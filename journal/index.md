@@ -1,11 +1,11 @@
 ---
 title: Journal
 layout: default
-nav_order: 5
+nav_order: 6
 has_children: true
 permalink: /journal/
 ---
 
-# Journal — 커리어 일기
+# Journal
 
-CSO로서의 업무·의사결정·회고 기록입니다. 개별 일기는 이 섹션 하위에 표시됩니다.
+평소의 **아카이빙, 일기, 회고록**을 기록하는 공간입니다.
