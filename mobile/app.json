@@ -1,0 +1,17 @@
+{
+  "expo": {
+    "name": "Selly Strategy Mobile",
+    "slug": "selly-strategy-mobile",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "sdkVersion": "49.0.0",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "ios": {
+      "bundleIdentifier": "com.jichang.sellystrategy"
+    }
+  }
+}
