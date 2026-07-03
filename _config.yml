@@ -1,0 +1,58 @@
+# ─────────────────────────────────────────────
+# 식자재쿡 CSO Journal — Jekyll 설정
+# GitHub Pages + just-the-docs 원격 테마
+# ─────────────────────────────────────────────
+
+title: 식자재쿡 CSO Journal
+description: 식자재쿡 전략기획부 CSO 관점의 리서치·분석·보고서 아카이브
+lang: ko
+
+# GitHub Pages 프로젝트 사이트 주소
+url: "https://jichang-kim.github.io"
+baseurl: "/selly-strategy-table"
+
+# 원격 테마 (GitHub Pages 지원)
+remote_theme: just-the-docs/just-the-docs
+color_scheme: light
+
+# ── 검색 ──────────────────────────────────────
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 3
+  preview_words_before: 3
+  preview_words_after: 3
+  tokenizer_separator: /[\s/]+/
+  rel_url: true
+  button: false
+
+# ── 우측 상단 링크 ────────────────────────────
+aux_links:
+  "GitHub 저장소":
+    - "https://github.com/jichang-kim/selly-strategy-table"
+aux_links_new_tab: true
+
+# ── 하단 ──────────────────────────────────────
+footer_content: "© 2026 김지창 · 식자재쿡 전략기획부 · 내부 전략 아카이브"
+
+# ── 마크다운 ──────────────────────────────────
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# ── 플러그인 (GitHub Pages 허용 목록) ─────────
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# ── 사이트 빌드 제외 ─────────────────────────
+# templates/는 문서 양식(스캐폴딩)이므로 사이트에는 렌더링하지 않음
+exclude:
+  - CLAUDE.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - templates/
