@@ -4,6 +4,8 @@ title: (리서치 주제)
 date: YYYY-MM-DD
 author: 김지창 (CSO)
 sources: []
+layout: default
+parent: Research  # 사이트 사이드바에서 Research 하위로 정렬
 ---
 
 # 리서치 — (주제)
