@@ -12,3 +12,9 @@ gem "github-pages", group: :jekyll_plugins
 
 # 최신 Ruby에서 로컬 서버 구동에 필요
 gem "webrick", "~> 1.8"
+
+# Ruby 3.4+ / 4.0 에서 기본 gem에서 빠진 표준 라이브러리 (로컬 빌드용)
+gem "csv"
+gem "base64"
+gem "bigdecimal"
+gem "logger"

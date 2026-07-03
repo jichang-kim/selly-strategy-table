@@ -1,2 +1,109 @@
 <!-- 사이트 전역 Pretendard 웹폰트 (대시보드와 폰트 통일) -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+
+<!-- 파비콘: 식자재쿡 앱 아이콘 -->
+<link rel="icon" type="image/png" href="{{ '/assets/images/foodcook-icon.png' | relative_url }}">
+<link rel="apple-touch-icon" href="{{ '/assets/images/foodcook-icon.png' | relative_url }}">
+
+<!-- ── 사이드바 프로필 카드 (좌측 타이틀과 메뉴 사이) ─────────────────
+     just-the-docs 원격 테마는 버전이 고정돼 있지 않아 레이아웃을 직접
+     오버라이드하지 않고, 안정적인 클래스(.side-bar/.site-header/.site-nav)에
+     프로필 카드를 삽입한다. 프로필 사진은 assets/images/profile.jpg 를
+     교체하면 자동으로 바뀐다(정적 사이트의 '업로드'). -->
+<style>
+  .selly-profile {
+    padding: 16px 24px 12px;
+    text-align: center;
+    border-bottom: 1px solid #ECE3D8;
+  }
+  .selly-profile__avatar {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #F3C89B;
+    background: #FBF3EA;
+    display: block;
+    margin: 0 auto 10px;
+  }
+  .selly-profile__avatar--fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: #E8730C;
+  }
+  .selly-profile__name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #4A3B2A;
+    line-height: 1.3;
+  }
+  .selly-profile__role {
+    font-size: 12px;
+    font-weight: 300;
+    color: #9A8B78;
+    margin-top: 2px;
+  }
+  .selly-profile__brand {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px dashed #ECE3D8;
+  }
+  .selly-profile__brand img {
+    height: 24px;
+    width: auto;
+    opacity: 0.92;
+  }
+  .selly-profile__brand-caption {
+    font-size: 10px;
+    color: #B7A895;
+    margin-top: 4px;
+    letter-spacing: 0.02em;
+  }
+</style>
+<script>
+  (function () {
+    var AVATAR = "{{ '/assets/images/profile.jpg' | relative_url }}";
+    var LOGO   = "{{ '/assets/images/foodcook-logo.png' | relative_url }}";
+
+    function buildProfile() {
+      var wrap = document.createElement('div');
+      wrap.className = 'selly-profile';
+      wrap.innerHTML =
+        '<img class="selly-profile__avatar" src="' + AVATAR + '" alt="김지창 프로필" ' +
+        'onerror="this.onerror=null;this.outerHTML=\'<div class=&quot;selly-profile__avatar selly-profile__avatar--fallback&quot;>김</div>\';">' +
+        '<div class="selly-profile__name">김지창</div>' +
+        '<div class="selly-profile__role">식자재쿡 전략기획본부 CSO</div>' +
+        '<div class="selly-profile__brand">' +
+          '<img src="' + LOGO + '" alt="식자재쿡" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'none\';">' +
+          '<div class="selly-profile__brand-caption">powered by 식자재쿡</div>' +
+        '</div>';
+      return wrap;
+    }
+
+    function inject() {
+      var sidebar = document.querySelector('.side-bar');
+      if (!sidebar) return false;
+      if (sidebar.querySelector('.selly-profile')) return true; // 중복 방지
+      var nav = sidebar.querySelector('.site-nav');
+      var header = sidebar.querySelector('.site-header');
+      var profile = buildProfile();
+      if (nav) {
+        nav.parentNode.insertBefore(profile, nav);          // 메뉴 바로 위
+      } else if (header) {
+        header.parentNode.insertBefore(profile, header.nextSibling); // 타이틀 바로 아래
+      } else {
+        sidebar.insertBefore(profile, sidebar.firstChild);
+      }
+      return true;
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', inject);
+    } else {
+      inject();
+    }
+  })();
+</script>

@@ -57,3 +57,7 @@ exclude:
   - Gemfile.lock
   - vendor/
   - templates/
+  # mobile/ 는 React Native 앱(사이트 콘텐츠 아님) — Jekyll 빌드에서 제외
+  - mobile/
+  # 내부 설계 문서 — 본문 JSX의 {{ }} 가 Liquid 파싱과 충돌해 빌드를 막으므로 제외
+  - react-native-design.md
