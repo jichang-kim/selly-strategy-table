@@ -5,6 +5,8 @@ date: YYYY-MM-DD
 author: 김지창 (CSO)
 status: draft   # draft | reviewed | final
 sources: []     # 참고 출처 URL
+layout: default
+parent: Reports  # 사이트 사이드바에서 Reports 하위로 정렬
 ---
 
 # (리포트 제목)
