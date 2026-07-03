@@ -1,6 +1,6 @@
 # 셀리 전략테이블 — 김지창 (식자재쿡 전략기획본부)
-https://jichang-kim.github.io/selly-strategy-table/
 식자재쿡 CSO 관점의 **커리어 일기**와 **리서치·분석·보고서**를 주기적으로 축적하는 개인 저장소입니다.
+https://jichang-kim.github.io/selly-strategy-table/
 
 ## 폴더 안내
 | 폴더 | 용도 |
