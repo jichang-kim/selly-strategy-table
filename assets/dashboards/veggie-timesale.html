@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>야채 타임세일 최저가 캠페인 · 식자재쿡</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  :root{
+    --bg:#FFFDF8; --surface:#FFFFFF; --ink:#211C15; --muted:#8C8276; --faint:#B7AE9F;
+    --line:rgba(33,28,21,0.10); --line2:rgba(33,28,21,0.06);
+    --orange:#F25C05; --orange-deep:#B4430A; --orange-soft:#FFE7D2;
+    --green:#2F8F3E; --green-deep:#1F6A2C; --green-soft:#E7F2E6;
+    --amber-soft:#FFEBC9; --amber-deep:#915200;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Pretendard Variable",Pretendard,-apple-system,sans-serif;
+    line-height:1.7;font-size:16px;letter-spacing:-0.01em;
+    word-break:keep-all;overflow-wrap:anywhere}
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px}
+  .num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
+  a{color:var(--orange-deep)}
+  /* eyebrow */
+  .eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;
+    color:var(--orange-deep);letter-spacing:0.02em;margin:0 0 12px}
+  .eyebrow::before{content:"";width:18px;height:2px;background:var(--orange);border-radius:2px}
+  section{padding:46px 0;border-top:1px solid var(--line2)}
+  h2{font-size:24px;font-weight:700;margin:0 0 6px;letter-spacing:-0.02em}
+  h3{font-size:17px;font-weight:600;margin:0 0 8px}
+  p{margin:0 0 14px;color:#3a3328}
+  .lead{color:var(--muted);font-size:15px;max-width:46em;margin-bottom:24px}
+  /* hero */
+  .hero{padding:64px 0 40px}
+  .hero h1{font-size:46px;line-height:1.12;font-weight:800;letter-spacing:-0.035em;margin:0 0 18px}
+  .hero h1 .hl{color:var(--orange)}
+  .thesis{font-size:18px;color:#3a3328;max-width:38em;margin:0 0 28px}
+  .thesis b{font-weight:700;color:var(--ink);background:linear-gradient(transparent 62%,var(--amber-soft) 62%)}
+  .meta{display:flex;flex-wrap:wrap;gap:10px 28px;font-size:14px;color:var(--muted);margin-bottom:30px}
+  .meta b{color:var(--ink);font-weight:600}
+  /* stat chips */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .stat .k{font-size:12.5px;color:var(--muted);margin-bottom:6px}
+  .stat .v{font-size:26px;font-weight:800;letter-spacing:-0.02em}
+  .stat .v small{font-size:14px;font-weight:600;color:var(--muted);margin-left:2px}
+  .stat.accent{background:var(--orange);border-color:var(--orange)}
+  .stat.accent .k{color:#FFE0CB}
+  .stat.accent .v{color:#fff}
+  /* generic grid */
+  .g2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card h3{display:flex;align-items:center;justify-content:space-between}
+  .tag{font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:999px}
+  .tag.o{background:var(--orange-soft);color:var(--orange-deep)}
+  .tag.g{background:var(--green-soft);color:var(--green-deep)}
+  .tag.a{background:var(--amber-soft);color:var(--amber-deep)}
+  .card ul{margin:6px 0 0;padding-left:18px;color:#3a3328;font-size:14.5px}
+  .card li{margin:5px 0}
+  .weak{color:var(--orange-deep);font-weight:600}
+  /* order->arrival flow */
+  .flow{display:flex;align-items:stretch;gap:0;flex-wrap:wrap;background:var(--surface);
+    border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:18px 0 8px}
+  .flow .step{flex:1;min-width:150px;padding:18px 20px;border-right:1px solid var(--line2);position:relative}
+  .flow .step:last-child{border-right:0}
+  .flow .lab{font-size:12px;color:var(--muted);margin-bottom:6px}
+  .flow .big{font-size:19px;font-weight:700}
+  .flow .step.hot .big{color:var(--orange)}
+  .flow .step.cold .big{color:var(--green-deep)}
+  /* price tag */
+  .ptag{display:inline-flex;align-items:center;font-weight:800;font-variant-numeric:tabular-nums;
+    background:var(--orange);color:#fff;border-radius:6px;padding:2px 8px;font-size:14px}
+  .strike{color:var(--faint);text-decoration:line-through;font-size:12.5px;margin-right:5px;font-weight:500}
+  /* table */
+  table{width:100%;border-collapse:collapse;font-size:14px;background:var(--surface);
+    border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  thead th{background:#FBF4EA;color:var(--muted);font-weight:600;font-size:12.5px;text-align:left;
+    padding:11px 14px;border-bottom:1px solid var(--line)}
+  tbody td{padding:11px 14px;border-bottom:1px solid var(--line2);vertical-align:middle}
+  tbody tr:last-child td{border-bottom:0}
+  td.r,th.r{text-align:right}
+  .pos{color:var(--green-deep);font-weight:700}
+  .neg{color:var(--orange-deep);font-weight:700}
+  /* calendar */
+  .calhead{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px}
+  .calhead div{background:#FBF4EA;border-radius:10px;text-align:center;padding:9px 0;font-size:13px;color:var(--muted)}
+  .calhead b{color:var(--ink);font-weight:700}
+  .cal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .cell{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:11px 12px;min-height:104px}
+  .cell.empty{background:transparent;border:1px dashed var(--line2)}
+  .cell.bb{border-color:var(--orange);background:#FFF6EF}
+  .cdate{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:8px}
+  .cdate .arr{color:var(--faint)}
+  .cell.bb .cdate{color:var(--orange-deep)} .cell.bb .arr{color:var(--orange)}
+  .citem{margin-bottom:8px}
+  .citem .nm{font-size:13px;font-weight:600;margin-bottom:3px}
+  .citem .row{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+  .citem .q{font-size:11px;color:var(--faint)}
+  .bbbadge{display:inline-block;font-size:10px;font-weight:800;background:var(--orange);color:#fff;
+    border-radius:5px;padding:1px 6px;margin-bottom:5px;letter-spacing:0.02em}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:14px}
+  .legend span{display:flex;align-items:center;gap:6px}
+  .sw{width:12px;height:12px;border-radius:4px;display:inline-block}
+  /* budget */
+  .budget-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:22px;align-items:start}
+  .chartbox{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;height:280px;position:relative}
+  .lever{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+  .lever .lt{font-weight:600;font-size:14.5px;margin-bottom:3px}
+  .lever .ld{font-size:13.5px;color:var(--muted)}
+  /* kpi */
+  .kpi{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .kpi .card .n{font-size:13px;color:var(--orange-deep);font-weight:700;margin-bottom:4px}
+  /* footer */
+  footer{padding:34px 0 60px;border-top:1px solid var(--line2);color:var(--faint);font-size:12.5px}
+  footer b{color:var(--muted)}
+  @media(max-width:760px){
+    .hero h1{font-size:33px} .stats{grid-template-columns:1fr 1fr}
+    .g2,.g3,.budget-grid,.kpi{grid-template-columns:1fr}
+    .cal,.calhead{grid-template-columns:1fr}
+    .flow .step{min-width:120px}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap hero">
+  <div class="eyebrow">식자재쿡 · CSO 캠페인 기획서</div>
+  <h1>야채 <span class="hl">최저가</span> 타임세일<br>— 첫 구매처 선점 작전</h1>
+  <p class="thesis">목적은 매출이 아니라 행동 전환입니다. 점주가 <b>낮에 우리부터 발주를 시작</b>하게 만들어, "빠뜨린 것만 늦게 담는 쩌리 주문처"에서 벗어나는 것. 야채 최저가는 그 미끼이고, 손실은 마케팅비로 봅니다.</p>
+  <div class="meta num">
+    <span>기간 <b>2026.06.29 ~ 07.31</b></span>
+    <span>운영 <b>월·화·수 14:00 오픈</b></span>
+    <span>지역 <b>영남권</b></span>
+    <span>연동 <b>구글 시트 실행캘린더</b></span>
+  </div>
+  <div class="stats num">
+    <div class="stat"><div class="k">행사일</div><div class="v">15<small>일</small></div></div>
+    <div class="stat"><div class="k">월 마케팅 예산(상한)</div><div class="v">150<small>만원</small></div></div>
+    <div class="stat"><div class="k">일평균 집행(상한)</div><div class="v">8.9<small>만원</small></div></div>
+    <div class="stat accent"><div class="k">평균 할인율</div><div class="v">~55<small>%</small></div></div>
+  </div>
+</div>
+
+<section class="wrap">
+  <div class="eyebrow">전략</div>
+  <h2>왜 이 캠페인인가</h2>
+  <p class="lead">최소주문 0원·자정 마감으로 편의성은 1등이지만, "반드시 우리부터"라는 이유가 약합니다. 그 빈틈을 야채 최저가로 메웁니다.</p>
+  <div class="g2">
+    <div class="card">
+      <h3>우리의 약점 <span class="tag o">현재</span></h3>
+      <ul>
+        <li>점주는 낮에 타 플랫폼·마트에서 메인 발주를 끝냄</li>
+        <li>우리는 빠뜨린 품목만 늦게 담는 보조 채널 → <span class="weak">낮은 객단가</span></li>
+        <li>주문이 흩어져 <span class="weak">물류 효율 상승 어려움</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>전환 레버 <span class="tag g">목표</span></h3>
+      <ul>
+        <li>경쟁사 마감(오후 3~5시) <b>이전</b>에 최저가를 먼저 노출</li>
+        <li>오후 2시 오픈으로 발주 의사결정을 우리 쪽으로 당김</li>
+        <li>"낮엔 우리부터, 밤까지 우리에서" — 0원·자정 마감과 결합</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="eyebrow">운영 메커니즘</div>
+  <h2>도착일 기준으로 설계한다</h2>
+  <p class="lead">행사는 주문일에 열리지만 매출은 도착일에 찍힙니다. 다음날 도착·일요일 배송휴무 구조라, 매출이 빠지는 화·수·목 도착을 채우려면 주문일을 월·화·수로 잡아야 합니다.</p>
+  <div class="flow num">
+    <div class="step hot"><div class="lab">행사(주문)일</div><div class="big">월 · 화 · 수</div><div class="lab" style="margin-top:6px">14:00 타임세일 오픈</div></div>
+    <div class="step"><div class="lab">→ 다음날</div><div class="big">+1일 배송</div><div class="lab" style="margin-top:6px">자정 주문 → 익일 도착</div></div>
+    <div class="step cold"><div class="lab">도착(매출)일</div><div class="big">화 · 수 · 목</div><div class="lab" style="margin-top:6px">매출 약세일 정조준</div></div>
+  </div>
+  <p style="font-size:14px;color:var(--muted)">목·금 주문(금·토 도착=이미 강세)은 <b>의도적으로 행사를 빼서</b> 마진을 약한 날에 집중합니다. 토·일은 휴무. 월요일 주문은 주말 직후 가장 약한 화요일 도착을 노린 <b style="color:var(--orange-deep)">블록버스터</b>로 엽니다. 한정수량은 실시간 소진율로 노출해 FOMO를 만듭니다.</p>
+</section>
+
+<section class="wrap">
+  <div class="eyebrow">경쟁 구도 · 영남권</div>
+  <h2>비어 있는 결: 매일·낮·단일 야채 한정 최저가</h2>
+  <p class="lead">두 강자 모두 강력하지만, 우리가 파고들 틈은 "매일 오후, 단일 야채를 한정수량 최저가로 던지는" 어그로입니다.</p>
+  <div class="g3">
+    <div class="card">
+      <h3>푸드팡 <span class="tag o">시세 기준점</span></h3>
+      <ul>
+        <li>"도매시장 시세"로 포지셔닝, 매일 시세 갱신</li>
+        <li>마감 후 시장 직접 사입 → <span class="weak">오후 마감이 구조적 약점</span></li>
+        <li>당일배송·24시간 CS·100% 교환환불</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>배민상회 <span class="tag o">쿠폰·PB</span></h3>
+      <ul>
+        <li>가입 즉시 쿠폰, 첫구매 파격특가</li>
+        <li>MD 최저가 도전 상품, 쌀 주간 한정특가</li>
+        <li>쿠폰 등급제(최대 6만원)·상회딜</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>시세 메모 <span class="tag g">6월 기준</span></h3>
+      <ul>
+        <li><b>양파</b> 햇양파 풍작 = 역대급 저가 → 손실 작게 파격가</li>
+        <li><b>마늘</b> 전년比 +34% 강세 → 어그로 강하나 손실 큼(가끔)</li>
+        <li><b>대파·여름엽채</b> 약보합·성수 → 데일리 주력</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="eyebrow">가격 산정</div>
+  <h2>품목 풀 &amp; 이벤트가</h2>
+  <p class="lead">우리 raw 기본판매가(6/8~6/21) 대비 47~71% 할인, 모두 경쟁 시세보다 낮게 설정. 손실 = 마케팅비, 한정수량으로 상한을 고정합니다.</p>
+  <table class="num">
+    <thead><tr><th>품목</th><th class="r">기본가</th><th class="r">매입원가</th><th class="r">이벤트가</th><th class="r">할인</th><th class="r">손익/개</th><th>역할</th></tr></thead>
+    <tbody>
+      <tr><td>흙대파 1단</td><td class="r">2,400</td><td class="r">1,800</td><td class="r">990</td><td class="r">59%</td><td class="r neg">−810</td><td>데일리</td></tr>
+      <tr><td>깐양파 1kg(햇)</td><td class="r">2,500</td><td class="r">~1,700</td><td class="r">990</td><td class="r">60%</td><td class="r neg">−710</td><td>데일리</td></tr>
+      <tr><td>청양고추 특 1kg</td><td class="r">7,500</td><td class="r">6,000</td><td class="r">3,900</td><td class="r">48%</td><td class="r neg">−2,100</td><td>데일리</td></tr>
+      <tr><td>가시오이 1kg</td><td class="r">3,000</td><td class="r">3,000</td><td class="r">1,490</td><td class="r">50%</td><td class="r neg">−1,510</td><td>데일리</td></tr>
+      <tr><td>애호박 1개</td><td class="r">900</td><td class="r">650</td><td class="r">390</td><td class="r">57%</td><td class="r neg">−260</td><td>미끼</td></tr>
+      <tr><td>깻잎 5묶음 · 손질양배추 · 무 · 당근 · 콩나물 · 부추 · 숙주 · 미나리</td><td class="r">1,450~3,300</td><td class="r">—</td><td class="r">690~1,490</td><td class="r">~50%</td><td class="r neg">소액</td><td>회전</td></tr>
+      <tr><td>무순 5팩</td><td class="r">3,100</td><td class="r">500</td><td class="r">1,490</td><td class="r">52%</td><td class="r pos">+990</td><td>방어(고마진)</td></tr>
+      <tr><td>간마늘 1kg · 깐양파 3kg · 포찹상추 2kg · 청양고추</td><td class="r">3,450~11,500</td><td class="r">—</td><td class="r">1,900~4,900</td><td class="r">45~61%</td><td class="r neg">크게</td><td>블록버스터</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="wrap">
+  <div class="eyebrow">실행 캘린더</div>
+  <h2>32일 → 15일, 약한 날만 정조준</h2>
+  <p class="lead">월·화·수 각 5회. 모두 화·수·목 도착으로 매출 약세일을 채웁니다. 월요일은 블록버스터로 오픈런을 유도합니다.</p>
+  <div class="calhead">
+    <div><b>월 주문</b> → 화 도착</div><div><b>화 주문</b> → 수 도착</div><div><b>수 주문</b> → 목 도착</div>
+  </div>
+  <div class="cal" id="cal"></div>
+  <div class="legend">
+    <span><i class="sw" style="background:#FFF6EF;border:1px solid var(--orange)"></i>월요일 블록버스터</span>
+    <span><i class="sw" style="background:var(--surface);border:1px solid var(--line)"></i>데일리 파격 2품목</span>
+    <span>목·금 주문(강세 도착)=행사 없음 · 토·일 휴무</span>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="eyebrow">손실 예산</div>
+  <h2>월 150만 한도 · 전량 소진 기준 상한</h2>
+  <p class="lead">한정수량 전량이 소진되는 최악 가정에서도 7월 집행 상한은 약 114만 원으로, 150만 한도 안에 버퍼가 남습니다. 무순 등 고마진 품목이 끼는 날은 손실이 줄어 실집행은 더 낮습니다.</p>
+  <div class="budget-grid">
+    <div class="chartbox"><canvas id="bchart" aria-label="주차별 손실 상한 막대그래프"></canvas></div>
+    <div>
+      <div class="lever"><div class="lt">한정수량</div><div class="ld">↓ 줄이면 일 손실 직접 감소. 가장 빠른 조절 레버.</div></div>
+      <div class="lever"><div class="lt">블록버스터 빈도</div><div class="ld">주 1회(월요일) 유지 권장. 늘리면 손실 급증.</div></div>
+      <div class="lever"><div class="lt">고가 품목 비중</div><div class="ld">마늘·상추 등은 손실 크므로 월 2~3회로 제한.</div></div>
+      <div class="lever" style="background:var(--orange-soft);border-color:var(--orange-soft)"><div class="lt" style="color:var(--orange-deep)">신규 100명 확보 시 CAC ≈ 1.3만원</div><div class="ld" style="color:var(--orange-deep)">배민상회 가입쿠폰 10만원 대비 매우 효율적.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="eyebrow">인스타 · 홍보</div>
+  <h2>가격 충격을 전면에</h2>
+  <div class="g2">
+    <div class="card">
+      <h3>포맷</h3>
+      <ul>
+        <li>데일리: "오늘의 야채 최저가" 단일 카드(품목·이벤트가·할인율·한정수량·14:00 오픈)</li>
+        <li>월요일: 금요일 저녁 예고편 + 당일 오픈런 카운트다운</li>
+        <li>실시간 "남은 수량 N개" 노출로 FOMO</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>푸시 타이밍 <span class="tag a">이번엔 예외</span></h3>
+      <ul>
+        <li>평소 최적창(19~21시)이 아니라 <b>오전 예고(11:30) + 오픈 직전(13:50)</b></li>
+        <li>목적이 "오후 발주 결정 가로채기"이기 때문</li>
+        <li>핵심 카피: "대파 1단 990원, 선착순 40단. 오후 2시 땡."</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="eyebrow">성공 지표</div>
+  <h2>매출이 아니라 행동을 본다</h2>
+  <div class="kpi">
+    <div class="card"><div class="n">신규 유입</div><h3>가입·첫 발주 수</h3><p style="margin:0;font-size:14px;color:var(--muted)">이벤트 기간 신규 사업자 가입과 첫 발주 전환.</p></div>
+    <div class="card"><div class="n">쩌리 탈피</div><h3>장바구니 동반구매 객단가</h3><p style="margin:0;font-size:14px;color:var(--muted)">타임세일 품목과 같은 주문에 담긴 비이벤트 품목 금액 — 핵심 지표.</p></div>
+    <div class="card"><div class="n">지속성</div><h3>D+7 / D+14 재발주율</h3><p style="margin:0;font-size:14px;color:var(--muted)">이벤트 구매자가 정상가로 돌아오는지.</p></div>
+    <div class="card"><div class="n">순효과 검증</div><h3>도착일 DiD</h3><p style="margin:0;font-size:14px;color:var(--muted)">화·수·목(처치) vs 금·토(대조) 도착 매출 변화로 순효과 분리. 강세일 잠식 여부도 동시 점검.</p></div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <p><b>데이터 기준</b> · 기본판매가·매입원가는 raw 주문 데이터(2026.06.08~06.21) 야채·채소 카테고리. 양파 실원가는 햇양파 풍작 반영해 하향 가정. 시세 메모는 2026년 6월 공개 도매·소매 자료 참고. 손실액은 한정수량 전량 소진 가정의 상한이며 실집행은 이보다 낮음.</p>
+  <p>식자재쿡 전략기획 · 야채 타임세일 최저가 캠페인 v3 (도착일 기준)</p>
+</footer>
+
+<script>
+const SHEET_ID = '1VX7kVN1upX1qFhitwQw46ukmH6FY-Iu2oAo8llyjAsA';
+const GID = '490025442';
+const API_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&gid=${GID}`;
+
+function parseSheetDate(value) {
+  if (!value) return null;
+  const match = /Date\((\d+),(\d+),(\d+)\)/.exec(value);
+  if (match) {
+    return new Date(parseInt(match[1], 10), parseInt(match[2], 10), parseInt(match[3], 10));
+  }
+  return new Date(value);
+}
+
+function formatDate(date) {
+  if (!date) return '';
+  return `${date.getMonth() + 1}/${date.getDate()}`;
+}
+
+function formatPrice(value) {
+  return typeof value === 'number' ? `₩${value.toLocaleString()}` : '—';
+}
+
+function formatPercent(value) {
+  return typeof value === 'number' ? `${Math.round(value * 100)}%` : '—';
+}
+
+function weekKey(date) {
+  const d = new Date(date);
+  const day = (d.getDay() + 6) % 7;
+  d.setDate(d.getDate() - day);
+  return d.toISOString().slice(0, 10);
+}
+
+function getWeekLabel(date) {
+  const d = new Date(date);
+  const month = d.getMonth() + 1;
+  const day = d.getDate();
+  return `${month}/${day}`;
+}
+
+function mapWeekdayIndex(weekday) {
+  return weekday === '월' ? 0 : weekday === '화' ? 1 : weekday === '수' ? 2 : -1;
+}
+
+function buildCalendar(entries) {
+  const weeks = {};
+  entries.forEach(function (entry) {
+    if (!entry.orderDate || !entry.orderWeekday) return;
+    const key = weekKey(entry.orderDate);
+    weeks[key] = weeks[key] || { label: getWeekLabel(entry.orderDate), days: [null, null, null], loss: 0 };
+    const idx = mapWeekdayIndex(entry.orderWeekday);
+    if (idx === -1) return;
+    weeks[key].days[idx] = entry;
+    weeks[key].loss += typeof entry.plannedLoss === 'number' ? entry.plannedLoss : 0;
+  });
+
+  const keys = Object.keys(weeks).sort((a, b) => new Date(a) - new Date(b));
+  let html = '';
+  keys.forEach(function (weekKey) {
+    const week = weeks[weekKey];
+    for (let c = 0; c < 3; c++) {
+      const entry = week.days[c];
+      if (!entry) {
+        html += '<div class="cell empty"></div>';
+        continue;
+      }
+      const bb = entry.type && entry.type.toLowerCase().includes('블록버스터');
+      html += '<div class="cell' + (bb ? ' bb' : '') + '">';
+      html += '<div class="cdate num"><span>' + formatDate(entry.orderDate).replace(/^0/, '') + ' ' + entry.orderWeekday + '</span><span class="arr">→' + formatDate(entry.arrivalDate).replace(/^0/, '') + ' 도착</span></div>';
+      html += '<div class="citem">' + (bb ? '<span class="bbbadge">블록버스터</span>' : '');
+      html += '<div class="nm">' + (entry.item || '미정') + '</div>';
+      html += '<div class="row"><span class="ptag num">' + formatPrice(entry.eventPrice) + '</span><span class="q num">한정 ' + (entry.quantity || '—') + '개 · ' + formatPercent(entry.discount) + '</span></div>';
+      html += '</div></div>';
+    }
+  });
+
+  document.getElementById('cal').innerHTML = html;
+  return keys.map(k => ({ week: weeks[k].label, loss: weeks[k].loss }));
+}
+
+function initChart(weeklyData) {
+  const labels = weeklyData.map(item => item.week + '~');
+  const data = weeklyData.map(item => Math.abs(item.loss));
+  new Chart(document.getElementById('bchart'), {
+    type: 'bar',
+    data: { labels: labels, datasets: [{ data: data, backgroundColor: '#F25C05', borderRadius: 6, maxBarThickness: 46 }] },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: function (c) { return '손실 상한 ' + c.raw.toLocaleString() + '원'; } } }
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { color: '#8C8276', font: { family: 'Pretendard' } } },
+        y: { grid: { color: 'rgba(33,28,21,0.06)' }, ticks: { color: '#8C8276', callback: function (v) { return (v / 10000) + '만'; } } }
+      }
+    }
+  });
+}
+
+function showLoadError() {
+  document.getElementById('cal').innerHTML = '<div style="padding:24px;color:#b14d00;background:#fff2e8;border:1px solid #f6d7bf;border-radius:12px;">구글 시트 데이터를 불러올 수 없습니다. 공개 설정이나 네트워크를 확인하세요.</div>';
+}
+
+fetch(API_URL)
+  .then(function (res) { return res.text(); })
+  .then(function (text) {
+    var match = /google\.visualization\.Query\.setResponse\((.*)\);/s.exec(text);
+    if (!match) throw new Error('Invalid sheet response');
+    var data = JSON.parse(match[1]);
+    var entries = data.table.rows.map(function (row) {
+      return {
+        orderDate: parseSheetDate(row.c[1] && row.c[1].v),
+        orderWeekday: row.c[2] && row.c[2].v,
+        arrivalDate: parseSheetDate(row.c[3] && row.c[3].v),
+        arrivalWeekday: row.c[4] && row.c[4].v,
+        type: row.c[5] && row.c[5].v,
+        item: row.c[6] && row.c[6].v,
+        eventPrice: row.c[9] && row.c[9].v,
+        discount: row.c[10] && row.c[10].v,
+        quantity: row.c[12] && row.c[12].v,
+        plannedLoss: row.c[13] && row.c[13].v,
+        weekLabel: row.c[14] && row.c[14].v,
+        status: row.c[19] && row.c[19].v
+      };
+    }).filter(function (entry) {
+      return entry.item && entry.status !== '취소';
+    });
+
+    var weeklyData = buildCalendar(entries);
+    if (weeklyData.length) {
+      initChart(weeklyData);
+    } else {
+      showLoadError();
+    }
+  })
+  .catch(function (err) {
+    console.error(err);
+    showLoadError();
+  });
+</script>
+</body>
+</html>
