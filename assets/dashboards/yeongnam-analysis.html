@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>식자재쿡 영남권역 분석 v2</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#FBF7F1;color:#201A15;font-family:'Pretendard','Noto Sans KR',sans-serif;padding:24px 12px}
+.wrap{max-width:960px;margin:0 auto}
+h1{font-size:22px;font-weight:800;color:#D2483D;letter-spacing:-0.5px}
+.sub{color:#888;font-size:13px;margin:4px 0 20px}
+.tabs{display:flex;gap:6px;margin-bottom:24px;flex-wrap:wrap}
+.tabs button{background:#FFFFFF;color:#aaa;border:none;border-radius:20px;padding:8px 14px;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;font-family:inherit}
+.tabs button.active{background:#D2483D;color:#3A342E}
+.tc{display:none}.tc.active{display:block}
+.section{margin-bottom:28px}
+.section h2{font-size:16px;font-weight:700;color:#3A342E;margin:0 0 12px;border-left:3px solid #D2483D;padding-left:10px}
+.cb{background:#111128;border-radius:12px;padding:16px;border:1px solid #FBF3EA;margin-bottom:8px}
+canvas{max-height:450px}
+.ins{background:#111128;border-radius:8px;padding:10px 14px;margin-top:10px;font-size:13px;color:#6B625A;line-height:1.6;border-left:2px solid #D2483D}
+.card{background:#111128;border-radius:12px;padding:20px;border:1px solid #FBF3EA;margin-bottom:12px}
+.phase{margin-bottom:16px;padding-left:16px}
+.pt{font-size:14px;font-weight:700;margin-bottom:4px}
+.pd{font-size:13px;color:#6B625A;line-height:1.6}
+.pg{margin-bottom:16px}
+.pg h3{font-size:14px;font-weight:700;color:#3A342E;margin-bottom:6px}
+.pi{font-size:13px;color:#6B625A;padding:3px 0 3px 12px;border-left:1px solid #333}
+.sr{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #FBF3EA;flex-wrap:wrap;gap:8px}
+.sl{font-size:13px;color:#888;font-weight:600}.sv{font-size:13px;color:#3A342E;font-weight:700}
+.sc{background:linear-gradient(135deg,#FFFFFF,#FBF3EA);border-radius:12px;padding:20px;border:1px solid #D2483D33}
+.bs{display:flex;justify-content:center;gap:40px;padding:16px 0}
+.bn{font-size:36px;font-weight:800;text-align:center}
+.bl{font-size:13px;color:#aaa;text-align:center}
+.lr{display:flex;justify-content:center;gap:12px;margin-top:8px;flex-wrap:wrap;font-size:12px;font-weight:700}
+table.dt{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px}
+table.dt th{background:#FFFFFF;color:#aaa;padding:8px 6px;text-align:left;font-weight:600;border-bottom:1px solid #333;position:sticky;top:0}
+table.dt td{padding:7px 6px;border-bottom:1px solid #1e1e38;color:#ccc}
+table.dt tr:hover td{background:#16163a}
+.tag{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700}
+.tag-p{background:#D2483D30;color:#D2483D}.tag-f{background:#2E9E6B30;color:#2E9E6B}
+.trend-card{background:#0f0f24;border:1px solid #FBF3EA;border-radius:10px;padding:16px;margin-bottom:12px}
+.trend-card h4{font-size:14px;font-weight:700;margin-bottom:6px}
+.trend-tag{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;margin-right:4px;margin-bottom:4px}
+.trend-body{font-size:13px;color:#6B625A;line-height:1.6;margin-top:8px}
+.season-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin-top:10px}
+.season-item{background:#16163a;border-radius:8px;padding:10px;font-size:12px;color:#ccc;line-height:1.5}
+.season-item strong{color:#3A342E;display:block;margin-bottom:4px}
+.scroll-box{max-height:500px;overflow-y:auto}
+</style>
+
+<style id="unified-theme">
+:root{
+  --bg:#FBF7F1!important; --surface:#FFFFFF!important; --surface-2:#FBF3EA!important;
+  --line:#ECE3D8!important; --line-soft:#F3ECE3!important;
+  --ink:#201A15!important; --ink-dim:#6B625A!important; --ink-soft:#A69C91!important; --ink2:#6B625A!important; --ink3:#A69C91!important;
+  --orange:#E8730C!important; --orange-2:#F59E0B!important; --amber:#C77A16!important; --amber2:#F6B23C!important;
+  --yellow:#F6B23C!important; --yellow-light:#FCD36B!important; --ember:#D2604A!important;
+  --blue:#2F8F85!important; --cool:#2F8F85!important; --red:#D2483D!important; --green:#2E9E6B!important;
+  --bg2:#FFFFFF!important; --bg3:#FBF3EA!important;
+  --body:'Pretendard','Noto Sans KR',sans-serif!important;
+  --disp:'Pretendard','Noto Sans KR',sans-serif!important;
+  --mono:'Pretendard','Noto Sans KR',sans-serif!important;
+}
+html,body{background:#FBF7F1!important; color:#201A15!important;}
+html body, html body *:not(code):not(pre):not(script):not(style){
+  font-family:'Pretendard','Noto Sans KR',sans-serif!important;
+}
+body{font-feature-settings:'tnum';}
+/* soften cards / panels consistently */
+[class*="card"],[class*="panel"],[class*="box"],[class*="tile"],[class*="section"],section,article{
+  border-radius:14px;
+}
+a{color:#E8730C;}
+/* consistent content width */
+.wrap{max-width:1360px!important;}
+::selection{background:#FCE1C2;color:#201A15;}
+/* scrollbar */
+*::-webkit-scrollbar-thumb{background:#E4D8C8;border-radius:8px;}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+<h1>식자재쿡 영남권역 분석 v2</h1>
+<p class="sub">장한유통 데이터 기반 · CJFW 든든배송 21년 vs 26년 · 지역 트렌드 리서치 반영</p>
+<div class="tabs">
+<button class="active" onclick="showTab(0)">카테고리 비중변화</button>
+<button onclick="showTab(1)">영남권역 거래액</button>
+<button onclick="showTab(2)">TOP100 상품분석</button>
+<button onclick="showTab(3)">TOP30 상세</button>
+<button onclick="showTab(4)">지역 트렌드 분석</button>
+<button onclick="showTab(5)">확장전략 제안</button>
+</div>
+
+<!-- TAB 0: 카테고리 -->
+<div class="tc active" id="tab0">
+<div class="section"><h2>대분류 비중변화 (21년 → 26년)</h2><div class="cb"><canvas id="c_main"></canvas></div><div class="ins">💡 가공식재료 비중이 46.7% → 64.9%로 급증. 신선식재료는 53.3% → 35.1%로 하락.</div></div>
+<div class="section"><h2>가공식재료 세부 카테고리 비중</h2><div class="cb"><canvas id="c_proc"></canvas></div><div class="ins">💡 장류/조미료(6.2→11%), 캔/통조림(3.1→9.6%) 급성장. 냉장/냉동식품은 54%로 최대.</div></div>
+<div class="section"><h2>신선식재료 세부 카테고리 비중</h2><div class="cb"><canvas id="c_fresh"></canvas></div><div class="ins">💡 축산물 53.1% → 16.9% 급감. 쌀/잡곡 11.8→14.8% 성장. 수산물 안정적 유지.</div></div>
+</div>
+
+<!-- TAB 1: 영남권역 -->
+<div class="tc" id="tab1">
+<div class="section"><h2>도/광역시별 월평균 거래액</h2><div class="cb"><canvas id="c_region"></canvas></div>
+<div class="lr"><span style="color:#D2483D">부산 32.7%</span><span style="color:#E8730C">경남 23.7%</span><span style="color:#2E9E6B">경북 17.6%</span><span style="color:#C77A16">대구 15.7%</span><span style="color:#2F8F85">울산 10.3%</span></div>
+<div class="ins">💡 경북이 3위(17.6%). 식자재쿡 미진출 지역 중 가장 큰 시장.</div></div>
+<div class="section"><h2>시군구별 월평균 거래액 TOP20</h2><div class="cb"><canvas id="c_city"></canvas></div><div class="ins">💡 경북: 구미시(4.1%), 포항시(4.4% 합산), 경산시(2.3%)가 핵심 거점.</div></div>
+<div class="section"><h2>대구 + 경북 시군구별 거래액</h2><div class="cb"><canvas id="c_gb"></canvas></div>
+<div class="lr"><span style="color:#C77A16">■ 대구</span><span style="color:#2E9E6B">■ 경북</span></div>
+<div class="ins">💡 대구 달서구(51.3백만)·북구(43.3백만) 최대. 경북은 구미(61백만)·포항(65.2백만 합산)·경산(33.9백만) 순.</div></div>
+</div>
+
+<!-- TAB 2: TOP100 요약 -->
+<div class="tc" id="tab2">
+<div class="section"><h2>CJFW TOP100 카테고리 분포 (depth2)</h2><div class="cb"><canvas id="c_d2"></canvas></div><div class="ins">💡 냉장/냉동식품 31개(31%) 압도적 1위. 신선+냉동이 65%.</div></div>
+<div class="section"><h2>TOP100 세부상품군 (depth3) TOP12</h2><div class="cb"><canvas id="c_d3"></canvas></div><div class="ins">💡 유제품(치즈/크림) 11개 최다. 훈제/식육가공 10개, 튀김류 6개.</div></div>
+<div class="section"><h2>TOP100 대분류 비율</h2><div class="bs"><div><div class="bn" style="color:#D2483D">61%</div><div class="bl">가공식재료</div></div><div><div class="bn" style="color:#2E9E6B">39%</div><div class="bl">신선식재료</div></div></div><div class="ins">💡 26년 거래액 비중(64.9%)과 거의 일치. 가공식재료 중심 구색 전략 유효.</div></div>
+</div>
+
+<!-- TAB 3: TOP30 상세 -->
+<div class="tc" id="tab3">
+<div class="section"><h2>CJFW TOP30 상품 상세 리스트</h2>
+<div class="ins" style="margin-bottom:12px">💡 TOP30 중 가공 18개(60%), 신선 12개(40%). 유제품(치즈) 6개, 축산(계란/닭) 4개, 수산 4개가 핵심.</div>
+<div class="cb scroll-box">
+<table class="dt">
+<thead><tr><th>#</th><th>대분류</th><th>중분류</th><th>소분류</th><th>상품명(요약)</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><span class="tag tag-f">신선</span></td><td>쌀/잡곡</td><td>쌀</td><td>25년 햅쌀 농협 상등급 온미 쌀 20Kg</td></tr>
+<tr><td>2</td><td><span class="tag tag-p">가공</span></td><td>냉장/냉동</td><td>유제품</td><td>도노쉐프 피자치즈 모짜렐라99% 2.5Kg ×6입</td></tr>
+<tr><td>3</td><td><span class="tag tag-f">신선</span></td><td>축산물</td><td>냉장계육</td><td>AURORA 닭다리살 정육 12Kg/BOX</td></tr>
+<tr><td>4</td><td><span class="tag tag-f">신선</span></td><td>쌀/잡곡</td><td>쌀</td><td>25년 햅쌀 대야농협 신동진 쌀 20Kg</td></tr>
+<tr><td>5</td><td><span class="tag tag-p">가공</span></td><td>냉장/냉동</td><td>유제품</td><td>온리 흰우유 900ml ×15입</td></tr>
+<tr><td>6</td><td><span class="tag tag-p">가공</span></td><td>냉장/냉동</td><td>유제품</td><td>도노쉐프 피자치즈 모짜렐라99% 2.5Kg</td></tr>
+<tr><td>7</td><td><span class="tag tag-f">신선</span></td><td>수산물</td><td>새우/게</td><td>생칵테일새우 PDTO_31/40 900g</td></tr>
+<tr><td>8</td><td><span class="tag tag-f">신선</span></td><td>수산물</td><td>미역/다시마</td><td>정담김 조미김가루 1Kg</td></tr>
+<tr><td>9</td><td><span class="tag tag-p">가공</span></td><td>냉장/냉동</td><td>유제품</td><td>도노쉐프 피자치즈 모짜89%+고다9% 2.5Kg</td></tr>
+<tr><td>10</td><td><span class="tag tag-f">신선</span></td><td>축산물</td><td>기타육류</td><td>대란 5판 52g×30입</td></tr>
+<tr><td>11</td><td><span class="tag tag-f">신선</span></td><td>수산물</td><td>새우/게</td><td>생칵테일새우 페루_PDTO_26/30 900g</td></tr>
+<tr><td>12</td><td><span class="tag tag-p">가공</span></td><td>냉장/냉동</td><td>유제품</td><td>도노쉐프 피자치즈 모짜89%+고다 2.5Kg ×6입</td></tr>
+<tr><td>13</td><td><span class="tag tag-p">가공</span></td><td>냉장/냉동</td><td>유제품</td><td>조흥 피자치즈 레이99% 2.5Kg</td></tr>
+<tr><td>14</td><td><span class="tag tag-p">가공</span></td><td>김치/반찬</td><td>김치</td><td>미가 맛김치 10Kg</td></tr>
+<tr><td>15</td><td><span class="tag tag-p">가공</span></td><td>냉장/냉동</td><td>훈제/식육가공</td><td>이츠웰 순살치킨가라아게 1Kg</td></tr>
+<tr><td>16</td><td><span class="tag tag-f">신선</span></td><td>축산물</td><td>기타육류</td><td>특란 5판 60g×30입</td></tr>
+<tr><td>17</td><td><span class="tag tag-f">신선</span></td><td>채소류</td><td>양파</td><td>피양파 15Kg 중국산</td></tr>
+<tr><td>18</td><td><span class="tag tag-f">신선</span></td><td>축산물</td><td>기타육류</td><td>깐메추리알 무항생제 1Kg</td></tr>
+<tr><td>19</td><td><span class="tag tag-p">가공</span></td><td>냉장/냉동</td><td>튀김류</td><td>이츠웰 빵가루왕새우튀김 300g</td></tr>
+<tr><td>20</td><td><span class="tag tag-p">가공</span></td><td>김치/반찬</td><td>김치</td><td>미가 포기김치 10Kg</td></tr>
+<tr><td>21</td><td><span class="tag tag-p">가공</span></td><td>소스류</td><td>마요네즈/케찹</td><td>오쉐프 마요네즈 3.2Kg</td></tr>
+<tr><td>22</td><td><span class="tag tag-p">가공</span></td><td>캔/통조림</td><td>참치</td><td>동원F&B 참치캔 스탠다드 1.88Kg</td></tr>
+<tr><td>23</td><td><span class="tag tag-p">가공</span></td><td>캔/통조림</td><td>참치</td><td>와이낫 참치캔 1.88Kg</td></tr>
+<tr><td>24</td><td><span class="tag tag-p">가공</span></td><td>장류/조미료</td><td>식용유</td><td>굿딜 행복콩식용유 18L</td></tr>
+<tr><td>25</td><td><span class="tag tag-p">가공</span></td><td>주류/음료</td><td>탄산음료</td><td>코카콜라 업소용 355ml ×24입</td></tr>
+<tr><td>26</td><td><span class="tag tag-p">가공</span></td><td>장류/조미료</td><td>식용유</td><td>황금찬 대두유 18L</td></tr>
+<tr><td>27</td><td><span class="tag tag-f">신선</span></td><td>수산물</td><td>날치알/명란</td><td>동림수산 날치알 레드 800g</td></tr>
+<tr><td>28</td><td><span class="tag tag-f">신선</span></td><td>축산물</td><td>냉장계육</td><td>SEARA 닭조각정육 12Kg/BOX</td></tr>
+<tr><td>29</td><td><span class="tag tag-p">가공</span></td><td>냉장/냉동</td><td>튀김류</td><td>유로골드 냉동감자 웨지 2Kg</td></tr>
+<tr><td>30</td><td><span class="tag tag-f">신선</span></td><td>수산물</td><td>생선류</td><td>씨로드 훈제연어인젝션 9Kg/BOX</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section"><h2>TOP30 상품군 구성 요약</h2>
+<div class="cb"><canvas id="c_top30cat"></canvas></div>
+<div class="ins">💡 피자치즈/유제품 6개(20%)로 압도적. 계란류·닭고기·새우가 각 2~4개씩 차지. 외식업 기본 식재인 치즈·계란·닭·쌀·식용유가 TOP30의 70% 이상을 점유 → 이 5개 카테고리만 완비해도 초기 진입 구색의 핵심을 충족.</div>
+</div>
+</div>
+
+<!-- TAB 4: 지역 트렌드 -->
+<div class="tc" id="tab4">
+<div class="section"><h2>경북 주요 도시 관광·외식 트렌드 (26년 기준)</h2>
+<p style="font-size:13px;color:#888;margin-bottom:16px">21년 데이터에는 반영되지 않았던 신규 상권·관광 테마를 현시점 기준으로 분석</p>
+
+<div class="trend-card" style="border-left:3px solid #E8730C">
+<h4 style="color:#E8730C">🏛️ 경주 — 황리단길 폭발 성장</h4>
+<div><span class="trend-tag" style="background:#E8730C30;color:#E8730C">2025 한국관광의 별</span><span class="trend-tag" style="background:#E8730C30;color:#E8730C">APEC 특수</span><span class="trend-tag" style="background:#E8730C30;color:#E8730C">외국인 35% 급증</span></div>
+<div class="trend-body">황리단길이 21년 이후 전국구 관광지로 급부상. 2025 APEC 정상회의로 한 달간 590만명 방문, 외국인 35% 급증. 카페·퓨전한식·공방 등 청년 창업 상권이 폭발적으로 성장하며 야간 관광까지 활성화. 기존 데이터(월 23.4백만)는 과소 반영 — 실제 외식 수요는 대폭 상승 추정. 한식·퓨전 카페·디저트 중심 식재료 수요가 핵심.</div>
+<div class="season-grid">
+<div class="season-item"><strong>🌸 봄 (3~5월)</strong>벚꽃 시즌 + 한복체험 피크. 디저트·음료 재료 수요↑</div>
+<div class="season-item"><strong>☀️ 여름 (6~8월)</strong>물회·빙수류 시즌. 수산물·빙과 원료 수요↑</div>
+<div class="season-item"><strong>🍂 가을 (9~11월)</strong>APEC 이후 외국인 관광 본격화. 한식 상차림 재료↑</div>
+<div class="season-item"><strong>❄️ 겨울 (12~2월)</strong>야간관광·전통주점. 주류·안주류 수요↑</div>
+</div>
+</div>
+
+<div class="trend-card" style="border-left:3px solid #2F8F85">
+<h4 style="color:#2F8F85">🌊 포항 — 구룡포·영일대 관광 상권 부상</h4>
+<div><span class="trend-tag" style="background:#2F8F8530;color:#2F8F85">동백꽃 필 무렵</span><span class="trend-tag" style="background:#2F8F8530;color:#2F8F85">구룡포 가옥거리</span><span class="trend-tag" style="background:#2F8F8530;color:#2F8F85">스페이스워크</span></div>
+<div class="trend-body">구룡포 일본인가옥거리가 드라마 촬영지 + 감성 카페 상권으로 전국적 인지도 확보. 영일대·스페이스워크·포항운하 야경이 MZ세대 여행지로 부상. 과메기 시즌(10~2월) 수산물 특수 + 연중 해산물 외식 수요가 높음. 포항 남구(구룡포권) + 북구(영일대권) 모두 외식 상권 활성화 추세.</div>
+<div class="season-grid">
+<div class="season-item"><strong>🌸 봄</strong>호미반도 둘레길·등나무꽃. 브런치·카페 재료↑</div>
+<div class="season-item"><strong>☀️ 여름</strong>영일대 피서. 해산물·음료 수요 피크</div>
+<div class="season-item"><strong>🍂 가을</strong>과메기 철 시작. 수산 가공품 수요↑</div>
+<div class="season-item"><strong>❄️ 겨울</strong>과메기·대게 시즌 최성수기. 수산물 폭증</div>
+</div>
+</div>
+
+<div class="trend-card" style="border-left:3px solid #C77A16">
+<h4 style="color:#C77A16">🏙️ 대구 — 도시재생형 골목상권 확대</h4>
+<div><span class="trend-tag" style="background:#C77A1630;color:#C77A16">미래농원 MRNW</span><span class="trend-tag" style="background:#C77A1630;color:#C77A16">수성못 카페거리</span><span class="trend-tag" style="background:#C77A1630;color:#C77A16">K-골목상권</span></div>
+<div class="trend-body">대구시가 2026년 'K-골목상권 육성사업' 신규 추진. 미래농원 복합문화공간이 전국구 핫플로 부상, 수성못 카페거리·앞산 아눅 등 감성 카페·레스토랑 상권 폭발. 달서구·수성구 중심 프리미엄 외식 수요 증가. 기존 서비스 중인 대구 지역 고도화 + 인접 경산 연계가 핵심.</div>
+</div>
+
+<div class="trend-card" style="border-left:3px solid #7FB39A">
+<h4 style="color:#7FB39A">⛰️ 김천 — 직지사 관광 + 혁신도시</h4>
+<div><span class="trend-tag" style="background:#7FB39A30;color:#7FB39A">직지사</span><span class="trend-tag" style="background:#7FB39A30;color:#7FB39A">김천혁신도시</span><span class="trend-tag" style="background:#7FB39A30;color:#7FB39A">베이커리카페</span></div>
+<div class="trend-body">김천혁신도시(공공기관 이전) 입주 완료로 인구 유입 지속. 직지사·연화지 관광권과 혁신도시 상업지구 이원화. 메타1976 등 대형 베이커리카페가 들어서며 외식 수요 다변화. 구미와 20분 거리로 구미-김천 클러스터 형성 시 시너지 기대.</div>
+</div>
+
+<div class="ins">💡 <strong>핵심 시사점:</strong> 21년 데이터에서 경주(월 23.4백만)는 중간 규모였으나, 황리단길 폭발 성장으로 실제 외식 수요는 데이터 대비 크게 상승. 포항도 구룡포 관광 상권 활성화로 상향 조정 필요. 확장 우선순위에 <strong>경주를 별도 고려 대상</strong>으로 격상해야 함.</div>
+</div>
+</div>
+
+<!-- TAB 5: 확장전략 -->
+<div class="tc" id="tab5">
+<div class="section"><h2>26년 기준 권역 확장 전략 (업데이트)</h2>
+<div class="card">
+<div class="phase" style="border-left:3px solid #2E9E6B"><div class="pt" style="color:#2E9E6B">1단계: 경산시 + 칠곡군 (즉시)</div><div class="pd">대구 기존 동선에서 자연 연장. 경산(월 33.9백만) + 칠곡(10.9백만). 추가 물류비 최소, 월 +45백만 확보.</div></div>
+<div class="phase" style="border-left:3px solid #E8730C"><div class="pt" style="color:#E8730C">2단계: 구미시 + 김천시 (3개월 내)</div><div class="pd">구미(월 61백만) 경북 최대 단일 시장 + 김천(9.4백만, 혁신도시 성장중). 경부고속도로 축. 월 +70백만.</div></div>
+<div class="phase" style="border-left:3px solid #D2483D"><div class="pt" style="color:#D2483D">⭐ 3단계: 경주시 (6개월 내) — 신규 격상</div><div class="pd">황리단길 '2025 한국관광의 별' 선정. APEC 이후 590만 방문, 외국인 35% 증가. 거래 데이터(월 23.4백만)는 21년 기준이며 실제 외식 시장 규모는 대폭 성장 추정. 울산→경주 동선 연계 가능. 관광형 외식 상권(카페·퓨전한식·디저트)에 특화된 상품 구색 별도 편성 필요.</div></div>
+<div class="phase" style="border-left:3px solid #2F8F85"><div class="pt" style="color:#2F8F85">4단계: 포항시 (6~9개월)</div><div class="pd">포항 남+북구 합산 65.2백만. 구룡포 관광 + 영일대 상권 성장. 과메기 시즌(10~2월) 수산물 특수. 별도 물류 거점(포항 허브) 필요. 울산 연계 검토.</div></div>
+<div class="phase" style="border-left:3px solid #7FB39A"><div class="pt" style="color:#7FB39A">5단계: 안동 + 영주 (장기)</div><div class="pd">안동(25.5백만), 영주(11.9백만). 경쟁 진입 장벽 낮음. 중앙고속도로 연결.</div></div>
+</div></div>
+
+<div class="section"><h2>상품 구색 전략 (업데이트)</h2><div class="card">
+<div class="pg"><h3>🥇 필수 구색 (전 지역 공통)</h3>
+<div class="pi">피자치즈 모짜렐라 2.5Kg — TOP30 중 6개, 외식업 No.1 필수품</div>
+<div class="pi">쌀 20Kg 상등급 — TOP30 중 2개, 모든 외식업의 기본</div>
+<div class="pi">식용유 18L (콩/대두) — TOP30 중 2개, 튀김·볶음 기본</div>
+<div class="pi">닭고기 (다리살/조각정육) — TOP30 중 2개, 치킨·가라아게용</div>
+<div class="pi">계란 (대란/특란) — TOP30 중 2개, 전 업종 공통</div>
+<div class="pi">참치캔 1.88Kg — TOP30 중 2개, 김밥·간편조리</div>
+<div class="pi">김치 10Kg (맛/포기) — TOP30 중 2개, 한식 필수</div></div>
+<div class="pg"><h3>🌟 관광지 특화 구색 (경주·포항·대구)</h3>
+<div class="pi">수산물 강화 — 새우, 날치알/명란, 훈제연어 (포항 과메기 시즌 연계)</div>
+<div class="pi">디저트/카페 재료 — 우유, 크림, 베이커리 원료 (황리단길·수성못 카페거리)</div>
+<div class="pi">퓨전한식 재료 — 근채류(감자/양파), 양배추, 버섯 (관광형 외식)</div>
+<div class="pi">주류/음료 — 코카콜라 업소용, 전통주 연계 (야간 관광 상권)</div></div>
+<div class="pg"><h3>📈 트렌드 대응 (전년 대비 고성장)</h3>
+<div class="pi">장류/조미료 — 비중 6.2→11%, 2배 성장</div>
+<div class="pi">캔/통조림 — 비중 3.1→9.6%, 3배 성장 (인건비 절감 트렌드)</div>
+<div class="pi">튀김류 — 냉동감자·새우튀김 (간편조리 수요 확대)</div></div>
+</div></div>
+
+<div class="section"><h2>핵심 요약</h2><div class="sc">
+<div class="sr"><span class="sl">확장 순서</span><span class="sv">경산 → 구미/김천 → 경주(신규) → 포항</span></div>
+<div class="sr"><span class="sl">경주 격상 사유</span><span class="sv">황리단길 폭발성장 + APEC 590만명 + 외국인 35%↑</span></div>
+<div class="sr"><span class="sl">예상 추가 거래액</span><span class="sv">월 +200백만원 이상 (4단계 완료 시)</span></div>
+<div class="sr"><span class="sl">상품 포커스</span><span class="sv">치즈·계란·닭·쌀·식용유 (TOP30의 70%)</span></div>
+<div class="sr"><span class="sl">관광지 특화</span><span class="sv">수산물·디저트원료·퓨전한식 재료 별도 편성</span></div>
+<div class="sr"><span class="sl">동선 전략</span><span class="sv">대구→경산→구미/김천(경부축) | 울산→경주(관광축) | 포항(별도거점)</span></div>
+</div></div>
+</div>
+
+</div>
+
+<script>
+Chart.register(ChartDataLabels);
+Chart.defaults.color='#aaa';Chart.defaults.borderColor='#FBF3EA';
+Chart.defaults.font.family="'Pretendard','Noto Sans KR',sans-serif";Chart.defaults.font.size=12;
+var charts={};
+function showTab(n){document.querySelectorAll('.tc').forEach(function(e,i){e.classList.toggle('active',i===n)});document.querySelectorAll('.tabs button').forEach(function(e,i){e.classList.toggle('active',i===n)});if(n===0&&!charts.c_main)t0();if(n===1&&!charts.c_region)t1();if(n===2&&!charts.c_d2)t2();if(n===3&&!charts.c_top30cat)t3();}
+function dl(h,u){return{color:'#3A342E',font:{size:10,weight:'bold'},anchor:h?'end':'end',align:h?'right':'top',offset:4,formatter:function(v){return v+u}}}
+function mk(h,ar,d){return{indexAxis:h?'y':'x',responsive:true,aspectRatio:ar||1.8,plugins:{legend:{labels:{usePointStyle:true,pointStyle:'rect',padding:12}},tooltip:{backgroundColor:'#3A342E',borderColor:'#444',borderWidth:1,titleColor:'#3A342E',bodyColor:'#ccc'},datalabels:d||{}},scales:{x:{grid:{color:'#3A342E'},ticks:{color:'#888'}},y:{grid:{color:h?'transparent':'#FFFFFF'},ticks:{color:'#ccc'}}}}}
+function noleg(o){var r=JSON.parse(JSON.stringify(o));r.plugins.legend={display:false};return r;}
+
+function t0(){
+charts.c_main=new Chart(document.getElementById('c_main'),{type:'bar',data:{labels:['가공식재료','신선식재료'],datasets:[{label:'21년',data:[46.67,53.33],backgroundColor:'#2F8F85',borderRadius:4,barPercentage:.6},{label:'26년',data:[64.92,35.08],backgroundColor:'#D2483D',borderRadius:4,barPercentage:.6}]},options:mk(true,2.2,dl(true,'%'))});
+charts.c_proc=new Chart(document.getElementById('c_proc'),{type:'bar',data:{labels:['냉장/냉동','장류/조미료','캔/통조림','소스류','주류/음료','면/떡/밥','김치/반찬','베이커리','간편조리','전분류'],datasets:[{label:'21년',data:[53.69,6.16,3.11,6.70,11.26,6.17,5.06,6.44,0.67,0.66],backgroundColor:'#2F8F85',borderRadius:4},{label:'26년',data:[54.32,11.04,9.60,6.65,8.00,3.78,3.38,1.74,0.58,0.89],backgroundColor:'#D2483D',borderRadius:4}]},options:mk(false,1.6,dl(false,'%'))});
+charts.c_fresh=new Chart(document.getElementById('c_fresh'),{type:'bar',data:{labels:['축산물','수산물','쌀/잡곡/견과류','채소류'],datasets:[{label:'21년',data:[53.10,28.54,11.81,6.56],backgroundColor:'#2F8F85',borderRadius:4},{label:'26년',data:[16.87,17.75,14.76,4.64],backgroundColor:'#D2483D',borderRadius:4}]},options:mk(false,2,dl(false,'%'))});
+}
+function t1(){
+var rc=['#D2483D','#E8730C','#2E9E6B','#C77A16','#2F8F85'];
+var o1=noleg(mk(false,2,dl(false,'')));o1.plugins.datalabels=dl(false,'');
+charts.c_region=new Chart(document.getElementById('c_region'),{type:'bar',data:{labels:['부산','경남','경북','대구','울산'],datasets:[{label:'월평균(백만)',data:[489.7,355.7,263.9,235.2,154.4],backgroundColor:rc,borderRadius:6}]},options:o1});
+var cn=['김해시','부산진구','남구(울산)','구미시','해운대구','달서구','양산시','북구(대구)','금정구','남구(부산)','포항시북구','기장군','동구(대구)','북구(부산)','경산시','진주시','연제구','북구(울산)','수성구','거제시'];
+var ca=[75.4,70.7,64.3,61.0,56.8,51.3,47.0,43.3,41.2,40.3,38.6,37.7,35.5,35.5,33.9,32.6,31.7,31.1,30.7,30.3];
+var cr=['경남','부산','울산','경북','부산','대구','경남','대구','부산','부산','경북','부산','대구','부산','경북','경남','부산','울산','대구','경남'];
+var rcm={부산:'#D2483D',경남:'#E8730C',경북:'#2E9E6B',대구:'#C77A16',울산:'#2F8F85'};
+var o2=noleg(mk(true,1.1,dl(true,'')));o2.plugins.datalabels=dl(true,'');
+charts.c_city=new Chart(document.getElementById('c_city'),{type:'bar',data:{labels:cn,datasets:[{label:'월평균(백만)',data:ca,backgroundColor:cr.map(function(r){return rcm[r]}),borderRadius:4}]},options:o2});
+var gL=['구미시','달서구','북구','포항시북구','동구','경산시','수성구','달성군','포항시남구','안동시','경주시','남구','중구','영주시','칠곡군','김천시','서구'];
+var gD=[61.0,51.3,43.3,38.6,35.5,33.9,30.7,27.1,26.6,25.5,23.4,19.6,18.5,11.9,10.9,9.4,9.2];
+var dg=['달서구','북구','동구','수성구','달성군','남구','중구','서구'];
+var gC=gL.map(function(n){return dg.indexOf(n)>=0?'#C77A16':'#2E9E6B'});
+var o3=noleg(mk(true,.9,dl(true,'')));o3.plugins.datalabels=dl(true,'');
+charts.c_gb=new Chart(document.getElementById('c_gb'),{type:'bar',data:{labels:gL,datasets:[{label:'월평균(백만)',data:gD,backgroundColor:gC,borderRadius:4}]},options:o3});
+}
+function t2(){
+var o4=noleg(mk(true,1.3,dl(true,'개')));o4.plugins.datalabels=dl(true,'개');
+charts.c_d2=new Chart(document.getElementById('c_d2'),{type:'bar',data:{labels:['냉장/냉동','채소류','수산물','축산물','김치/반찬','장류/조미료','쌀/잡곡','주류/음료','캔/통조림','면/떡/밥','전분류','베이커리','소스류','간편조리'],datasets:[{label:'상품수',data:[31,13,11,10,6,6,5,5,3,3,3,2,1,1],backgroundColor:'#D2483D',borderRadius:4}]},options:o4});
+var dc=['#D2483D','#E8730C','#2E9E6B','#2F8F85','#7FB39A','#F6B23C','#E08A5B','#C77A16','#2E9E6B','#E8730C','#2F8F85','#B5651D'];
+var o5=noleg(mk(false,1.8,dl(false,'개')));o5.plugins.datalabels=dl(false,'개');
+charts.c_d3=new Chart(document.getElementById('c_d3'),{type:'bar',data:{labels:['유제품','훈제/가공','튀김류','쌀','냉장돈육','근채류','날치알/명란','새우/게','김치','양파','식용유','탄산음료'],datasets:[{label:'상품수',data:[11,10,6,5,5,5,4,3,3,3,3,3],backgroundColor:dc,borderRadius:4}]},options:o5});
+}
+function t3(){
+var o6=noleg(mk(true,1.2,dl(true,'개')));o6.plugins.datalabels=dl(true,'개');
+charts.c_top30cat=new Chart(document.getElementById('c_top30cat'),{type:'bar',data:{labels:['피자치즈/유제품','계란류','닭고기','쌀','새우/수산','김치','참치캔','식용유','튀김류','소스류','채소','음료','연어/날치알'],datasets:[{label:'상품수',data:[6,3,2,2,2,2,2,2,2,1,1,1,1],backgroundColor:['#D2483D','#E8730C','#2E9E6B','#7FB39A','#2F8F85','#E08A5B','#C77A16','#F6B23C','#E8730C','#2E9E6B','#2F8F85','#B5651D','#ECE3D8'],borderRadius:4}]},options:o6});
+}
+t0();
+</script>
+
+<script id="unified-chart-theme">
+(function(){
+  var INK='#201A15', DIM='#6B625A', GRID='rgba(32,26,21,0.08)';
+  function retheme(){
+    if(!window.Chart) return;
+    try{
+      Chart.defaults.color=DIM;
+      Chart.defaults.borderColor=GRID;
+      Chart.defaults.font.family="'Pretendard','Noto Sans KR',sans-serif";
+    }catch(e){}
+    var insts = Chart.instances || {};
+    Object.keys(insts).forEach(function(k){
+      var c=insts[k]; if(!c||!c.options) return;
+      try{
+        var o=c.options;
+        if(o.scales){Object.keys(o.scales).forEach(function(s){
+          var sc=o.scales[s]; if(!sc) return;
+          if(sc.grid){sc.grid.color=GRID; if(sc.grid.borderColor!==undefined) sc.grid.borderColor=GRID;}
+          if(sc.ticks){sc.ticks.color=DIM;}
+          if(sc.title){sc.title.color=DIM;}
+          if(sc.pointLabels){sc.pointLabels.color=DIM;}
+          if(sc.angleLines){sc.angleLines.color=GRID;}
+          if(sc.border){sc.border.color=GRID;}
+        });}
+        if(o.plugins){
+          if(o.plugins.legend&&o.plugins.legend.labels){o.plugins.legend.labels.color=INK;}
+          if(o.plugins.title){o.plugins.title.color=INK;}
+          if(o.plugins.subtitle){o.plugins.subtitle.color=DIM;}
+        }
+        c.update('none');
+      }catch(e){}
+    });
+  }
+  if(document.readyState==='complete'){ retheme(); }
+  window.addEventListener('load', retheme);
+  setTimeout(retheme, 400);
+  setTimeout(retheme, 1200);
+})();
+</script>
+
+</body>
+</html>
