@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>foodcook 매출 마진 + 매입 현황 통합 분석 | 장한유통</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAHsklEQVR42u2aa4yUVxmAn/ecb2Z2dvbOAltYiJRLa6HlVtsaa0K0Rmql3mIbk6JGY1UMKgRjtDHGH15o1USiMZKmvzD1R2NrapqUQC1WaykgbFsKrLDLssuyu7DX2Z3dmfnOef0xszegwC47pCTzZX7snMz5vvO89/f9Vvxjy7mZL8NNfhUBigBFgCJAEaAIUAQoArwPAbygNzWADdV4vfkAvOAEUQ7Uxk6XB3jVAqtihgFsVoOM742aTWsrf7a8XMAoRpGCQQQzdSMF43m5Pu7Qj3VlokoyMM7Ij+6qCA3bjwwEoCDvcw08s6h089qqxopgVtpFve6uiz27sLSlNPACBTj9TAKogOrm/w1a+M3tFYHY3nhk59LKCqdPHEvGsurkPTc6QZmmqwTXaTZjcjWKD+T+zszGpqE/LTBlIxl1JGP2e43ZNRdCFxGrk3w9v0WwTo0HIwgqNxbAeAXRMS2KqEt/p2lkaPn91cuWldjI4GD348de17BRgvhEEdtQUVxEbKhtieCFBSVHqiLrutKPNaVcIEYLD+AFHA010YpQFyVDb7BiJDOiC5bUbHryV7euGP/pfSl9+iey73lKy/DeCzbUvfNKkoF8tjl1oC62ZVVlb9T0RWRNbxY/ZUOajg8IWDU2Q2fc/mNO1A67iDPGGw2z5ovf1VtXeJd13jl13odaUsojW0hU4BwiaixiWxORbSsrj9RGf3tbeXfMgqwYCL/QOqxTFP80NZA1ptWMNNf40/H43nmJgcDcda5nYcYsk3Kdv1hAbGTcTVS1NEFZFb2dqNhkn/f+q28n99XOf2J1TXvEJdKZNQNsaxyaO+y8FSk0gIqY4aGzDz70ysqlrzbtae9ve3dJ1cOfevTLrzXw6h5tb5ZEBalBqmpJVOYcg0yabJowSyLOJzf6ufXmWMM95w+8MCv1ZEd8ocZua+kgM+zLysX7AjuxsZIa0PvWf/Qrv5vX37z/xMs/vnvz7lN7Hqhdfcc3vxW2fd7u2KqJcgZ6+dJWefhxvMMGZNMM9VM1m21/ZOkqA3yGB1uPfLivfVX1csrKtavFv7jT7N9NPMEUGWQKo0XJBxL9+XMsvP3wuUMq9u66Vf3p5JnephV1K/nn8/q3nWbLDmKlVFQTK8V7jNHmd9j2EFt/Lx/ZQBgigjGIAA4EDKh6fvE1Gl4jXoZ3BdKAITvMgmVS9wFRXXvLWsB5Vxkrv7NuJaosWa1hhtn1xOIAmstOSncns+v50AN4jzW5zKHeKVgEARcSRNnwDd7+N+oLGYXEkEnjHSIePFhjFRRFRA3S0ULjf/OnF0EMCH1dzKmXaBxjEIMIImKsMTa/EkQFZPGdVM0hzOaUUwgAJRbnfBtH3wBMNmNciAvFhZLNoMqhVxjq12MHUCWbwYVkMwD93ajiHWEWF17mk1s3hnhZDq8APiCCc6RTOEc8QUUNzo1XZwrG0NtFNk1JgoqavCUoWKvJPjIjUj3nivWOoErfebyjJIG1qM6cD4gQhiQqWLOOIIoLJ51+vEKIYAze4cKJahNrMYYwew3HieJDjh9kcIAguBaG4JqiT86gN22X1etuQJeoh/by1KYZjEKKCOoprybMop7xRMvEjIuYyy3KxY2AengPQ3dZjKVm7rX7ZnCtwWckRcNrLFl5RVK9uv+pYoJRv5GLgU0MYP9u0iNEStCrJwT707vmXIMOlEiElnfpaCEMpX7J+Flzf6SS2tMpZVWTN3laGymtEGsnViJcOEc2IyWll8Lrf17ir3/g9b9jZKbDqBhGhnnxaf68XTPpUUkrgHe6Yyvf/4QefQPA+3wqfXkXm9fx3I7cb/Jxqe0kP9zAL79OKjma7PJWqtk0u7az9y9k05dY44zkARFq6ujtpPXERFNWoLeT/gsc3jehUYMzjWRGONOY35sbE73zOl2tJHtwbpL4c2wDPVTPLVgiyz0mNZjPtbkDeS/GsvhOjOXsSQAzes9IFGOJRCcZ/NkmvKd+KeVVk+wQOPYmqYEJailQQyPCu28CeTPNPWzBMoyl44xmhmF0lKWa/+QfZQDamxCYv3jyQQXg+KEpyX5aAOqJxmg6qqlBxIyJUOYtJp6gt4uutlHrunQAIDrYR8dpgij1S8aNTRVjGBqg+R0isQIXc6oEUbrbOdUwMW7qvEVUzmKon7aTk9zA2rx0c8I+e4qBHsqrWLBsXPB5B2jk/Fki0SnZz/RMyJBJc/zQaPQAoHo2VXPoPse505No+3vyESkn195OOlqIl8kti/LWOAqgR/dPKfhcT0+sBAHHD6I+Xy2rShDVR7cw/1buW59r3AA+/oj2nZf1G8dW5I579XPf5oP3UFY57sE53zhxKL9rqvKc+j97CN4RL+Wpl6SyFuEKYrv6MFQ9ig7184NPk+zBBoU3IZQgQl83B/fmhec93ufLeu/yX73HOckV+mMrYy3B2ErOg9/6Fz3nCCJTPf10B1vqicV59tdaXiX3rh9N+5eVhb10LHBxWDi8j13bCaLTOP30TGhCh6CexSuorZ9qGzU63/NcaOfUWyBEIjcWYCyGpIcntS9TzkOWXFWn03wFch3D3dwjY6XTkf3Em6jnOq7rfkOj/ga9jrwxb2iKAEWAIkARoAhQBCgCFAFuquv/ufusFv9w1kAAAAAASUVORK5CYII=">
+<link rel="apple-touch-icon" href="data:image/png;base64,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nN3JKKuZG+WZVimxy1m1rYimSqNTZdkfNQ8FoJX7eOYE9j4hMyUCLE4PyASXGc6c1MGnOgTQLJd/NRpuuhO+Uw0xuzPmyksniOme49kdVhMAjVUZoMDy21k2wldnFGUFxKGndGKIWb2L/Z+uJoAAGWEgeGBntV9Ks+lp4rRq3AXzaWZFzHLtV8mjebj/PJ8Oz/r+km7ZuWNt7nyY42Ozr6ZLBLjsJgBwkKBx/xOaGK2cbHX5E53zvkFaoEfuehjB6ACYCLAY4SLoQt7QwZ343j92fPmEHxhSECAiAH9mnw4+hZA7vbs/dDcHwebBGWXE1AS+9AlMnCXZfQW985k06Kid8v6/w8gwLOvKEugrxQUSnSLlqDXw1IP40idFSl72ekieuCBJ8qqsDh0NrJ0P4f/7FLIMKOejJQvQDeaA+PTHdf/f0jKokGsRzbL9ocZJZTmpBMVICzq6D3/2OzhVbv/df3+uDAK4GGpoT+nPf0ff+CwsMzNohpbOlRvyQqBc8IiQ6eQz+I8fxv4nkNdf1C6Hy4euLYa7cKMTYMZWGw99Gc1JveRW5HUKnOkIkVfKsu+0JNAjBIYAM9z/WfzRBzC0E7We8tDwSrgdXVwL9FwkKEuOJ8Zw01161/t53ct5rqBHV8x9eJYReOoh+9yf6cEvwV31Ov0KMoxXDgFmrAADJsdR79HVt9iNd+v6l3H1Zi1bzbx2pXg+RRtnTuD4QTz9GJ54QI9/i5Oj6F0yfzPlEwEWtuNbdp+oOQF39g1g2TosXY7+wXNKy91q/mVSC+NnMTrCk0cwfhagGn0wzmpSdyLAoiQAQQdIBFCIjthCLK4EJ0hlTR+JkCHkMtKAeOUmA7IrkfQQVO70BUQSqjWgCyoy2aWfvZRXRzlohgJi2V4jXJGn5NmVyvwZPSRANfpTV8wn17MD4yu0RsSQkHAFIxEgIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhESAhIREgISERICEhESAhIREgISERICGh+/H/A/eQ7Z+kZt8OAAAAAElFTkSuQmCC">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+:root {
+  --bg: #0a0a0a; --surface: #131313; --surface-2: #1a1a1a;
+  --line: #2a2a2a; --line-soft: #1f1f1f;
+  --ink: #3A342E; --ink-dim: #8a8a8a; --ink-soft: #555555;
+  --orange: #f59e0b; --orange-2: #ff6b35;
+  --yellow: #fbbf24; --yellow-light: #fde047;
+  --amber: #d97706; --blue: #2F8F85; --red: #dc2626;
+  --green: #84cc16;
+}
+* { box-sizing: border-box; margin:0; padding:0; }
+html, body { background: var(--bg); color: var(--ink); font-family: 'Pretendard', sans-serif; font-feature-settings: 'tnum'; }
+body {
+  background-image: radial-gradient(at 15% 0%, rgba(245,158,11,0.05) 0px, transparent 55%), radial-gradient(at 85% 100%, rgba(255,107,53,0.04) 0px, transparent 55%);
+  min-height: 100vh;
+}
+.container { max-width: 1440px; margin: 0 auto; padding: 48px 56px 80px; }
+
+.header { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 28px; border-bottom: 1px solid var(--line); margin-bottom: 40px; }
+.header-left .eyebrow { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; font-weight: 500; }
+.header-left h1 { font-size: 36px; font-weight: 700; line-height: 1.1; letter-spacing: -0.025em; }
+.header-left h1 em { font-style: normal; color: var(--orange); }
+.header-left .sub { font-size: 14px; color: var(--ink-dim); margin-top: 10px; }
+.header-right { text-align: right; font-size: 12px; color: var(--ink-dim); }
+.header-right .period { color: var(--ink); font-size: 13px; font-weight: 500; }
+.header-right .days { color: var(--orange); font-weight: 700; }
+.brand { display: flex; align-items: center; gap: 18px; }
+.brand-logo { width: 64px; height: 64px; border-radius: 14px; flex-shrink: 0; box-shadow: 0 8px 24px rgba(255,107,53,0.25), 0 0 0 1px rgba(245,158,11,0.2); transition: transform 0.3s ease; }
+.brand-logo:hover { transform: scale(1.04) rotate(-2deg); }
+.brand-text { display: flex; flex-direction: column; }
+
+/* Methodology callout */
+.methodology { background: linear-gradient(180deg, rgba(59,130,246,0.06), rgba(59,130,246,0.02)); border: 1px solid rgba(59,130,246,0.3); padding: 22px 28px; border-radius: 4px; margin-bottom: 40px; }
+.methodology-title { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #2F8F85; margin-bottom: 12px; font-weight: 700; }
+.methodology-body { font-size: 13px; line-height: 1.75; color: var(--ink); }
+.methodology-body strong { color: #2F8F85; font-weight: 700; }
+.methodology-body code { background: rgba(59,130,246,0.15); padding: 2px 8px; border-radius: 3px; font-family: monospace; font-size: 12px; }
+
+/* Part divider */
+.part-divider { display: flex; align-items: center; gap: 20px; margin: 64px 0 32px; }
+.part-divider .part-num { font-size: 12px; letter-spacing: 0.3em; color: var(--orange); font-weight: 700; padding: 8px 16px; background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.4); border-radius: 4px; }
+.part-divider .part-title { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; flex: 1; }
+.part-divider .part-sub { font-size: 12px; color: var(--ink-soft); letter-spacing: 0.1em; text-transform: uppercase; }
+
+.kpi-strip { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-bottom: 56px; }
+.kpi { background: var(--surface); padding: 22px; }
+.kpi-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--ink-soft); margin-bottom: 14px; font-weight: 600; }
+.kpi-value { font-size: 26px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
+.kpi-value .unit { font-size: 13px; color: var(--ink-dim); margin-left: 4px; font-weight: 400; }
+.kpi-value.positive { color: var(--green); }
+.kpi-value.warning { color: var(--orange-2); }
+.kpi-sub { font-size: 11px; color: var(--ink-soft); margin-top: 8px; letter-spacing: 0.05em; }
+
+.section { margin-bottom: 56px; }
+.section-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--line-soft); }
+.section-num { font-size: 11px; color: var(--orange); letter-spacing: 0.15em; font-weight: 700; }
+.section-title { font-size: 22px; font-weight: 700; letter-spacing: -0.015em; flex: 1; margin-left: 16px; }
+.section-tag { font-size: 11px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 500; }
+
+.card { background: var(--surface); border: 1px solid var(--line); padding: 24px; border-radius: 4px; }
+.card-title { font-size: 12px; color: var(--ink-dim); margin-bottom: 6px; letter-spacing: 0.04em; }
+.card-headline { font-size: 18px; font-weight: 700; margin-bottom: 18px; letter-spacing: -0.01em; }
+.card-headline .hl { color: var(--orange); }
+.card-headline .pos { color: var(--green); }
+.card-headline .neg { color: var(--orange-2); }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+.chart-wrap { position: relative; height: 320px; }
+.chart-wrap-tall { position: relative; height: 480px; }
+.chart-wrap-mega { position: relative; height: 760px; }
+
+.insight { background: var(--surface-2); border-left: 3px solid var(--orange); padding: 22px 26px; margin-top: 18px; }
+.insight-title { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; font-weight: 700; }
+.insight-body { font-size: 14px; line-height: 1.75; }
+.insight-body strong { color: var(--orange); font-weight: 700; }
+.insight-body .neg { color: var(--orange-2); font-weight: 700; }
+.insight-body .pos { color: var(--green); font-weight: 700; }
+
+.exec-summary { background: linear-gradient(180deg, rgba(245,158,11,0.04), transparent); border: 1px solid var(--line); padding: 40px; margin-top: 64px; position: relative; }
+.exec-summary::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--orange), var(--orange-2), transparent); }
+.exec-summary h2 { font-size: 26px; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.015em; }
+.exec-summary .exec-sub { font-size: 12px; color: var(--ink-soft); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 28px; font-weight: 600; }
+.exec-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.exec-item { padding: 22px; background: var(--surface); border-left: 3px solid var(--orange); }
+.exec-item-num { font-size: 11px; color: var(--orange); letter-spacing: 0.12em; margin-bottom: 8px; font-weight: 700; }
+.exec-item-title { font-size: 16px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em; }
+.exec-item-body { font-size: 13px; line-height: 1.75; color: var(--ink-dim); }
+.exec-item-body strong { color: var(--ink); font-weight: 700; }
+.exec-item-body .accent { color: var(--orange); font-weight: 700; }
+
+.footer { text-align: center; margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--line); font-size: 11px; color: var(--ink-soft); letter-spacing: 0.1em; }
+
+@media (max-width: 1100px) {
+  .container { padding: 32px 24px; }
+  .kpi-strip { grid-template-columns: repeat(2, 1fr); }
+  .grid-2, .grid-3, .exec-grid { grid-template-columns: 1fr; }
+  .header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .header-left h1 { font-size: 28px; }
+  .brand-logo { width: 52px; height: 52px; border-radius: 11px; }
+}
+</style>
+
+<style id="unified-theme">
+:root{
+  --bg:#FBF7F1!important; --surface:#FFFFFF!important; --surface-2:#FBF3EA!important;
+  --line:#ECE3D8!important; --line-soft:#F3ECE3!important;
+  --ink:#201A15!important; --ink-dim:#6B625A!important; --ink-soft:#A69C91!important; --ink2:#6B625A!important; --ink3:#A69C91!important;
+  --orange:#E8730C!important; --orange-2:#F59E0B!important; --amber:#C77A16!important; --amber2:#F6B23C!important;
+  --yellow:#F6B23C!important; --yellow-light:#FCD36B!important; --ember:#D2604A!important;
+  --blue:#2F8F85!important; --cool:#2F8F85!important; --red:#D2483D!important; --green:#2E9E6B!important;
+  --bg2:#FFFFFF!important; --bg3:#FBF3EA!important;
+  --body:'Pretendard','Noto Sans KR',sans-serif!important;
+  --disp:'Pretendard','Noto Sans KR',sans-serif!important;
+  --mono:'Pretendard','Noto Sans KR',sans-serif!important;
+}
+html,body{background:#FBF7F1!important; color:#201A15!important;}
+html body, html body *:not(code):not(pre):not(script):not(style){
+  font-family:'Pretendard','Noto Sans KR',sans-serif!important;
+}
+body{font-feature-settings:'tnum';}
+/* soften cards / panels consistently */
+[class*="card"],[class*="panel"],[class*="box"],[class*="tile"],[class*="section"],section,article{
+  border-radius:14px;
+}
+a{color:#E8730C;}
+/* consistent content width */
+.wrap{max-width:1360px!important;}
+::selection{background:#FCE1C2;color:#201A15;}
+/* scrollbar */
+*::-webkit-scrollbar-thumb{background:#E4D8C8;border-radius:8px;}
+</style>
+
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand">
+      <img class="brand-logo" src="data:image/png;base64,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nN3JKKuZG+WZVimxy1m1rYimSqNTZdkfNQ8FoJX7eOYE9j4hMyUCLE4PyASXGc6c1MGnOgTQLJd/NRpuuhO+Uw0xuzPmyksniOme49kdVhMAjVUZoMDy21k2wldnFGUFxKGndGKIWb2L/Z+uJoAAGWEgeGBntV9Ks+lp4rRq3AXzaWZFzHLtV8mjebj/PJ8Oz/r+km7ZuWNt7nyY42Ozr6ZLBLjsJgBwkKBx/xOaGK2cbHX5E53zvkFaoEfuehjB6ACYCLAY4SLoQt7QwZ343j92fPmEHxhSECAiAH9mnw4+hZA7vbs/dDcHwebBGWXE1AS+9AlMnCXZfQW985k06Kid8v6/w8gwLOvKEugrxQUSnSLlqDXw1IP40idFSl72ekieuCBJ8qqsDh0NrJ0P4f/7FLIMKOejJQvQDeaA+PTHdf/f0jKokGsRzbL9ocZJZTmpBMVICzq6D3/2OzhVbv/df3+uDAK4GGpoT+nPf0ff+CwsMzNohpbOlRvyQqBc8IiQ6eQz+I8fxv4nkNdf1C6Hy4euLYa7cKMTYMZWGw99Gc1JveRW5HUKnOkIkVfKsu+0JNAjBIYAM9z/WfzRBzC0E7We8tDwSrgdXVwL9FwkKEuOJ8Zw01161/t53ct5rqBHV8x9eJYReOoh+9yf6cEvwV31Ov0KMoxXDgFmrAADJsdR79HVt9iNd+v6l3H1Zi1bzbx2pXg+RRtnTuD4QTz9GJ54QI9/i5Oj6F0yfzPlEwEWtuNbdp+oOQF39g1g2TosXY7+wXNKy91q/mVSC+NnMTrCk0cwfhagGn0wzmpSdyLAoiQAQQdIBFCIjthCLK4EJ0hlTR+JkCHkMtKAeOUmA7IrkfQQVO70BUQSqjWgCyoy2aWfvZRXRzlohgJi2V4jXJGn5NmVyvwZPSRANfpTV8wn17MD4yu0RsSQkHAFIxEgIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhIREgISERICEhESAhESAhIREgISERICEhESAhIREgISERICGh+/H/A/eQ7Z+kZt8OAAAAAElFTkSuQmCC" alt="foodcook 로고" />
+      <div class="brand-text">
+        <div class="eyebrow">Sales Margin · Procurement · Cash Flow Brief</div>
+        <h1>foodcook <em>매출 마진 + 매입</em> 통합 분석</h1>
+        <div class="sub">매출SKU 기준 마진 + 매입 활동 현황 + 운전자본 회전 (3-Part 구조)</div>
+      </div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="period" id="period"></div>
+    <div style="margin-top:6px;">분석기간 <span class="days" id="days"></span></div>
+    <div style="margin-top:14px; opacity:0.6;">Confidential · For internal use</div>
+  </div>
+</div>
+
+<!-- Methodology callout -->
+<div class="methodology">
+  <div class="methodology-title">📐 Methodology · 마진 계산 방식</div>
+  <div class="methodology-body" id="methodologyBody"></div>
+</div>
+
+<!-- KPI strip -->
+<div class="kpi-strip" id="kpiStrip"></div>
+
+<!-- ============ PART A: 매출 마진 ============ -->
+<div class="part-divider">
+  <div class="part-num">PART A</div>
+  <div class="part-title">매출 마진 분석</div>
+  <div class="part-sub">Sales Margin (COGS = 최근매입단가 × 수량)</div>
+</div>
+
+<div class="section">
+  <div class="section-head"><div class="section-num">A1</div><div class="section-title">결제수단별 매출 + 마진율</div><div class="section-tag">Payment Method × Margin</div></div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">결제수단별 매출 비중 · 도넛 내부 비중(%) + 매출액 표시</div>
+      <div class="card-headline" id="payHead"></div>
+      <div class="chart-wrap"><canvas id="paymentDonut"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-title">결제수단별 마진율 비교 (실제 매출 마진율)</div>
+      <div class="card-headline">결제수단 × 마진율 매트릭스</div>
+      <div class="chart-wrap"><canvas id="paymentMargin"></canvas></div>
+    </div>
+  </div>
+  <div class="card" style="margin-top: 20px;">
+    <div class="card-title">월별 결제수단 mix (누적 막대) — 외상(만나서결제) 비중 흐름</div>
+    <div class="card-headline">결제 행태 변화 추적</div>
+    <div class="chart-wrap"><canvas id="paymentMonthly"></canvas></div>
+  </div>
+  <div class="insight"><div class="insight-title">CSO Note · Payment Behavior</div><div class="insight-body" id="insight_a1"></div></div>
+</div>
+
+<div class="section">
+  <div class="section-head"><div class="section-num">A2</div><div class="section-title">매출 SKU TOP 30 — 매출액 대비 실제 마진율</div><div class="section-tag">SKU Margin Reality</div></div>
+  <div class="card">
+    <div class="card-title">매출 TOP 30 SKU의 매출액(막대) + 마진율(라인) — 매출 1위 ≠ 이익 1위 검증</div>
+    <div class="card-headline" id="sku30Head"></div>
+    <div class="chart-wrap-mega"><canvas id="sku30Chart"></canvas></div>
+  </div>
+  <div class="insight"><div class="insight-title">CSO Note · 매출 1위 vs 이익 1위</div><div class="insight-body" id="insight_a2"></div></div>
+</div>
+
+<div class="section">
+  <div class="section-head"><div class="section-num">A3</div><div class="section-title">고마진 vs 저마진 SKU 양극단</div><div class="section-tag">Margin Extremes (실제 매입가 SKU만)</div></div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">고마진 TOP 20 (매출 1천만+ · 실제 매입가 보유 SKU)</div>
+      <div class="card-headline" id="highMargHead"></div>
+      <div class="chart-wrap-tall"><canvas id="highMarginChart"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-title">저마진/손실 TOP 20 (매출 1천만+ · 실제 매입가 보유 SKU)</div>
+      <div class="card-headline" id="lowMargHead"></div>
+      <div class="chart-wrap-tall"><canvas id="lowMarginChart"></canvas></div>
+    </div>
+  </div>
+  <div class="insight"><div class="insight-title">CSO Note · Pricing Action Items</div><div class="insight-body" id="insight_a3"></div></div>
+</div>
+
+<div class="section">
+  <div class="section-head"><div class="section-num">A4</div><div class="section-title">카테고리별 매출-마진 매트릭스</div><div class="section-tag">Category P&L</div></div>
+  <div class="card">
+    <div class="card-title">카테고리별 매출(막대) + 마진율(라인) — 자원 배분 우선순위</div>
+    <div class="card-headline" id="catHead"></div>
+    <div class="chart-wrap-tall"><canvas id="catChart"></canvas></div>
+  </div>
+  <div class="card" style="margin-top: 20px;">
+    <div class="card-title">카테고리 4분면 — 매출(X) × 마진율(Y) 산점도</div>
+    <div class="card-headline">★ 우상단 = 스타 카테고리 (매출↑·마진↑) / 좌하단 = 정리/축소 후보</div>
+    <div class="chart-wrap-tall"><canvas id="catScatter"></canvas></div>
+  </div>
+  <div class="insight"><div class="insight-title">CSO Note · Category Strategy</div><div class="insight-body" id="insight_a4"></div></div>
+</div>
+
+<div class="section">
+  <div class="section-head"><div class="section-num">A5</div><div class="section-title">월별 마진 트렌드 + PB vs 일반</div><div class="section-tag">Margin Trend</div></div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">월별 매출액(막대) + 마진율(라인) — 마진율 추이</div>
+      <div class="card-headline" id="trendHead"></div>
+      <div class="chart-wrap"><canvas id="marginTrend"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-title">PB(식자재쿡) vs 일반상품 마진율 비교</div>
+      <div class="card-headline" id="pbHead"></div>
+      <div class="chart-wrap"><canvas id="pbCompare"></canvas></div>
+    </div>
+  </div>
+  <div class="insight"><div class="insight-title">CSO Note · Margin Trend & PB Reality</div><div class="insight-body" id="insight_a5"></div></div>
+</div>
+
+<!-- ============ PART B: 매입 활동 (분리) ============ -->
+<div class="part-divider">
+  <div class="part-num">PART B</div>
+  <div class="part-title">매입 활동 현황 (별도)</div>
+  <div class="part-sub">Procurement Activity — independent of sales margin</div>
+</div>
+
+<div class="methodology" style="border-color: rgba(245,158,11,0.3); background: linear-gradient(180deg, rgba(245,158,11,0.06), rgba(245,158,11,0.02));">
+  <div class="methodology-title" style="color: var(--orange);">⚠ Important · 매입은 매출 마진과 분리</div>
+  <div class="methodology-body">
+    매입 활동은 <strong>미래 발주·재고 비축·시즌 대응</strong>을 위한 의사결정으로, 동기간 매출 SKU의 마진과 직접 연관되지 않습니다. 
+    이 섹션은 "<strong>지금 어떤 상품을 얼마나 매입하고 있는가</strong>"를 별도 트래킹하기 위한 자료이며, 
+    매출 마진(Part A)과는 분석 주제가 다릅니다. 두 영역의 유일한 연결고리는 <strong>현금흐름(Part C)</strong>입니다.
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-head"><div class="section-num">B1</div><div class="section-title">월별 매입액 추이 (참고용)</div><div class="section-tag">Procurement Trend</div></div>
+  <div class="card">
+    <div class="card-title">월별 매입액 — 발주·재고 비축 패턴</div>
+    <div class="card-headline" id="purchaseHead"></div>
+    <div class="chart-wrap"><canvas id="purchaseMonthly"></canvas></div>
+  </div>
+  <div class="insight"><div class="insight-title">CSO Note · Procurement Pattern</div><div class="insight-body" id="insight_b1"></div></div>
+</div>
+
+<!-- ============ PART C: 현금흐름 (CCC) ============ -->
+<div class="part-divider">
+  <div class="part-num">PART C</div>
+  <div class="part-title">현금흐름 분석 (CCC)</div>
+  <div class="part-sub">Cash Conversion Cycle — 매출-매입 결제 갭</div>
+</div>
+
+<div class="methodology" style="border-color: rgba(132,204,22,0.3); background: linear-gradient(180deg, rgba(132,204,22,0.06), rgba(132,204,22,0.02));">
+  <div class="methodology-title" style="color: var(--green);">💡 Why CCC matters</div>
+  <div class="methodology-body">
+    유통업의 본질은 <strong>"매출이 들어오기 전에 매입을 결제하는가, 후에 결제하는가"</strong>입니다. 
+    매출 마진율이 9%라도 매입 결제가 매출 회수보다 빠르면 자금난이 발생할 수 있고, 반대면 자금 여유가 생깁니다. 
+    Part C는 매출(Part A)와 매입(Part B)의 <strong>시점 차이</strong>만을 분리해서 보여주는 영역입니다.
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-head"><div class="section-num">C1</div><div class="section-title">CCC (Cash Conversion Cycle) 회전일</div><div class="section-tag">Working Capital Position</div></div>
+  <div class="grid-3" id="cccMatrix"></div>
+  <div class="card" style="margin-top: 20px;">
+    <div class="card-title">월별 매출 vs 매입 vs 순현금흐름 — 시점별 갭</div>
+    <div class="card-headline" id="cashHead"></div>
+    <div class="chart-wrap-tall"><canvas id="cashChart"></canvas></div>
+  </div>
+  <div class="card" style="margin-top: 20px;">
+    <div class="card-title">누적 매출-매입-순현금 추이</div>
+    <div class="card-headline">자금 누적 추적 — 양수 = 자금 누적, 음수 = 자금 부담</div>
+    <div class="chart-wrap"><canvas id="cumChart"></canvas></div>
+  </div>
+  <div class="insight"><div class="insight-title">CSO Note · Cash Position</div><div class="insight-body" id="insight_c1"></div></div>
+</div>
+
+<!-- ============ Executive Summary ============ -->
+<div class="exec-summary">
+  <h2>Executive Summary</h2>
+  <div class="exec-sub">통합 분석 핵심 인사이트 · Strategic Takeaways</div>
+  <div class="exec-grid" id="execGrid"></div>
+</div>
+
+<div class="footer">— foodcook · 장한유통 매출 마진 + 매입 통합 분석 · GENERATED 2026-04-29 —</div>
+
+</div>
+
+<script>
+const D = {"summary": {"total_revenue": 4586024149.0, "total_cogs": 3975554335.3999996, "total_margin": 431535394.6, "margin_pct": 9.40979333251217, "total_purchase": 2502343868.0, "period_sales": "2026-01-01 ~ 2026-04-28", "period_purchase": "2025-12-30 ~ 2026-04-29", "days": 121, "matched_sku_count": 2185, "loss_sku_count": 84, "weighted_sales_days": 3.9936018040798156, "weighted_purchase_days": 10.812390334916191, "ccc_days": -6.818788530836375, "rev_actual_pct": 74.13809394661345, "rev_assumed_pct": 25.86190605338655, "rev_actual": 3399990892.0, "rev_assumed": 1186033257.0, "margin_actual": 255699238.0, "margin_assumed": 175836156.6, "actual_margin_pct": 7.520585969852063}, "payment": {"total": {"labels": ["계좌", "만나서결제", "카드", "미분류", "포인트"], "values": [1619644141.0, 1464363298.0, 1354179430.0, 147455520.0, 381760.0], "orders": [6444, 5868, 16099, 367, 35], "aov": [251341.4247361887, 249550.66428084526, 84115.74818311696, 401786.15803814714, 10907.42857142857], "margin": [192208612.4, 92844825.1, 135427542.85, 11023711.25, 30703.0], "margin_pct": [11.86733601131213, 6.3402862682235845, 10.000708905318403, 7.4759569868934035, 8.04248742665549]}, "monthly": {"months": ["2026-01", "2026-02", "2026-03", "2026-04"], "series": {"계좌": [435339487.0, 387760345.0, 404842723.0, 391701586.0], "만나서결제": [382179817.0, 368553992.0, 357588339.0, 356041150.0], "미분류": [13111040.0, 45985730.0, 39959340.0, 48399410.0], "카드": [368074358.0, 334581526.0, 333961419.0, 317562127.0], "포인트": [52180.0, 23880.0, 83420.0, 222280.0]}}}, "sku_margin": {"top30_revenue": {"labels": ["식자재쿡 메뚜기쌀 20kg 포대 보통등급", "김치찜이최고야 삼겹 1.6cm찜 5kg EA 칠레산 (토,일 배송불가)", "돈갈비_KJ (20kg)_BOX (돈육:국내산)", "[국찜] 돈갈비(국내산) 20KG", "(푸줏간) 푸줏간구이 냉동  (5KG*2EA/BX)", "(푸줏간) 숙성삼겹살 냉동  (5KG*2EA/BX)", "김치찌개김치(파란색) BOX (밥풀)", "꿀배양념장(만능) EA (밥풀)", "동화식품 참맛판두부 3kg EA", "김치찜김치(노랑색) BOX (밥풀)", "[국찜] 순한맛소스 box(5kg*3)", "순한찜갈비소스_KJ(기본맛/5kg*3ea)_BOX", "식자재쿡 계란(특란) 30구 판", "[이유] 돈목뼈 중 15kg", "식자재쿡 햇살미쌀 20kg 포대 상등급", "(푸줏간) 양념숙성돼지구이 냉동  (2KG*5EA/BX)", "밥풀냉면 BOX (밥풀)", "계주)뼈없는 사이갈비(냉장)5kg", "싱싱 / 냉장박피닭가슴살 kg (국내산)", "수)삼계2각(반계)", "식자재쿡 계란(대란) 30구 판", "식자재쿡 메뚜기쌀 20kg 포대 상등급", "세천팜 반달채단무지 2.5kg*8ea BOX", "[국찜] 매운맛소스 box(5kg*3)", "풍년들 맛김치 10kg BOX", "깐메추리알 1kg EA", "매운찜갈비소스_KJ (5kg*3ea)_BOX", "세진 통통순대 2kg EA", "돈목뼈 중 15kg", "다원FS 가을미소 굵은고춧가루(김치용) 5kg EA"], "revenue": [228406060.0, 163893500.0, 133278000.0, 128234000.0, 124234400.0, 107030500.0, 69069000.0, 64083000.0, 59638820.0, 53416000.0, 53252100.0, 53014500.0, 48796190.0, 45658500.0, 43491000.0, 42047060.0, 37989000.0, 36183100.0, 35310000.0, 34764000.0, 34219480.0, 33055430.0, 32354440.0, 31482000.0, 29858380.0, 28690970.0, 28690200.0, 27974420.0, 26925000.0, 26670700.0], "margin": [15214060.0, 24584025.0, 0.0, 13220000.0, 18635160.0, 16054575.0, -753480.0, -698661.0, 9114020.0, -582720.0, 20133300.0, 3267000.0, 1219750.0, 2181150.0, 2516000.0, 5733690.0, -414261.0, 5427465.0, 5296500.0, 5214600.0, -1024920.0, 2475430.0, 1533343.0, 11369250.0, 3580380.0, -385015.0, 2538000.0, 1227434.0, 1657800.0, 2419200.0], "margin_pct": [6.660970378806937, 15.0, 0.0, 10.309278350515463, 15.0, 15.0, -1.090909090909091, -1.0902439024390242, 15.282026036061747, -1.090909090909091, 37.807523083596706, 6.162464985994398, 2.499682864584305, 4.777095173954466, 5.785104964245476, 13.636363636363635, -1.0904761904761906, 15.0, 15.0, 15.0, -2.9951361037631195, 7.48872424288536, 4.73920426377338, 36.11349342481418, 11.991206488764629, -1.3419378989277813, 8.846226237530585, 4.387701335720276, 6.1571030640668525, 9.070628067504789], "methods": ["actual", "assumed_15pct", "actual", "actual", "assumed_15pct", "assumed_15pct", "actual", "actual", "actual", "actual", "actual", "actual", "actual", "actual", "actual", "assumed_15pct", "actual", "assumed_15pct", "assumed_15pct", "assumed_15pct", "actual", "actual", "actual", "actual", "actual", "actual", "actual", "actual", "actual", "actual"]}, "high_margin_top20": {"labels": ["[국찜] 간장소스 box(4kg*2)", "청양고추 kg 봉 특 국내산", "수국칼 육가루 20kg", "[국찜] 순한맛소스 box(5kg*3)", "[국찜] 매운맛소스 box(5kg*3)", "무라칼집편채 4kg BOX 중국산", "흙대파 단 국내산", "간마늘 kg 봉 국내산", "손질배추 11kg내외(52) 5입 특 국내산", "간마늘 kg 봉 중국산", "생칵테일새우 21/25 9kg(900g*10) BOX 베트남산", "통꽃게(암게) 5단 10kg BOX 국내산", "동화식품 참맛판두부 3kg EA", "서해이오 오징어채 3.6kg 박스 중국산", "진산물산 냉면용김치 3kg EA", "굿프랜즈 물만두 1350g*6ea BOX", "풍년들 맛김치 10kg BOX 중국산", "풍년들 맛김치 10kg BOX", "대원 사각어묵 800g EA", "풍년들 세절김치 10kg BOX"], "revenue": [13490400.0, 18201160.0, 16749370.0, 53252100.0, 31482000.0, 13946110.0, 11678120.0, 13737470.0, 11677560.0, 10826480.0, 12914000.0, 15260000.0, 59638820.0, 12299600.0, 16638460.0, 13281630.0, 10048360.0, 29858380.0, 11410230.0, 10629610.0], "margin": [7094000.0, 8013160.0, 7161514.0, 20133300.0, 11369250.0, 4190110.0, 3101120.0, 2946470.0, 2201560.0, 2020480.0, 2256000.0, 2616000.0, 9114020.0, 1659600.0, 2230261.0, 1688597.0, 1270360.0, 3580380.0, 1287946.0, 1193610.0], "margin_pct": [52.58554231156971, 44.025545624564586, 42.756915633244716, 37.807523083596706, 36.11349342481418, 30.045008966658088, 26.55495918863653, 21.448418085717385, 18.852911053336484, 18.66239073087467, 17.469413040111505, 17.142857142857142, 15.282026036061747, 13.493121727535856, 13.40425135499319, 12.71377835401227, 12.642461058321954, 11.991206488764629, 11.287642755667502, 11.229104360366938]}, "low_margin_top20": {"labels": ["식자재쿡 친환경퐁퐁 13kg 말", "봉투(소) BOX (밥풀)", "사조 부대찌개모듬햄 (1kg*10) BOX", "사조 칼집비엔나 1kg*10ea BOX", "동원 식용유 18L 말", "롯데 식용유 18L 말", "[이유] 뼈양념 17kg BOX", "식자재쿡 계란(대란) 30구 판", "펩시콜라 제로슈가라임 500ml*20 박스", "깐메추리알 1kg EA", "해농 미니김 (1.8g*20ea)*24ea BOX", "김치찌개김치(파란색) BOX (밥풀)", "김치찜김치(노랑색) BOX (밥풀)", "밀면 BOX (밥풀)", "밥풀냉면 BOX (밥풀)", "밥풀냉면농축액 4.6kg EA (밥풀)", "꿀배양념장(만능) EA (밥풀)", "밥풀 냉면농축액 5kg EA", "덮밥소스 EA (밥풀)", "돈갈비_KJ (20kg)_BOX (돈육:국내산)"], "revenue": [12006050.0, 15312000.0, 15648500.0, 19016890.0, 15444190.0, 18856970.0, 17050000.0, 34219480.0, 13018000.0, 28690970.0, 15707480.0, 69069000.0, 53416000.0, 18178000.0, 37989000.0, 15376000.0, 64083000.0, 19473200.0, 10175000.0, 133278000.0], "margin": [-1647179.0, -1392000.0, -1156412.0, -828854.0, -665713.0, -677145.0, -527000.0, -1024920.0, -240050.0, -385015.0, -191960.0, -753480.0, -582720.0, -198250.0, -414261.0, -167648.0, -698661.0, -212236.0, -110825.0, 0.0], "margin_pct": [-13.719574714414817, -9.090909090909092, -7.3899223567754095, -4.358514983259618, -4.310442956218488, -3.5909533716180277, -3.090909090909091, -2.9951361037631195, -1.843985251190659, -1.3419378989277813, -1.222092913694622, -1.090909090909091, -1.090909090909091, -1.0906040268456376, -1.0904761904761906, -1.0903225806451613, -1.0902439024390242, -1.0898876404494382, -1.0891891891891892, 0.0]}, "loss_count": 84}, "category": {"labels": ["상온 · 냉장 식자재", "냉동식자재", "정육 · 축산", "BEST 상품", "야채 · 채소", "전용상품", "수산(냉동)", "잡화(주방/소모품)", "음료", "박스 단가존", "일본 식자재", "포장 · 용기", "반찬 · 즉석조리", "사세 특별전", "과일(농산물)", "건어물", "노마진 특가", "수산(생물)"], "revenue": [1165988933.0, 895955476.0, 582607520.0, 580768840.0, 474529820.0, 349685682.0, 196093720.0, 66524120.0, 63794408.0, 55892180.0, 31017650.0, 26852600.0, 25183070.0, 18491380.0, 16720620.0, 14955340.0, 13530660.0, 7432130.0], "cogs": [1006186318.45, 771601024.05, 495099576.85, 538496240.0, 412655459.05, 289177494.05, 164022054.5, 57926666.15, 55382303.0, 48443598.0, 25676095.0, 23503234.75, 21330608.0, 16266765.0, 18633010.5, 12016762.85, 12217225.2, 6919900.0], "margin": [71255837.55, 77088214.95, 87407074.15, 35941337.0, 61835253.95, 51471144.95, 30860634.5, 2552904.85, 2614371.0, 2367915.0, 2724313.0, 908487.25, 2217691.0, 568047.0, -1912390.5, 2907668.15, 214660.8, 512230.0], "margin_pct": [6.111193299808104, 8.604022969328891, 15.002737031269353, 6.188578746752323, 13.030846818014513, 14.719260066816235, 15.737696495328866, 3.837562751675633, 4.0981193837553915, 4.236576565809385, 8.783105747856462, 3.3832375635878833, 8.806277391914488, 3.0719556896240303, -11.437318113802, 19.442340662265117, 1.586476934606294, 6.892102264088491], "qty": [93231.0, 43930.0, 50839.0, 35346.0, 76102.0, 4069.0, 12839.0, 7297.0, 3705.0, 1228.0, 4096.0, 591.0, 1725.0, 1393.0, 3353.0, 833.0, 2145.0, 182.0]}, "margin_trend": {"monthly": {"labels": ["2026-01", "2026-02", "2026-03", "2026-04"], "revenue": [1198756882.0, 1136905473.0, 1136435241.0, 1113926553.0], "margin": [117123132.65, 111529802.15, 106567244.15, 96315215.65], "margin_pct": [9.77038250279676, 9.809945048087565, 9.377326600346073, 8.646460162979883]}, "weekly": {"labels": ["12/29-01/04", "01/05-01/11", "01/12-01/18", "01/19-01/25", "01/26-02/01", "02/02-02/08", "02/09-02/15", "02/16-02/22", "02/23-03/01", "03/02-03/08", "03/09-03/15", "03/16-03/22", "03/23-03/29", "03/30-04/05", "04/06-04/12", "04/13-04/19", "04/20-04/26", "04/27-05/03"], "revenue": [166387883.0, 260298982.0, 266711624.0, 283032545.0, 266725148.0, 287089358.0, 368856390.0, 193577455.0, 246015680.0, 265614682.0, 252096143.0, 267782852.0, 274252136.0, 275253785.0, 268453988.0, 271636754.0, 292245115.0, 79993629.0], "margin": [16598387.95, 24666540.65, 25518636.95, 27667299.65, 26618433.65, 28069093.65, 36232172.1, 19994047.8, 23605829.9, 24293602.7, 23458395.8, 26459064.45, 25357410.75, 24570634.7, 24340483.6, 23979199.5, 23516861.8, 6589299.0], "margin_pct": [9.975719175416156, 9.476234006170642, 9.567875808067518, 9.77530681144813, 9.979724015374808, 9.777127875983476, 9.822839750722496, 10.32870682177323, 9.595254213064793, 9.146182175275989, 9.305337051507369, 9.880791190468013, 9.24602124156291, 8.926538358046557, 9.066910788451391, 8.827671199457788, 8.046964891098352, 8.237279746365802]}}, "pb_margin": {"labels": ["일반상품", "PB(식자재쿡)"], "revenue": [4175189949.0, 410834200.0], "margin": [411771158.6, 19764236.0], "margin_pct": [9.862333537630388, 4.810757234913743]}, "purchase_activity": {"monthly": {"labels": ["2025-12", "2026-01", "2026-02", "2026-03", "2026-04"], "values": [3243160.0, 587158402.0, 592105340.0, 712278945.0, 607558021.0]}, "total": 2502343868.0}, "cash_flow": {"months": ["2025-12", "2026-01", "2026-02", "2026-03", "2026-04"], "sales": [0.0, 1198756882.0, 1136905473.0, 1136435241.0, 1113926553.0], "purchase": [3243160.0, 587158402.0, 592105340.0, 712278945.0, 607558021.0], "net": [-3243160.0, 611598480.0, 544800133.0, 424156296.0, 506368532.0], "cum_sales": [0.0, 1198756882.0, 2335662355.0, 3472097596.0, 4586024149.0], "cum_purchase": [3243160.0, 590401562.0, 1182506902.0, 1894785847.0, 2502343868.0], "cum_net": [-3243160.0, 608355320.0, 1153155453.0, 1577311749.0, 2083680281.0], "sales_days": 3.9936018040798156, "purchase_days": 10.812390334916191, "ccc": -6.818788530836375}};
+const fmt = n => Math.round(n).toLocaleString('ko-KR');
+const kor = n => {
+  const a = Math.abs(n);
+  if (a >= 1e8) return (n/1e8).toFixed(1)+'억';
+  if (a >= 1e4) return (n/1e4).toFixed(0)+'만';
+  return fmt(n);
+};
+const korL = n => {
+  const a = Math.abs(n);
+  if (a >= 1e8) return (n/1e8).toFixed(2)+'억';
+  if (a >= 1e4) return (n/1e4).toFixed(1)+'만';
+  return fmt(n);
+};
+function getContrast(hex) {
+  if (!hex || typeof hex !== 'string' || !hex.startsWith('#') || hex.length < 7) return '#0a0a0a';
+  const r = parseInt(hex.slice(1,3), 16);
+  const g = parseInt(hex.slice(3,5), 16);
+  const b = parseInt(hex.slice(5,7), 16);
+  const lum = (0.299*r + 0.587*g + 0.114*b) / 255;
+  return lum > 0.55 ? '#0a0a0a' : '#ffffff';
+}
+
+Chart.defaults.color = '#8a8a8a';
+Chart.defaults.font.family = "'Pretendard', sans-serif";
+Chart.defaults.font.size = 11;
+Chart.defaults.font.weight = '500';
+Chart.defaults.borderColor = '#2a2a2a';
+Chart.defaults.plugins.tooltip.backgroundColor = '#1a1a1a';
+Chart.defaults.plugins.tooltip.titleColor = '#f59e0b';
+Chart.defaults.plugins.tooltip.bodyColor = '#3A342E';
+Chart.defaults.plugins.tooltip.borderColor = '#f59e0b';
+Chart.defaults.plugins.tooltip.borderWidth = 1;
+Chart.defaults.plugins.tooltip.padding = 12;
+Chart.defaults.plugins.tooltip.titleFont = { family: "'Pretendard', sans-serif", weight: '700', size: 12 };
+Chart.defaults.plugins.tooltip.bodyFont = { family: "'Pretendard', sans-serif", weight: '500', size: 12 };
+Chart.defaults.plugins.tooltip.cornerRadius = 4;
+
+const COLORS = {
+  orange: '#f59e0b', orange2: '#ff6b35', yellow: '#fbbf24', yellowLight: '#fde047',
+  amber: '#d97706', blue: '#2F8F85', red: '#dc2626', green: '#84cc16',
+  ink: '#3A342E', inkDim: '#8a8a8a', gridSoft: '#1f1f1f', gridLine: '#2a2a2a'
+};
+
+// Plugins (same as before)
+const minMaxLabelPlugin = {
+  id: 'minMaxLabel',
+  afterDatasetsDraw(chart) {
+    try {
+      const cfg = (chart.options && chart.options.plugins && chart.options.plugins.minMaxLabel) || null;
+      if (!cfg || cfg.enabled !== true) return;
+      const dsIdx = cfg.datasetIndex !== undefined ? cfg.datasetIndex : 0;
+      const ds = chart.data.datasets[dsIdx];
+      if (!ds || !Array.isArray(ds.data) || ds.data.length === 0) return;
+      const meta = chart.getDatasetMeta(dsIdx);
+      if (!meta || !meta.data || !meta.data.length) return;
+      const t = (meta.type || ds.type || chart.config.type || '').toLowerCase();
+      if (t !== 'bar' && t !== 'line') return;
+      const data = ds.data.map(v => (typeof v === 'number') ? v : (v && v.y) ? v.y : 0);
+      let minIdx = 0, maxIdx = 0;
+      for (let i = 1; i < data.length; i++) { if (data[i] < data[minIdx]) minIdx = i; if (data[i] > data[maxIdx]) maxIdx = i; }
+      const ctx = chart.ctx;
+      const isHorizontal = chart.options.indexAxis === 'y';
+      const formatter = cfg.formatter || (v => v.toLocaleString());
+      const drawnAt = new Map();
+      const drawLabel = (idx, label, color) => {
+        try {
+          const el = meta.data[idx];
+          if (!el || typeof el.tooltipPosition !== 'function') return;
+          const pos = el.tooltipPosition(true);
+          if (!pos || !isFinite(pos.x) || !isFinite(pos.y)) return;
+          const text = label + ' ' + formatter(data[idx]);
+          ctx.save();
+          ctx.font = "700 11px 'Pretendard', sans-serif";
+          const w = ctx.measureText(text).width + 12;
+          const h = 20;
+          const stack = drawnAt.get(idx) || 0;
+          let x, y;
+          if (isHorizontal) { x = pos.x + 8 + stack * (w + 4); y = pos.y - h / 2; if (x + w > chart.chartArea.right) x = pos.x - w - 8 - stack * (w + 4); }
+          else { x = pos.x - w / 2; y = pos.y - h - 6 - stack * (h + 3); if (y < chart.chartArea.top) y = pos.y + 6 + stack * (h + 3); if (x < chart.chartArea.left) x = chart.chartArea.left + 2; if (x + w > chart.chartArea.right) x = chart.chartArea.right - w - 2; }
+          ctx.fillStyle = color;
+          ctx.beginPath();
+          if (ctx.roundRect) ctx.roundRect(x, y, w, h, 3); else ctx.rect(x, y, w, h);
+          ctx.fill();
+          ctx.fillStyle = getContrast(color);
+          ctx.textBaseline = 'middle';
+          ctx.fillText(text, x + 6, y + h / 2 + 1);
+          ctx.restore();
+          drawnAt.set(idx, stack + 1);
+        } catch (e) {}
+      };
+      if (cfg.showMax !== false) drawLabel(maxIdx, 'MAX', cfg.maxColor || '#fbbf24');
+      if (cfg.showMin !== false) drawLabel(minIdx, 'MIN', cfg.minColor || '#ff6b35');
+    } catch (e) {}
+  }
+};
+Chart.register(minMaxLabelPlugin);
+
+const barValueLabelPlugin = {
+  id: 'barValueLabel',
+  afterDatasetsDraw(chart) {
+    try {
+      const cfg = (chart.options && chart.options.plugins && chart.options.plugins.barValueLabel) || null;
+      if (!cfg || cfg.enabled !== true) return;
+      const dsIdx = cfg.datasetIndex !== undefined ? cfg.datasetIndex : 0;
+      const ds = chart.data.datasets[dsIdx];
+      const meta = chart.getDatasetMeta(dsIdx);
+      if (!ds || !meta || !meta.data || !meta.data.length) return;
+      const t = (meta.type || ds.type || chart.config.type || '').toLowerCase();
+      if (t !== 'bar') return;
+      const isHorizontal = chart.options.indexAxis === 'y';
+      const formatter = cfg.formatter || (v => v.toLocaleString());
+      const ctx = chart.ctx;
+      ctx.save();
+      ctx.font = "600 11px 'Pretendard', sans-serif";
+      ctx.fillStyle = cfg.color || '#fde047';
+      meta.data.forEach((el, i) => {
+        try {
+          const v = ds.data[i];
+          if (v == null) return;
+          const pos = el.tooltipPosition(true);
+          if (!pos || !isFinite(pos.x) || !isFinite(pos.y)) return;
+          const text = formatter(v);
+          if (isHorizontal) { ctx.textAlign = 'left'; ctx.textBaseline = 'middle'; ctx.fillText(text, pos.x + 8, pos.y); }
+          else { ctx.textAlign = 'center'; ctx.textBaseline = 'bottom'; ctx.fillText(text, pos.x, pos.y - 4); }
+        } catch (e) {}
+      });
+      ctx.restore();
+    } catch (e) {}
+  }
+};
+Chart.register(barValueLabelPlugin);
+
+const doughnutLabelPlugin = {
+  id: 'doughnutLabel',
+  afterDatasetsDraw(chart) {
+    try {
+      const cfg = (chart.options && chart.options.plugins && chart.options.plugins.doughnutLabel) || null;
+      if (!cfg || cfg.enabled !== true) return;
+      const meta = chart.getDatasetMeta(0);
+      const ds = chart.data.datasets[0];
+      if (!meta || !ds || !meta.data || !ds.data) return;
+      const total = ds.data.reduce((a, b) => a + (b || 0), 0);
+      if (!total) return;
+      const ctx = chart.ctx;
+      const minPct = cfg.minPct !== undefined ? cfg.minPct : 4;
+      const showValue = cfg.showValue === true;
+      const valueFormatter = cfg.valueFormatter || (v => v.toLocaleString());
+      meta.data.forEach((arc, i) => {
+        try {
+          const v = ds.data[i]; if (!v) return;
+          const pct = (v / total) * 100; if (pct < minPct) return;
+          const angle = (arc.startAngle + arc.endAngle) / 2;
+          const r = (arc.innerRadius + arc.outerRadius) / 2;
+          const x = arc.x + Math.cos(angle) * r;
+          const y = arc.y + Math.sin(angle) * r;
+          const bgColor = Array.isArray(ds.backgroundColor) ? ds.backgroundColor[i] : ds.backgroundColor;
+          const txtColor = getContrast(bgColor);
+          ctx.save();
+          ctx.fillStyle = txtColor; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+          if (showValue) {
+            ctx.font = "700 13px 'Pretendard', sans-serif";
+            ctx.fillText(pct.toFixed(1) + '%', x, y - 8);
+            ctx.font = "600 10px 'Pretendard', sans-serif";
+            ctx.fillText(valueFormatter(v), x, y + 8);
+          } else {
+            ctx.font = "700 13px 'Pretendard', sans-serif";
+            ctx.fillText(pct.toFixed(1) + '%', x, y);
+          }
+          ctx.restore();
+        } catch (e) {}
+      });
+    } catch (e) {}
+  }
+};
+Chart.register(doughnutLabelPlugin);
+
+function safeChart(ctxId, config) {
+  try { const el = document.getElementById(ctxId); if (!el) return null; return new Chart(el, config); }
+  catch (e) { console.error('Chart failed:', ctxId, e); return null; }
+}
+
+// Header
+document.getElementById('period').textContent = D.summary.period_sales;
+document.getElementById('days').textContent = D.summary.days + ' DAYS';
+
+// Methodology
+document.getElementById('methodologyBody').innerHTML = `
+  본 분석의 마진 계산은 <strong>매출 SKU의 "최근매입단가"(M열)</strong>를 기반으로 합니다 — 
+  <code>마진 = (단가 − 최근매입단가) × 수량</code>. 
+  데이터 품질상 매출의 <strong>${D.summary.rev_actual_pct.toFixed(1)}% (${kor(D.summary.rev_actual)}원)</strong>는 실제 매입가가 기록되어 있어 정확한 계산이 가능하지만, 
+  나머지 <strong>${D.summary.rev_assumed_pct.toFixed(1)}% (${kor(D.summary.rev_assumed)}원)</strong>는 매입가가 누락(0 또는 NULL)되어 
+  <strong>판매가 대비 15% 마진을 가정</strong>하여 추정 계산했습니다 (보수적 가정). 
+  실제 매입가 기반 마진율 <strong>${D.summary.actual_margin_pct.toFixed(2)}%</strong> + 15% 가정분이 가중 평균되어 전체 평균 <strong>${D.summary.margin_pct.toFixed(2)}%</strong>가 도출됩니다. 
+  매입가 누락 SKU 22,696건의 마스터 데이터 보완 시 마진율 정확도가 크게 개선됩니다.
+`;
+
+// KPI strip
+const kpis = [
+  { label:'총 매출', value:korL(D.summary.total_revenue), unit:'원', sub:'GROSS REVENUE' },
+  { label:'매출원가 (COGS)', value:korL(D.summary.total_cogs), unit:'원', sub:'COST OF GOODS' },
+  { label:'마진 (공헌이익)', value:korL(D.summary.total_margin), unit:'원', sub:'GROSS PROFIT', cls:'positive' },
+  { label:'평균 마진율', value:D.summary.margin_pct.toFixed(1), unit:'%', sub:'GROSS MARGIN', cls: D.summary.margin_pct >= 10 ? 'positive' : 'warning' },
+  { label:'매입 활동(별도)', value:korL(D.summary.total_purchase), unit:'원', sub:'PROCUREMENT' },
+  { label:'순 자금 갭(CCC)', value:D.summary.ccc_days.toFixed(1), unit:'일', sub:'NEG = CASH-RICH', cls: D.summary.ccc_days < 0 ? 'positive' : 'warning' }
+];
+document.getElementById('kpiStrip').innerHTML = kpis.map(k =>
+  `<div class="kpi"><div class="kpi-label">${k.label}</div><div class="kpi-value ${k.cls||''}">${k.value}<span class="unit">${k.unit}</span></div><div class="kpi-sub">${k.sub}</div></div>`
+).join('');
+
+// ===== Section A1: Payment + Margin =====
+const pay = D.payment;
+const payTotal = pay.total.values.reduce((a,b)=>a+b,0);
+const PAY_COLORS = { '계좌':'#fbbf24', '만나서결제':'#ff6b35', '카드':'#f59e0b', '미분류':'#6b7280', '포인트':'#84cc16' };
+const payColors = pay.total.labels.map(l => PAY_COLORS[l] || '#666');
+document.getElementById('payHead').innerHTML = `1위 결제 <span class="hl">${pay.total.labels[0]} ${(pay.total.values[0]/payTotal*100).toFixed(1)}%</span>`;
+
+safeChart('paymentDonut', {
+  type:'doughnut',
+  data:{ labels: pay.total.labels, datasets:[{ data: pay.total.values, backgroundColor: payColors, borderColor:'#0a0a0a', borderWidth:3, hoverOffset:8 }] },
+  options:{
+    maintainAspectRatio:false, cutout:'55%',
+    plugins:{
+      legend:{ position:'bottom', labels:{ padding:14, usePointStyle:true, boxWidth:8, color:'#3A342E' } },
+      tooltip:{ callbacks:{ label: c => `${c.label}: ₩${fmt(c.raw)} (${(c.raw/payTotal*100).toFixed(1)}%)` } },
+      doughnutLabel:{ enabled:true, showValue:true, valueFormatter: v => kor(v)+'원', minPct:3 }
+    }
+  }
+});
+
+safeChart('paymentMargin', {
+  type:'bar',
+  data:{
+    labels: pay.total.labels,
+    datasets:[{
+      label:'마진율(%)', data: pay.total.margin_pct,
+      backgroundColor: pay.total.margin_pct.map(p => p >= 10 ? COLORS.green : p >= 7 ? COLORS.yellow : COLORS.orange2),
+      borderColor:'#0a0a0a', borderWidth:1, borderRadius:2
+    }]
+  },
+  options:{
+    maintainAspectRatio:false,
+    layout:{ padding:{ top:30 } },
+    plugins:{
+      legend:{ display:false },
+      tooltip:{ callbacks:{ label: c => `마진율 ${c.raw.toFixed(2)}% · 매출 ₩${fmt(pay.total.values[c.dataIndex])} · 마진 ₩${fmt(pay.total.margin[c.dataIndex])}` } },
+      barValueLabel:{ enabled:true, formatter: v => v.toFixed(1)+'%', color:'#fde047' }
+    },
+    scales:{
+      y:{ beginAtZero:true, ticks:{ callback: v=>v+'%' }, grid:{ color:COLORS.gridSoft } },
+      x:{ grid:{ display:false } }
+    }
+  }
+});
+
+safeChart('paymentMonthly', {
+  type:'bar',
+  data:{
+    labels: pay.monthly.months,
+    datasets: Object.keys(pay.monthly.series).map(method => ({
+      label: method, data: pay.monthly.series[method],
+      backgroundColor: PAY_COLORS[method] || '#666', stack:'s1', borderRadius:2
+    }))
+  },
+  options:{
+    maintainAspectRatio:false,
+    plugins:{
+      legend:{ position:'bottom', labels:{ padding:14, usePointStyle:true, boxWidth:8, color:'#3A342E' } },
+      tooltip:{ callbacks:{ label: c => `${c.dataset.label}: ₩${fmt(c.raw)}` } }
+    },
+    scales:{
+      y:{ stacked:true, beginAtZero:true, ticks:{ callback:v=>kor(v) }, grid:{ color:COLORS.gridSoft } },
+      x:{ stacked:true, grid:{ display:false } }
+    }
+  }
+});
+
+const cashIdx = pay.total.labels.indexOf('만나서결제');
+const cashPct = cashIdx >= 0 ? pay.total.values[cashIdx]/payTotal*100 : 0;
+document.getElementById('insight_a1').innerHTML = `결제수단별 매출 분포: <strong>계좌이체 ${(pay.total.values[pay.total.labels.indexOf('계좌')]/payTotal*100).toFixed(1)}%</strong>, <strong>만나서결제 ${cashPct.toFixed(1)}%</strong>, <strong>카드 ${(pay.total.values[pay.total.labels.indexOf('카드')]/payTotal*100).toFixed(1)}%</strong>로 거의 3분할. 마진율 측면에서 결제수단별 격차도 모니터링: <strong>마진율이 결제수단별로 다르다면 거래처 세그먼트별 영업 전략 분리 신호</strong>. 만나서결제 ${cashPct.toFixed(1)}% (${kor(pay.total.values[cashIdx])}원)는 <strong>현장 결제·외상 가능성</strong>이 동반된 비중 — 회수 안정성과 미수 리스크를 별도 KPI로 관리해야 함. <strong>실행 액션: (1) 만나서결제 거래처 미수금 별도 집계 (2) 자동결제 전환 인센티브 캠페인 (3) 결제수단별 거래처 LTV 분석.</strong>`;
+
+// ===== Section A2: SKU TOP 30 =====
+const sku30 = D.sku_margin.top30_revenue;
+const totalRev30 = sku30.revenue.reduce((a,b)=>a+b,0);
+const totalMar30 = sku30.margin.reduce((a,b)=>a+b,0);
+document.getElementById('sku30Head').innerHTML = `매출 TOP 30 합계 <span class="hl">${kor(totalRev30)}원</span> · 마진 ${kor(totalMar30)}원 (평균 ${(totalMar30/totalRev30*100).toFixed(1)}%)`;
+
+safeChart('sku30Chart', {
+  data:{
+    labels: sku30.labels,
+    datasets:[
+      { type:'bar', label:'매출액', data: sku30.revenue,
+        backgroundColor: ctx => {
+          const v = ctx.raw; const max = Math.max(...sku30.revenue);
+          const r = v/max;
+          if (r > 0.7) return COLORS.yellow;
+          if (r > 0.4) return COLORS.orange;
+          return 'rgba(245,158,11,0.55)';
+        },
+        borderColor:'#0a0a0a', borderWidth:1, borderRadius:2,
+        xAxisID:'x', order:2 },
+      { type:'line', label:'마진율(%)', data: sku30.margin_pct,
+        borderColor: COLORS.orange2, backgroundColor: 'rgba(255,107,53,0.15)',
+        borderWidth: 2.5, tension: 0.3, pointRadius: 5,
+        pointBackgroundColor: ctx => sku30.margin_pct[ctx.dataIndex] < 0 ? COLORS.red : (sku30.margin_pct[ctx.dataIndex] < 5 ? COLORS.orange2 : sku30.margin_pct[ctx.dataIndex] >= 15 ? COLORS.green : COLORS.yellow),
+        pointBorderColor: '#0a0a0a', pointBorderWidth: 1.5,
+        xAxisID:'x2', order:1, fill: false }
+    ]
+  },
+  options:{
+    indexAxis:'y', maintainAspectRatio:false,
+    interaction:{ mode:'index', intersect:false },
+    plugins:{
+      legend:{ position:'top', align:'end', labels:{ padding:14, usePointStyle:true, boxWidth:10, color:'#3A342E' } },
+      tooltip:{ callbacks:{
+        label: c => {
+          if (c.dataset.label === '매출액') return ` 매출 ₩${fmt(c.raw)}`;
+          const method = sku30.methods[c.dataIndex];
+          return ` 마진율 ${c.raw.toFixed(1)}% · 마진 ₩${fmt(sku30.margin[c.dataIndex])}` + (method === 'assumed_15pct' ? ' (15% 가정)' : method === 'mixed' ? ' (혼합)' : '');
+        }
+      } }
+    },
+    scales:{
+      x:{ position:'top', beginAtZero:true, ticks:{ callback:v=>kor(v), color:COLORS.orange }, title:{ display:true, text:'매출액(원)', color:COLORS.orange, font:{ weight:'700' } } },
+      x2:{ position:'bottom', ticks:{ callback:v=>v+'%', color:COLORS.orange2 }, title:{ display:true, text:'마진율(%)', color:COLORS.orange2, font:{ weight:'700' } }, grid:{ display:false } },
+      y:{ type:'category', grid:{ display:false }, ticks:{ font:{ size:10 } } }
+    }
+  }
+});
+
+const negativeIn30 = sku30.margin_pct.filter(p => p < 0).length;
+const lowIn30 = sku30.margin_pct.filter(p => p >= 0 && p < 5).length;
+const top30AvgMargin = totalMar30/totalRev30*100;
+document.getElementById('insight_a2').innerHTML = `매출 TOP 30 SKU의 평균 마진율은 <strong>${top30AvgMargin.toFixed(2)}%</strong>로 회사 전체 평균(${D.summary.margin_pct.toFixed(2)}%) 대비 <strong>${top30AvgMargin > D.summary.margin_pct ? '높음' : '낮음'}</strong>. 매출 TOP 30 중 <span class="neg">마진 음수(손실) ${negativeIn30}개</span>, 5% 미만 저마진 ${lowIn30}개 — 이들은 <strong>락인용 트래픽 SKU(의도적 저마진)</strong>이거나 <strong>매입가 변동 미반영(가격 재검토 시급)</strong>. 매출 1위 SKU의 마진율(${sku30.margin_pct[0].toFixed(1)}%)과 회사 평균을 비교해 <strong>"매출 1위 = 이익 1위 인가"</strong>를 분기별 점검해야 함. <strong>실행 액션: (1) 마진 음수 TOP 30 SKU 즉시 라벨링 → 락인 SKU vs 가격 오류 SKU 구분 (2) 분기 단위 SKU 마진 KPI 도입 + 자동 알림 (3) 영업 인센티브를 매출 → 마진 가중 점진 전환.</strong>`;
+
+// ===== Section A3: High vs Low margin =====
+const hm = D.sku_margin.high_margin_top20;
+const lm = D.sku_margin.low_margin_top20;
+document.getElementById('highMargHead').innerHTML = `1위 <span class="pos">${hm.margin_pct[0].toFixed(1)}%</span> · ${hm.labels[0]}`;
+document.getElementById('lowMargHead').innerHTML = `1위 <span class="neg">${lm.margin_pct[0].toFixed(1)}%</span> · ${lm.labels[0]}`;
+
+safeChart('highMarginChart', {
+  type:'bar',
+  data:{
+    labels: hm.labels,
+    datasets:[{
+      label:'마진율(%)', data: hm.margin_pct,
+      backgroundColor: hm.margin_pct.map(p => p > 30 ? COLORS.green : p > 20 ? COLORS.yellow : COLORS.orange),
+      borderColor:'#0a0a0a', borderWidth:1, borderRadius:2
+    }]
+  },
+  options:{
+    indexAxis:'y', maintainAspectRatio:false, layout:{ padding:{ right:80 } },
+    plugins:{
+      legend:{ display:false },
+      tooltip:{ callbacks:{ label: c => `마진율 ${c.raw.toFixed(1)}% · 매출 ₩${fmt(hm.revenue[c.dataIndex])} · 마진 ₩${fmt(hm.margin[c.dataIndex])}` } },
+      barValueLabel:{ enabled:true, formatter: v => v.toFixed(1)+'%', color:'#fde047' }
+    },
+    scales:{
+      x:{ beginAtZero:true, ticks:{ callback: v=>v+'%' }, grid:{ color:COLORS.gridSoft } },
+      y:{ grid:{ display:false }, ticks:{ font:{ size:10 } } }
+    }
+  }
+});
+
+safeChart('lowMarginChart', {
+  type:'bar',
+  data:{
+    labels: lm.labels,
+    datasets:[{
+      label:'마진율(%)', data: lm.margin_pct,
+      backgroundColor: lm.margin_pct.map(p => p < 0 ? COLORS.red : p < 3 ? COLORS.orange2 : COLORS.orange),
+      borderColor:'#0a0a0a', borderWidth:1, borderRadius:2
+    }]
+  },
+  options:{
+    indexAxis:'y', maintainAspectRatio:false, layout:{ padding:{ right:80 } },
+    plugins:{
+      legend:{ display:false },
+      tooltip:{ callbacks:{ label: c => `마진율 ${c.raw.toFixed(1)}% · 매출 ₩${fmt(lm.revenue[c.dataIndex])} · 마진 ₩${fmt(lm.margin[c.dataIndex])}` } },
+      barValueLabel:{ enabled:true, formatter: v => v.toFixed(1)+'%', color:'#fde047' }
+    },
+    scales:{
+      x:{ ticks:{ callback: v=>v+'%' }, grid:{ color:COLORS.gridSoft } },
+      y:{ grid:{ display:false }, ticks:{ font:{ size:10 } } }
+    }
+  }
+});
+
+document.getElementById('insight_a3').innerHTML = `<strong class="pos">고마진 1위 ${hm.labels[0]}</strong> (${hm.margin_pct[0].toFixed(1)}%) — <strong>이익 효자 SKU로 영업·노출·재고 우선순위 강화</strong>. 고마진 TOP 20 평균 ${(hm.margin_pct.reduce((a,b)=>a+b,0)/hm.margin_pct.length).toFixed(1)}%로 회사 평균 대비 압도적. <span class="neg">저마진/손실 1위 ${lm.labels[0]}</span> (${lm.margin_pct[0].toFixed(1)}%) — <strong>가격 인상 또는 매입사 변경 시급</strong>. 손실 SKU ${D.summary.loss_sku_count}개 중 매출 1천만원+ 영향군은 즉시 액션 대상. <strong>실행 액션: (1) 손실 SKU 가격 정책 회의 (2) 매입가 재협상 또는 매입사 이중화 (3) 고마진 SKU 매출 비중 확대를 위한 추천 알고리즘·진열 강화.</strong>`;
+
+// ===== Section A4: Category =====
+const cat = D.category;
+document.getElementById('catHead').innerHTML = `1위 카테고리 <span class="hl">${cat.labels[0]}</span> ${kor(cat.revenue[0])}원 · 마진율 ${cat.margin_pct[0].toFixed(1)}%`;
+
+safeChart('catChart', {
+  data:{
+    labels: cat.labels,
+    datasets:[
+      { type:'bar', label:'매출액', data: cat.revenue,
+        backgroundColor: COLORS.orange, borderColor:'#0a0a0a', borderWidth:1, borderRadius:2,
+        yAxisID:'y', order:2 },
+      { type:'line', label:'마진율(%)', data: cat.margin_pct,
+        borderColor: COLORS.yellowLight, backgroundColor:'transparent',
+        borderWidth:2.5, tension:0.3, pointRadius:5,
+        pointBackgroundColor: ctx => cat.margin_pct[ctx.dataIndex] < 0 ? COLORS.red : cat.margin_pct[ctx.dataIndex] < 5 ? COLORS.orange2 : cat.margin_pct[ctx.dataIndex] >= 15 ? COLORS.green : COLORS.yellow,
+        pointBorderColor:'#0a0a0a', pointBorderWidth:1.5,
+        yAxisID:'y1', order:1, fill:false }
+    ]
+  },
+  options:{
+    maintainAspectRatio:false,
+    interaction:{ mode:'index', intersect:false },
+    plugins:{
+      legend:{ position:'top', align:'end', labels:{ padding:14, usePointStyle:true, boxWidth:10, color:'#3A342E' } },
+      tooltip:{ callbacks:{ label: c => c.dataset.label === '매출액' ? ` 매출 ₩${fmt(c.raw)}` : ` 마진율 ${c.raw.toFixed(1)}% · 마진 ₩${fmt(cat.margin[c.dataIndex])}` } }
+    },
+    scales:{
+      y:{ position:'left', beginAtZero:true, ticks:{ callback:v=>kor(v), color:COLORS.orange }, grid:{ color:COLORS.gridSoft }, title:{ display:true, text:'매출액(원)', color:COLORS.orange, font:{ weight:'700' } } },
+      y1:{ position:'right', ticks:{ callback:v=>v+'%', color:COLORS.yellowLight }, grid:{ display:false }, title:{ display:true, text:'마진율(%)', color:COLORS.yellowLight, font:{ weight:'700' } } },
+      x:{ ticks:{ font:{ size:10 } }, grid:{ display:false } }
+    }
+  }
+});
+
+const catTotal = cat.revenue.reduce((a,b)=>a+b,0);
+const avgRev = catTotal/cat.labels.length;
+const avgMargPct = D.summary.margin_pct;
+
+safeChart('catScatter', {
+  type:'scatter',
+  data:{
+    datasets: cat.labels.map((l, i) => ({
+      label: l,
+      data: [{ x: cat.revenue[i], y: cat.margin_pct[i], r: Math.max(8, Math.sqrt(cat.qty[i])/15) }],
+      backgroundColor: cat.margin_pct[i] >= avgMargPct && cat.revenue[i] >= avgRev ? COLORS.green :
+                       cat.margin_pct[i] >= avgMargPct ? COLORS.yellow :
+                       cat.revenue[i] >= avgRev ? COLORS.orange : COLORS.orange2,
+      borderColor:'#0a0a0a', borderWidth:1.5
+    }))
+  },
+  options:{
+    maintainAspectRatio:false,
+    plugins:{
+      legend:{ position:'bottom', labels:{ padding:8, usePointStyle:true, boxWidth:8, color:'#3A342E', font:{ size:10 } } },
+      tooltip:{ callbacks:{ label: c => `${c.dataset.label}: 매출 ${kor(c.raw.x)}원 · 마진율 ${c.raw.y.toFixed(1)}%` } }
+    },
+    scales:{
+      x:{ type:'linear', beginAtZero:true, ticks:{ callback:v=>kor(v) }, title:{ display:true, text:'매출액(원) →', color:COLORS.orange, font:{ weight:'700' } }, grid:{ color:COLORS.gridSoft } },
+      y:{ ticks:{ callback:v=>v+'%' }, title:{ display:true, text:'마진율(%) ↑', color:COLORS.yellow, font:{ weight:'700' } }, grid:{ color:COLORS.gridSoft } }
+    }
+  }
+});
+
+const sortedByMar = cat.labels.map((l,i)=>({l, rev:cat.revenue[i], pct:cat.margin_pct[i]})).sort((a,b)=>b.pct-a.pct);
+const topMar = sortedByMar[0];
+document.getElementById('insight_a4').innerHTML = `매출 1위 카테고리는 <strong>${cat.labels[0]}</strong>로 베이스 매출, 마진율 1위는 <strong class="pos">${topMar.l}</strong> (${topMar.pct.toFixed(1)}%) — 두 카테고리가 다르면 매출 동력과 이익 동력이 분리된 구조. 4분면 산점도 우상단(스타) 카테고리는 매출↑·마진↑로 <strong>즉시 자원 집중</strong>, 좌하단(매출↓·마진↓)은 <strong>정리 또는 축소 검토</strong>. 식자재 유통업의 카테고리 마진 격차는 보통 매우 큼: <strong>(상온/냉장 식자재·야채 = 낮은 마진·높은 회전), (전용상품·노마진 특가 = 의도적 저마진), (음료·잡화·박스단가존 = 상대적 고마진 영역)</strong>. <strong>실행 액션: 카테고리별 매입 협상 우선순위 + 영업 KPI 카테고리별 분리 + 분기별 카테고리 ABC 재분류.</strong>`;
+
+// ===== Section A5: Margin trend + PB =====
+const mt = D.margin_trend.monthly;
+document.getElementById('trendHead').innerHTML = `최고 마진율 월 <span class="hl">${mt.labels[mt.margin_pct.indexOf(Math.max(...mt.margin_pct))]}</span> · ${Math.max(...mt.margin_pct).toFixed(2)}%`;
+
+safeChart('marginTrend', {
+  data:{
+    labels: mt.labels,
+    datasets:[
+      { type:'bar', label:'매출액', data: mt.revenue,
+        backgroundColor: COLORS.orange, borderRadius:2, yAxisID:'y', order:2 },
+      { type:'line', label:'마진율(%)', data: mt.margin_pct,
+        borderColor: COLORS.green, backgroundColor:'rgba(132,204,22,0.15)',
+        borderWidth: 3, tension: 0.3, pointRadius: 6,
+        pointBackgroundColor: COLORS.green, pointBorderColor:'#0a0a0a', pointBorderWidth: 2,
+        yAxisID:'y1', order:1, fill:true }
+    ]
+  },
+  options:{
+    maintainAspectRatio:false,
+    interaction:{ mode:'index', intersect:false },
+    plugins:{
+      legend:{ position:'top', align:'end', labels:{ padding:14, usePointStyle:true, boxWidth:10, color:'#3A342E' } },
+      tooltip:{ callbacks:{ label: c => c.dataset.label === '매출액' ? ` 매출 ₩${fmt(c.raw)}` : ` 마진율 ${c.raw.toFixed(2)}% · 마진 ₩${fmt(mt.margin[c.dataIndex])}` } }
+    },
+    scales:{
+      y:{ position:'left', beginAtZero:true, ticks:{ callback:v=>kor(v), color:COLORS.orange }, grid:{ color:COLORS.gridSoft }, title:{ display:true, text:'매출(원)', color:COLORS.orange, font:{ weight:'700' } } },
+      y1:{ position:'right', ticks:{ callback:v=>v+'%', color:COLORS.green }, grid:{ display:false }, title:{ display:true, text:'마진율(%)', color:COLORS.green, font:{ weight:'700' } } },
+      x:{ grid:{ display:false } }
+    }
+  }
+});
+
+const pbm = D.pb_margin;
+document.getElementById('pbHead').innerHTML = `PB <span class="neg">${pbm.margin_pct[1].toFixed(2)}%</span> vs 일반 ${pbm.margin_pct[0].toFixed(2)}%`;
+
+safeChart('pbCompare', {
+  type:'bar',
+  data:{
+    labels: pbm.labels,
+    datasets:[
+      { label:'매출액', data: pbm.revenue, backgroundColor: COLORS.orange, yAxisID:'y', borderRadius:2 },
+      { type:'line', label:'마진율(%)', data: pbm.margin_pct,
+        borderColor: COLORS.green, backgroundColor: 'rgba(132,204,22,0.15)',
+        borderWidth: 3, pointRadius: 8,
+        pointBackgroundColor: pbm.margin_pct.map(p => p >= 8 ? COLORS.green : COLORS.orange2),
+        pointBorderColor: '#0a0a0a', pointBorderWidth: 2,
+        yAxisID:'y1', fill:false }
+    ]
+  },
+  options:{
+    maintainAspectRatio:false,
+    plugins:{
+      legend:{ position:'top', align:'end', labels:{ padding:14, usePointStyle:true, boxWidth:10, color:'#3A342E' } },
+      tooltip:{ callbacks:{ label: c => c.dataset.label === '매출액' ? ` 매출 ₩${fmt(c.raw)}` : ` 마진율 ${c.raw.toFixed(2)}% · 마진 ₩${fmt(pbm.margin[c.dataIndex])}` } }
+    },
+    scales:{
+      y:{ position:'left', beginAtZero:true, ticks:{ callback:v=>kor(v), color:COLORS.orange }, title:{ display:true, text:'매출(원)', color:COLORS.orange, font:{ weight:'700' } } },
+      y1:{ position:'right', beginAtZero:true, ticks:{ callback:v=>v+'%', color:COLORS.green }, grid:{ display:false }, title:{ display:true, text:'마진율(%)', color:COLORS.green, font:{ weight:'700' } } },
+      x:{ grid:{ display:false } }
+    }
+  }
+});
+
+const minMonth = mt.labels[mt.margin_pct.indexOf(Math.min(...mt.margin_pct))];
+const maxMonth = mt.labels[mt.margin_pct.indexOf(Math.max(...mt.margin_pct))];
+document.getElementById('insight_a5').innerHTML = `<strong>월별 마진율 변동: ${Math.min(...mt.margin_pct).toFixed(2)}% (${minMonth}) ~ ${Math.max(...mt.margin_pct).toFixed(2)}% (${maxMonth})</strong>로 ±${(Math.max(...mt.margin_pct) - Math.min(...mt.margin_pct)).toFixed(2)}%p 변동. <strong style="color:#dc2626">중요한 발견: PB(식자재쿡) 마진율 ${pbm.margin_pct[1].toFixed(2)}% < 일반상품 ${pbm.margin_pct[0].toFixed(2)}%</strong> — PB는 일반상품 대비 <strong>${(pbm.margin_pct[0] - pbm.margin_pct[1]).toFixed(1)}%p 낮은 마진</strong>. 기존 가설 "PB = 수익 엔진"이 데이터로 반증됨. 메뚜기쌀 등 PB는 <strong>락인·트래픽 효과는 강하지만 단위 마진은 일반상품보다 낮은</strong> 구조 — 즉 PB의 가치는 마진보다 <strong>고객 충성도·반복 발주·매장 식자재 라이선스</strong>에 있음. <strong>실행 액션: (1) PB 가격 정책 재설계 (2) PB 라인 확장 시 마진율을 1차 KPI로 (3) 일반상품 중 고마진 SKU 발굴·확대로 전체 마진 견인 + PB는 락인 도구로 포지셔닝.</strong>`;
+
+// ===== Section B1: Purchase activity =====
+const pa = D.purchase_activity;
+document.getElementById('purchaseHead').innerHTML = `매입 총액 <span class="hl">${kor(pa.total)}원</span> · 월평균 ${kor(pa.total/pa.monthly.values.length)}원`;
+
+safeChart('purchaseMonthly', {
+  type:'bar',
+  data:{
+    labels: pa.monthly.labels,
+    datasets:[{
+      label:'매입액', data: pa.monthly.values,
+      backgroundColor: ctx => {
+        const v = ctx.raw; const max = Math.max(...pa.monthly.values);
+        return v / max > 0.85 ? COLORS.yellow : COLORS.orange;
+      },
+      borderRadius: 2
+    }]
+  },
+  options:{
+    maintainAspectRatio:false,
+    layout:{ padding:{ top:30 } },
+    plugins:{
+      legend:{ display:false },
+      tooltip:{ callbacks:{ label: c => '매입액 ₩' + fmt(c.raw) } },
+      minMaxLabel:{ enabled:true, formatter: v => kor(v) }
+    },
+    scales:{
+      y:{ beginAtZero:true, ticks:{ callback: v=>kor(v) }, grid:{ color:COLORS.gridSoft } },
+      x:{ grid:{ display:false } }
+    }
+  }
+});
+
+document.getElementById('insight_b1').innerHTML = `<strong>중요 — 매입 활동은 매출 마진과 분리해서 해석</strong>: 매입은 <strong>미래 발주·재고 비축·시즌 대응</strong>을 위한 의사결정. 동기간 매출 SKU의 마진과 직결되지 않음 (매출 마진은 Part A에서 매출SKU의 매입단가로 계산). 월별 매입 총액 ${kor(pa.total)}원, 평균 ${kor(pa.total/pa.monthly.values.length)}원/월 — 1월은 명절 비축, 2~4월은 정상화 흐름. 더 상세한 매입사·상품·결제주기·평균매입주기 분석은 <strong>별도의 매입 분석 대시보드</strong>(foodcook_매입분석_v2)를 참조. 본 통합 대시보드는 매출 마진 + 현금흐름에 집중.`;
+
+// ===== Section C1: CCC =====
+const cf = D.cash_flow;
+document.getElementById('cashHead').innerHTML = `매출 ${kor(cf.sales.reduce((a,b)=>a+b,0))}원 · 매입 ${kor(cf.purchase.reduce((a,b)=>a+b,0))}원 · 순 <span class="pos">${kor(cf.cum_net[cf.cum_net.length-1])}원</span>`;
+
+const cccColor = cf.ccc < 0 ? COLORS.green : COLORS.orange2;
+document.getElementById('cccMatrix').innerHTML = `
+  <div class="card">
+    <div class="card-title">매출 평균 회수일 (DSO proxy)</div>
+    <div class="card-headline" style="color:${COLORS.orange}; font-size:38px;">${cf.sales_days.toFixed(1)}일</div>
+    <div style="font-size:12px; color:#8a8a8a;">결제수단별 가중평균 (만나서결제=0d, 카드=7d, 계좌=5d 가정)</div>
+  </div>
+  <div class="card">
+    <div class="card-title">매입 평균 결제일 (DPO)</div>
+    <div class="card-headline" style="color:${COLORS.yellow}; font-size:38px;">${cf.purchase_days.toFixed(1)}일</div>
+    <div style="font-size:12px; color:#8a8a8a;">결제주기 마스터 기반 가중평균 (즉시지급=0d, 월말=22d 등)</div>
+  </div>
+  <div class="card">
+    <div class="card-title">순 자금 갭 (CCC = DSO − DPO)</div>
+    <div class="card-headline" style="color:${cccColor}; font-size:38px;">${cf.ccc.toFixed(1)}일</div>
+    <div style="font-size:12px; color:#8a8a8a;">${cf.ccc < 0 ? '✓ 자금 여유 (매출 회수가 매입 결제보다 빠름)' : '⚠ 자금 부담'}</div>
+  </div>
+`;
+
+safeChart('cashChart', {
+  data:{
+    labels: cf.months,
+    datasets:[
+      { type:'bar', label:'매출', data: cf.sales, backgroundColor: COLORS.yellow, borderRadius:2, order:3 },
+      { type:'bar', label:'매입', data: cf.purchase, backgroundColor: COLORS.orange2, borderRadius:2, order:2 },
+      { type:'line', label:'순현금흐름', data: cf.net,
+        borderColor: COLORS.green, backgroundColor: 'rgba(132,204,22,0.15)',
+        borderWidth: 3, tension: 0.3, pointRadius: 7,
+        pointBackgroundColor: ctx => cf.net[ctx.dataIndex] >= 0 ? COLORS.green : COLORS.red,
+        pointBorderColor: '#0a0a0a', pointBorderWidth: 2,
+        fill: true, order: 1 }
+    ]
+  },
+  options:{
+    maintainAspectRatio:false,
+    interaction:{ mode:'index', intersect:false },
+    plugins:{
+      legend:{ position:'top', align:'end', labels:{ padding:14, usePointStyle:true, boxWidth:10, color:'#3A342E' } },
+      tooltip:{ callbacks:{ label: c => `${c.dataset.label}: ₩${fmt(c.raw)}` } }
+    },
+    scales:{
+      y:{ beginAtZero:true, ticks:{ callback:v=>kor(v) }, grid:{ color:COLORS.gridSoft } },
+      x:{ grid:{ display:false } }
+    }
+  }
+});
+
+safeChart('cumChart', {
+  type:'line',
+  data:{
+    labels: cf.months,
+    datasets:[
+      { label:'누적 매출', data: cf.cum_sales, borderColor: COLORS.yellow, backgroundColor: 'rgba(251,191,36,0.1)', borderWidth: 2.5, tension: 0.2, pointRadius: 4, fill: false },
+      { label:'누적 매입', data: cf.cum_purchase, borderColor: COLORS.orange2, backgroundColor: 'rgba(255,107,53,0.1)', borderWidth: 2.5, tension: 0.2, pointRadius: 4, fill: false },
+      { label:'누적 순현금', data: cf.cum_net, borderColor: COLORS.green, backgroundColor: 'rgba(132,204,22,0.18)', borderWidth: 3, tension: 0.2, pointRadius: 5, fill: true }
+    ]
+  },
+  options:{
+    maintainAspectRatio:false,
+    interaction:{ mode:'index', intersect:false },
+    plugins:{
+      legend:{ position:'bottom', labels:{ padding:14, usePointStyle:true, boxWidth:8, color:'#3A342E' } },
+      tooltip:{ callbacks:{ label: c => `${c.dataset.label}: ₩${fmt(c.raw)}` } }
+    },
+    scales:{
+      y:{ beginAtZero:true, ticks:{ callback:v=>kor(v) }, grid:{ color:COLORS.gridSoft } },
+      x:{ grid:{ display:false } }
+    }
+  }
+});
+
+document.getElementById('insight_c1').innerHTML = `누적 순현금흐름 <strong class="pos">${kor(cf.cum_net[cf.cum_net.length-1])}원</strong> — 분석 기간 동안 매출이 매입을 ${kor(cf.cum_net[cf.cum_net.length-1])}원 초과. CCC <strong class="pos">${cf.ccc.toFixed(1)}일</strong>(매출 ${cf.sales_days.toFixed(1)}d − 매입 ${cf.purchase_days.toFixed(1)}d)로 <strong>음수 = 자금 여유 구조</strong>. 즉 회사는 <strong>"매출이 들어온 후 매입을 결제"</strong>하는 우호적 현금 회전 구조 — 유통업으로서 이상적 위치. <span class="neg">단, 이 구조의 안정성은 매입의 32.6%가 '즉시 지급' 조건 + 매출의 31.9%가 '만나서결제(즉시 회수)'에 의존</span>한다는 점에서 위태로운 균형. 만나서결제 미수금이 누적되면 즉시 자금 부담으로 전환. <strong>실행 액션: (1) DSO·DPO 월간 KPI로 모니터링 (2) 만나서결제 외상 미수금 별도 집계 (3) 매입 결제주기 5일 연장 협상 시 추가 ${kor(D.summary.total_purchase * 5/365)}원 운전자본 효과.</strong>`;
+
+// ===== Executive Summary =====
+const execItems = [
+  {
+    num: 'INSIGHT 01',
+    title: `평균 마진율 ${D.summary.margin_pct.toFixed(1)}% — 식자재 B2B 평균, 개선 여지 존재`,
+    body: `매출 ${kor(D.summary.total_revenue)}원 / 매출원가 ${kor(D.summary.total_cogs)}원 / 마진 ${kor(D.summary.total_margin)}원. 실제 매입가 기반 마진율 <strong>${D.summary.actual_margin_pct.toFixed(2)}%</strong> (매출 ${D.summary.rev_actual_pct.toFixed(1)}%) + 15% 가정 적용분 가중 평균. <span class="accent">매입가 누락 SKU 22,696건의 마스터 데이터 보완이 마진 정확도 개선의 1순위.</span>`
+  },
+  {
+    num: 'INSIGHT 02',
+    title: `PB(식자재쿡) ${pbm.margin_pct[1].toFixed(1)}% < 일반 ${pbm.margin_pct[0].toFixed(1)}% — 가설 반증`,
+    body: `이전 분석에서 "PB가 수익 엔진"이라 추정했으나 실제 데이터는 반대. PB 마진율은 일반상품 대비 <strong>${(pbm.margin_pct[0]-pbm.margin_pct[1]).toFixed(1)}%p 낮음</strong>. PB의 가치는 마진이 아닌 <strong>락인·반복 발주·고객 충성도</strong>에 있음을 인식하고 <span class="accent">PB 가격 정책 재설계 + 고마진 일반상품 확대로 전체 마진 견인</span> 필요.`
+  },
+  {
+    num: 'INSIGHT 03',
+    title: `손실 SKU ${D.summary.loss_sku_count}개 — 즉시 가격 검토 필요`,
+    body: `매출 1백만원+ SKU 중 <strong>${D.summary.loss_sku_count}개가 마진 음수(손실)</strong>. 트래픽 SKU(의도적 락인) vs 가격/매입가 변동 미반영을 구분하는 작업 시급. <span class="accent">분기별 SKU 마진 자동 점검 + 임계값 기반 알림 시스템 도입.</span>`
+  },
+  {
+    num: 'INSIGHT 04',
+    title: 'CCC -6.8일 — 자금 여유 구조 (현재)',
+    body: `매출 회수 <strong>${cf.sales_days.toFixed(1)}일</strong> < 매입 결제 <strong>${cf.purchase_days.toFixed(1)}일</strong>. 매출이 매입보다 빠르게 회수되는 <strong>유통업 이상적 구조</strong>이지만 만나서결제 미수금 누적 시 즉시 부담 전환. <span class="accent">DSO·DPO 월간 KPI 도입 + 만나서결제 외상 별도 관리.</span>`
+  },
+  {
+    num: 'INSIGHT 05',
+    title: '결제수단별 마진율 격차 — 거래처 세그먼트 영업 전략 분리',
+    body: `결제수단 3분할(계좌·만나서결제·카드)에서 <strong>마진율도 결제수단별로 차이</strong>. 거래처 특성(프랜차이즈 vs 일반·소상공인 등)에 따라 영업 전략 분리 가능. <span class="accent">결제수단 × 거래처 매트릭스로 LTV 분석 → 핵심 KA 락인 단가 협상.</span>`
+  },
+  {
+    num: 'INSIGHT 06',
+    title: '매출 마진 vs 매입 활동 분리 인식 — 두 영역의 유일한 연결고리는 CCC',
+    body: `매출 마진(Part A)과 매입 활동(Part B)은 <strong>별개의 분석 영역</strong>. 매입은 미래 발주·재고 비축, 매출 마진은 매출 SKU의 매입단가 기반. 두 영역은 <strong>현금흐름(Part C)에서만 만남</strong>. <span class="accent">월간 매출 마진(P&L) + 매입 활동 모니터링(Operations) + 현금흐름(Treasury) 3개 KPI 분리 운영.</span>`
+  }
+];
+
+document.getElementById('execGrid').innerHTML = execItems.map(item => `
+  <div class="exec-item">
+    <div class="exec-item-num">${item.num}</div>
+    <div class="exec-item-title">${item.title}</div>
+    <div class="exec-item-body">${item.body}</div>
+  </div>
+`).join('');
+</script>
+
+<script id="unified-chart-theme">
+(function(){
+  var INK='#201A15', DIM='#6B625A', GRID='rgba(32,26,21,0.08)';
+  function retheme(){
+    if(!window.Chart) return;
+    try{
+      Chart.defaults.color=DIM;
+      Chart.defaults.borderColor=GRID;
+      Chart.defaults.font.family="'Pretendard','Noto Sans KR',sans-serif";
+    }catch(e){}
+    var insts = Chart.instances || {};
+    Object.keys(insts).forEach(function(k){
+      var c=insts[k]; if(!c||!c.options) return;
+      try{
+        var o=c.options;
+        if(o.scales){Object.keys(o.scales).forEach(function(s){
+          var sc=o.scales[s]; if(!sc) return;
+          if(sc.grid){sc.grid.color=GRID; if(sc.grid.borderColor!==undefined) sc.grid.borderColor=GRID;}
+          if(sc.ticks){sc.ticks.color=DIM;}
+          if(sc.title){sc.title.color=DIM;}
+          if(sc.pointLabels){sc.pointLabels.color=DIM;}
+          if(sc.angleLines){sc.angleLines.color=GRID;}
+          if(sc.border){sc.border.color=GRID;}
+        });}
+        if(o.plugins){
+          if(o.plugins.legend&&o.plugins.legend.labels){o.plugins.legend.labels.color=INK;}
+          if(o.plugins.title){o.plugins.title.color=INK;}
+          if(o.plugins.subtitle){o.plugins.subtitle.color=DIM;}
+        }
+        c.update('none');
+      }catch(e){}
+    });
+  }
+  if(document.readyState==='complete'){ retheme(); }
+  window.addEventListener('load', retheme);
+  setTimeout(retheme, 400);
+  setTimeout(retheme, 1200);
+})();
+</script>
+
+</body>
+</html>

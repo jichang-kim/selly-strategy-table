@@ -1,0 +1,1318 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>프랜차이즈 매출 분석 · 이유있는감자탕 vs 국민매운찜갈비</title>
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAHqUlEQVR42u2Za4xUZxnHf897zpmZnb0My/0ud5pyhzYoXtpEo0CsrYmmfLDCFwWjpBBMG2PUL9rE0mrVWI3VLxprjAlWbVJbAYsVa7kVynUJ7JbLLpdd2Mvs7uzMOe/7+GFmGXaFsLN0CCRzcr7Mmdvze97/c3tfcV+ax718Ge7xqwJQAagAVAAqABWACkAF4C4EcILKnQDwy/S7XqQIauQeWwEnWEGUfWPiZ2p8nDrQewjAC9XPaUfMfOWB1HcX1IriKcYhetdLSME43piciJBPXs5WWU37Ro08tTgVGrYe7PQVBbm7V0BfmpHcuCx1os4fk3Uxp9vHx/8wNXEm6endLyEVUJ482QM8f19dIF57IvjlnLpaK985lo5F6uTG7lewgpNhhop/m7KhXxVGsb587FK4rqnnF5NNXV9OLV1xb1NDuLQtsr4YHZhkwVOc4Fk1FgyIqLmzAMYpFHOlIBr1bTxluu//+MjZsxJBIp1uXX/sbQ0bxE9en428SFFsIF6kzdX+n6ck3h0RPHw590RjzyDUcgFYQaweHBUbkdNp3ZEzeGIk28fUWSO+/twPp80ryuXDGf31t2XXKyRrcM6BZ3XHhER3II829e4ZH9+8JNURmKsxWdYe4koW0nBiQMDHeDm5mPB2jot5GRtYY1SIcnxxk06f51xonbVqrY00UcWaLSRrsRYR9TzEO1cTbFqSOjw69uP7aq/GPZD5XdEXzmXUw2j5JRQac176Gke6c4mq7ZOqOwOzsOXKh3LeHK1l8kwB8YJ+/yiqVKe0uo7ONlS8dIdTt+5w167RU55eOrI5cMm+3NI0TzX0jO21zhcpN4CK8TK9Z1ev3rlw1pund7R0NR+dkXpk1ePr/nWIN7drS5Mk6+jpon4M1SlQxJDNEOWIQpIJVj7hxkw0xw892Lr/ldE9P2pOTCY298xFcllXWyvOlTmIjZHetC5f+dCXfzq1s2n38de+tewbrzf+Y+WYZfdv+FrU/HnvJ5u0uo7uDh7fLJ/7Ks7hGfp6yfRQN4qnf8WsRR7wGKvOHVzR2bK4fgE1NXqpSf/6krzzBlXVaGkMMoytRX1mG1PmHGjZbzx/6bhF6Vx345VTCycs5q2/sO1F2fwzqpKkRhGrwjmM0aajbFnFN38uKx4hChGDMYgAFiQfiIr+YC3vvUVVDaWsQykrIIZchkmzzITpqD4wcRlgna2N1SyasBhVZi5QZxk/lVgCQBUUVK5e0tGT5MFP4xyel68c6qyiHgYBa/F9eXS9Ht6NavmykCKGMIuziDjUgWc8BUURQQwXmrThQMF6EYwB0Y5Wxk4iiGMMYhBBRIxnjF944gcgzJhP/ViiML845Umj8SraWvTIf3DOhDkTRUSRRJHkcjirB3bS3cnxvThHmCOKyOVQpbMNVWxElCOKbnSH2AhjqKrN45UhBkSwlmwGG1FVTd3IwUoVof0yYZZENalRxXeNR3c72T5GjruFPFTpaMNZEkk8b4ha8odqfRSRrGXJQwRxbIS1g1szBT/AGJwliorvquL5GEMY3rqZ9gNsxIl99KTx/aEw+CUEwMbnZNEn7sSce+CfunX9EG0bMoAqNfVEIeq4Vmivx1NFzI0eyuAxRh3cROg2RIzWjx365OMPNYFmMxzcxcwF/XKRG0PeMv5UMf5NF9nEAfa8TjZDLIHaWw+x31s4dmikAe8f48L7RDmZPPs6WxWETI+2X5aa1GCDzp8imcKYAeF09aKGOYlXDQRWEN39N7a9yO5X8bwhbgaYoeonvwiv/obfP0uUK/6xgrP6wpNsfFiP7wFwDmcB/fvvdMNH9U8vFB7me4Tzp3TLKr6/lkw3Qn+YKghhlpe3suOPJZWCUuqACKMm0H5ZzzYUbKLfhZ2tpNvZv7O/AAPI2ZNEIfkPCzgFOPI2bS10d2BtUYf5waj5NF1XGTmupMm/FIB8a9CbpuHdotucxXjMmI8Ymk/nG77C54MYxhDEimME6PlTOMeUOdSkihLKMx97h56u611QhkqsYAxH/1tYkGtz8dS5eB6XzpLNIFKwQLVwF2ANwIVGUCbO6E9HFH/qxP4B0VIeAEcsQdMRzXQjBtW8X2XiTBLVXLlEW8tNXKiI0N3BxTMEcabMHpiXDL1pGg8TxEttp0sFUPwYbS2cPjwgb06cTmo0vV2cO3ndfgXXes88krY00XmF6pRMnXudqhTgXANtLQSxsnaj+W8IYZbje4vZCagfx4jRtDZrS2PRfnV0Xs1npIJfr1zg0lmStYyfVlQOCuixPeSy/1cKyzETq+IHnNgLWpCsKp4na7bopJmy4rP9jodPraGjVVatLbR0IPM+oo9tkHnLB0Rw3ujje4ee+29zIhPUEk/K869RNwphGG4bEFQKvV26ZTXp9iE2cLe5raJ4AZ1tum8HxuQLGc5h+9t6Zwv34CcOZ4lCorD/pctHsL73b65cIAhKtX64G1vOEU/y8rNaWy/LP1OaL4w32B8Hd/HbZ4glhmH9MIf6/vkmIoqYtZCxU4YvodZmTh1CzPDcfxsA13JINkMU3saJiE8iWWr1/YA2d/N/GU+SuJ1TC6X0zawP9IRGXXnPwO7sCU0FoAJQAagAVAAqABWACsC9df0PRk+y5bJZB4AAAAAASUVORK5CYII=" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+<style>
+:root {
+  --bg:#0a0a0a; --surface:#131313; --surface-2:#1a1a1a; --line:#2a2a2a; --line-soft:#1f1f1f;
+  --ink:#3A342E; --ink-dim:#8a8a8a; --ink-soft:#555;
+  --orange:#f59e0b; --orange-2:#ff6b35; --yellow:#fbbf24; --yellow-light:#fde047;
+  --amber:#d97706; --red:#dc2626; --blue:#2F8F85; --green:#10b981;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg); color: var(--ink); font-family: 'Pretendard', sans-serif;
+  font-feature-settings: 'tnum'; -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 1440px; margin: 0 auto; padding: 48px 56px 80px; }
+@media (max-width: 1100px) { .wrap { padding: 32px 24px; } }
+
+.header { display: flex; gap: 20px; align-items: center; border-bottom: 1px solid var(--line); padding-bottom: 28px; margin-bottom: 24px; }
+.logo { width: 64px; height: 64px; border-radius: 14px; object-fit: cover;
+  box-shadow: 0 8px 24px rgba(255,107,53,.25), 0 0 0 1px rgba(245,158,11,.2); }
+.eyebrow { font-size: 11px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--orange); margin-bottom: 6px; }
+h1 { font-size: 32px; font-weight: 700; letter-spacing: -.025em; margin: 0 0 4px; color: var(--ink); }
+.subtitle { font-size: 13px; color: var(--ink-dim); display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
+.subtitle .pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px; border-radius: 999px;
+  background: rgba(16,185,129,.15); color: var(--green);
+  font-size: 12px; font-weight: 600;
+}
+.subtitle .pill::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--green); }
+
+/* ─── Tab Bar ─── */
+.tabbar {
+  display: flex; gap: 0;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 36px;
+  position: sticky; top: 0;
+  background: var(--bg); z-index: 10;
+  padding-top: 4px;
+}
+.tab {
+  background: transparent; border: none; cursor: pointer;
+  color: var(--ink-soft); font-family: inherit;
+  font-size: 13px; font-weight: 600; letter-spacing: .04em;
+  padding: 16px 24px; border-bottom: 2px solid transparent;
+  transition: all .2s ease;
+  display: flex; align-items: center; gap: 8px;
+}
+.tab:hover { color: var(--ink-dim); }
+.tab.active { color: var(--ink); border-bottom-color: var(--orange); }
+.tab .badge {
+  display: inline-block; padding: 2px 8px; border-radius: 4px;
+  background: var(--surface-2); color: var(--ink-soft);
+  font-size: 10px; font-weight: 700;
+}
+.tab.active .badge { background: rgba(245,158,11,.2); color: var(--yellow); }
+
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+section { margin-bottom: 48px; }
+.section-head { margin-bottom: 20px; }
+.section-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 6px; }
+.section-title { font-size: 22px; font-weight: 700; letter-spacing: -.015em; color: var(--ink); margin: 0; }
+.section-sub { font-size: 13px; color: var(--ink-dim); margin-top: 4px; }
+
+/* KPI strip */
+.kpi-strip {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: 1px; background: var(--line);
+  border: 1px solid var(--line); border-radius: 8px; overflow: hidden;
+}
+@media (max-width: 1100px) { .kpi-strip { grid-template-columns: repeat(2, 1fr); } }
+.kpi-strip.cols-6 { grid-template-columns: repeat(6, 1fr); }
+@media (max-width: 1100px) { .kpi-strip.cols-6 { grid-template-columns: repeat(3, 1fr); } }
+.kpi { background: var(--surface); padding: 22px; display: flex; flex-direction: column; gap: 6px; }
+.kpi-label { font-size: 11px; font-weight: 600; color: var(--ink-soft); letter-spacing: .12em; text-transform: uppercase; }
+.kpi-value { font-size: 24px; font-weight: 700; letter-spacing: -.02em; color: var(--ink); line-height: 1.1; }
+.kpi-sub { font-size: 11px; color: var(--ink-dim); }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 24px; }
+.card-title { font-size: 18px; font-weight: 700; letter-spacing: -.01em; margin: 0 0 4px; color: var(--ink); }
+.card-sub { font-size: 12px; color: var(--ink-dim); margin-bottom: 18px; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.grid-3eq { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 1100px) { .grid-2, .grid-3eq { grid-template-columns: 1fr; } }
+
+.chart-wrap { position: relative; height: 320px; }
+.chart-wrap-tall { position: relative; height: 420px; }
+.chart-wrap-mega { position: relative; height: 560px; }
+
+.insight {
+  background: var(--surface-2); border-left: 3px solid var(--orange);
+  padding: 22px 26px; border-radius: 4px; margin-top: 20px;
+}
+.insight-label { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--orange); margin-bottom: 8px; }
+.insight p { font-size: 14px; line-height: 1.7; color: var(--ink-dim); margin: 0 0 12px; }
+.insight p:last-child { margin-bottom: 0; }
+.insight strong { color: var(--ink); font-weight: 600; }
+.insight em { color: var(--yellow); font-style: normal; font-weight: 600; }
+.insight .yn { color: var(--green); font-weight: 600; }
+.insight .nn { color: var(--orange-2); font-weight: 600; }
+
+/* Comparison table */
+.comp-table { width: 100%; border-collapse: collapse; }
+.comp-table th, .comp-table td {
+  padding: 14px 14px; border-bottom: 1px solid var(--line-soft); font-size: 13px;
+}
+.comp-table th { font-size: 10px; color: var(--ink-soft); letter-spacing: .15em; text-transform: uppercase; font-weight: 600; text-align: left; }
+.comp-table th.r, .comp-table td.r { text-align: right; font-variant-numeric: tabular-nums; }
+.comp-table th.c, .comp-table td.c { text-align: center; }
+.comp-table tbody tr:hover { background: rgba(245,158,11,0.04); }
+.comp-table .name { font-weight: 600; color: var(--ink); }
+.comp-table .total { font-weight: 700; color: var(--yellow); }
+.comp-table tr.dim { opacity: .85; }
+.comp-table .rank-tag {
+  display: inline-block; min-width: 22px; height: 22px; padding: 0 6px;
+  border-radius: 4px; background: var(--surface-2); color: var(--ink-soft);
+  text-align: center; line-height: 22px; font-size: 11px; font-weight: 700;
+}
+.comp-table tr.top1 .rank-tag { background: rgba(251,191,36,0.2); color: var(--yellow); }
+.comp-table tr.top2 .rank-tag { background: rgba(245,158,11,0.18); color: var(--orange); }
+.comp-table tr.top3 .rank-tag { background: rgba(217,119,6,0.18); color: var(--amber); }
+.region-badge {
+  display: inline-block; padding: 2px 8px; border-radius: 4px;
+  font-size: 10px; font-weight: 700; letter-spacing: .04em;
+}
+.region-badge.yn { background: rgba(16,185,129,0.18); color: var(--green); }
+.region-badge.nn { background: rgba(255,107,53,0.18); color: var(--orange-2); }
+
+.profit-box {
+  background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(245,158,11,0.06));
+  border: 1px solid rgba(16,185,129,0.3);
+  border-radius: 8px; padding: 24px 28px;
+  display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 24px;
+}
+@media (max-width: 1100px) { .profit-box { grid-template-columns: 1fr 1fr; } }
+.profit-cell { text-align: center; }
+.profit-label { font-size: 11px; font-weight: 600; color: var(--ink-soft); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 6px; }
+.profit-value { font-size: 22px; font-weight: 700; color: var(--green); }
+.profit-sub { font-size: 11px; color: var(--ink-dim); margin-top: 4px; }
+
+/* Region split card (영남 vs 비영남) */
+.split-card {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1px; background: var(--line);
+  border: 1px solid var(--line); border-radius: 8px; overflow: hidden;
+  margin-bottom: 24px;
+}
+.split-cell { padding: 22px 24px; }
+.split-cell.yn { background: rgba(16,185,129,0.05); border-left: 3px solid var(--green); }
+.split-cell.nn { background: rgba(255,107,53,0.04); border-left: 3px solid var(--orange-2); }
+.split-tag { font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+.split-tag.yn { color: var(--green); }
+.split-tag.nn { color: var(--orange-2); }
+.split-name { font-size: 14px; color: var(--ink-dim); margin-top: 4px; }
+.split-value { font-size: 26px; font-weight: 700; margin-top: 8px; color: var(--ink); }
+.split-detail { font-size: 11px; color: var(--ink-soft); margin-top: 6px; line-height: 1.6; }
+.split-detail strong { color: var(--ink); font-weight: 600; }
+
+/* Profit ratio bar */
+.ratio-bar {
+  height: 32px; border-radius: 6px; overflow: hidden;
+  display: flex; background: var(--surface-2); margin-top: 12px;
+  border: 1px solid var(--line-soft);
+}
+.ratio-bar > div { display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; padding: 0 10px;
+}
+
+.footer {
+  margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 11px; letter-spacing: .12em; color: var(--ink-soft);
+  text-transform: uppercase;
+}
+
+.u-orange { color: var(--orange); }
+.u-yellow { color: var(--yellow); }
+.u-green { color: var(--green); }
+.u-red { color: var(--orange-2); }
+.u-blue { color: var(--blue); }
+.u-bold { font-weight: 700; }
+</style>
+
+<style id="unified-theme">
+:root{
+  --bg:#FBF7F1!important; --surface:#FFFFFF!important; --surface-2:#FBF3EA!important;
+  --line:#ECE3D8!important; --line-soft:#F3ECE3!important;
+  --ink:#201A15!important; --ink-dim:#6B625A!important; --ink-soft:#A69C91!important; --ink2:#6B625A!important; --ink3:#A69C91!important;
+  --orange:#E8730C!important; --orange-2:#F59E0B!important; --amber:#C77A16!important; --amber2:#F6B23C!important;
+  --yellow:#F6B23C!important; --yellow-light:#FCD36B!important; --ember:#D2604A!important;
+  --blue:#2F8F85!important; --cool:#2F8F85!important; --red:#D2483D!important; --green:#2E9E6B!important;
+  --bg2:#FFFFFF!important; --bg3:#FBF3EA!important;
+  --body:'Pretendard','Noto Sans KR',sans-serif!important;
+  --disp:'Pretendard','Noto Sans KR',sans-serif!important;
+  --mono:'Pretendard','Noto Sans KR',sans-serif!important;
+}
+html,body{background:#FBF7F1!important; color:#201A15!important;}
+html body, html body *:not(code):not(pre):not(script):not(style){
+  font-family:'Pretendard','Noto Sans KR',sans-serif!important;
+}
+body{font-feature-settings:'tnum';}
+/* soften cards / panels consistently */
+[class*="card"],[class*="panel"],[class*="box"],[class*="tile"],[class*="section"],section,article{
+  border-radius:14px;
+}
+a{color:#E8730C;}
+/* consistent content width */
+.wrap{max-width:1360px!important;}
+::selection{background:#FCE1C2;color:#201A15;}
+/* scrollbar */
+*::-webkit-scrollbar-thumb{background:#E4D8C8;border-radius:8px;}
+</style>
+
+</head>
+<body>
+
+<div class="wrap">
+
+<!-- ─── Header ─── -->
+<header class="header">
+  <img class="logo" src="data:image/png;base64,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" alt="식자재쿡" />
+  <div>
+    <div class="eyebrow">CSO Brief · Multi-Franchise Analysis</div>
+    <h1>프랜차이즈 매출 분석 · 통합 비교</h1>
+    <div class="subtitle">
+      <span>분석 기간: <strong>2026-01-01 ~ 2026-04-30</strong></span>
+      <span>대상: <strong>이유있는감자탕(4) + 국민매운찜갈비(23) = 27개 지점</strong></span>
+      <span class="pill">차등 이익률 적용</span>
+    </div>
+  </div>
+</header>
+
+<!-- ─── Tab Bar ─── -->
+<nav class="tabbar">
+  <button class="tab active" data-tab="overview">
+    🌐  통합 비교
+    <span class="badge">2 PROD</span>
+  </button>
+  <button class="tab" data-tab="yiyu">
+    이유있는감자탕
+    <span class="badge">4지점</span>
+  </button>
+  <button class="tab" data-tab="gukmin">
+    국민매운찜갈비
+    <span class="badge">23지점</span>
+  </button>
+</nav>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- ─── TAB 1: OVERVIEW (통합 비교) ─── -->
+<!-- ════════════════════════════════════════════════════════ -->
+<div class="tab-content active" id="tab-overview">
+
+<!-- KPI -->
+<section>
+  <div class="kpi-strip cols-6">
+    <div class="kpi">
+      <div class="kpi-label">통합 매출</div>
+      <div class="kpi-value">₩639.4M</div>
+      <div class="kpi-sub">2개 프랜차이즈 합계</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">통합 이익</div>
+      <div class="kpi-value u-green">₩25.3M</div>
+      <div class="kpi-sub">실효 이익률 3.95%</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">총 지점수</div>
+      <div class="kpi-value">27곳</div>
+      <div class="kpi-sub">4 + 23 지점</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">총 주문수</div>
+      <div class="kpi-value">1,027건</div>
+      <div class="kpi-sub">285 + 742건</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">건당 평균 이익</div>
+      <div class="kpi-value u-orange">₩24,615</div>
+      <div class="kpi-sub">통합 평균</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">전체 매출 비중</div>
+      <div class="kpi-value u-yellow">13.66%</div>
+      <div class="kpi-sub">전체 ₩46.8억 중</div>
+    </div>
+  </div>
+</section>
+
+<!-- 매출 vs 이익 비교 -->
+<section>
+  <div class="section-head">
+    <div class="section-eyebrow">Section 01 · Revenue vs Profit Comparison</div>
+    <h2 class="section-title">두 프랜차이즈 매출·이익 비교</h2>
+    <div class="section-sub">매출 규모는 국민매운찜갈비가 3배 크지만, 이익률 차이로 이익 격차는 1.65배 — 프랜차이즈별 수익 효율성이 다름</div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3 class="card-title">월별 매출 비교</h3>
+      <p class="card-sub">국민매운찜갈비(₩118~139M/월) vs 이유있는감자탕(₩37~43M/월)</p>
+      <div class="chart-wrap-tall">
+        <canvas id="cmpRevChart"></canvas>
+      </div>
+    </div>
+    <div class="card">
+      <h3 class="card-title">월별 이익 비교</h3>
+      <p class="card-sub">이익률 차이로 매출 대비 이익 격차 좁아짐 — 이유있는감자탕이 효율성 우위</p>
+      <div class="chart-wrap-tall">
+        <canvas id="cmpProfitChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- 비교 테이블 -->
+  <div class="card" style="margin-top: 20px;">
+    <h3 class="card-title">프랜차이즈별 종합 KPI</h3>
+    <p class="card-sub">매출·주문·객단가·이익률 한눈에 비교</p>
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>프랜차이즈</th><th class="c">지점</th><th class="r">총 매출</th><th class="r">주문수</th>
+          <th class="r">객단가</th><th class="c">이익률</th><th class="r">총 이익</th><th class="r">건당 이익</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="top1">
+          <td class="name">이유있는감자탕</td>
+          <td class="c">4곳</td>
+          <td class="r">₩158,896,240</td>
+          <td class="r">285건</td>
+          <td class="r">₩557,530</td>
+          <td class="c"><span class="region-badge yn">균일 6%</span></td>
+          <td class="r total">₩9,533,779</td>
+          <td class="r u-green u-bold">₩33,452</td>
+        </tr>
+        <tr class="top2">
+          <td class="name">국민매운찜갈비</td>
+          <td class="c">23곳</td>
+          <td class="r">₩480,535,690</td>
+          <td class="r">742건</td>
+          <td class="r">₩647,623</td>
+          <td class="c"><span class="region-badge yn">영남 6%</span> <span class="region-badge nn">외 1%</span></td>
+          <td class="r total">₩15,746,465</td>
+          <td class="r u-green u-bold">₩21,222</td>
+        </tr>
+        <tr style="border-top: 2px solid var(--line); background: rgba(245,158,11,0.04);">
+          <td class="name u-yellow">합계</td>
+          <td class="c">27곳</td>
+          <td class="r u-bold">₩639,431,930</td>
+          <td class="r u-bold">1,027건</td>
+          <td class="r">₩622,621</td>
+          <td class="c"><span style="font-size:11px; color:var(--ink-dim);">실효 3.95%</span></td>
+          <td class="r u-yellow u-bold">₩25,280,244</td>
+          <td class="r u-green u-bold">₩24,615</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="insight">
+    <div class="insight-label">CSO Note · 매출 vs 수익 효율성</div>
+    <p>국민매운찜갈비의 매출 ₩480.5M은 이유있는감자탕 ₩158.9M의 <em>3.02배</em>로 외형은 압도적으로 큽니다. 그러나 이익은 ₩15.7M vs ₩9.5M으로 <strong>1.65배 차이에 그칩니다</strong>. 이는 국민매운찜갈비의 영남 외 12개 지점(매출 ₩261.7M)에 1% 이익률이 적용되기 때문이며, 이 부분이 사실상 <em>매출은 크지만 수익 기여는 미미한 구간</em>으로 작동하고 있습니다.</p>
+    <p>건당 이익으로 보면 차이가 더 명확합니다. <strong>이유있는감자탕 ₩33,452 vs 국민매운찜갈비 ₩21,222</strong> — 같은 1건을 처리하는데 이유있는감자탕이 1.58배 효율적입니다. 즉 운영·물류 부담은 양쪽 비슷한데 회수율이 다른 셈입니다. 국민매운찜갈비의 영남 외 지역은 현재 사실상 <strong>"매출 통로" 역할만 하고 수익은 영남 11개 지점에서 집중 발생</strong>하는 구조입니다.</p>
+  </div>
+</section>
+
+<!-- 누적 이익 비교 -->
+<section>
+  <div class="section-head">
+    <div class="section-eyebrow">Section 02 · Profit Accumulation</div>
+    <h2 class="section-title">월별 이익 누적 추이</h2>
+    <div class="section-sub">4개월 누적 이익 흐름 — 두 프랜차이즈의 누적 곡선 격차 분석</div>
+  </div>
+
+  <div class="card">
+    <div class="chart-wrap-tall">
+      <canvas id="profitCumChart"></canvas>
+    </div>
+  </div>
+
+  <!-- 매출/이익 비중 -->
+  <div class="grid-2" style="margin-top: 20px;">
+    <div class="card">
+      <h3 class="card-title">매출 비중</h3>
+      <p class="card-sub">국민매운찜갈비 75.1% vs 이유있는감자탕 24.9%</p>
+      <div class="chart-wrap">
+        <canvas id="revShareChart"></canvas>
+      </div>
+    </div>
+    <div class="card">
+      <h3 class="card-title">이익 비중</h3>
+      <p class="card-sub">국민매운찜갈비 62.3% vs 이유있는감자탕 37.7% — 매출 대비 이익 비중 역전</p>
+      <div class="chart-wrap">
+        <canvas id="profitShareChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="insight">
+    <div class="insight-label">CSO Note · 비중 역전 현상</div>
+    <p>매출 점유율은 국민매운찜갈비 75.1% : 이유있는감자탕 24.9%지만, 이익 점유율은 62.3% : 37.7%로 <em>이유있는감자탕의 이익 기여도가 매출 점유율의 1.51배</em>입니다. 통상 매출 4분의 1짜리 거래처가 이익의 거의 4분의 1.5를 만들어내고 있는 셈으로, 이유있는감자탕은 외형은 작지만 <strong>"고수익 우량 거래처"</strong>입니다.</p>
+    <p>전략적으로는 두 프랜차이즈에 다른 접근이 필요합니다. <strong>이유있는감자탕</strong>은 점진적 매출 확장 + 이익률 7~8% 상향 협상이 핵심이고, <strong>국민매운찜갈비</strong>는 영남 11개 지점 유지·강화 + 영남 외 12개 지점은 이익률 재협상(현재 1% → 2~3% 협의) 또는 거래 효율화가 우선입니다. 영남 외 지점에서 1%로 운영해도 수익이 나는 이유가 무엇인지(물류 효율, 공동 발주 등) 검토 후 협상 카드를 정할 수 있겠습니다.</p>
+  </div>
+</section>
+
+</div>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- ─── TAB 2: 이유있는감자탕 ─── -->
+<!-- ════════════════════════════════════════════════════════ -->
+<div class="tab-content" id="tab-yiyu">
+
+<section>
+  <div class="kpi-strip">
+    <div class="kpi">
+      <div class="kpi-label">총 매출 (4개월)</div>
+      <div class="kpi-value">₩158.9M</div>
+      <div class="kpi-sub">285건 · 4개 지점</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">월 평균 매출</div>
+      <div class="kpi-value">₩39.7M</div>
+      <div class="kpi-sub">월평균 71건</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">평균 객단가</div>
+      <div class="kpi-value">₩557,530</div>
+      <div class="kpi-sub">건당 결제액</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">우리 이익 (6%)</div>
+      <div class="kpi-value u-green">₩9.53M</div>
+      <div class="kpi-sub">월평균 ₩2.38M</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">건당 이익</div>
+      <div class="kpi-value u-orange">₩33,452</div>
+      <div class="kpi-sub">285건 평균</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <div class="section-eyebrow">YIYU · Monthly Trend</div>
+    <h2 class="section-title">월 매출 추이</h2>
+    <div class="section-sub">1월 정점 → 2~3월 dip → 4월 반등 패턴</div>
+  </div>
+
+  <div class="card">
+    <div class="chart-wrap-tall">
+      <canvas id="yMonthlyChart"></canvas>
+    </div>
+  </div>
+
+  <div class="grid-2" style="margin-top: 20px;">
+    <div class="card">
+      <h3 class="card-title">월별 우리 이익 (6%)</h3>
+      <div class="chart-wrap">
+        <canvas id="yProfitChart"></canvas>
+      </div>
+    </div>
+    <div class="card">
+      <h3 class="card-title">지점별 매출 비중</h3>
+      <div class="chart-wrap">
+        <canvas id="yShareChart"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <div class="section-eyebrow">YIYU · Branch Performance</div>
+    <h2 class="section-title">지점별 월매출 추이</h2>
+    <div class="section-sub">메인 2개 지점이 전체의 85.5% 차지</div>
+  </div>
+
+  <div class="card">
+    <div class="chart-wrap-tall">
+      <canvas id="yBranchChart"></canvas>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top: 20px;">
+    <h3 class="card-title">지점별 4개월 통합 실적</h3>
+    <table class="comp-table" id="yBranchTable">
+      <thead>
+        <tr>
+          <th></th><th>지점명</th>
+          <th class="r">1월</th><th class="r">2월</th><th class="r">3월</th><th class="r">4월</th>
+          <th class="r">합계</th><th class="r">주문수</th><th class="r">객단가</th><th class="r">이익(6%)</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="insight">
+    <div class="insight-label">CSO Note · 이유있는감자탕</div>
+    <p>4개 지점은 <strong>2-tier 구조</strong>로 명확히 나뉩니다. 메인 2곳(<em>도계점 ₩68.6M, 해운대장산역점 ₩67.2M</em>)이 전체의 <strong>85.5%</strong>를 차지하고, 소형 2곳(황금·서부정류장)이 14.5%를 분담합니다. 메인 지점은 4개월간 각 101건씩 거의 매주 발주하는 안정적 운영 패턴입니다.</p>
+    <p>객단가 격차는 <em>메인 ₩66~68만 vs 소형 ₩27~29만</em>으로 약 2.5배입니다. <strong>소형 2개 지점의 객단가를 메인의 절반인 ₩45만원까지만 끌어올려도 월 ₩340~400k 추가 이익</strong> 확보가 가능합니다. 또한 6% 이익률은 식자재 유통 평균(5~8%) 중간 수준이라, 향후 PB상품·묶음 카테고리 확장으로 7~8% 협상 여지가 충분합니다.</p>
+  </div>
+</section>
+
+</div>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- ─── TAB 3: 국민매운찜갈비 ─── -->
+<!-- ════════════════════════════════════════════════════════ -->
+<div class="tab-content" id="tab-gukmin">
+
+<section>
+  <div class="kpi-strip">
+    <div class="kpi">
+      <div class="kpi-label">총 매출 (4개월)</div>
+      <div class="kpi-value">₩480.5M</div>
+      <div class="kpi-sub">742건 · 23개 지점</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">월 평균 매출</div>
+      <div class="kpi-value">₩120.1M</div>
+      <div class="kpi-sub">월평균 186건</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">평균 객단가</div>
+      <div class="kpi-value">₩647,623</div>
+      <div class="kpi-sub">건당 결제액</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">우리 이익 (차등)</div>
+      <div class="kpi-value u-green">₩15.75M</div>
+      <div class="kpi-sub">실효 이익률 3.28%</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">건당 이익</div>
+      <div class="kpi-value u-orange">₩21,222</div>
+      <div class="kpi-sub">742건 평균</div>
+    </div>
+  </div>
+</section>
+
+<!-- 영남 vs 영남 외 카드 -->
+<section>
+  <div class="section-head">
+    <div class="section-eyebrow">GUKMIN · Region Split</div>
+    <h2 class="section-title">영남권 vs 영남권 외 분리 분석</h2>
+    <div class="section-sub">영남 11개 지점(6%) vs 영남 외 12개 지점(1%) — 매출 대비 이익 비중 역전 구조</div>
+  </div>
+
+  <div class="split-card">
+    <div class="split-cell yn">
+      <div class="split-tag yn">— 영남권 (6% 이익률)</div>
+      <div class="split-name">11개 지점 · 부산·울산·경남·대구·경북</div>
+      <div class="split-value">₩218.8M</div>
+      <div class="split-detail">
+        455건 · 객단가 ₩480,929 ·
+        이익 <strong style="color:var(--green);">₩13,129,334 (83.4%)</strong>
+      </div>
+    </div>
+    <div class="split-cell nn">
+      <div class="split-tag nn">— 영남권 외 (1% 이익률)</div>
+      <div class="split-name">12개 지점 · 수도권·충청·강원</div>
+      <div class="split-value">₩261.7M</div>
+      <div class="split-detail">
+        287건 · 객단가 ₩911,890 ·
+        이익 <strong style="color:var(--orange-2);">₩2,617,131 (16.6%)</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 class="card-title">매출 vs 이익 비중 — 역전 현상</h3>
+    <p class="card-sub">매출은 영남 외(54.5%)가 더 크지만, 이익은 영남(83.4%)이 압도적</p>
+    <div style="margin-top: 16px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+        <span style="font-size:11px; color:var(--ink-soft); letter-spacing:.1em; font-weight:600;">매출 비중</span>
+        <span style="font-size:11px; color:var(--ink-dim);">영남 45.5% · 영남 외 54.5%</span>
+      </div>
+      <div class="ratio-bar">
+        <div style="width: 45.5%; background: rgba(16,185,129,0.5); color: white;">₩218.8M (45.5%)</div>
+        <div style="width: 54.5%; background: rgba(255,107,53,0.6); color: white;">₩261.7M (54.5%)</div>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin: 18px 0 6px;">
+        <span style="font-size:11px; color:var(--ink-soft); letter-spacing:.1em; font-weight:600;">이익 비중</span>
+        <span style="font-size:11px; color:var(--ink-dim);">영남 83.4% · 영남 외 16.6%</span>
+      </div>
+      <div class="ratio-bar">
+        <div style="width: 83.4%; background: var(--green); color: white;">₩13.13M (83.4%)</div>
+        <div style="width: 16.6%; background: var(--orange-2); color: white;">₩2.62M (16.6%)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <div class="section-eyebrow">GUKMIN · Monthly Trend</div>
+    <h2 class="section-title">월 매출 추이 (영남 vs 영남 외)</h2>
+    <div class="section-sub">두 권역 모두 1월 정점 후 점진 감소 — 동계 시즌성 영향</div>
+  </div>
+
+  <div class="card">
+    <div class="chart-wrap-tall">
+      <canvas id="gMonthlyChart"></canvas>
+    </div>
+  </div>
+
+  <div class="grid-2" style="margin-top: 20px;">
+    <div class="card">
+      <h3 class="card-title">월별 우리 이익 (영남 vs 영남 외)</h3>
+      <p class="card-sub">매출 추이는 비슷하지만 이익은 영남이 4~5배 격차</p>
+      <div class="chart-wrap">
+        <canvas id="gProfitChart"></canvas>
+      </div>
+    </div>
+    <div class="card">
+      <h3 class="card-title">월별 객단가 비교</h3>
+      <p class="card-sub">영남 외 지점이 영남 대비 항상 큰 객단가 (소수 대형 발주 패턴)</p>
+      <div class="chart-wrap">
+        <canvas id="gAovChart"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <div class="section-eyebrow">GUKMIN · Branch Performance</div>
+    <h2 class="section-title">23개 지점별 매출 (Top 23)</h2>
+    <div class="section-sub">매출 기준 정렬 — 영남(녹색) vs 영남 외(주황) 색상 구분</div>
+  </div>
+
+  <div class="card">
+    <div class="chart-wrap-mega">
+      <canvas id="gBranchChart"></canvas>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top: 20px;">
+    <h3 class="card-title">지점별 상세 실적</h3>
+    <p class="card-sub">매출·이익률·이익 — 영남 6% / 영남 외 1% 차등 적용</p>
+    <table class="comp-table" id="gBranchTable">
+      <thead>
+        <tr>
+          <th></th><th>지점명</th><th class="c">권역</th>
+          <th class="r">총 매출</th><th class="r">주문수</th><th class="r">객단가</th>
+          <th class="c">이익률</th><th class="r">이익</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="insight">
+    <div class="insight-label">CSO Note · 국민매운찜갈비</div>
+    <p>국민매운찜갈비는 <strong>매출 외형은 크지만 수익 기여는 비대칭</strong>입니다. 영남 외 12개 지점이 매출의 54.5%(₩261.7M)를 만들어내지만 1% 이익률 적용으로 이익은 ₩2.6M(16.6%)에 그칩니다. 반면 영남 11개 지점은 매출 45.5%로 이익의 83.4%를 책임지는 구조입니다.</p>
+    <p>특이한 패턴은 <em>영남 외 지점의 객단가가 영남보다 훨씬 큰 ₩91만원</em>이라는 점 — 부평점 단독 ₩76M, 단가 ₩2.53M(주문 30건뿐)이 대표적입니다. 즉 영남 외에서는 <strong>"소수 대형 발주" 모델</strong>이 작동하고 있어 물류 빈도는 낮을 가능성이 큽니다. 이건 우리에게 유리한 운영 비용 구조이기 때문에, <em>영남 외 지점의 이익률을 1%→2~3%로 인상하는 협상</em>을 시도할 만합니다. 부평점에 2%만 적용해도 추가 ₩760k/4개월입니다.</p>
+    <p style="border-top:1px solid var(--line); padding-top:12px; margin-top:14px;"><strong>지점 단위 액션:</strong> ① <span class="yn">영남 11개</span> — 본점·김해점·연산점·경산점·서면점이 핵심, 안정 유지 ② <span class="nn">영남 외 12개</span> — 부평점·주안점·죽전점이 매출 Top 3, 이익률 협상 우선 대상 ③ <span class="nn">대전유성점(4건)·성남점(1건)</span> — 거래 활성도 매우 낮음, 영업 미팅 필요</p>
+  </div>
+</section>
+
+</div>
+
+<!-- ─── Footer ─── -->
+<footer class="footer">
+  <div>식자재쿡 · CSO Brief · Multi-Franchise Sales Analysis</div>
+  <div>Generated · 2026-05-08</div>
+</footer>
+
+</div><!-- /.wrap -->
+
+<script>
+Chart.defaults.font.family = "'Pretendard', sans-serif";
+Chart.defaults.font.weight = 500;
+Chart.defaults.color = '#8a8a8a';
+Chart.defaults.borderColor = '#2a2a2a';
+
+const D = {"y": {"name": "이유있는감자탕", "branch_count": 4, "total_revenue": 158896240, "total_orders": 285, "total_profit": 9533779, "profit_rate_label": "6% (균일)", "monthly": [{"month": "2026-01", "label": "01월", "revenue": 42835020, "orders": 80, "aov": 535437, "profit": 2570103}, {"month": "2026-02", "label": "02월", "revenue": 37812900, "orders": 59, "aov": 640896, "profit": 2268776}, {"month": "2026-03", "label": "03월", "revenue": 37753200, "orders": 76, "aov": 496752, "profit": 2265193}, {"month": "2026-04", "label": "04월", "revenue": 40495120, "orders": 70, "aov": 578501, "profit": 2429707}], "branches": [{"branch": "이유있는감자탕 도계점", "short_name": "도계점", "2026-01": 18438020, "2026-02": 16091590, "2026-03": 15328870, "2026-04": 18716960, "total": 68575440, "orders": 101, "aov": 678964, "profit": 4114526}, {"branch": "이유있는감자탕 해운대장산역점", "short_name": "해운대장산역점", "2026-01": 17664360, "2026-02": 15928500, "2026-03": 16887070, "2026-04": 16721480, "total": 67201410, "orders": 101, "aov": 665360, "profit": 4032087}, {"branch": "이유있는감자탕 황금점", "short_name": "황금점", "2026-01": 3648230, "2026-02": 3785740, "2026-03": 2758350, "2026-04": 2712700, "total": 12905020, "orders": 45, "aov": 286778, "profit": 774303}, {"branch": "이유있는 감자탕 서부정류장점", "short_name": "서부정류장점", "2026-01": 3084410, "2026-02": 2007070, "2026-03": 2778910, "2026-04": 2343980, "total": 10214370, "orders": 38, "aov": 268799, "profit": 612863}]}, "g": {"name": "국민매운찜갈비", "branch_count": 23, "total_revenue": 480535690, "total_orders": 742, "total_profit": 15746465, "profit_rate_label": "영남 6% / 영남 외 1%", "yeongnam_revenue": 218822410, "yeongnam_profit": 13129334, "yeongnam_branch_count": 11, "yeongnam_orders": 455, "non_yeongnam_revenue": 261713280, "non_yeongnam_profit": 2617131, "non_yeongnam_branch_count": 12, "non_yeongnam_orders": 287, "monthly": [{"month": "2026-01", "label": "01월", "revenue": 139113130, "orders": 207, "aov": 672044, "profit": 4671615}, {"month": "2026-02", "label": "02월", "revenue": 128436610, "orders": 167, "aov": 769081, "profit": 4106520}, {"month": "2026-03", "label": "03월", "revenue": 108233260, "orders": 185, "aov": 585044, "profit": 3522442}, {"month": "2026-04", "label": "04월", "revenue": 104752690, "orders": 183, "aov": 572419, "profit": 3445888}], "yeongnam_monthly": [{"month": "2026-01", "label": "01월", "revenue": 65609810, "orders": 135, "aov": 485998, "profit": 3936582}, {"month": "2026-02", "label": "02월", "revenue": 56443100, "orders": 110, "aov": 513119, "profit": 3386584}, {"month": "2026-03", "label": "03월", "revenue": 48802230, "orders": 103, "aov": 473808, "profit": 2928132}, {"month": "2026-04", "label": "04월", "revenue": 47967270, "orders": 107, "aov": 448292, "profit": 2878036}], "non_yeongnam_monthly": [{"month": "2026-01", "label": "01월", "revenue": 73503320, "orders": 72, "aov": 1020879, "profit": 735033}, {"month": "2026-02", "label": "02월", "revenue": 71993510, "orders": 57, "aov": 1263044, "profit": 719936}, {"month": "2026-03", "label": "03월", "revenue": 59431030, "orders": 82, "aov": 724768, "profit": 594310}, {"month": "2026-04", "label": "04월", "revenue": 56785420, "orders": 76, "aov": 747176, "profit": 567852}], "branches": [{"branch": "국민매운찜갈비 부평점", "short_name": "부평점", "region": "인천", "is_yeongnam": false, "rate": 1, "2026-01": 25914000, "2026-02": 19095600, "2026-03": 16335300, "2026-04": 14705000, "total": 76049900, "orders": 30, "aov": 2534996, "profit": 760499}, {"branch": "국민매운찜갈비 주안점", "short_name": "주안점", "region": "인천", "is_yeongnam": false, "rate": 1, "2026-01": 11369300, "2026-02": 10293400, "2026-03": 9368300, "2026-04": 8750920, "total": 39781920, "orders": 46, "aov": 864824, "profit": 397819}, {"branch": "국민매운찜갈비 본점", "short_name": "본점", "region": "부산", "is_yeongnam": true, "rate": 6, "2026-01": 10086740, "2026-02": 5870640, "2026-03": 7946880, "2026-04": 6814060, "total": 30718320, "orders": 51, "aov": 602320, "profit": 1843099}, {"branch": "국민매운찜갈비 죽전점", "short_name": "죽전점", "region": "경기", "is_yeongnam": false, "rate": 1, "2026-01": 7266680, "2026-02": 15634860, "2026-03": 4922870, "2026-04": 2556010, "total": 30380420, "orders": 37, "aov": 821092, "profit": 303805}, {"branch": "국민매운찜갈비 김해점", "short_name": "김해점", "region": "경남", "is_yeongnam": true, "rate": 6, "2026-01": 8052130, "2026-02": 7878060, "2026-03": 6546170, "2026-04": 7541890, "total": 30018250, "orders": 64, "aov": 469035, "profit": 1801094}, {"branch": "국민매운찜갈비 김포점", "short_name": "김포점", "region": "경기", "is_yeongnam": false, "rate": 1, "2026-01": 8665580, "2026-02": 6276250, "2026-03": 4706300, "2026-04": 4298200, "total": 23946330, "orders": 32, "aov": 748322, "profit": 239463}, {"branch": "국민매운찜갈비 양주점", "short_name": "양주점", "region": "경기", "is_yeongnam": false, "rate": 1, "2026-01": 6773000, "2026-02": 6377000, "2026-03": 4143800, "2026-04": 6538400, "total": 23832200, "orders": 30, "aov": 794406, "profit": 238322}, {"branch": "국민매운찜갈비 연산점", "short_name": "연산점", "region": "부산", "is_yeongnam": true, "rate": 6, "2026-01": 7582350, "2026-02": 5616930, "2026-03": 4415910, "2026-04": 5706360, "total": 23321550, "orders": 26, "aov": 896982, "profit": 1399293}, {"branch": "국민매운찜갈비 경산점", "short_name": "경산점", "region": "경북", "is_yeongnam": true, "rate": 6, "2026-01": 8507990, "2026-02": 5491070, "2026-03": 4584050, "2026-04": 4415130, "total": 22998240, "orders": 26, "aov": 884547, "profit": 1379891}, {"branch": "국민매운찜갈비 서면점", "short_name": "서면점", "region": "부산", "is_yeongnam": true, "rate": 6, "2026-01": 6538300, "2026-02": 6773000, "2026-03": 5462400, "2026-04": 3770500, "total": 22544200, "orders": 38, "aov": 593268, "profit": 1352652}, {"branch": "국민매운찜갈비 성서점", "short_name": "성서점", "region": "대구", "is_yeongnam": true, "rate": 6, "2026-01": 4984520, "2026-02": 5992530, "2026-03": 5242600, "2026-04": 5685280, "total": 21904930, "orders": 28, "aov": 782318, "profit": 1314294}, {"branch": "국민매운찜갈비 무거점", "short_name": "무거점", "region": "울산", "is_yeongnam": true, "rate": 6, "2026-01": 5960300, "2026-02": 4969100, "2026-03": 4927700, "2026-04": 3998400, "total": 19855500, "orders": 55, "aov": 361009, "profit": 1191330}, {"branch": "국민매운찜갈비 세종점", "short_name": "세종점", "region": "세종", "is_yeongnam": false, "rate": 1, "2026-01": 6287100, "2026-02": 3584500, "2026-03": 3664500, "2026-04": 4393100, "total": 17929200, "orders": 26, "aov": 689584, "profit": 179292}, {"branch": "국민매운찜갈비 대구경대점", "short_name": "대구경대점", "region": "대구", "is_yeongnam": true, "rate": 6, "2026-01": 4690800, "2026-02": 5174600, "2026-03": 2855900, "2026-04": 3009200, "total": 15730500, "orders": 37, "aov": 425148, "profit": 943830}, {"branch": "국민매운찜갈비 해운대점", "short_name": "해운대점", "region": "부산", "is_yeongnam": true, "rate": 6, "2026-01": 4576510, "2026-02": 4457440, "2026-03": 3346300, "2026-04": 2670920, "total": 15051170, "orders": 52, "aov": 289445, "profit": 903066}, {"branch": "국민매운찜갈비 원주점", "short_name": "원주점", "region": "강원", "is_yeongnam": false, "rate": 1, "2026-01": 3645260, "2026-02": 3257100, "2026-03": 2754560, "2026-04": 3424140, "total": 13081060, "orders": 22, "aov": 594593, "profit": 130809}, {"branch": "국민매운찜갈비 하양점", "short_name": "하양점", "region": "경북", "is_yeongnam": true, "rate": 6, "2026-01": 2824190, "2026-02": 2552490, "2026-03": 2712540, "2026-04": 3796200, "total": 11885420, "orders": 30, "aov": 396180, "profit": 713125}, {"branch": "국민매운찜갈비 아산점", "short_name": "아산점", "region": "충남", "is_yeongnam": false, "rate": 1, "2026-01": 0, "2026-02": 3008400, "2026-03": 6452680, "2026-04": 2344320, "total": 11805400, "orders": 20, "aov": 590270, "profit": 118054}, {"branch": "국민매운찜갈비 안양점", "short_name": "안양점", "region": "경기", "is_yeongnam": false, "rate": 1, "2026-01": 1990600, "2026-02": 2233200, "2026-03": 2357700, "2026-04": 3072440, "total": 9653940, "orders": 24, "aov": 402247, "profit": 96539}, {"branch": "국민매운찜갈비 청라점", "short_name": "청라점", "region": "인천", "is_yeongnam": false, "rate": 1, "2026-01": 0, "2026-02": 0, "2026-03": 4143020, "2026-04": 4802230, "total": 8945250, "orders": 15, "aov": 596350, "profit": 89452}, {"branch": "국민매운찜갈비 남구점", "short_name": "남구점", "region": "부산", "is_yeongnam": true, "rate": 6, "2026-01": 1805980, "2026-02": 1667240, "2026-03": 761780, "2026-04": 559330, "total": 4794330, "orders": 48, "aov": 99881, "profit": 287660}, {"branch": "국민매운찜갈비 대전유성점", "short_name": "대전유성점", "region": "대전", "is_yeongnam": false, "rate": 1, "2026-01": 1591800, "2026-02": 2233200, "2026-03": 582000, "2026-04": 0, "total": 4407000, "orders": 4, "aov": 1101750, "profit": 44070}, {"branch": "국민매운찜갈비 성남점", "short_name": "성남점", "region": "경기", "is_yeongnam": false, "rate": 1, "2026-01": 0, "2026-02": 0, "2026-03": 0, "2026-04": 1900660, "total": 1900660, "orders": 1, "aov": 1900660, "profit": 19007}]}, "all_total_rev": 4680644018, "combined_monthly": [{"month": "2026-01", "label": "1월", "yiyu_revenue": 42835020, "gukmin_revenue": 139113130, "yiyu_profit": 2570103, "gukmin_profit": 4671615}, {"month": "2026-02", "label": "2월", "yiyu_revenue": 37812900, "gukmin_revenue": 128436610, "yiyu_profit": 2268776, "gukmin_profit": 4106520}, {"month": "2026-03", "label": "3월", "yiyu_revenue": 37753200, "gukmin_revenue": 108233260, "yiyu_profit": 2265193, "gukmin_profit": 3522442}, {"month": "2026-04", "label": "4월", "yiyu_revenue": 40495120, "gukmin_revenue": 104752690, "yiyu_profit": 2429707, "gukmin_profit": 3445888}]};
+const won = v => '₩' + Math.round(v).toLocaleString();
+const wonM = v => '₩' + (v/1e6).toFixed(1) + 'M';
+
+// ─── Tab Switching ───
+const tabs = document.querySelectorAll('.tab');
+const contents = document.querySelectorAll('.tab-content');
+const charts = {};  // chart instances by tab
+
+tabs.forEach(t => {
+  t.addEventListener('click', () => {
+    const target = t.dataset.tab;
+    tabs.forEach(x => x.classList.toggle('active', x === t));
+    contents.forEach(c => c.classList.toggle('active', c.id === 'tab-' + target));
+    // Resize charts in newly active tab
+    setTimeout(() => {
+      Object.values(charts).forEach(ch => {
+        if (ch && ch.canvas && ch.canvas.offsetParent !== null) ch.resize();
+      });
+    }, 50);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+
+// ════════════════════════════════════════════════════════
+// TAB 1: OVERVIEW
+// ════════════════════════════════════════════════════════
+
+// 매출 비교 (월별 그룹 바)
+charts.cmpRev = new Chart(document.getElementById('cmpRevChart'), {
+  type: 'bar',
+  data: {
+    labels: D.combined_monthly.map(m => m.label),
+    datasets: [
+      {
+        label: '국민매운찜갈비',
+        data: D.combined_monthly.map(m => m.gukmin_revenue),
+        backgroundColor: 'rgba(255,107,53,0.7)', borderColor: '#ff6b35', borderWidth: 1, borderRadius: 4
+      },
+      {
+        label: '이유있는감자탕',
+        data: D.combined_monthly.map(m => m.yiyu_revenue),
+        backgroundColor: '#fbbf24', borderColor: '#fde047', borderWidth: 1, borderRadius: 4
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'top', align: 'end', labels: { font: { size: 11 }, color: '#3A342E', boxWidth: 12 } },
+      tooltip: { backgroundColor: '#1a1a1a', padding: 12, callbacks: { label: c => `${c.dataset.label}: ${won(c.parsed.y)}` } }
+    },
+    scales: {
+      x: { grid: { display: false }, ticks: { font: { size: 12, weight: 600 }, color: '#3A342E' } },
+      y: { beginAtZero: true, grid: { color: '#1f1f1f' },
+        ticks: { font: { size: 11 }, callback: v => '₩' + (v/1e6).toFixed(0) + 'M' } }
+    }
+  }
+});
+
+// 이익 비교
+charts.cmpProfit = new Chart(document.getElementById('cmpProfitChart'), {
+  type: 'bar',
+  data: {
+    labels: D.combined_monthly.map(m => m.label),
+    datasets: [
+      {
+        label: '국민매운찜갈비',
+        data: D.combined_monthly.map(m => m.gukmin_profit),
+        backgroundColor: 'rgba(255,107,53,0.7)', borderColor: '#ff6b35', borderWidth: 1, borderRadius: 4
+      },
+      {
+        label: '이유있는감자탕',
+        data: D.combined_monthly.map(m => m.yiyu_profit),
+        backgroundColor: '#fbbf24', borderColor: '#fde047', borderWidth: 1, borderRadius: 4
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'top', align: 'end', labels: { font: { size: 11 }, color: '#3A342E', boxWidth: 12 } },
+      tooltip: { backgroundColor: '#1a1a1a', padding: 12, callbacks: { label: c => `${c.dataset.label}: ${won(c.parsed.y)}` } }
+    },
+    scales: {
+      x: { grid: { display: false }, ticks: { font: { size: 12, weight: 600 }, color: '#3A342E' } },
+      y: { beginAtZero: true, grid: { color: '#1f1f1f' },
+        ticks: { font: { size: 11 }, callback: v => '₩' + (v/1e6).toFixed(1) + 'M' } }
+    }
+  },
+  plugins: [{
+    id: 'cmpProfitLabel',
+    afterDatasetsDraw(chart) {
+      const { ctx, scales } = chart;
+      chart.data.datasets.forEach((ds, dsi) => {
+        ds.data.forEach((v, i) => {
+          const meta = chart.getDatasetMeta(dsi);
+          const bar = meta.data[i];
+          ctx.save();
+          ctx.fillStyle = dsi === 0 ? '#ff6b35' : '#fde047';
+          ctx.font = "700 10px Pretendard";
+          ctx.textAlign = 'center';
+          ctx.fillText('₩' + (v/1e6).toFixed(1) + 'M', bar.x, bar.y - 4);
+          ctx.restore();
+        });
+      });
+    }
+  }]
+});
+
+// 누적 이익 라인
+(() => {
+  let yCum = 0, gCum = 0;
+  const yCumArr = D.combined_monthly.map(m => { yCum += m.yiyu_profit; return yCum; });
+  const gCumArr = D.combined_monthly.map(m => { gCum += m.gukmin_profit; return gCum; });
+
+  charts.profitCum = new Chart(document.getElementById('profitCumChart'), {
+    type: 'line',
+    data: {
+      labels: D.combined_monthly.map(m => m.label),
+      datasets: [
+        {
+          label: '국민매운찜갈비 (누적)',
+          data: gCumArr,
+          borderColor: '#ff6b35', backgroundColor: 'rgba(255,107,53,0.12)',
+          tension: 0.3, fill: true, borderWidth: 2.5,
+          pointRadius: 6, pointBackgroundColor: '#ff6b35', pointBorderColor: '#0a0a0a', pointBorderWidth: 2
+        },
+        {
+          label: '이유있는감자탕 (누적)',
+          data: yCumArr,
+          borderColor: '#fbbf24', backgroundColor: 'rgba(251,191,36,0.18)',
+          tension: 0.3, fill: true, borderWidth: 2.5,
+          pointRadius: 6, pointBackgroundColor: '#fde047', pointBorderColor: '#0a0a0a', pointBorderWidth: 2
+        }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'top', align: 'end', labels: { font: { size: 11 }, color: '#3A342E', boxWidth: 12 } },
+        tooltip: { backgroundColor: '#1a1a1a', padding: 12, callbacks: { label: c => `${c.dataset.label}: ${won(c.parsed.y)}` } }
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { size: 12, weight: 600 }, color: '#3A342E' } },
+        y: { beginAtZero: true, grid: { color: '#1f1f1f' },
+          ticks: { font: { size: 11 }, callback: v => '₩' + (v/1e6).toFixed(1) + 'M' } }
+      }
+    },
+    plugins: [{
+      id: 'cumLabel',
+      afterDatasetsDraw(chart) {
+        const { ctx, scales } = chart;
+        [gCumArr, yCumArr].forEach((arr, dsi) => {
+          arr.forEach((v, i) => {
+            const meta = chart.getDatasetMeta(dsi);
+            const pt = meta.data[i];
+            if (i === arr.length - 1) {
+              ctx.save();
+              ctx.fillStyle = dsi === 0 ? '#ff6b35' : '#fde047';
+              ctx.font = "700 12px Pretendard";
+              ctx.textAlign = 'left';
+              ctx.fillText('₩' + (v/1e6).toFixed(2) + 'M', pt.x + 8, pt.y + 4);
+              ctx.restore();
+            }
+          });
+        });
+      }
+    }]
+  });
+})();
+
+// 매출 비중 도넛
+charts.revShare = new Chart(document.getElementById('revShareChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['국민매운찜갈비', '이유있는감자탕'],
+    datasets: [{
+      data: [D.g.total_revenue, D.y.total_revenue],
+      backgroundColor: ['#ff6b35', '#fbbf24'],
+      borderColor: '#0a0a0a', borderWidth: 2
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false, cutout: '60%',
+    plugins: {
+      legend: { position: 'bottom', labels: { font: { size: 11 }, color: '#3A342E', padding: 10, boxWidth: 12 } },
+      tooltip: { backgroundColor: '#1a1a1a', padding: 12,
+        callbacks: { label: c => {
+          const total = c.dataset.data.reduce((a,b)=>a+b,0);
+          return `${won(c.parsed)} (${(c.parsed/total*100).toFixed(1)}%)`;
+        }}
+      }
+    }
+  },
+  plugins: [{
+    id: 'revShareCenter',
+    afterDraw(chart) {
+      const { ctx, chartArea } = chart;
+      const cx = (chartArea.left + chartArea.right) / 2;
+      const cy = (chartArea.top + chartArea.bottom) / 2;
+      ctx.save();
+      ctx.fillStyle = '#3A342E';
+      ctx.font = "700 18px Pretendard";
+      ctx.textAlign = 'center';
+      ctx.fillText('₩639M', cx, cy - 4);
+      ctx.fillStyle = '#8a8a8a'; ctx.font = "500 11px Pretendard";
+      ctx.fillText('매출 합계', cx, cy + 14);
+      ctx.restore();
+    }
+  }]
+});
+
+// 이익 비중 도넛
+charts.profitShare = new Chart(document.getElementById('profitShareChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['국민매운찜갈비', '이유있는감자탕'],
+    datasets: [{
+      data: [D.g.total_profit, D.y.total_profit],
+      backgroundColor: ['#ff6b35', '#fbbf24'],
+      borderColor: '#0a0a0a', borderWidth: 2
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false, cutout: '60%',
+    plugins: {
+      legend: { position: 'bottom', labels: { font: { size: 11 }, color: '#3A342E', padding: 10, boxWidth: 12 } },
+      tooltip: { backgroundColor: '#1a1a1a', padding: 12,
+        callbacks: { label: c => {
+          const total = c.dataset.data.reduce((a,b)=>a+b,0);
+          return `${won(c.parsed)} (${(c.parsed/total*100).toFixed(1)}%)`;
+        }}
+      }
+    }
+  },
+  plugins: [{
+    id: 'profitShareCenter',
+    afterDraw(chart) {
+      const { ctx, chartArea } = chart;
+      const cx = (chartArea.left + chartArea.right) / 2;
+      const cy = (chartArea.top + chartArea.bottom) / 2;
+      ctx.save();
+      ctx.fillStyle = '#10b981';
+      ctx.font = "700 18px Pretendard";
+      ctx.textAlign = 'center';
+      ctx.fillText('₩25.3M', cx, cy - 4);
+      ctx.fillStyle = '#8a8a8a'; ctx.font = "500 11px Pretendard";
+      ctx.fillText('이익 합계', cx, cy + 14);
+      ctx.restore();
+    }
+  }]
+});
+
+// ════════════════════════════════════════════════════════
+// TAB 2: YIYU (이유있는감자탕)
+// ════════════════════════════════════════════════════════
+
+charts.yMonthly = new Chart(document.getElementById('yMonthlyChart'), {
+  type: 'bar',
+  data: {
+    labels: D.y.monthly.map(m => m.label),
+    datasets: [{
+      label: '월 매출',
+      data: D.y.monthly.map(m => m.revenue),
+      backgroundColor: ['#fbbf24', 'rgba(255,107,53,0.6)', 'rgba(245,158,11,0.7)', '#fde047'],
+      borderColor: ['#fde047', '#ff6b35', '#f59e0b', '#fef08a'], borderWidth: 1, borderRadius: 6
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { backgroundColor: '#1a1a1a', padding: 12,
+        callbacks: { label: c => {
+          const m = D.y.monthly[c.dataIndex];
+          return [`매출: ${won(m.revenue)}`, `주문: ${m.orders}건`, `객단가: ${won(m.aov)}`, `이익: ${won(m.profit)}`];
+        }}
+      }
+    },
+    scales: {
+      x: { grid: { display: false }, ticks: { font: { size: 13, weight: 700 }, color: '#3A342E' } },
+      y: { beginAtZero: true, grid: { color: '#1f1f1f' }, ticks: { font: { size: 11 }, callback: v => '₩' + (v/1e6).toFixed(0) + 'M' } }
+    }
+  },
+  plugins: [{
+    id: 'yMonthlyLabel',
+    afterDatasetsDraw(chart) {
+      const { ctx } = chart;
+      D.y.monthly.forEach((m, i) => {
+        const bar = chart.getDatasetMeta(0).data[i];
+        ctx.save();
+        ctx.fillStyle = '#fde047';
+        ctx.font = "700 14px Pretendard";
+        ctx.textAlign = 'center';
+        ctx.fillText('₩' + (m.revenue/1e6).toFixed(1) + 'M', bar.x, bar.y - 18);
+        ctx.fillStyle = '#8a8a8a'; ctx.font = "500 11px Pretendard";
+        ctx.fillText(m.orders + '건', bar.x, bar.y - 4);
+        ctx.restore();
+      });
+    }
+  }]
+});
+
+charts.yProfit = new Chart(document.getElementById('yProfitChart'), {
+  type: 'bar',
+  data: {
+    labels: D.y.monthly.map(m => m.label),
+    datasets: [{
+      label: '이익',
+      data: D.y.monthly.map(m => m.profit),
+      backgroundColor: 'rgba(16,185,129,0.5)', borderColor: '#10b981', borderWidth: 1, borderRadius: 4
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { backgroundColor: '#1a1a1a', padding: 12, callbacks: { label: c => '이익: ' + won(c.parsed.y) } } },
+    scales: {
+      x: { grid: { display: false }, ticks: { font: { size: 12, weight: 600 }, color: '#3A342E' } },
+      y: { beginAtZero: true, grid: { color: '#1f1f1f' }, ticks: { font: { size: 10 }, callback: v => '₩' + (v/1e6).toFixed(1) + 'M' } }
+    }
+  },
+  plugins: [{
+    id: 'yProfitLabel',
+    afterDatasetsDraw(chart) {
+      const { ctx } = chart;
+      D.y.monthly.forEach((m, i) => {
+        const bar = chart.getDatasetMeta(0).data[i];
+        ctx.save();
+        ctx.fillStyle = '#10b981';
+        ctx.font = "700 12px Pretendard";
+        ctx.textAlign = 'center';
+        ctx.fillText('₩' + (m.profit/1e6).toFixed(2) + 'M', bar.x, bar.y - 8);
+        ctx.restore();
+      });
+    }
+  }]
+});
+
+charts.yShare = new Chart(document.getElementById('yShareChart'), {
+  type: 'doughnut',
+  data: {
+    labels: D.y.branches.map(b => b.short_name),
+    datasets: [{
+      data: D.y.branches.map(b => b.total),
+      backgroundColor: ['#fde047', '#fbbf24', '#f59e0b', '#ff6b35'],
+      borderColor: '#0a0a0a', borderWidth: 2
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false, cutout: '58%',
+    plugins: {
+      legend: { position: 'bottom', labels: { font: { size: 11 }, color: '#3A342E', padding: 8, boxWidth: 12 } },
+      tooltip: { backgroundColor: '#1a1a1a', padding: 12,
+        callbacks: { label: c => {
+          const total = c.dataset.data.reduce((a,b)=>a+b,0);
+          return `${won(c.parsed)} (${(c.parsed/total*100).toFixed(1)}%)`;
+        }}
+      }
+    }
+  }
+});
+
+charts.yBranch = new Chart(document.getElementById('yBranchChart'), {
+  type: 'bar',
+  data: {
+    labels: ['1월', '2월', '3월', '4월'],
+    datasets: D.y.branches.map((b, i) => ({
+      label: b.short_name,
+      data: ['2026-01','2026-02','2026-03','2026-04'].map(m => b[m]),
+      backgroundColor: ['#fde047', '#fbbf24', '#f59e0b', '#ff6b35'][i],
+      borderWidth: 1, borderRadius: 4
+    }))
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'top', align: 'end', labels: { font: { size: 11 }, color: '#3A342E', boxWidth: 12 } },
+      tooltip: { backgroundColor: '#1a1a1a', padding: 12, callbacks: { label: c => `${c.dataset.label}: ${won(c.parsed.y)}` } }
+    },
+    scales: {
+      x: { grid: { display: false }, ticks: { font: { size: 12, weight: 600 }, color: '#3A342E' } },
+      y: { beginAtZero: true, grid: { color: '#1f1f1f' }, ticks: { font: { size: 11 }, callback: v => '₩' + (v/1e6).toFixed(0) + 'M' } }
+    }
+  }
+});
+
+// 이유있는감자탕 테이블
+(() => {
+  const tbody = document.querySelector('#yBranchTable tbody');
+  D.y.branches.forEach((b, i) => {
+    const tr = document.createElement('tr');
+    if (i === 0) tr.classList.add('top1');
+    if (i === 1) tr.classList.add('top2');
+    tr.innerHTML = `
+      <td><span class="rank-tag">${i+1}</span></td>
+      <td class="name">${b.branch}</td>
+      <td class="r">${won(b['2026-01'])}</td>
+      <td class="r">${won(b['2026-02'])}</td>
+      <td class="r">${won(b['2026-03'])}</td>
+      <td class="r">${won(b['2026-04'])}</td>
+      <td class="r total">${won(b.total)}</td>
+      <td class="r">${b.orders}건</td>
+      <td class="r">${won(b.aov)}</td>
+      <td class="r" style="color:var(--green);font-weight:600;">${won(b.profit)}</td>`;
+    tbody.appendChild(tr);
+  });
+})();
+
+// ════════════════════════════════════════════════════════
+// TAB 3: GUKMIN (국민매운찜갈비)
+// ════════════════════════════════════════════════════════
+
+// 영남 vs 비영남 월별 매출 (스택바)
+charts.gMonthly = new Chart(document.getElementById('gMonthlyChart'), {
+  type: 'bar',
+  data: {
+    labels: D.g.yeongnam_monthly.map(m => m.label),
+    datasets: [
+      {
+        label: '영남권 (6%)',
+        data: D.g.yeongnam_monthly.map(m => m.revenue),
+        backgroundColor: 'rgba(16,185,129,0.7)', borderColor: '#10b981', borderWidth: 1, borderRadius: 4
+      },
+      {
+        label: '영남 외 (1%)',
+        data: D.g.non_yeongnam_monthly.map(m => m.revenue),
+        backgroundColor: 'rgba(255,107,53,0.7)', borderColor: '#ff6b35', borderWidth: 1, borderRadius: 4
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'top', align: 'end', labels: { font: { size: 11 }, color: '#3A342E', boxWidth: 12 } },
+      tooltip: { backgroundColor: '#1a1a1a', padding: 12,
+        callbacks: { label: c => `${c.dataset.label}: ${won(c.parsed.y)}` } }
+    },
+    scales: {
+      x: { grid: { display: false }, ticks: { font: { size: 12, weight: 600 }, color: '#3A342E' } },
+      y: { beginAtZero: true, stacked: true, grid: { color: '#1f1f1f' }, ticks: { font: { size: 11 }, callback: v => '₩' + (v/1e6).toFixed(0) + 'M' } }
+    }
+  }
+});
+
+// 이익 비교 라인
+charts.gProfit = new Chart(document.getElementById('gProfitChart'), {
+  type: 'line',
+  data: {
+    labels: D.g.yeongnam_monthly.map(m => m.label),
+    datasets: [
+      {
+        label: '영남 이익',
+        data: D.g.yeongnam_monthly.map(m => m.profit),
+        borderColor: '#10b981', backgroundColor: 'rgba(16,185,129,0.15)',
+        tension: 0.3, fill: true, borderWidth: 2.5,
+        pointRadius: 5, pointBackgroundColor: '#10b981'
+      },
+      {
+        label: '영남 외 이익',
+        data: D.g.non_yeongnam_monthly.map(m => m.profit),
+        borderColor: '#ff6b35', backgroundColor: 'rgba(255,107,53,0.12)',
+        tension: 0.3, fill: true, borderWidth: 2.5,
+        pointRadius: 5, pointBackgroundColor: '#ff6b35'
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'top', align: 'end', labels: { font: { size: 11 }, color: '#3A342E', boxWidth: 12 } },
+      tooltip: { backgroundColor: '#1a1a1a', padding: 12, callbacks: { label: c => `${c.dataset.label}: ${won(c.parsed.y)}` } }
+    },
+    scales: {
+      x: { grid: { display: false }, ticks: { font: { size: 12, weight: 600 }, color: '#3A342E' } },
+      y: { beginAtZero: true, grid: { color: '#1f1f1f' }, ticks: { font: { size: 10 }, callback: v => '₩' + (v/1e6).toFixed(1) + 'M' } }
+    }
+  }
+});
+
+// 객단가 라인
+charts.gAov = new Chart(document.getElementById('gAovChart'), {
+  type: 'line',
+  data: {
+    labels: D.g.yeongnam_monthly.map(m => m.label),
+    datasets: [
+      {
+        label: '영남 객단가',
+        data: D.g.yeongnam_monthly.map(m => m.aov),
+        borderColor: '#10b981', tension: 0.3, borderWidth: 2.5,
+        pointRadius: 5, pointBackgroundColor: '#10b981'
+      },
+      {
+        label: '영남 외 객단가',
+        data: D.g.non_yeongnam_monthly.map(m => m.aov),
+        borderColor: '#ff6b35', tension: 0.3, borderWidth: 2.5,
+        pointRadius: 5, pointBackgroundColor: '#ff6b35'
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'top', align: 'end', labels: { font: { size: 11 }, color: '#3A342E', boxWidth: 12 } },
+      tooltip: { backgroundColor: '#1a1a1a', padding: 12, callbacks: { label: c => `${c.dataset.label}: ${won(c.parsed.y)}` } }
+    },
+    scales: {
+      x: { grid: { display: false }, ticks: { font: { size: 12, weight: 600 }, color: '#3A342E' } },
+      y: { beginAtZero: false, grid: { color: '#1f1f1f' }, ticks: { font: { size: 10 }, callback: v => '₩' + (v/1e4).toFixed(0) + '만' } }
+    }
+  }
+});
+
+// 23개 지점별 수평 바
+charts.gBranch = new Chart(document.getElementById('gBranchChart'), {
+  type: 'bar',
+  data: {
+    labels: D.g.branches.map(b => b.short_name + ` [${b.region}]`),
+    datasets: [{
+      label: '매출',
+      data: D.g.branches.map(b => b.total),
+      backgroundColor: D.g.branches.map(b => b.is_yeongnam ? 'rgba(16,185,129,0.7)' : 'rgba(255,107,53,0.7)'),
+      borderColor: D.g.branches.map(b => b.is_yeongnam ? '#10b981' : '#ff6b35'),
+      borderWidth: 1, borderRadius: 3
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { backgroundColor: '#1a1a1a', padding: 12,
+        callbacks: {
+          label: c => {
+            const b = D.g.branches[c.dataIndex];
+            return [`매출: ${won(b.total)}`, `주문: ${b.orders}건 / 객단가 ${won(b.aov)}`, `이익(${b.rate}%): ${won(b.profit)}`];
+          }
+        }
+      }
+    },
+    scales: {
+      x: { beginAtZero: true, grid: { color: '#1f1f1f' }, ticks: { font: { size: 10 }, callback: v => '₩' + (v/1e6).toFixed(0) + 'M' } },
+      y: { grid: { display: false }, ticks: { font: { size: 11 }, color: '#3A342E' } }
+    }
+  },
+  plugins: [{
+    id: 'gBranchLabel',
+    afterDatasetsDraw(chart) {
+      const { ctx } = chart;
+      D.g.branches.forEach((b, i) => {
+        const bar = chart.getDatasetMeta(0).data[i];
+        ctx.save();
+        ctx.fillStyle = b.is_yeongnam ? '#10b981' : '#ff6b35';
+        ctx.font = "600 10px Pretendard";
+        ctx.textAlign = 'left';
+        ctx.fillText(`₩${(b.total/1e6).toFixed(1)}M  ·  이익 ₩${(b.profit/1000).toFixed(0)}k`, bar.x + 4, bar.y + 4);
+        ctx.restore();
+      });
+    }
+  }]
+});
+
+// 23개 지점 테이블
+(() => {
+  const tbody = document.querySelector('#gBranchTable tbody');
+  D.g.branches.forEach((b, i) => {
+    const tr = document.createElement('tr');
+    if (i === 0) tr.classList.add('top1');
+    if (i === 1) tr.classList.add('top2');
+    if (i === 2) tr.classList.add('top3');
+    tr.innerHTML = `
+      <td><span class="rank-tag">${i+1}</span></td>
+      <td class="name">${b.branch}</td>
+      <td class="c"><span class="region-badge ${b.is_yeongnam ? 'yn' : 'nn'}">${b.region}</span></td>
+      <td class="r">${won(b.total)}</td>
+      <td class="r">${b.orders}건</td>
+      <td class="r">${won(b.aov)}</td>
+      <td class="c"><span class="region-badge ${b.is_yeongnam ? 'yn' : 'nn'}">${b.rate}%</span></td>
+      <td class="r" style="color:var(--green);font-weight:600;">${won(b.profit)}</td>`;
+    tbody.appendChild(tr);
+  });
+})();
+
+</script>
+
+<script id="unified-chart-theme">
+(function(){
+  var INK='#201A15', DIM='#6B625A', GRID='rgba(32,26,21,0.08)';
+  function retheme(){
+    if(!window.Chart) return;
+    try{
+      Chart.defaults.color=DIM;
+      Chart.defaults.borderColor=GRID;
+      Chart.defaults.font.family="'Pretendard','Noto Sans KR',sans-serif";
+    }catch(e){}
+    var insts = Chart.instances || {};
+    Object.keys(insts).forEach(function(k){
+      var c=insts[k]; if(!c||!c.options) return;
+      try{
+        var o=c.options;
+        if(o.scales){Object.keys(o.scales).forEach(function(s){
+          var sc=o.scales[s]; if(!sc) return;
+          if(sc.grid){sc.grid.color=GRID; if(sc.grid.borderColor!==undefined) sc.grid.borderColor=GRID;}
+          if(sc.ticks){sc.ticks.color=DIM;}
+          if(sc.title){sc.title.color=DIM;}
+          if(sc.pointLabels){sc.pointLabels.color=DIM;}
+          if(sc.angleLines){sc.angleLines.color=GRID;}
+          if(sc.border){sc.border.color=GRID;}
+        });}
+        if(o.plugins){
+          if(o.plugins.legend&&o.plugins.legend.labels){o.plugins.legend.labels.color=INK;}
+          if(o.plugins.title){o.plugins.title.color=INK;}
+          if(o.plugins.subtitle){o.plugins.subtitle.color=DIM;}
+        }
+        c.update('none');
+      }catch(e){}
+    });
+  }
+  if(document.readyState==='complete'){ retheme(); }
+  window.addEventListener('load', retheme);
+  setTimeout(retheme, 400);
+  setTimeout(retheme, 1200);
+})();
+</script>
+
+</body>
+</html>

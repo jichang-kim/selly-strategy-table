@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>프랜차이즈 솔루션 정면 비교표 — 식자재쿡 vs 전업 경쟁사</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0d10;--bg2:#131418;--bg3:#1a1c22;--line:#2a2d35;
+    --ink:#3A342E;--ink2:#a9a79f;--ink3:#6f6d66;
+    --amber:#f5a623;--amber2:#ffcd6b;--ember:#e8643c;
+    --green:#5fcf80;--cool:#2F8F85;
+    --mono:'IBM Plex Mono',monospace;--disp:'Fraunces',serif;--body:'Pretendard',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;font-size:15px;
+    -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(circle at 12% 0%,rgba(245,166,35,.06),transparent 42%),radial-gradient(circle at 88% 3%,rgba(232,100,60,.05),transparent 45%);}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 26px}
+  header{padding:74px 0 40px;border-bottom:1px solid var(--line)}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.22em;color:var(--amber);text-transform:uppercase;margin-bottom:18px}
+  h1{font-weight:800;font-size:clamp(26px,3.8vw,42px);line-height:1.14;letter-spacing:-.02em}
+  h1 em{font-family:var(--disp);font-style:italic;font-weight:900;color:var(--amber2)}
+  .sub{margin-top:18px;max-width:720px;color:var(--ink2);font-size:15.5px}
+  .meta{margin-top:26px;display:flex;gap:26px;flex-wrap:wrap;font-family:var(--mono);font-size:11.5px;color:var(--ink3)}
+  .meta b{color:var(--ink);font-weight:500}
+
+  section{padding:50px 0;border-bottom:1px solid var(--line)}
+  .snum{font-family:var(--disp);font-style:italic;font-weight:900;font-size:14px;color:var(--ember);display:block;margin-bottom:6px}
+  h2{font-weight:800;font-size:clamp(20px,2.5vw,27px);letter-spacing:-.015em;margin-bottom:8px}
+  .lead{color:var(--ink2);max-width:780px;margin-bottom:26px;font-size:15px}
+
+  .thesis{background:linear-gradient(160deg,var(--bg2),var(--bg3));border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:13px;padding:24px 28px}
+  .thesis b{color:var(--amber2)} .thesis strong{color:var(--ink)} .thesis p{color:var(--ink2)}
+
+  /* TABLE */
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:13px;background:var(--bg2)}
+  table{border-collapse:collapse;width:100%;min-width:920px;font-size:12.5px}
+  th,td{padding:11px 12px;text-align:center;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+  th:last-child,td:last-child{border-right:none}
+  thead th{font-family:var(--mono);font-size:11px;letter-spacing:.04em;background:var(--bg3);color:var(--ink2);font-weight:600;position:sticky;top:0;vertical-align:bottom;padding:14px 12px}
+  thead th .op{display:block;font-size:9.5px;color:var(--ink3);font-weight:400;margin-top:3px;letter-spacing:0}
+  thead th.us{color:#1a1205;background:var(--amber)}
+  thead th.us .op{color:#5a4410}
+  .rowlab{text-align:left;font-weight:600;color:var(--ink);background:var(--bg2);position:sticky;left:0;min-width:210px;font-size:12.5px}
+  td.us{background:rgba(245,166,35,.08)}
+  .grp td{background:var(--bg3);text-align:left;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber2);padding:9px 12px;font-weight:600}
+  tbody tr:hover td:not(.grp-cell){background:rgba(255,255,255,.02)}
+  tbody tr:hover td.us{background:rgba(245,166,35,.13)}
+  .mk{font-size:15px;font-weight:700;line-height:1}
+  .y{color:var(--green)} .p{color:var(--amber)} .n{color:var(--ink3)}
+  .txt{font-size:11px;color:var(--ink2);line-height:1.4}
+  td.us .txt{color:var(--ink)}
+  .legend{margin-top:14px;font-family:var(--mono);font-size:11px;color:var(--ink3);display:flex;gap:20px;flex-wrap:wrap}
+  .legend span b{font-family:var(--body)}
+
+  /* 1:1 */
+  .duel{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:13px;overflow:hidden;margin-top:6px}
+  .duel>div{padding:22px 24px}
+  .duel .them{background:var(--bg2)}
+  .duel .uscol{background:linear-gradient(165deg,rgba(245,166,35,.1),rgba(245,166,35,.03));border-left:2px solid var(--amber)}
+  .duel h4{font-size:13px;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+  .duel .them h4{color:var(--ink3)} .duel .uscol h4{color:var(--amber)}
+  .duel ul{list-style:none}
+  .duel li{font-size:13px;margin-bottom:12px;padding-left:18px;position:relative;color:var(--ink2)}
+  .duel .them li::before{content:"–";position:absolute;left:0;color:var(--ink3)}
+  .duel .uscol li::before{content:"★";position:absolute;left:0;color:var(--amber);font-size:10px;top:3px}
+  .duel .uscol li{color:var(--ink)}
+  @media(max-width:680px){.duel{grid-template-columns:1fr}.duel .uscol{border-left:none;border-top:2px solid var(--amber)}}
+
+  .defense{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:13px;margin-top:6px}
+  .dcard{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:19px 20px;border-top:2px solid var(--amber)}
+  .dcard .q{font-size:11px;font-family:var(--mono);color:var(--ember);letter-spacing:.04em;margin-bottom:7px}
+  .dcard .a{font-size:13.5px;color:var(--ink)}
+  .dcard .a b{color:var(--amber2)}
+
+  footer{padding:40px 0 64px;font-family:var(--mono);font-size:11.5px;color:var(--ink3)}
+  .note{font-family:var(--mono);font-size:11px;color:var(--ink3);margin-top:18px;line-height:1.7}
+</style>
+
+<style id="unified-theme">
+:root{
+  --bg:#FBF7F1!important; --surface:#FFFFFF!important; --surface-2:#FBF3EA!important;
+  --line:#ECE3D8!important; --line-soft:#F3ECE3!important;
+  --ink:#201A15!important; --ink-dim:#6B625A!important; --ink-soft:#A69C91!important; --ink2:#6B625A!important; --ink3:#A69C91!important;
+  --orange:#E8730C!important; --orange-2:#F59E0B!important; --amber:#C77A16!important; --amber2:#F6B23C!important;
+  --yellow:#F6B23C!important; --yellow-light:#FCD36B!important; --ember:#D2604A!important;
+  --blue:#2F8F85!important; --cool:#2F8F85!important; --red:#D2483D!important; --green:#2E9E6B!important;
+  --bg2:#FFFFFF!important; --bg3:#FBF3EA!important;
+  --body:'Pretendard','Noto Sans KR',sans-serif!important;
+  --disp:'Pretendard','Noto Sans KR',sans-serif!important;
+  --mono:'Pretendard','Noto Sans KR',sans-serif!important;
+}
+html,body{background:#FBF7F1!important; color:#201A15!important;}
+html body, html body *:not(code):not(pre):not(script):not(style){
+  font-family:'Pretendard','Noto Sans KR',sans-serif!important;
+}
+body{font-feature-settings:'tnum';}
+/* soften cards / panels consistently */
+[class*="card"],[class*="panel"],[class*="box"],[class*="tile"],[class*="section"],section,article{
+  border-radius:14px;
+}
+a{color:#E8730C;}
+/* consistent content width */
+.wrap{max-width:1360px!important;}
+::selection{background:#FCE1C2;color:#201A15;}
+/* scrollbar */
+*::-webkit-scrollbar-thumb{background:#E4D8C8;border-radius:8px;}
+</style>
+
+</head>
+<body>
+
+<header><div class="wrap">
+  <div class="kicker">CSO Memo · 경쟁사 정면 비교 / TIPS 차별성 방어</div>
+  <h1>프랜차이즈 솔루션 정면 비교 —<br><em>식자재쿡</em> vs 전업 경쟁사</h1>
+  <p class="sub">프랜킷·발주고+프차고·맥스오피스·프랜솔·이카운트와 기능·자산·BM을 같은 축으로 비교. 핵심은 "더 나은 SaaS"가 아니라 <b style="color:var(--amber2)">공급 자산을 직접 가진 유통사라는 점</b>에서 갈린다.</p>
+  <div class="meta">
+    <div>비교 대상 <b>전업 경쟁사 5</b></div>
+    <div>비교 축 <b>기능 · 자산 · BM · 성격</b></div>
+    <div>용도 <b>TIPS 심사 / 포지셔닝</b></div>
+  </div>
+</div></header>
+
+<!-- THESIS -->
+<section><div class="wrap">
+  <span class="snum">00</span><h2>한 줄 방어 논리</h2>
+  <div class="thesis">
+    <p><strong>경쟁사 대부분은 <b>asset-light SaaS 툴</b>이다.</strong> 본부가 "자기 공급망을 가졌을 때" 그 위에 얹는 관리 도구이며, 식자재 공급·물류·여신을 직접 지지 않는다. 프랜킷이 소싱·물류 대행으로 공급에 발을 들이지만 스타트업 단계다.</p>
+    <p style="margin-top:10px"><strong>식자재쿡(장한유통)은 <b>실제 식자재 공급·물류·여신을 운영하는 유통사 + 데이터</b>다.</strong> 따라서 우리의 경쟁은 "더 나은 발주 앱"이 아니라, <b>공급 + AI 데이터 + 임베디드 금융</b>을 하나로 묶고, <b>일반 외식(식자재쿡) × 프랜차이즈(브랜드쿡) 양면</b>을 동시에 쥐는 번들이다 — 순수 SaaS가 복제할 수 없는 자산.</p>
+  </div>
+</div></section>
+
+<!-- MATRIX -->
+<section><div class="wrap">
+  <span class="snum">01</span><h2>기능·자산·BM 통합 비교 매트릭스</h2>
+  <p class="lead">기능(상단)은 경쟁이 치열해 큰 차이가 없다. 갈리는 곳은 <b style="color:var(--amber2)">자산(중단)과 BM(하단)</b> — 우리 열에만 ●가 몰리는 구간이 해자다.</p>
+  <div class="scroll"><table>
+    <thead><tr>
+      <th class="rowlab" style="background:var(--bg3)">비교 항목</th>
+      <th class="us">식자재쿡 ★<span class="op">신규/IT법인</span></th>
+      <th>프랜킷<span class="op">frankit · TIPS</span></th>
+      <th>발주고+프차고<span class="op">콤웨어</span></th>
+      <th>맥스오피스<span class="op">리드플래닛</span></th>
+      <th>프랜솔<span class="op">FranSOL</span></th>
+      <th>이카운트<span class="op">범용 ERP</span></th>
+    </tr></thead>
+    <tbody>
+      <tr class="grp"><td class="grp-cell" colspan="7">A · 기능 (FUNCTIONS) — 경합, 차별화 약함</td></tr>
+      <tr><td class="rowlab">본부↔가맹점 수발주</td>
+        <td class="us"><span class="mk y">●</span></td><td><span class="mk y">●</span></td><td><span class="mk y">●</span><div class="txt">NO.1</div></td><td><span class="mk y">●</span></td><td><span class="mk n">○</span></td><td><span class="mk y">●</span></td></tr>
+      <tr><td class="rowlab">가맹관리(계약·QSC·교육)</td>
+        <td class="us"><span class="mk p">◐</span><div class="txt">개발</div></td><td><span class="mk p">◐</span></td><td><span class="mk y">●</span><div class="txt">프차고</div></td><td><span class="mk y">●</span></td><td><span class="mk y">●</span><div class="txt">특화</div></td><td><span class="mk p">◐</span></td></tr>
+      <tr><td class="rowlab">POS/매출 데이터 연동</td>
+        <td class="us"><span class="mk p">◐</span><div class="txt">구축여지</div></td><td><span class="mk y">●</span><div class="txt">매출기반</div></td><td><span class="mk y">●</span><div class="txt">사입분석</div></td><td><span class="mk p">◐</span></td><td><span class="mk p">◐</span></td><td><span class="mk y">●</span></td></tr>
+      <tr><td class="rowlab">재고·자동발주</td>
+        <td class="us"><span class="mk p">◐</span><div class="txt">개발</div></td><td><span class="mk y">●</span><div class="txt">자동화</div></td><td><span class="mk y">●</span></td><td><span class="mk p">◐</span></td><td><span class="mk n">○</span></td><td><span class="mk y">●</span></td></tr>
+      <tr><td class="rowlab">AI 수요예측</td>
+        <td class="us"><span class="mk p">◐</span><div class="txt">내부IP</div></td><td><span class="mk p">◐</span></td><td><span class="mk n">○</span></td><td><span class="mk n">○</span></td><td><span class="mk n">○</span></td><td><span class="mk n">○</span></td></tr>
+      <tr><td class="rowlab">원가/마진 분석</td>
+        <td class="us"><span class="mk y">●</span><div class="txt">VAT보정 IP</div></td><td><span class="mk p">◐</span></td><td><span class="mk p">◐</span></td><td><span class="mk p">◐</span></td><td><span class="mk n">○</span></td><td><span class="mk y">●</span></td></tr>
+      <tr><td class="rowlab">CRM·이탈예측·재발주(폐쇄학습)</td>
+        <td class="us"><span class="mk p">◐</span><div class="txt">AACE식 개발</div></td><td><span class="mk n">○</span></td><td><span class="mk n">○</span></td><td><span class="mk n">○</span></td><td><span class="mk n">○</span></td><td><span class="mk n">○</span></td></tr>
+
+      <tr class="grp"><td class="grp-cell" colspan="7">B · 자산 (ASSETS) — 우리 해자가 집중되는 구간</td></tr>
+      <tr><td class="rowlab">식자재 공급(소싱) 직접 운영</td>
+        <td class="us"><span class="mk y">●</span><div class="txt">유통사 본업</div></td><td><span class="mk p">◐</span><div class="txt">소싱대행</div></td><td><span class="mk n">○</span><div class="txt">툴</div></td><td><span class="mk n">○</span></td><td><span class="mk n">○</span></td><td><span class="mk n">○</span></td></tr>
+      <tr><td class="rowlab">물류 인프라/제휴</td>
+        <td class="us"><span class="mk y">●</span><div class="txt">다중제휴·MOU</div></td><td><span class="mk p">◐</span><div class="txt">대행</div></td><td><span class="mk p">◐</span><div class="txt">3PL연동</div></td><td><span class="mk n">○</span></td><td><span class="mk n">○</span></td><td><span class="mk n">○</span></td></tr>
+      <tr><td class="rowlab">여신·결제·자금(임베디드 금융)</td>
+        <td class="us"><span class="mk y">●</span><div class="txt">여신·선결제</div></td><td><span class="mk n">○</span></td><td><span class="mk p">◐</span><div class="txt">가상계좌</div></td><td><span class="mk n">○</span></td><td><span class="mk n">○</span></td><td><span class="mk n">○</span></td></tr>
+      <tr><td class="rowlab">일반 외식(비프랜차이즈) 채널</td>
+        <td class="us"><span class="mk y">●</span><div class="txt">식자재쿡</div></td><td><span class="mk n">○</span><div class="txt">프차전용</div></td><td><span class="mk p">◐</span></td><td><span class="mk n">○</span></td><td><span class="mk n">○</span></td><td><span class="mk p">◐</span></td></tr>
+      <tr><td class="rowlab">실거래 데이터 밀도</td>
+        <td class="us"><span class="mk y">●</span><div class="txt">실거래</div></td><td><span class="mk p">◐</span></td><td><span class="mk p">◐</span></td><td><span class="mk p">◐</span></td><td><span class="mk p">◐</span></td><td><span class="mk p">◐</span></td></tr>
+      <tr><td class="rowlab">지역 거점(영남 밀도)</td>
+        <td class="us"><span class="mk y">●</span></td><td><span class="mk n">○</span></td><td><span class="mk n">○</span></td><td><span class="mk n">○</span></td><td><span class="mk n">○</span></td><td><span class="mk n">○</span></td></tr>
+      <tr><td class="rowlab">자체 R&D / 개발 역량</td>
+        <td class="us"><span class="mk y">●</span><div class="txt">6인+IT법인</div></td><td><span class="mk y">●</span></td><td><span class="mk y">●</span></td><td><span class="mk y">●</span></td><td><span class="mk y">●</span></td><td><span class="mk y">●</span></td></tr>
+
+      <tr class="grp"><td class="grp-cell" colspan="7">C · 사업모델·포지션 (BM & POSITION)</td></tr>
+      <tr><td class="rowlab">수익 다각화</td>
+        <td class="us"><span class="mk y">●</span><div class="txt">GMV+구독+발송+여신</div></td><td><span class="mk p">◐</span><div class="txt">대행마진</div></td><td><span class="mk n">○</span><div class="txt">구독</div></td><td><span class="mk n">○</span><div class="txt">구독</div></td><td><span class="mk n">○</span><div class="txt">구독</div></td><td><span class="mk n">○</span><div class="txt">구독</div></td></tr>
+      <tr><td class="rowlab">회사 성격</td>
+        <td class="us"><div class="txt">공급자산 유통사<br>+데이터+금융</div></td><td><div class="txt">데이터 SaaS<br>+소싱대행</div></td><td><div class="txt">수발주·가맹<br>관리 SaaS</div></td><td><div class="txt">프랜차이즈<br>전용 ERP</div></td><td><div class="txt">운영관리<br>(QSC) SaaS</div></td><td><div class="txt">범용 ERP</div></td></tr>
+      <tr><td class="rowlab">핵심 타깃</td>
+        <td class="us"><div class="txt">본부+가맹점+유통사<br>(양면)</div></td><td><div class="txt">초기·중소 본부</div></td><td><div class="txt">대형 본부<br>(노랑통닭·설빙)</div></td><td><div class="txt">본부</div></td><td><div class="txt">30+ 본부</div></td><td><div class="txt">범용</div></td></tr>
+      <tr><td class="rowlab">TIPS 상태</td>
+        <td class="us"><div class="txt" style="color:var(--amber2)">신청 예정</div></td><td><span class="mk y" style="color:var(--ember)">●</span><div class="txt">선정 7억</div></td><td><div class="txt">—</div></td><td><div class="txt">—</div></td><td><div class="txt">—</div></td><td><div class="txt">—</div></td></tr>
+    </tbody>
+  </table></div>
+  <div class="legend">
+    <span><b class="y">●</b> 보유/강</span><span><b class="p">◐</b> 부분/개발·예정</span><span><b class="n">○</b> 없음/약</span>
+    <span style="color:var(--amber2)">→ A(기능)는 평준화, B(자산)·C(BM)에서 우리 열에만 ●가 집중</span>
+  </div>
+</div></section>
+
+<!-- 1:1 vs FRANKIT -->
+<section><div class="wrap">
+  <span class="snum">02</span><h2>핵심 1:1 — 프랜킷 vs 식자재쿡</h2>
+  <p class="lead">동일 서사로 이미 TIPS를 받은 프랜킷이 심사의 기준점이 된다. 이 4가지가 "카피가 아니다"라는 답이다.</p>
+  <div class="duel">
+    <div class="them">
+      <h4>프랜킷 (frankit)</h4>
+      <ul>
+        <li>전용몰 기반 <b style="color:var(--ink)">무료 발주 시스템</b> + 통합 공급망 관리, MD 소싱·물류·CS <b style="color:var(--ink)">대행</b></li>
+        <li>매출 데이터 기반 발주·재고 <b style="color:var(--ink)">자동화</b>가 핵심 (asset-light → 대행으로 확장 중)</li>
+        <li><b style="color:var(--ink)">프랜차이즈 본부 전용</b>, 초기·중소형 타깃</li>
+        <li>발주·재고 자동화 중심 — CRM/이탈예측·금융 레이어 없음</li>
+      </ul>
+    </div>
+    <div class="uscol">
+      <h4>식자재쿡 / 신규법인</h4>
+      <ul>
+        <li><b>식자재 공급·물류·여신을 직접 운영</b>하는 유통사 — 대행이 아니라 자산 보유, 실거래 데이터로 정확도 우위</li>
+        <li>발주 자동화 위에 <b>AI 수요예측 + 폐쇄학습 CRM + 임베디드 여신</b>을 결합한 번들</li>
+        <li><b>일반 외식(식자재쿡) × 프랜차이즈(브랜드쿡) 양면</b> — 데이터 폭·교차학습 우위</li>
+        <li><b>영남 고밀도 비치헤드</b> + 기보유 마진·CCC·휴면세그 분석 IP</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- DEFENSE Q&A -->
+<section style="border-bottom:none"><div class="wrap">
+  <span class="snum">03</span><h2>심사 예상질문 방어 카드</h2>
+  <div class="defense">
+    <div class="dcard"><div class="q">Q. 프랜킷·발주고와 뭐가 다른가?</div><div class="a">그들은 <b>SaaS 툴</b>, 우리는 <b>공급 자산을 가진 유통사+데이터</b>. 공급·물류·여신을 직접 운영해 데이터 정확도와 자금 결합에서 복제 불가.</div></div>
+    <div class="dcard"><div class="q">Q. 기능은 거의 같지 않나?</div><div class="a">기능(A축)은 평준화 맞다. 차별은 <b>자산(B)·BM(C)</b>에서 발생 — 우리만 공급·여신·양면 채널을 동시 보유.</div></div>
+    <div class="dcard"><div class="q">Q. 후발 진입인데 승산은?</div><div class="a">제로베이스가 아니다. <b>식자재쿡·브랜드쿡 실거래 데이터와 영남 거점</b>이 first reference. 프랜킷이 못 가진 공급단에서 시작.</div></div>
+    <div class="dcard"><div class="q">Q. 왜 신규/IT 법인인가?</div><div class="a">IP 귀속 명확화 + 투자·TIPS용 클린 캡테이블. 식자재쿡(유통)은 <b>first customer</b>, 신규법인이 기술·R&D 주체.</div></div>
+  </div>
+  <p class="note">활용 : 사업계획서 "경쟁분석/차별성" 섹션과 IR 1페이지에 그대로 이식 가능. 수치·현황은 공개자료 기반이며 시점에 따라 변동될 수 있음.</p>
+</div></section>
+
+<footer><div class="wrap">
+  CSO Memo — 프랜차이즈 솔루션 정면 비교 / TIPS 차별성 방어 · 식자재쿡 · 브랜드쿡
+</div></footer>
+
+
+<script id="unified-chart-theme">
+(function(){
+  var INK='#201A15', DIM='#6B625A', GRID='rgba(32,26,21,0.08)';
+  function retheme(){
+    if(!window.Chart) return;
+    try{
+      Chart.defaults.color=DIM;
+      Chart.defaults.borderColor=GRID;
+      Chart.defaults.font.family="'Pretendard','Noto Sans KR',sans-serif";
+    }catch(e){}
+    var insts = Chart.instances || {};
+    Object.keys(insts).forEach(function(k){
+      var c=insts[k]; if(!c||!c.options) return;
+      try{
+        var o=c.options;
+        if(o.scales){Object.keys(o.scales).forEach(function(s){
+          var sc=o.scales[s]; if(!sc) return;
+          if(sc.grid){sc.grid.color=GRID; if(sc.grid.borderColor!==undefined) sc.grid.borderColor=GRID;}
+          if(sc.ticks){sc.ticks.color=DIM;}
+          if(sc.title){sc.title.color=DIM;}
+          if(sc.pointLabels){sc.pointLabels.color=DIM;}
+          if(sc.angleLines){sc.angleLines.color=GRID;}
+          if(sc.border){sc.border.color=GRID;}
+        });}
+        if(o.plugins){
+          if(o.plugins.legend&&o.plugins.legend.labels){o.plugins.legend.labels.color=INK;}
+          if(o.plugins.title){o.plugins.title.color=INK;}
+          if(o.plugins.subtitle){o.plugins.subtitle.color=DIM;}
+        }
+        c.update('none');
+      }catch(e){}
+    });
+  }
+  if(document.readyState==='complete'){ retheme(); }
+  window.addEventListener('load', retheme);
+  setTimeout(retheme, 400);
+  setTimeout(retheme, 1200);
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1109 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>식자재쿡 · 4·19 할인행사 효과 분석</title>
+<link rel="icon" href="data:image/png;base64,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" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+<style>
+:root {
+  --bg:#0a0a0a; --surface:#131313; --surface-2:#1a1a1a; --line:#2a2a2a; --line-soft:#1f1f1f;
+  --ink:#3A342E; --ink-dim:#8a8a8a; --ink-soft:#555;
+  --orange:#f59e0b; --orange-2:#ff6b35; --yellow:#fbbf24; --yellow-light:#fde047;
+  --amber:#d97706; --red:#dc2626; --blue:#2F8F85; --green:#10b981;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg); color: var(--ink); font-family: 'Pretendard', sans-serif;
+  font-feature-settings: 'tnum'; -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 1440px; margin: 0 auto; padding: 48px 56px 80px; }
+@media (max-width: 1100px) { .wrap { padding: 32px 24px; } }
+
+.header { display: flex; gap: 20px; align-items: center; border-bottom: 1px solid var(--line); padding-bottom: 28px; margin-bottom: 36px; }
+.logo {
+  width: 64px; height: 64px; border-radius: 14px; object-fit: cover;
+  box-shadow: 0 8px 24px rgba(255,107,53,.25), 0 0 0 1px rgba(245,158,11,.2);
+  transition: transform .3s ease;
+}
+.logo:hover { transform: scale(1.04) rotate(-2deg); }
+.eyebrow { font-size: 11px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--orange); margin-bottom: 6px; }
+h1 { font-size: 36px; font-weight: 700; letter-spacing: -.025em; margin: 0 0 4px; color: var(--ink); }
+.subtitle { font-size: 14px; color: var(--ink-dim); display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
+.subtitle .pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px; border-radius: 999px;
+  background: rgba(245,158,11,.1); color: var(--orange);
+  font-size: 12px; font-weight: 600; letter-spacing: .02em;
+}
+.subtitle .pill::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--orange); }
+
+section { margin-bottom: 56px; }
+.section-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 20px; gap: 16px; }
+.section-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 6px; }
+.section-title { font-size: 22px; font-weight: 700; letter-spacing: -.015em; color: var(--ink); margin: 0; }
+.section-sub { font-size: 13px; color: var(--ink-dim); margin-top: 4px; }
+
+.kpi-strip {
+  display: grid; grid-template-columns: repeat(6, 1fr);
+  gap: 1px; background: var(--line);
+  border: 1px solid var(--line); border-radius: 8px; overflow: hidden;
+}
+@media (max-width: 1100px) { .kpi-strip { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 600px) { .kpi-strip { grid-template-columns: repeat(2, 1fr); } }
+.kpi { background: var(--surface); padding: 22px 22px; display: flex; flex-direction: column; gap: 6px; }
+.kpi-label { font-size: 11px; font-weight: 600; color: var(--ink-soft); letter-spacing: .12em; text-transform: uppercase; }
+.kpi-value { font-size: 26px; font-weight: 700; letter-spacing: -.02em; color: var(--ink); line-height: 1.1; }
+.kpi-delta { font-size: 12px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; }
+.delta-up { color: var(--green); }
+.delta-down { color: var(--orange-2); }
+.delta-neutral { color: var(--ink-dim); }
+.kpi-sub { font-size: 11px; color: var(--ink-dim); }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 24px; }
+.card-title { font-size: 18px; font-weight: 700; letter-spacing: -.01em; margin: 0 0 4px; color: var(--ink); }
+.card-sub { font-size: 12px; color: var(--ink-dim); margin-bottom: 18px; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+.grid-3-eq { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 1100px) { .grid-2, .grid-3, .grid-3-eq { grid-template-columns: 1fr; } }
+
+.chart-wrap { position: relative; height: 320px; }
+.chart-wrap-tall { position: relative; height: 420px; }
+.chart-wrap-mega { position: relative; height: 560px; }
+
+.insight {
+  background: var(--surface-2); border-left: 3px solid var(--orange);
+  padding: 22px 26px; border-radius: 4px; margin-top: 20px;
+}
+.insight-label { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--orange); margin-bottom: 8px; }
+.insight p { font-size: 14px; line-height: 1.7; color: var(--ink-dim); margin: 0 0 12px; }
+.insight p:last-child { margin-bottom: 0; }
+.insight strong { color: var(--ink); font-weight: 600; }
+.insight em { color: var(--yellow); font-style: normal; font-weight: 600; }
+
+/* compare cards */
+.compare {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1px; background: var(--line);
+  border: 1px solid var(--line); border-radius: 6px; overflow: hidden;
+  margin-bottom: 24px;
+}
+.compare-cell { background: var(--surface-2); padding: 18px 20px; }
+.compare-cell.before { background: rgba(255,107,53,.05); }
+.compare-cell.after  { background: rgba(245,158,11,.08); }
+.compare-tag { font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--ink-soft); }
+.compare-cell.before .compare-tag { color: var(--orange-2); }
+.compare-cell.after  .compare-tag { color: var(--orange); }
+.compare-period { font-size: 13px; color: var(--ink-dim); margin-top: 4px; }
+.compare-value { font-size: 28px; font-weight: 700; letter-spacing: -.02em; margin-top: 8px; color: var(--ink); }
+.compare-unit { font-size: 14px; font-weight: 500; color: var(--ink-dim); margin-left: 6px; }
+.compare-detail { font-size: 11px; color: var(--ink-soft); margin-top: 4px; letter-spacing: .04em; }
+
+/* rank list (Top 주문처) */
+.rank-list { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+.rank-row {
+  display: grid; grid-template-columns: 24px 1fr 110px 90px;
+  gap: 12px; align-items: center;
+  padding: 10px 14px; border-radius: 6px;
+  background: var(--surface-2); border: 1px solid var(--line-soft);
+}
+.rank-row.dec { border-left: 2px solid var(--orange-2); }
+.rank-row.inc { border-left: 2px solid var(--yellow); }
+.rank-num { font-size: 11px; font-weight: 700; color: var(--ink-soft); letter-spacing: .04em; }
+.rank-name { font-size: 13px; font-weight: 600; color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rank-vals { font-size: 11px; color: var(--ink-dim); text-align: right; font-variant-numeric: tabular-nums; line-height: 1.4; }
+.rank-vals .pre { color: var(--ink-soft); }
+.rank-vals .post { color: var(--ink); font-weight: 600; }
+.rank-delta { font-size: 13px; font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; }
+.rank-delta.pos { color: var(--yellow); }
+.rank-delta.neg { color: var(--orange-2); }
+
+/* push events table */
+.event-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+.event-table th, .event-table td {
+  padding: 12px 14px; text-align: left;
+  border-bottom: 1px solid var(--line-soft);
+  font-size: 13px; color: var(--ink);
+}
+.event-table th { font-size: 10px; color: var(--ink-soft); letter-spacing: .15em; text-transform: uppercase; font-weight: 600; }
+.event-table td.r { text-align: right; font-variant-numeric: tabular-nums; }
+.event-table td.c { text-align: center; }
+.event-table .channel-tag {
+  display: inline-block; padding: 2px 8px; border-radius: 4px;
+  font-size: 10px; font-weight: 700; letter-spacing: .04em;
+  background: rgba(245,158,11,.18); color: var(--yellow);
+}
+.event-table .channel-tag.both {
+  background: rgba(255,107,53,.18); color: var(--orange-2);
+}
+
+.footer {
+  margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 11px; letter-spacing: .12em; color: var(--ink-soft);
+  text-transform: uppercase;
+}
+@media (max-width: 700px) { .footer { flex-direction: column; gap: 8px; } }
+
+.u-orange { color: var(--orange); }
+.u-yellow { color: var(--yellow); }
+.u-green { color: var(--green); }
+.u-red { color: var(--orange-2); }
+.u-blue { color: var(--blue); }
+.u-bold { font-weight: 700; }
+</style>
+
+<style id="unified-theme">
+:root{
+  --bg:#FBF7F1!important; --surface:#FFFFFF!important; --surface-2:#FBF3EA!important;
+  --line:#ECE3D8!important; --line-soft:#F3ECE3!important;
+  --ink:#201A15!important; --ink-dim:#6B625A!important; --ink-soft:#A69C91!important; --ink2:#6B625A!important; --ink3:#A69C91!important;
+  --orange:#E8730C!important; --orange-2:#F59E0B!important; --amber:#C77A16!important; --amber2:#F6B23C!important;
+  --yellow:#F6B23C!important; --yellow-light:#FCD36B!important; --ember:#D2604A!important;
+  --blue:#2F8F85!important; --cool:#2F8F85!important; --red:#D2483D!important; --green:#2E9E6B!important;
+  --bg2:#FFFFFF!important; --bg3:#FBF3EA!important;
+  --body:'Pretendard','Noto Sans KR',sans-serif!important;
+  --disp:'Pretendard','Noto Sans KR',sans-serif!important;
+  --mono:'Pretendard','Noto Sans KR',sans-serif!important;
+}
+html,body{background:#FBF7F1!important; color:#201A15!important;}
+html body, html body *:not(code):not(pre):not(script):not(style){
+  font-family:'Pretendard','Noto Sans KR',sans-serif!important;
+}
+body{font-feature-settings:'tnum';}
+/* soften cards / panels consistently */
+[class*="card"],[class*="panel"],[class*="box"],[class*="tile"],[class*="section"],section,article{
+  border-radius:14px;
+}
+a{color:#E8730C;}
+/* consistent content width */
+.wrap{max-width:1360px!important;}
+::selection{background:#FCE1C2;color:#201A15;}
+/* scrollbar */
+*::-webkit-scrollbar-thumb{background:#E4D8C8;border-radius:8px;}
+</style>
+
+</head>
+<body>
+
+<div class="wrap">
+
+<!-- ─── Header ─── -->
+<header class="header">
+  <img class="logo" src="data:image/png;base64,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" alt="식자재쿡" />
+  <div>
+    <div class="eyebrow">CSO Brief · Promotion Impact Analysis (v2)</div>
+    <h1>4·19 일제 할인행사 효과 분석</h1>
+    <div class="subtitle">
+      <span>분석 대상: <strong>식자재쿡(foodcook) 플랫폼</strong></span>
+      <span>데이터 기간: <strong>2026-03-01 ~ 2026-05-05</strong></span>
+      <span>주문 79,926건 · 주문처 927곳</span>
+      <span class="pill">행사 시작 · 4월 19일</span>
+    </div>
+  </div>
+</header>
+
+<!-- ─── KPI Strip ─── -->
+<section>
+  <div class="kpi-strip">
+    <div class="kpi">
+      <div class="kpi-label">3월 매출 (식자재쿡)</div>
+      <div class="kpi-value">₩146.7M</div>
+      <div class="kpi-sub">2,513건 · 393곳 활성</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">4월 매출 (식자재쿡)</div>
+      <div class="kpi-value u-yellow">₩160.1M</div>
+      <div class="kpi-delta delta-up">▲ +9.1% (₩13.4M↑)</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">행사후 일평균 매출</div>
+      <div class="kpi-value u-orange">₩5.97M</div>
+      <div class="kpi-delta delta-up">▲ +21.5% (₩4.91→5.97M)</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">행사후 객단가</div>
+      <div class="kpi-value">₩62,606</div>
+      <div class="kpi-delta delta-up">▲ +10.0% (₩56,917→62,606)</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">행사후 신규 주문처</div>
+      <div class="kpi-value u-yellow">56곳</div>
+      <div class="kpi-sub">신규 매출 ₩7.75M</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">행사후 일평균 가입자</div>
+      <div class="kpi-value u-orange">4.5명</div>
+      <div class="kpi-delta delta-up">▲ +21% (3.7→4.5명)</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- ─── Section 01: 식자재쿡 매출 종합 비교 ─── -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section>
+  <div class="section-head">
+    <div>
+      <div class="section-eyebrow">Section 01 · Sales Comparison</div>
+      <h2 class="section-title">식자재쿡 매출 다각 비교</h2>
+      <div class="section-sub">전월 동기간 + 4월 전반(1~15) vs 후반(16~30) + 행사 정확 기준(4/1~18 vs 4/19~30)</div>
+    </div>
+  </div>
+
+  <!-- 행사 정확 기준 비교 -->
+  <div class="compare">
+    <div class="compare-cell before">
+      <div class="compare-tag">— 행사 전 (4/1 ~ 4/18, 18일)</div>
+      <div class="compare-period">일평균 매출</div>
+      <div class="compare-value">₩4,913,848</div>
+      <div class="compare-detail">총 ₩88.4M · 1,554건 · 객단가 ₩56,917 · 활성 374곳</div>
+    </div>
+    <div class="compare-cell after">
+      <div class="compare-tag">▲ 행사 후 (4/19 ~ 4/30, 12일)</div>
+      <div class="compare-period">일평균 매출</div>
+      <div class="compare-value u-yellow">₩5,968,522</div>
+      <div class="compare-detail">총 ₩71.6M · 1,144건 · 객단가 ₩62,606 · 활성 362곳 · <strong style="color:var(--green)">+21.5%</strong></div>
+    </div>
+  </div>
+
+  <!-- 사용자 요청 구간 (4/1~15 vs 4/16~30) -->
+  <div class="grid-2" style="margin-top:8px;">
+    <div class="card">
+      <h3 class="card-title">4월 전반 vs 후반 (요청 구간)</h3>
+      <p class="card-sub">4/1~15 (15일) vs 4/16~30 (15일) 일평균 매출 비교</p>
+      <div class="chart-wrap">
+        <canvas id="aprHalfChart"></canvas>
+      </div>
+    </div>
+    <div class="card">
+      <h3 class="card-title">전월 동기간 비교</h3>
+      <p class="card-sub">3월 vs 4월 같은 구간 일평균 매출 — 행사 후 격차 확대</p>
+      <div class="chart-wrap">
+        <canvas id="monthCompareChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="insight">
+    <div class="insight-label">CSO Note · Sales Comparison</div>
+    <p>식자재쿡 4월 매출은 ₩146.7M(3월) → ₩160.1M(4월)로 <em>+9.1% 증가</em>했고, 행사 정확 기준(4/19) 전후로 분리하면 일평균 매출이 ₩4.91M → ₩5.97M으로 <strong>+21.5% 점프</strong>합니다. 사용자가 지정한 구간(4/1~15 vs 4/16~30)으로 봐도 ₩5.00M → ₩5.67M로 +13.2% 증가이며, 이는 4/16~18(행사 전 3일)이 후반 평균을 끌어내린 결과로 행사 정확 기준이 더 의미 있는 측정입니다.</p>
+    <p>전월 동기간 비교에서도 <strong>3/16~31 ₩4.84M → 4/16~30 ₩5.67M (+17.1%)</strong>로 식자재쿡 시장 자체의 자연 성장률을 크게 상회합니다. 일제 할인이 매출을 실질적으로 끌어올렸음이 다각도로 검증된 셈이며, 가장 흥미로운 것은 <em>객단가가 ₩56,917 → ₩62,606로 +10% 상승</em>했다는 점 — 할인은 보통 객단가를 떨어뜨리는데, 이번엔 거꾸로 갔습니다. 고객들이 할인 상품을 평소보다 더 많이 장바구니에 담았다는 의미입니다.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- ─── Section 02: 일별·주별 매출 추이 (REQ #1) ─── -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section>
+  <div class="section-head">
+    <div>
+      <div class="section-eyebrow">Section 02 · Daily &amp; Weekly Trend</div>
+      <h2 class="section-title">3월~5월 일별·주별 매출 추이</h2>
+      <div class="section-sub">식자재쿡(주축) + 브랜드쿡(비교) · 4·19 분기점 + 푸시·문자 발송일 마커</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 class="card-title">일별 매출 (3/1 ~ 5/5)</h3>
+    <p class="card-sub">노란색 = 4/19 이후 행사 적용 · 점선 = 4/19 행사 시작 · 별표 = 푸시·문자 발송일</p>
+    <div class="chart-wrap-mega">
+      <canvas id="salesDailyChart"></canvas>
+    </div>
+  </div>
+
+  <div class="grid-2" style="margin-top: 20px;">
+    <div class="card">
+      <h3 class="card-title">주별 매출 (식자재쿡)</h3>
+      <p class="card-sub">월~일 기준 주차별 매출 — W4월3주(4/13~19) 진입 시점부터 상승 본격화</p>
+      <div class="chart-wrap-tall">
+        <canvas id="weeklyChart"></canvas>
+      </div>
+    </div>
+    <div class="card">
+      <h3 class="card-title">행사 후 주문수·객단가 동시 상승</h3>
+      <p class="card-sub">일평균 주문수 86.3 → 95.3건 (+10.4%) · 객단가 ₩56,917 → ₩62,606 (+10.0%)</p>
+      <div class="chart-wrap-tall">
+        <canvas id="orderAovChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="insight">
+    <div class="insight-label">CSO Note · Daily &amp; Weekly Trend</div>
+    <p>주별 매출 추이를 보면 행사 시작 주(4/13~19, 4·19가 일요일이라 그 주에 부분적으로 포함)부터 상승이 시작되어 <strong>4/27~5/3 주에 ₩39.8M으로 최고치</strong>를 기록했습니다. 토요일은 식자재쿡이 영업하지 않는 패턴(4/18 ₩79만, 4/25 ₩56만)이 명확하니 모든 분석에서 토요일을 제외하는 것이 정확합니다.</p>
+    <p>가장 큰 일별 스파이크는 <strong style="color:var(--yellow)">4/29(수) ₩10.76M</strong> — 이는 푸시·문자가 발송되지 않은 날인데도 가장 높은 매출이 나왔습니다. 행사 종료(4/30) 직전 하루 전이라 <em>마감 임박 효과</em>로 해석되며, 다음 행사에서는 종료 D-2 ~ D-1 시점에 종료 임박 메시지를 강하게 푸시하는 것이 가장 효율적인 발송 타이밍이 될 수 있습니다.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- ─── Section 03: 주문처별 일평균 구매액 변동 (REQ #3) ─── -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section>
+  <div class="section-head">
+    <div>
+      <div class="section-eyebrow">Section 03 · Per-Store Daily Avg</div>
+      <h2 class="section-title">주문처별 일평균 구매액 변동</h2>
+      <div class="section-sub">행사 전 18일 vs 행사 후 12일 기준 — 활성 일자당 평균 구매액 변화</div>
+    </div>
+  </div>
+
+  <!-- KPI 박스 -->
+  <div class="grid-3-eq" style="margin-bottom: 24px;">
+    <div class="card" style="text-align:center;">
+      <div class="kpi-label" style="margin-bottom:8px;">양월 활성 주문처</div>
+      <div style="font-size: 32px; font-weight: 700; color: var(--ink);">306<span style="font-size:14px; color:var(--ink-dim); font-weight:500; margin-left:4px;">곳</span></div>
+      <div class="kpi-sub" style="margin-top:8px;">증가 <span class="u-yellow u-bold">166곳</span> · 감소 <span class="u-red u-bold">140곳</span></div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div class="kpi-label" style="margin-bottom:8px;">행사 후 신규 주문처</div>
+      <div style="font-size: 32px; font-weight: 700; color: var(--yellow);">56<span style="font-size:14px; color:var(--ink-dim); font-weight:500; margin-left:4px;">곳</span></div>
+      <div class="kpi-sub" style="margin-top:8px;">신규 매출 <span class="u-bold">₩7.75M</span></div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div class="kpi-label" style="margin-bottom:8px;">이탈 (행사 전→후)</div>
+      <div style="font-size: 32px; font-weight: 700; color: var(--orange-2);">68<span style="font-size:14px; color:var(--ink-dim); font-weight:500; margin-left:4px;">곳</span></div>
+      <div class="kpi-sub" style="margin-top:8px;">신규(56) > 이탈(68)·12곳 순감소</div>
+    </div>
+  </div>
+
+  <!-- 분포 차트 + Top 증가/감소 -->
+  <div class="card">
+    <h3 class="card-title">일평균 구매액 변동율 분포</h3>
+    <p class="card-sub">양월 모두 활성인 306개 주문처의 행사 전후 변동율 (회색 점선 = 0% 기준)</p>
+    <div class="chart-wrap">
+      <canvas id="storeBucketChart"></canvas>
+    </div>
+  </div>
+
+  <div class="grid-2" style="margin-top: 20px;">
+    <div class="card">
+      <h3 class="card-title">Top 10 매출 증가 주문처</h3>
+      <p class="card-sub">행사 후 일평균 구매액 증가폭 TOP 10</p>
+      <div id="topIncList" class="rank-list"></div>
+    </div>
+    <div class="card">
+      <h3 class="card-title">Top 10 매출 감소 주문처</h3>
+      <p class="card-sub">행사 후 일평균 구매액 감소폭 TOP 10 (재활성화 대상)</p>
+      <div id="topDecList" class="rank-list"></div>
+    </div>
+  </div>
+
+  <div class="insight">
+    <div class="insight-label">CSO Note · Per-Store Insight</div>
+    <p>양월 모두 활성인 <strong>306곳 중 증가 166곳 vs 감소 140곳 — 거의 1:1 분포</strong>가 나옵니다. 평균 일평균 변동은 +₩4,308로 미세한 양수지만, 이는 <em>증가 회원의 큰 폭이 감소 회원의 작은 폭을 상쇄한 결과</em>입니다. 분포 차트를 보면 +50% 이상 급증한 주문처가 다수이며, 이들이 전체 매출 +21.5%의 핵심 견인차입니다.</p>
+    <p>Top 증가 주문처에는 <strong>계주 숯불닭갈비(+₩585K, +436%)</strong>, <strong>주식회사 리프(+₩237K, +769%)</strong>, <strong>지코바숯불치킨 동구점(+₩137K, +115%)</strong>가 있고, 이들은 행사를 기회로 평소의 4~7배까지 발주를 확대한 케이스입니다. 반면 Top 감소 주문처(<strong>교동닭칼국수 화원직영점, 영끌포차, 십일월</strong>)는 행사 인지가 낮았거나 다른 이유로 발주가 줄어든 곳으로, 영업팀의 1:1 컨택 대상입니다. 또한 신규 56곳·매출 ₩7.75M은 행사가 신규 거래처 확보 채널로도 작동했음을 시사합니다.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- ─── Section 04: 푸시·문자 발송일 효과 (REQ #4) ─── -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section>
+  <div class="section-head">
+    <div>
+      <div class="section-eyebrow">Section 04 · Push &amp; SMS Effect</div>
+      <h2 class="section-title">푸시·문자 발송일 매출 효과</h2>
+      <div class="section-sub">발송일 5일 (4/19, 20, 23, 26, 28) vs 비발송일 6일 (4/21, 22, 24, 27, 29, 30) — 토요일 제외</div>
+    </div>
+  </div>
+
+  <!-- 발송일 정보 테이블 -->
+  <div class="card" style="margin-bottom: 20px;">
+    <h3 class="card-title">발송일별 매출 (4·19 ~ 4·30)</h3>
+    <p class="card-sub">행사 기간 중 푸시 5회, 문자 2회 발송 — 발송일 매출과 비교 기준일 매출</p>
+    <table class="event-table" id="eventTable">
+      <thead>
+        <tr><th>일자</th><th>요일</th><th class="c">발송 채널</th><th class="r">매출 (₩)</th><th class="r">주문수</th><th class="r">객단가 (₩)</th><th class="c">주변일 대비</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- 발송 vs 비발송 비교 -->
+  <div class="grid-2">
+    <div class="card">
+      <h3 class="card-title">발송일 vs 비발송일 비교</h3>
+      <p class="card-sub">5일(발송) vs 6일(비발송) 일평균 — 토요일(영업 X) 제외</p>
+      <div class="chart-wrap">
+        <canvas id="pushBarChart"></canvas>
+      </div>
+    </div>
+    <div class="card">
+      <h3 class="card-title">행사 기간 일별 매출 패턴</h3>
+      <p class="card-sub">발송일(주황) vs 비발송일(노랑) 매출 추이 — 4/29 비발송 스파이크 주목</p>
+      <div class="chart-wrap">
+        <canvas id="pushDailyChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="insight">
+    <div class="insight-label">CSO Note · Push &amp; SMS Effect (반직관적 결과)</div>
+    <p>예상과 달리 <strong style="color:var(--orange-2)">발송일 일평균 ₩6.18M vs 비발송일 일평균 ₩6.69M — Lift -7.7%</strong>로 발송일이 오히려 약간 낮은 매출을 보였습니다. 주문수도 -3.0%, 객단가도 -3.9%로 모든 지표에서 발송일이 비발송일을 앞서지 못했습니다. 이는 <em>푸시·문자가 직접적인 매출 lift를 만들지 못했다</em>는 결론입니다.</p>
+    <p>왜 이런 결과가 나왔을까요? 가장 큰 단서는 <strong>4/29(수) ₩10.76M</strong> — 푸시·문자가 발송되지 않은 날인데 행사 기간 최고 매출이 나왔습니다. 이는 4/30 행사 종료 직전 <em>마감 임박 효과</em>로, 메시지 없이도 회원들이 알아서 발주를 몰아 넣은 것입니다. 즉, <strong>행사 자체의 매출 견인력은 이미 강력했고, 푸시·문자는 추가 자극이 되기보다 발송 타이밍이 비효율적이었다</strong>고 해석됩니다. 4/19(일·푸시) 첫날, 4/26(일·푸시+문자) 모두 일요일이라 발주 빈도 자체가 낮은 날에 발송된 것도 한 요인입니다.</p>
+    <p style="border-top:1px solid var(--line); padding-top:12px; margin-top:14px;"><strong>다음 행사를 위한 권장 사항:</strong> ① 발송 타이밍을 평일 오전(화·수·목 10시 전후)으로 이동 ② 행사 종료 D-2 ~ D-1에 <strong>"마감 임박" 강조 메시지</strong> 집중 배치 — 4/29 자연 스파이크가 보여준 패턴 ③ 일요일 발송은 효과 측정 시 별도 트래킹(통상 평일 발송 대비 회수율 30~40% 낮음)</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- ─── Section 05: 가입자 추이 (이전 분석 유지) ─── -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section>
+  <div class="section-head">
+    <div>
+      <div class="section-eyebrow">Section 05 · Signup Trend</div>
+      <h2 class="section-title">3월~4월 일별 신규 가입자 추이</h2>
+      <div class="section-sub">4월 19일을 기점으로 일평균 가입자 3.72명 → 4.50명 (+21%) — 자연 유입 채널이 견인</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="chart-wrap-tall">
+      <canvas id="signupDailyChart"></canvas>
+    </div>
+  </div>
+
+  <div class="grid-2" style="margin-top: 20px;">
+    <div class="compare-cell before" style="border: 1px solid var(--line); border-radius: 8px;">
+      <div class="compare-tag">— 행사 전 (4/1 ~ 4/18)</div>
+      <div class="compare-period">총 18일</div>
+      <div class="compare-value">67<span class="compare-unit">명</span></div>
+      <div class="compare-detail">일평균 <strong>3.72명</strong> · 첫 주문 전환 41.8% (28명)</div>
+    </div>
+    <div class="compare-cell after" style="border: 1px solid var(--line); border-radius: 8px;">
+      <div class="compare-tag">▲ 행사 후 (4/19 ~ 4/30)</div>
+      <div class="compare-period">총 12일</div>
+      <div class="compare-value u-yellow">54<span class="compare-unit">명</span></div>
+      <div class="compare-detail">일평균 <strong>4.50명 (+21%)</strong> · 첫 주문 전환 29.6% (16명)</div>
+    </div>
+  </div>
+
+  <div class="insight">
+    <div class="insight-label">CSO Note · Signup Trend</div>
+    <p>4/19 행사 시작 이후 일평균 가입자가 <em>3.72명 → 4.50명</em>으로 <strong>+21% 증가</strong>했습니다. 채널 분석에서 <strong>자연유입 +88%, 네이버 검색 +125%</strong> 증가가 확인되어, 일제 할인이 영업조직 푸시 없이도 시장에서 입소문(WOM)과 검색 노출을 만들어냈다는 강력한 시그널이 나왔습니다. 매출 측면의 +21.5%와 가입자 측면의 +21%가 거의 같은 폭으로 움직인 것은 흥미로운 일치입니다.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div>식자재쿡 · CSO Brief · Promotion Impact Analysis · v2 (with sales data)</div>
+  <div>Generated · 2026-05-06</div>
+</footer>
+
+</div><!-- /.wrap -->
+
+<script>
+Chart.defaults.font.family = "'Pretendard', sans-serif";
+Chart.defaults.font.weight = 500;
+Chart.defaults.color = '#8a8a8a';
+Chart.defaults.borderColor = '#2a2a2a';
+
+const D = {"compare": {"promo_pre": {"revenue": 88449280, "orders": 1554, "stores": 374, "aov": 56917, "daily_avg_rev": 4913848}, "promo_post": {"revenue": 71622268, "orders": 1144, "stores": 362, "aov": 62606, "daily_avg_rev": 5968522}, "apr_h1": {"revenue": 75066850, "orders": 1311, "stores": 364, "aov": 57259, "daily_avg_rev": 5004456}, "apr_h2": {"revenue": 85004698, "orders": 1387, "stores": 375, "aov": 61286, "daily_avg_rev": 5666979}, "mar_h1": {"revenue": 69308700, "orders": 1153, "stores": 327, "aov": 60111, "daily_avg_rev": 4620580}, "mar_h2": {"revenue": 77409640, "orders": 1360, "stores": 354, "aov": 56918, "daily_avg_rev": 4838102}, "mar_total": {"revenue": 146718340, "orders": 2513, "stores": 393, "aov": 58383, "daily_avg_rev": 4732849}, "apr_total": {"revenue": 160071548, "orders": 2698, "stores": 430, "aov": 59329, "daily_avg_rev": 5335718}}, "daily": [{"date": "2026-03-01", "weekday": "Sun", "food_revenue": 622680, "food_orders": 14, "food_stores": 14, "food_aov": 44477, "brand_revenue": 2410030}, {"date": "2026-03-02", "weekday": "Mon", "food_revenue": 7165170, "food_orders": 101, "food_stores": 90, "food_aov": 70942, "brand_revenue": 36804474}, {"date": "2026-03-03", "weekday": "Tue", "food_revenue": 3186000, "food_orders": 74, "food_stores": 65, "food_aov": 43054, "brand_revenue": 34466117}, {"date": "2026-03-04", "weekday": "Wed", "food_revenue": 5728590, "food_orders": 91, "food_stores": 82, "food_aov": 62952, "brand_revenue": 25965801}, {"date": "2026-03-05", "weekday": "Thu", "food_revenue": 6648390, "food_orders": 99, "food_stores": 92, "food_aov": 67155, "brand_revenue": 51482026}, {"date": "2026-03-06", "weekday": "Fri", "food_revenue": 7826140, "food_orders": 118, "food_stores": 105, "food_aov": 66323, "brand_revenue": 42915410}, {"date": "2026-03-07", "weekday": "Sat", "food_revenue": 730110, "food_orders": 10, "food_stores": 8, "food_aov": 73011, "brand_revenue": 4577690}, {"date": "2026-03-08", "weekday": "Sun", "food_revenue": 4576510, "food_orders": 77, "food_stores": 69, "food_aov": 59435, "brand_revenue": 33542254}, {"date": "2026-03-09", "weekday": "Mon", "food_revenue": 3328170, "food_orders": 74, "food_stores": 71, "food_aov": 44975, "brand_revenue": 29787489}, {"date": "2026-03-10", "weekday": "Tue", "food_revenue": 4305960, "food_orders": 80, "food_stores": 71, "food_aov": 53824, "brand_revenue": 26096260}, {"date": "2026-03-11", "weekday": "Wed", "food_revenue": 5447620, "food_orders": 102, "food_stores": 89, "food_aov": 53408, "brand_revenue": 30925177}, {"date": "2026-03-12", "weekday": "Thu", "food_revenue": 7003330, "food_orders": 112, "food_stores": 98, "food_aov": 62530, "brand_revenue": 53077671}, {"date": "2026-03-13", "weekday": "Fri", "food_revenue": 7349430, "food_orders": 112, "food_stores": 96, "food_aov": 65620, "brand_revenue": 41420871}, {"date": "2026-03-14", "weekday": "Sat", "food_revenue": 547450, "food_orders": 11, "food_stores": 11, "food_aov": 49768, "brand_revenue": 4585510}, {"date": "2026-03-15", "weekday": "Sun", "food_revenue": 4843150, "food_orders": 78, "food_stores": 74, "food_aov": 62092, "brand_revenue": 33378055}, {"date": "2026-03-16", "weekday": "Mon", "food_revenue": 5161040, "food_orders": 96, "food_stores": 85, "food_aov": 53761, "brand_revenue": 30817041}, {"date": "2026-03-17", "weekday": "Tue", "food_revenue": 4518730, "food_orders": 88, "food_stores": 81, "food_aov": 51349, "brand_revenue": 31716994}, {"date": "2026-03-18", "weekday": "Wed", "food_revenue": 4898330, "food_orders": 93, "food_stores": 83, "food_aov": 52670, "brand_revenue": 33797019}, {"date": "2026-03-19", "weekday": "Thu", "food_revenue": 5736660, "food_orders": 101, "food_stores": 86, "food_aov": 56799, "brand_revenue": 52914539}, {"date": "2026-03-20", "weekday": "Fri", "food_revenue": 6609320, "food_orders": 117, "food_stores": 97, "food_aov": 56490, "brand_revenue": 41698949}, {"date": "2026-03-21", "weekday": "Sat", "food_revenue": 553040, "food_orders": 12, "food_stores": 12, "food_aov": 46087, "brand_revenue": 4223180}, {"date": "2026-03-22", "weekday": "Sun", "food_revenue": 5093700, "food_orders": 79, "food_stores": 75, "food_aov": 64477, "brand_revenue": 40044310}, {"date": "2026-03-23", "weekday": "Mon", "food_revenue": 4151120, "food_orders": 86, "food_stores": 79, "food_aov": 48269, "brand_revenue": 26578524}, {"date": "2026-03-24", "weekday": "Tue", "food_revenue": 4201690, "food_orders": 80, "food_stores": 75, "food_aov": 52521, "brand_revenue": 37599093}, {"date": "2026-03-25", "weekday": "Wed", "food_revenue": 6429480, "food_orders": 98, "food_stores": 89, "food_aov": 65607, "brand_revenue": 34120621}, {"date": "2026-03-26", "weekday": "Thu", "food_revenue": 8009430, "food_orders": 119, "food_stores": 98, "food_aov": 67306, "brand_revenue": 55596301}, {"date": "2026-03-27", "weekday": "Fri", "food_revenue": 6757290, "food_orders": 114, "food_stores": 100, "food_aov": 59274, "brand_revenue": 46027108}, {"date": "2026-03-28", "weekday": "Sat", "food_revenue": 984000, "food_orders": 14, "food_stores": 13, "food_aov": 70286, "brand_revenue": 2954150}, {"date": "2026-03-29", "weekday": "Sun", "food_revenue": 5284470, "food_orders": 94, "food_stores": 80, "food_aov": 56218, "brand_revenue": 35558859}, {"date": "2026-03-30", "weekday": "Mon", "food_revenue": 3582550, "food_orders": 81, "food_stores": 72, "food_aov": 44229, "brand_revenue": 34107263}, {"date": "2026-03-31", "weekday": "Tue", "food_revenue": 5438790, "food_orders": 88, "food_stores": 76, "food_aov": 61804, "brand_revenue": 30528115}, {"date": "2026-04-01", "weekday": "Wed", "food_revenue": 7113600, "food_orders": 110, "food_stores": 98, "food_aov": 64669, "brand_revenue": 36169392}, {"date": "2026-04-02", "weekday": "Thu", "food_revenue": 6822430, "food_orders": 121, "food_stores": 104, "food_aov": 56384, "brand_revenue": 56890949}, {"date": "2026-04-03", "weekday": "Fri", "food_revenue": 7613440, "food_orders": 118, "food_stores": 103, "food_aov": 64521, "brand_revenue": 42765924}, {"date": "2026-04-04", "weekday": "Sat", "food_revenue": 330330, "food_orders": 8, "food_stores": 8, "food_aov": 41291, "brand_revenue": 2134420}, {"date": "2026-04-05", "weekday": "Sun", "food_revenue": 5171000, "food_orders": 81, "food_stores": 75, "food_aov": 63840, "brand_revenue": 36585582}, {"date": "2026-04-06", "weekday": "Mon", "food_revenue": 3979270, "food_orders": 88, "food_stores": 77, "food_aov": 45219, "brand_revenue": 31133244}, {"date": "2026-04-07", "weekday": "Tue", "food_revenue": 4981710, "food_orders": 93, "food_stores": 78, "food_aov": 53567, "brand_revenue": 28893466}, {"date": "2026-04-08", "weekday": "Wed", "food_revenue": 5170680, "food_orders": 80, "food_stores": 74, "food_aov": 64634, "brand_revenue": 37096156}, {"date": "2026-04-09", "weekday": "Thu", "food_revenue": 5596580, "food_orders": 110, "food_stores": 99, "food_aov": 50878, "brand_revenue": 54984295}, {"date": "2026-04-10", "weekday": "Fri", "food_revenue": 7904430, "food_orders": 134, "food_stores": 114, "food_aov": 58988, "brand_revenue": 46676601}, {"date": "2026-04-11", "weekday": "Sat", "food_revenue": 1040310, "food_orders": 16, "food_stores": 16, "food_aov": 65019, "brand_revenue": 2534780}, {"date": "2026-04-12", "weekday": "Sun", "food_revenue": 4919270, "food_orders": 88, "food_stores": 82, "food_aov": 55901, "brand_revenue": 33543196}, {"date": "2026-04-13", "weekday": "Mon", "food_revenue": 4692690, "food_orders": 91, "food_stores": 80, "food_aov": 51568, "brand_revenue": 36745267}, {"date": "2026-04-14", "weekday": "Tue", "food_revenue": 4348970, "food_orders": 78, "food_stores": 74, "food_aov": 55756, "brand_revenue": 33066457}, {"date": "2026-04-15", "weekday": "Wed", "food_revenue": 5382140, "food_orders": 95, "food_stores": 81, "food_aov": 56654, "brand_revenue": 32794675}, {"date": "2026-04-16", "weekday": "Thu", "food_revenue": 7410910, "food_orders": 129, "food_stores": 111, "food_aov": 57449, "brand_revenue": 49300514}, {"date": "2026-04-17", "weekday": "Fri", "food_revenue": 5181250, "food_orders": 99, "food_stores": 90, "food_aov": 52336, "brand_revenue": 44825836}, {"date": "2026-04-18", "weekday": "Sat", "food_revenue": 790270, "food_orders": 15, "food_stores": 15, "food_aov": 52685, "brand_revenue": 3229830}, {"date": "2026-04-19", "weekday": "Sun", "food_revenue": 5403200, "food_orders": 85, "food_stores": 77, "food_aov": 63567, "brand_revenue": 38464745}, {"date": "2026-04-20", "weekday": "Mon", "food_revenue": 5721640, "food_orders": 101, "food_stores": 90, "food_aov": 56650, "brand_revenue": 34513475}, {"date": "2026-04-21", "weekday": "Tue", "food_revenue": 5395080, "food_orders": 108, "food_stores": 97, "food_aov": 49954, "brand_revenue": 34178466}, {"date": "2026-04-22", "weekday": "Wed", "food_revenue": 5055240, "food_orders": 91, "food_stores": 81, "food_aov": 55552, "brand_revenue": 37031427}, {"date": "2026-04-23", "weekday": "Thu", "food_revenue": 7157940, "food_orders": 116, "food_stores": 101, "food_aov": 61706, "brand_revenue": 57733754}, {"date": "2026-04-24", "weekday": "Fri", "food_revenue": 8989610, "food_orders": 129, "food_stores": 108, "food_aov": 69687, "brand_revenue": 52860968}, {"date": "2026-04-25", "weekday": "Sat", "food_revenue": 562820, "food_orders": 12, "food_stores": 10, "food_aov": 46902, "brand_revenue": 2685270}, {"date": "2026-04-26", "weekday": "Sun", "food_revenue": 5745350, "food_orders": 93, "food_stores": 83, "food_aov": 61778, "brand_revenue": 34575575}, {"date": "2026-04-27", "weekday": "Mon", "food_revenue": 6010980, "food_orders": 109, "food_stores": 102, "food_aov": 55147, "brand_revenue": 35321821}, {"date": "2026-04-28", "weekday": "Tue", "food_revenue": 6871370, "food_orders": 111, "food_stores": 98, "food_aov": 61904, "brand_revenue": 42432896}, {"date": "2026-04-29", "weekday": "Wed", "food_revenue": 10760449, "food_orders": 133, "food_stores": 118, "food_aov": 80906, "brand_revenue": 77751322}, {"date": "2026-04-30", "weekday": "Thu", "food_revenue": 3948589, "food_orders": 56, "food_stores": 47, "food_aov": 70511, "brand_revenue": 15587972}, {"date": "2026-05-01", "weekday": "Fri", "food_revenue": 5729980, "food_orders": 102, "food_stores": 84, "food_aov": 56176, "brand_revenue": 47190282}, {"date": "2026-05-02", "weekday": "Sat", "food_revenue": 857260, "food_orders": 15, "food_stores": 14, "food_aov": 57151, "brand_revenue": 5197618}, {"date": "2026-05-03", "weekday": "Sun", "food_revenue": 7427160, "food_orders": 115, "food_stores": 103, "food_aov": 64584, "brand_revenue": 60355533}, {"date": "2026-05-04", "weekday": "Mon", "food_revenue": 1981790, "food_orders": 32, "food_stores": 30, "food_aov": 61931, "brand_revenue": 9730630}, {"date": "2026-05-05", "weekday": "Tue", "food_revenue": 6708140, "food_orders": 116, "food_stores": 103, "food_aov": 57829, "brand_revenue": 55520203}], "weekly": [{"start": "2026-02-23", "end": "2026-03-01", "label": "2/23~3/1", "revenue": 622680, "orders": 14}, {"start": "2026-03-02", "end": "2026-03-08", "label": "3/2~3/8", "revenue": 35860910, "orders": 570}, {"start": "2026-03-09", "end": "2026-03-15", "label": "3/9~3/15", "revenue": 32825110, "orders": 569}, {"start": "2026-03-16", "end": "2026-03-22", "label": "3/16~3/22", "revenue": 32570820, "orders": 586}, {"start": "2026-03-23", "end": "2026-03-29", "label": "3/23~3/29", "revenue": 35817480, "orders": 605}, {"start": "2026-03-30", "end": "2026-04-05", "label": "3/30~4/5", "revenue": 36072140, "orders": 607}, {"start": "2026-04-06", "end": "2026-04-12", "label": "4/6~4/12", "revenue": 33592250, "orders": 609}, {"start": "2026-04-13", "end": "2026-04-19", "label": "4/13~4/19", "revenue": 33209430, "orders": 592}, {"start": "2026-04-20", "end": "2026-04-26", "label": "4/20~4/26", "revenue": 38627680, "orders": 650}, {"start": "2026-04-27", "end": "2026-05-03", "label": "4/27~5/3", "revenue": 41605788, "orders": 641}, {"start": "2026-05-04", "end": "2026-05-10", "label": "5/4~5/10", "revenue": 8689930, "orders": 148}], "push": {"push_days": ["2026-04-19", "2026-04-20", "2026-04-23", "2026-04-26", "2026-04-28"], "nopush_days": ["2026-04-21", "2026-04-22", "2026-04-24", "2026-04-27", "2026-04-29", "2026-04-30"], "push_avg_rev": 6179900, "nopush_avg_rev": 6693324, "push_avg_orders": 101.2, "nopush_avg_orders": 104.3, "push_avg_aov": 61121, "nopush_avg_aov": 63626, "lift_revenue": -7.6706971831736475, "lift_orders": -3.003194888178906}, "push_events": [{"date": "2026-04-19", "type": "푸시", "revenue": 5403200, "orders": 85}, {"date": "2026-04-20", "type": "푸시+문자", "revenue": 5721640, "orders": 101}, {"date": "2026-04-23", "type": "푸시", "revenue": 7157940, "orders": 116}, {"date": "2026-04-26", "type": "푸시+문자", "revenue": 5745350, "orders": 93}, {"date": "2026-04-28", "type": "푸시", "revenue": 6871370, "orders": 111}], "stores": {"both_active": 306, "new_stores": 56, "lost_stores": 68, "increase_count": 166, "decrease_count": 140, "avg_change": 4308, "new_revenue": 7754790, "bucket_dist": {"-50%↓": 21, "-50~-25%": 44, "-25~-10%": 42, "-10~+10%": 68, "+10~25%": 34, "+25~50%": 35, "+50~100%": 32, "+100%↑": 30}, "top_inc": [{"name": "계주 숯불닭갈비", "pre": 134100, "post": 719270, "change": 585170}, {"name": "주식회사 리프", "pre": 30780, "post": 267615, "change": 236835}, {"name": "지코바숯불치킨 동구점", "pre": 119802, "post": 257250, "change": 137447}, {"name": "육회하계 연어하게", "pre": 141920, "post": 260942, "change": 119022}, {"name": "청로야(뚜레박) 가야점", "pre": 117256, "post": 214791, "change": 97534}, {"name": "부센동", "pre": 94306, "post": 190745, "change": 96438}, {"name": "참조은 돼지얼큰이해장국", "pre": 118000, "post": 205450, "change": 87450}, {"name": "설레임푸드(간판명:베트남노상식당)", "pre": 70312, "post": 154105, "change": 83793}, {"name": "마피아돼지갈비튀김.마피아떡볶이 부산하", "pre": 52190, "post": 131460, "change": 79270}, {"name": "배떡 범어점", "pre": 191776, "post": 268500, "change": 76723}, {"name": "요부코", "pre": 69910, "post": 145428, "change": 75518}, {"name": "욜로 PC방 부산개금점", "pre": 39930, "post": 114920, "change": 74990}, {"name": "수영대패", "pre": 69911, "post": 143700, "change": 73789}, {"name": "이담에도 칼국수", "pre": 90515, "post": 156250, "change": 65735}, {"name": "처갓집 해운대점", "pre": 68850, "post": 131250, "change": 62400}], "top_dec": [{"name": "교동닭칼국수 화원직영점", "pre": 227493, "post": 11400, "change": -216093}, {"name": "영끌포차", "pre": 386512, "post": 242710, "change": -143802}, {"name": "십일월", "pre": 186980, "post": 52058, "change": -134922}, {"name": "성경김밥", "pre": 205440, "post": 94890, "change": -110550}, {"name": "남주", "pre": 199710, "post": 100290, "change": -99420}, {"name": "배떡 양산덕계점", "pre": 187580, "post": 96460, "change": -91120}, {"name": "주든(suden)", "pre": 108560, "post": 31270, "change": -77290}, {"name": "주식회사 수국칼", "pre": 79795, "post": 5325, "change": -74470}, {"name": "명륜진사갈비 부산명지CGV점", "pre": 195010, "post": 125510, "change": -69500}, {"name": "본가진설렁탕", "pre": 96475, "post": 32770, "change": -63705}, {"name": "성대한연회 남포본점", "pre": 101535, "post": 42175, "change": -59360}, {"name": "요미우돈교자 해리단길", "pre": 97082, "post": 49373, "change": -47708}, {"name": "초가네 장어구이 덕천점", "pre": 73400, "post": 28980, "change": -44420}, {"name": "카츠엔맨", "pre": 113120, "post": 69155, "change": -43965}, {"name": "진주식품", "pre": 108540, "post": 65040, "change": -43500}]}};
+const S1 = {"summary": {"total_users": 6315, "march_revenue": 1135502758, "april_revenue": 1219993203, "march_active": 809, "april_active": 836, "march_aov": 1403588, "april_aov": 1459322, "april_signups": 123, "march_signups": 162, "pre_signups": 67, "post_signups": 54, "pre_daily_avg": 3.72, "post_daily_avg": 4.5, "april_first_order": 44, "march_first_order": 55, "new_user_revenue_april": 28247197, "new_user_revenue_march": 27747910, "both_active": 738, "both_increase": 374, "both_decrease": 361, "both_revenue_mar": 1115041814, "both_revenue_apr": 1165562333}, "daily_signups": [{"date": "2026-03-01", "count": 1}, {"date": "2026-03-02", "count": 8}, {"date": "2026-03-03", "count": 6}, {"date": "2026-03-04", "count": 4}, {"date": "2026-03-05", "count": 7}, {"date": "2026-03-06", "count": 6}, {"date": "2026-03-07", "count": 0}, {"date": "2026-03-08", "count": 2}, {"date": "2026-03-09", "count": 3}, {"date": "2026-03-10", "count": 10}, {"date": "2026-03-11", "count": 9}, {"date": "2026-03-12", "count": 6}, {"date": "2026-03-13", "count": 9}, {"date": "2026-03-14", "count": 2}, {"date": "2026-03-15", "count": 1}, {"date": "2026-03-16", "count": 8}, {"date": "2026-03-17", "count": 8}, {"date": "2026-03-18", "count": 11}, {"date": "2026-03-19", "count": 7}, {"date": "2026-03-20", "count": 5}, {"date": "2026-03-21", "count": 1}, {"date": "2026-03-22", "count": 2}, {"date": "2026-03-23", "count": 5}, {"date": "2026-03-24", "count": 7}, {"date": "2026-03-25", "count": 5}, {"date": "2026-03-26", "count": 9}, {"date": "2026-03-27", "count": 6}, {"date": "2026-03-28", "count": 1}, {"date": "2026-03-29", "count": 5}, {"date": "2026-03-30", "count": 8}, {"date": "2026-03-31", "count": 16}, {"date": "2026-04-01", "count": 5}, {"date": "2026-04-02", "count": 4}, {"date": "2026-04-03", "count": 4}, {"date": "2026-04-04", "count": 1}, {"date": "2026-04-05", "count": 2}, {"date": "2026-04-06", "count": 14}, {"date": "2026-04-07", "count": 3}, {"date": "2026-04-08", "count": 3}, {"date": "2026-04-09", "count": 5}, {"date": "2026-04-10", "count": 7}, {"date": "2026-04-11", "count": 0}, {"date": "2026-04-12", "count": 0}, {"date": "2026-04-13", "count": 3}, {"date": "2026-04-14", "count": 2}, {"date": "2026-04-15", "count": 1}, {"date": "2026-04-16", "count": 10}, {"date": "2026-04-17", "count": 3}, {"date": "2026-04-18", "count": 2}, {"date": "2026-04-19", "count": 2}, {"date": "2026-04-20", "count": 6}, {"date": "2026-04-21", "count": 7}, {"date": "2026-04-22", "count": 7}, {"date": "2026-04-23", "count": 5}, {"date": "2026-04-24", "count": 3}, {"date": "2026-04-25", "count": 1}, {"date": "2026-04-26", "count": 3}, {"date": "2026-04-27", "count": 3}, {"date": "2026-04-28", "count": 4}, {"date": "2026-04-29", "count": 13}, {"date": "2026-04-30", "count": 0}], "channel_pre": {"자연유입": 20, "브랜드쿡(프랜차이즈)": 18, "초인 추천": 15, "네이버 검색": 2, "식자재쿡 기존회원": 4, "지인 추천": 3, "회원 추천": 3, "식봄": 2, "직접 영업": 0}, "channel_post": {"자연유입": 25, "브랜드쿡(프랜차이즈)": 14, "초인 추천": 6, "네이버 검색": 3, "식자재쿡 기존회원": 2, "지인 추천": 2, "회원 추천": 0, "식봄": 1, "직접 영업": 1}, "bucket_dist": {"-50%↓": 66, "-50~-25%": 106, "-25~-10%": 107, "-10~0%": 85, "0~10%": 83, "10~25%": 95, "25~50%": 76, "50~100%": 56, "100%↑": 64}, "grade_dist": {"씨앗": 122, "기존": 1}};
+
+const won = v => '₩' + v.toLocaleString();
+const wonShort = v => {
+  if (Math.abs(v) >= 1e8) return '₩' + (v/1e8).toFixed(1) + '억';
+  if (Math.abs(v) >= 1e7) return '₩' + (v/1e7).toFixed(1) + '천만';
+  if (Math.abs(v) >= 1e4) return '₩' + (v/1e4).toFixed(0) + '만';
+  return '₩' + v.toLocaleString();
+};
+
+// ─── Section 01 - 4월 전반 vs 후반 ───
+new Chart(document.getElementById('aprHalfChart'), {
+  type: 'bar',
+  data: {
+    labels: ['4/1~15 (15일)', '4/16~30 (15일)'],
+    datasets: [{
+      label: '일평균 매출',
+      data: [D.compare.apr_h1.daily_avg_rev, D.compare.apr_h2.daily_avg_rev],
+      backgroundColor: ['rgba(255,107,53,0.6)', '#fbbf24'],
+      borderColor: ['#ff6b35', '#fde047'],
+      borderWidth: 1, borderRadius: 4
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { backgroundColor: '#1a1a1a', padding: 12, callbacks: { label: c => `일평균 ${won(c.parsed.y)}` } },
+      datalabels: false
+    },
+    scales: {
+      y: { beginAtZero: true, grid: { color: '#1f1f1f' }, ticks: { font: { size: 11 }, callback: v => '₩' + (v/1e6).toFixed(1) + 'M' } },
+      x: { grid: { display: false }, ticks: { font: { size: 12, weight: 600 }, color: '#3A342E' } }
+    }
+  },
+  plugins: [{
+    id: 'aprHalfLabel',
+    afterDatasetsDraw(chart) {
+      const { ctx, scales } = chart;
+      const data = chart.data.datasets[0].data;
+      data.forEach((v, i) => {
+        const x = scales.x.getPixelForValue(i);
+        const y = scales.y.getPixelForValue(v);
+        ctx.save();
+        ctx.fillStyle = i === 1 ? '#fde047' : '#3A342E';
+        ctx.font = "700 14px Pretendard";
+        ctx.textAlign = 'center';
+        ctx.fillText('₩' + (v/1e6).toFixed(2) + 'M', x, y - 8);
+        if (i === 1) {
+          ctx.fillStyle = '#10b981';
+          ctx.font = "600 11px Pretendard";
+          ctx.fillText('+13.2%', x, y + 16);
+        }
+        ctx.restore();
+      });
+    }
+  }]
+});
+
+// ─── Section 01 - 전월 동기간 비교 ───
+new Chart(document.getElementById('monthCompareChart'), {
+  type: 'bar',
+  data: {
+    labels: ['1~15일', '16~말일'],
+    datasets: [
+      {
+        label: '3월',
+        data: [D.compare.mar_h1.daily_avg_rev, D.compare.mar_h2.daily_avg_rev],
+        backgroundColor: 'rgba(255,107,53,0.4)', borderColor: '#ff6b35', borderWidth: 1, borderRadius: 4
+      },
+      {
+        label: '4월',
+        data: [D.compare.apr_h1.daily_avg_rev, D.compare.apr_h2.daily_avg_rev],
+        backgroundColor: '#fbbf24', borderColor: '#fde047', borderWidth: 1, borderRadius: 4
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'top', align: 'end', labels: { font: { size: 11 }, color: '#3A342E', boxWidth: 12, boxHeight: 12 } },
+      tooltip: { backgroundColor: '#1a1a1a', padding: 12, callbacks: { label: c => `${c.dataset.label} 일평균 ${won(c.parsed.y)}` } }
+    },
+    scales: {
+      y: { beginAtZero: true, grid: { color: '#1f1f1f' }, ticks: { font: { size: 11 }, callback: v => '₩' + (v/1e6).toFixed(1) + 'M' } },
+      x: { grid: { display: false }, ticks: { font: { size: 12, weight: 600 }, color: '#3A342E' } }
+    }
+  }
+});
+
+// ─── Section 02 - 일별 매출 (식자재쿡 + 브랜드쿡) ───
+(() => {
+  const labels = D.daily.map(d => d.date.slice(5));
+  const food = D.daily.map(d => d.food_revenue);
+  const brand = D.daily.map(d => d.brand_revenue);
+  const cutoffIdx = D.daily.findIndex(d => d.date === '2026-04-19');
+
+  // 푸시·문자 발송일 인덱스
+  const pushSet = new Set(D.push_events.map(e => e.date));
+  const pushIdx = D.daily.map((d, i) => pushSet.has(d.date) ? i : null).filter(v => v !== null);
+
+  // 색상: 3월=회색, 4/1~18=오렌지, 4/19~=노랑
+  const foodColors = D.daily.map(d => {
+    if (d.date < '2026-04-01') return '#555';
+    if (d.date < '2026-04-19') return '#ff6b35';
+    return '#fbbf24';
+  });
+
+  new Chart(document.getElementById('salesDailyChart'), {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        { label: '식자재쿡 (foodcook)', data: food, backgroundColor: foodColors, borderRadius: 2, order: 2 },
+        { label: '브랜드쿡 (brandcook)', data: brand, type: 'line', borderColor: 'rgba(59,130,246,0.7)', backgroundColor: 'rgba(59,130,246,0.05)', tension: 0.3, pointRadius: 0, borderWidth: 1.5, fill: true, yAxisID: 'y1', order: 1 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { position: 'top', align: 'end', labels: { font: { size: 11 }, color: '#3A342E', boxWidth: 12, boxHeight: 12 } },
+        tooltip: {
+          backgroundColor: '#1a1a1a', padding: 12,
+          callbacks: { label: c => `${c.dataset.label}: ${won(c.parsed.y)}` }
+        }
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: { font: { size: 9 }, color: '#555', maxRotation: 0, autoSkip: true, maxTicksLimit: 18 }
+        },
+        y: { beginAtZero: true, position: 'left', grid: { color: '#1f1f1f' },
+          ticks: { font: { size: 10 }, callback: v => '₩' + (v/1e6).toFixed(0) + 'M' },
+          title: { display: true, text: '식자재쿡 (₩)', color: '#fbbf24', font: { size: 10, weight: 600 } }
+        },
+        y1: { beginAtZero: true, position: 'right', grid: { display: false },
+          ticks: { font: { size: 10 }, callback: v => '₩' + (v/1e6).toFixed(0) + 'M', color: '#2F8F85' },
+          title: { display: true, text: '브랜드쿡 (₩)', color: '#2F8F85', font: { size: 10, weight: 600 } }
+        }
+      }
+    },
+    plugins: [{
+      id: 'cutoffAndMarkers',
+      afterDatasetsDraw(chart) {
+        const { ctx, chartArea, scales } = chart;
+        // 4/19 cutoff
+        if (cutoffIdx >= 0) {
+          const x = scales.x.getPixelForValue(cutoffIdx) - (scales.x.getPixelForValue(1)-scales.x.getPixelForValue(0))/2;
+          ctx.save();
+          ctx.setLineDash([4, 4]);
+          ctx.strokeStyle = '#fde047';
+          ctx.lineWidth = 1.5;
+          ctx.beginPath();
+          ctx.moveTo(x, chartArea.top);
+          ctx.lineTo(x, chartArea.bottom);
+          ctx.stroke();
+          ctx.setLineDash([]);
+          ctx.fillStyle = '#fde047';
+          ctx.font = "700 11px Pretendard";
+          ctx.textAlign = 'left';
+          ctx.fillText('▼ 4·19 행사 시작', x + 6, chartArea.top + 14);
+          ctx.restore();
+        }
+        // 푸시·문자 발송일 별표
+        pushIdx.forEach(i => {
+          const x = scales.x.getPixelForValue(i);
+          const y = scales.y.getPixelForValue(food[i]) - 12;
+          ctx.save();
+          ctx.fillStyle = '#fde047';
+          ctx.font = "700 14px Pretendard";
+          ctx.textAlign = 'center';
+          ctx.fillText('★', x, y);
+          ctx.restore();
+        });
+      }
+    }]
+  });
+})();
+
+// ─── Section 02 - 주별 매출 ───
+(() => {
+  const labels = D.weekly.map(w => w.label);
+  const values = D.weekly.map(w => w.revenue);
+  // 행사 시작 주 = 4/13~19 또는 4/19 포함 주 → 가장 매출 높은 주는 +21.5%로 강조
+  const colors = D.weekly.map(w => {
+    if (w.start >= '2026-04-19') return '#fbbf24';
+    if (w.start >= '2026-04-13') return '#f59e0b';  // transitioning week
+    return 'rgba(255,107,53,0.4)';
+  });
+
+  new Chart(document.getElementById('weeklyChart'), {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        label: '주별 매출',
+        data: values,
+        backgroundColor: colors,
+        borderRadius: 4
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { backgroundColor: '#1a1a1a', padding: 12, callbacks: { label: c => `매출 ${won(c.parsed.y)} · 주문 ${D.weekly[c.dataIndex].orders}건` } }
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { size: 10 }, color: '#8a8a8a', maxRotation: 0 } },
+        y: { beginAtZero: true, grid: { color: '#1f1f1f' }, ticks: { font: { size: 11 }, callback: v => '₩' + (v/1e6).toFixed(0) + 'M' } }
+      }
+    },
+    plugins: [{
+      id: 'weeklyLabel',
+      afterDatasetsDraw(chart) {
+        const { ctx, scales } = chart;
+        values.forEach((v, i) => {
+          if (v < 5e6) return;
+          const x = scales.x.getPixelForValue(i);
+          const y = scales.y.getPixelForValue(v);
+          ctx.save();
+          ctx.fillStyle = colors[i] === '#fbbf24' ? '#fde047' : '#3A342E';
+          ctx.font = "700 11px Pretendard";
+          ctx.textAlign = 'center';
+          ctx.fillText('₩' + (v/1e6).toFixed(1) + 'M', x, y - 8);
+          ctx.restore();
+        });
+      }
+    }]
+  });
+})();
+
+// ─── Section 02 - 주문수·객단가 ───
+new Chart(document.getElementById('orderAovChart'), {
+  type: 'bar',
+  data: {
+    labels: ['일평균 주문수 (건)', '객단가 (원)', '활성 주문처 (곳)'],
+    datasets: [
+      {
+        label: '행사 전',
+        data: [D.compare.promo_pre.orders / 18, D.compare.promo_pre.aov, D.compare.promo_pre.stores],
+        backgroundColor: 'rgba(255,107,53,0.45)', borderColor: '#ff6b35', borderWidth: 1, borderRadius: 4
+      },
+      {
+        label: '행사 후',
+        data: [D.compare.promo_post.orders / 12, D.compare.promo_post.aov, D.compare.promo_post.stores],
+        backgroundColor: '#fbbf24', borderColor: '#fde047', borderWidth: 1, borderRadius: 4
+      }
+    ]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'top', align: 'end', labels: { font: { size: 11 }, color: '#3A342E', boxWidth: 12, boxHeight: 12 } },
+      tooltip: { backgroundColor: '#1a1a1a', padding: 12,
+        callbacks: { label: c => `${c.dataset.label}: ${c.parsed.x.toLocaleString()}` } }
+    },
+    scales: {
+      x: { type: 'logarithmic', grid: { color: '#1f1f1f' }, ticks: { font: { size: 10 }, color: '#8a8a8a' } },
+      y: { grid: { display: false }, ticks: { font: { size: 12, weight: 600 }, color: '#3A342E' } }
+    }
+  }
+});
+
+// ─── Section 03 - 주문처 변동 분포 ───
+(() => {
+  const labels = Object.keys(D.stores.bucket_dist);
+  const values = Object.values(D.stores.bucket_dist);
+  const colors = labels.map(l => {
+    if (l.startsWith('-50%↓')) return '#dc2626';
+    if (l.startsWith('-50')) return '#ff6b35';
+    if (l.startsWith('-25')) return '#f59e0b';
+    if (l.startsWith('-10')) return '#d97706';
+    if (l.startsWith('+10') && !l.startsWith('+100')) return '#fbbf24';
+    if (l.startsWith('+25')) return '#fbbf24';
+    if (l.startsWith('+50')) return '#fde047';
+    if (l.startsWith('+100')) return '#fef08a';
+    return '#666';
+  });
+  new Chart(document.getElementById('storeBucketChart'), {
+    type: 'bar',
+    data: { labels, datasets: [{ data: values, backgroundColor: colors, borderRadius: 4 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { backgroundColor: '#1a1a1a', padding: 12, callbacks: { label: c => `${c.parsed.y}곳` } }
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { size: 10 }, color: '#8a8a8a' } },
+        y: { beginAtZero: true, grid: { color: '#1f1f1f' }, ticks: { font: { size: 11 }, color: '#8a8a8a' } }
+      }
+    },
+    plugins: [{
+      id: 'storeBucketLabel',
+      afterDatasetsDraw(chart) {
+        const { ctx, scales } = chart;
+        values.forEach((v, i) => {
+          if (v === 0) return;
+          const x = scales.x.getPixelForValue(i);
+          const y = scales.y.getPixelForValue(v);
+          ctx.save();
+          ctx.fillStyle = '#3A342E';
+          ctx.font = "600 11px Pretendard";
+          ctx.textAlign = 'center';
+          ctx.fillText(v + '곳', x, y - 6);
+          ctx.restore();
+        });
+        // 0% 기준선
+        const cutIdx = labels.findIndex(l => l.startsWith('-10~'));
+        if (cutIdx >= 0) {
+          const xRight = scales.x.getPixelForValue(cutIdx) + (scales.x.getPixelForValue(1)-scales.x.getPixelForValue(0))/2;
+          ctx.save();
+          ctx.setLineDash([3, 3]);
+          ctx.strokeStyle = 'rgba(255,255,255,0.25)';
+          ctx.beginPath();
+          ctx.moveTo(xRight, chart.chartArea.top);
+          ctx.lineTo(xRight, chart.chartArea.bottom);
+          ctx.stroke();
+          ctx.restore();
+        }
+      }
+    }]
+  });
+})();
+
+// ─── Section 03 - Top 증가/감소 리스트 ───
+(() => {
+  const incList = document.getElementById('topIncList');
+  const decList = document.getElementById('topDecList');
+
+  D.stores.top_inc.slice(0, 10).forEach((s, i) => {
+    const div = document.createElement('div');
+    div.className = 'rank-row inc';
+    div.innerHTML = `
+      <div class="rank-num">${(i+1).toString().padStart(2,'0')}</div>
+      <div class="rank-name" title="${s.name}">${s.name}</div>
+      <div class="rank-vals">
+        <div class="pre">전 ₩${s.pre.toLocaleString()}</div>
+        <div class="post">후 ₩${s.post.toLocaleString()}</div>
+      </div>
+      <div class="rank-delta pos">+₩${(s.change/1000).toFixed(0)}k</div>`;
+    incList.appendChild(div);
+  });
+
+  D.stores.top_dec.slice(0, 10).forEach((s, i) => {
+    const div = document.createElement('div');
+    div.className = 'rank-row dec';
+    div.innerHTML = `
+      <div class="rank-num">${(i+1).toString().padStart(2,'0')}</div>
+      <div class="rank-name" title="${s.name}">${s.name}</div>
+      <div class="rank-vals">
+        <div class="pre">전 ₩${s.pre.toLocaleString()}</div>
+        <div class="post">후 ₩${s.post.toLocaleString()}</div>
+      </div>
+      <div class="rank-delta neg">−₩${(Math.abs(s.change)/1000).toFixed(0)}k</div>`;
+    decList.appendChild(div);
+  });
+})();
+
+// ─── Section 04 - 발송일 테이블 ───
+(() => {
+  const tbody = document.querySelector('#eventTable tbody');
+  // 4/19~30 모든 일자 (토요일 제외)
+  const eventDates = D.daily.filter(d => d.date >= '2026-04-19' && d.date <= '2026-04-30');
+  const pushMap = {};
+  D.push_events.forEach(e => pushMap[e.date] = e.type);
+
+  eventDates.forEach(d => {
+    const dt = new Date(d.date);
+    const dayKr = ['일','월','화','수','목','금','토'][dt.getDay()];
+    if (dt.getDay() === 6) return;  // 토요일 skip
+
+    const tr = document.createElement('tr');
+    const channel = pushMap[d.date];
+    const channelHtml = channel
+      ? `<span class="channel-tag${channel.includes('+') ? ' both' : ''}">${channel}</span>`
+      : `<span style="color:var(--ink-soft); font-size:11px;">—</span>`;
+
+    let highlight = '';
+    if (channel) tr.style.background = 'rgba(245,158,11,0.04)';
+    if (d.date === '2026-04-29') highlight = ' style="color:var(--yellow); font-weight:700;"';
+
+    tr.innerHTML = `
+      <td><strong>${d.date.slice(5)}</strong></td>
+      <td>${dayKr}</td>
+      <td class="c">${channelHtml}</td>
+      <td class="r"${highlight}>${d.food_revenue.toLocaleString()}</td>
+      <td class="r">${d.food_orders}</td>
+      <td class="r">${d.food_aov.toLocaleString()}</td>
+      <td class="c"><span style="color:${d.date === '2026-04-29' ? 'var(--yellow)' : 'var(--ink-dim)'}; font-size:11px;">${d.date === '2026-04-29' ? '★ 최고치' : ''}</span></td>`;
+    tbody.appendChild(tr);
+  });
+})();
+
+// ─── Section 04 - 발송 vs 비발송 비교 ───
+new Chart(document.getElementById('pushBarChart'), {
+  type: 'bar',
+  data: {
+    labels: ['일평균 매출 (M)', '일평균 주문수', '객단가 (천원)'],
+    datasets: [
+      {
+        label: '발송일 (5일)',
+        data: [D.push.push_avg_rev/1e6, D.push.push_avg_orders, D.push.push_avg_aov/1000],
+        backgroundColor: 'rgba(255,107,53,0.55)', borderColor: '#ff6b35', borderWidth: 1, borderRadius: 4
+      },
+      {
+        label: '비발송일 (6일)',
+        data: [D.push.nopush_avg_rev/1e6, D.push.nopush_avg_orders, D.push.nopush_avg_aov/1000],
+        backgroundColor: '#fbbf24', borderColor: '#fde047', borderWidth: 1, borderRadius: 4
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'top', align: 'end', labels: { font: { size: 11 }, color: '#3A342E', boxWidth: 12, boxHeight: 12 } },
+      tooltip: { backgroundColor: '#1a1a1a', padding: 12 }
+    },
+    scales: {
+      y: { beginAtZero: true, grid: { color: '#1f1f1f' }, ticks: { font: { size: 11 } } },
+      x: { grid: { display: false }, ticks: { font: { size: 11, weight: 600 }, color: '#3A342E' } }
+    }
+  },
+  plugins: [{
+    id: 'pushLabel',
+    afterDatasetsDraw(chart) {
+      const { ctx, scales } = chart;
+      chart.data.datasets.forEach((ds, dsIdx) => {
+        ds.data.forEach((v, i) => {
+          const x = scales.x.getPixelForValue(i) + (dsIdx === 0 ? -22 : 22);
+          const y = scales.y.getPixelForValue(v);
+          ctx.save();
+          ctx.fillStyle = dsIdx === 0 ? '#ff6b35' : '#fde047';
+          ctx.font = "600 10px Pretendard";
+          ctx.textAlign = 'center';
+          ctx.fillText(v.toFixed(1), x, y - 4);
+          ctx.restore();
+        });
+      });
+    }
+  }]
+});
+
+// ─── Section 04 - 일별 매출 (행사 기간) ───
+(() => {
+  const range = D.daily.filter(d => d.date >= '2026-04-19' && d.date <= '2026-04-30');
+  const labels = range.map(d => {
+    const dt = new Date(d.date);
+    const dayKr = ['일','월','화','수','목','금','토'][dt.getDay()];
+    return d.date.slice(5) + ' ' + dayKr;
+  });
+  const values = range.map(d => d.food_revenue);
+  const pushSet = new Set(D.push_events.map(e => e.date));
+  const colors = range.map(d => {
+    if (new Date(d.date).getDay() === 6) return '#444';  // 토요일
+    return pushSet.has(d.date) ? '#ff6b35' : '#fbbf24';
+  });
+
+  new Chart(document.getElementById('pushDailyChart'), {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{ label: '식자재쿡 일별 매출', data: values, backgroundColor: colors, borderRadius: 3 }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { backgroundColor: '#1a1a1a', padding: 12,
+          callbacks: {
+            title: c => labels[c[0].dataIndex],
+            label: c => {
+              const d = range[c.dataIndex];
+              const tag = pushSet.has(d.date) ? ` (${D.push_events.find(e => e.date === d.date).type} 발송)` : '';
+              return `${won(c.parsed.y)}${tag}`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { size: 9 }, color: '#8a8a8a', maxRotation: 45, minRotation: 45 } },
+        y: { beginAtZero: true, grid: { color: '#1f1f1f' }, ticks: { font: { size: 10 }, callback: v => '₩' + (v/1e6).toFixed(0) + 'M' } }
+      }
+    },
+    plugins: [{
+      id: 'pushDailyLabel',
+      afterDatasetsDraw(chart) {
+        const { ctx, scales } = chart;
+        values.forEach((v, i) => {
+          const x = scales.x.getPixelForValue(i);
+          const y = scales.y.getPixelForValue(v);
+          if (range[i].date === '2026-04-29') {
+            ctx.save();
+            ctx.fillStyle = '#fde047';
+            ctx.font = "700 10px Pretendard";
+            ctx.textAlign = 'center';
+            ctx.fillText('★ ₩10.76M', x, y - 6);
+            ctx.restore();
+          }
+        });
+      }
+    }]
+  });
+})();
+
+// ─── Section 05 - 가입자 추이 (이전 분석에서 가져옴) ───
+(() => {
+  const labels = S1.daily_signups.map(d => d.date.slice(5));
+  const counts = S1.daily_signups.map(d => d.count);
+  const cutoffIdx = S1.daily_signups.findIndex(d => d.date === '2026-04-19');
+
+  const colors = S1.daily_signups.map((d, i) => {
+    if (d.date < '2026-04-01') return '#555';
+    if (d.date < '2026-04-19') return '#ff6b35';
+    return '#fbbf24';
+  });
+
+  new Chart(document.getElementById('signupDailyChart'), {
+    type: 'bar',
+    data: { labels, datasets: [{ data: counts, backgroundColor: colors, borderRadius: 3 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { backgroundColor: '#1a1a1a', padding: 12, callbacks: { label: c => `가입 ${c.parsed.y}명` } }
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { size: 10 }, color: '#555', maxRotation: 0, autoSkip: true, maxTicksLimit: 18 } },
+        y: { beginAtZero: true, grid: { color: '#1f1f1f' }, ticks: { font: { size: 11 }, color: '#8a8a8a' } }
+      }
+    },
+    plugins: [{
+      id: 'cutoff2',
+      afterDatasetsDraw(chart) {
+        const { ctx, chartArea, scales } = chart;
+        if (cutoffIdx < 0) return;
+        const x = scales.x.getPixelForValue(cutoffIdx) - (scales.x.getPixelForValue(1)-scales.x.getPixelForValue(0))/2;
+        ctx.save();
+        ctx.setLineDash([4, 4]);
+        ctx.strokeStyle = '#fde047';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(x, chartArea.top);
+        ctx.lineTo(x, chartArea.bottom);
+        ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillStyle = '#fde047';
+        ctx.font = "700 11px Pretendard";
+        ctx.textAlign = 'left';
+        ctx.fillText('▼ 4·19 행사 시작', x + 6, chartArea.top + 14);
+        ctx.restore();
+      }
+    }]
+  });
+})();
+</script>
+
+<script id="unified-chart-theme">
+(function(){
+  var INK='#201A15', DIM='#6B625A', GRID='rgba(32,26,21,0.08)';
+  function retheme(){
+    if(!window.Chart) return;
+    try{
+      Chart.defaults.color=DIM;
+      Chart.defaults.borderColor=GRID;
+      Chart.defaults.font.family="'Pretendard','Noto Sans KR',sans-serif";
+    }catch(e){}
+    var insts = Chart.instances || {};
+    Object.keys(insts).forEach(function(k){
+      var c=insts[k]; if(!c||!c.options) return;
+      try{
+        var o=c.options;
+        if(o.scales){Object.keys(o.scales).forEach(function(s){
+          var sc=o.scales[s]; if(!sc) return;
+          if(sc.grid){sc.grid.color=GRID; if(sc.grid.borderColor!==undefined) sc.grid.borderColor=GRID;}
+          if(sc.ticks){sc.ticks.color=DIM;}
+          if(sc.title){sc.title.color=DIM;}
+          if(sc.pointLabels){sc.pointLabels.color=DIM;}
+          if(sc.angleLines){sc.angleLines.color=GRID;}
+          if(sc.border){sc.border.color=GRID;}
+        });}
+        if(o.plugins){
+          if(o.plugins.legend&&o.plugins.legend.labels){o.plugins.legend.labels.color=INK;}
+          if(o.plugins.title){o.plugins.title.color=INK;}
+          if(o.plugins.subtitle){o.plugins.subtitle.color=DIM;}
+        }
+        c.update('none');
+      }catch(e){}
+    });
+  }
+  if(document.readyState==='complete'){ retheme(); }
+  window.addEventListener('load', retheme);
+  setTimeout(retheme, 400);
+  setTimeout(retheme, 1200);
+})();
+</script>
+
+</body>
+</html>
