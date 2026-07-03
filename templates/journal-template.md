@@ -1,8 +1,11 @@
 ---
 type: journal
+title: 일기 (YYYY-MM-DD)
 date: YYYY-MM-DD
 author: 김지창
 tags: []
+layout: default
+parent: Journal  # 사이트 사이드바에서 Journal 하위로 정렬
 ---
 
 # 커리어 일기 — YYYY-MM-DD
