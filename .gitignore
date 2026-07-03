@@ -1,0 +1,10 @@
+# 비밀키·환경변수 — 절대 커밋 금지
+.env
+.env.*
+*.pem
+*.key
+secrets/
+
+# 시스템
+.DS_Store
+node_modules/
