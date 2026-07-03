@@ -1,10 +1,10 @@
 # ─────────────────────────────────────────────
-# 식자재쿡 CSO Journal — Jekyll 설정
+# 셀리의 전략테이블 — Jekyll 설정
 # GitHub Pages + just-the-docs 원격 테마
 # ─────────────────────────────────────────────
 
-title: 식자재쿡 CSO Journal
-description: 식자재쿡 전략기획부 CSO 관점의 리서치·분석·보고서 아카이브
+title: 셀리의 전략테이블
+description: 전략기획본부 CSO 관점의 리서치·분석·보고서를 축적하는 내부 전략 아카이브
 lang: ko
 
 # GitHub Pages 프로젝트 사이트 주소
@@ -34,7 +34,7 @@ aux_links:
 aux_links_new_tab: true
 
 # ── 하단 ──────────────────────────────────────
-footer_content: "© 2026 김지창 · 식자재쿡 전략기획부 · 내부 전략 아카이브"
+footer_content: "© 2026 김지창 · 전략기획본부 · 셀리의 전략테이블"
 
 # ── 마크다운 ──────────────────────────────────
 markdown: kramdown
