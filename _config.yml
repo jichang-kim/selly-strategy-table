@@ -13,7 +13,8 @@ baseurl: "/selly-strategy-table"
 
 # 원격 테마 (GitHub Pages 지원)
 remote_theme: just-the-docs/just-the-docs
-color_scheme: light
+# 커스텀 연한 오렌지 컬러 스킴 (_sass/color_schemes/orange.scss)
+color_scheme: orange
 
 # ── 검색 ──────────────────────────────────────
 search_enabled: true
