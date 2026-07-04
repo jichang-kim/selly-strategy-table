@@ -16,3 +16,4 @@ _site/
 .sass-cache/
 vendor/
 Gemfile.lock
+Gemfile.local.lock
