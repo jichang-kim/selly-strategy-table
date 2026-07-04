@@ -1,0 +1,17 @@
+# 로컬 Ruby 4 / Jekyll 4 빌드 전용
+# 사용 예시:
+#   BUNDLE_GEMFILE=Gemfile.local bundle install
+#   BUNDLE_GEMFILE=Gemfile.local bundle exec jekyll serve
+
+source "https://rubygems.org"
+
+gem "jekyll", "~> 4.4"
+gem "jekyll-remote-theme", "~> 0.4", group: :jekyll_plugins
+gem "jekyll-seo-tag", "~> 2.8", group: :jekyll_plugins
+gem "jekyll-sitemap", "~> 1.4", group: :jekyll_plugins
+gem "jekyll-include-cache", "~> 0.2.1", group: :jekyll_plugins
+gem "webrick", "~> 1.8"
+gem "csv"
+gem "base64"
+gem "bigdecimal"
+gem "logger"

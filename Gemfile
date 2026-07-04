@@ -6,13 +6,8 @@
 
 source "https://rubygems.org"
 
-# 로컬 빌드는 Ruby 4 호환성을 위해 Jekyll 4 계열로 유지
-# GitHub Pages 배포는 저장소 설정 기준으로 별도 처리됨
-gem "jekyll", "~> 4.4"
-gem "jekyll-remote-theme", "~> 0.4", group: :jekyll_plugins
-gem "jekyll-seo-tag", "~> 2.8", group: :jekyll_plugins
-gem "jekyll-sitemap", "~> 1.4", group: :jekyll_plugins
-gem "jekyll-include-cache", "~> 0.2.1", group: :jekyll_plugins
+# GitHub Pages 기본 배포 호환 Gemfile
+gem "github-pages", "~> 232", group: :jekyll_plugins
 
 # 최신 Ruby에서 로컬 서버 구동에 필요
 gem "webrick", "~> 1.8"
