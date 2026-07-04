@@ -12,47 +12,60 @@
      교체하면 자동으로 바뀐다(정적 사이트의 '업로드'). -->
 <style>
   .selly-profile {
-    padding: 16px 24px 12px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 22px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* flex 부모 안에서도 확실히 가운데 */
     text-align: center;
     border-bottom: 1px solid #ECE3D8;
   }
   .selly-profile__avatar {
-    width: 88px;
-    height: 88px;
+    width: 112px;
+    height: 112px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #F3C89B;
     background: #FBF3EA;
-    display: block;
-    margin: 0 auto 10px;
+    margin: 0 auto 12px;
   }
   .selly-profile__avatar--fallback {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 32px;
+    font-size: 40px;
     font-weight: 700;
     color: #E8730C;
   }
   .selly-profile__name {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 700;
     color: #4A3B2A;
     line-height: 1.3;
   }
   .selly-profile__role {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 300;
     color: #9A8B78;
-    margin-top: 2px;
+    margin-top: 3px;
+  }
+  .selly-profile__bio {
+    font-size: 12.5px;
+    font-weight: 300;
+    color: #7C6C58;
+    line-height: 1.55;
+    margin-top: 10px;
+    max-width: 220px;
   }
   .selly-profile__brand {
-    margin-top: 12px;
-    padding-top: 10px;
+    margin-top: 14px;
+    padding-top: 12px;
     border-top: 1px dashed #ECE3D8;
+    width: 100%;
   }
   .selly-profile__brand img {
-    height: 24px;
+    height: 26px;
     width: auto;
     opacity: 0.92;
   }
@@ -68,14 +81,26 @@
     var AVATAR = "{{ '/assets/images/profile.jpg' | relative_url }}";
     var LOGO   = "{{ '/assets/images/foodcook-logo.png' | relative_url }}";
 
+    // ── 여기만 고치면 프로필 문구가 바뀝니다 ─────────────────
+    var NAME = "김지창";
+    var ROLE = "식자재쿡 전략기획본부 CSO";
+    var BIO  = "전략과 데이터로 외식업의 내일을 설계합니다.";  // ← 간단 소개문구
+    // ────────────────────────────────────────────────────
+
+    function esc(s) {
+      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
     function buildProfile() {
       var wrap = document.createElement('div');
       wrap.className = 'selly-profile';
+      var bioHtml = BIO ? '<div class="selly-profile__bio">' + esc(BIO) + '</div>' : '';
       wrap.innerHTML =
-        '<img class="selly-profile__avatar" src="' + AVATAR + '" alt="김지창 프로필" ' +
-        'onerror="this.onerror=null;this.outerHTML=\'<div class=&quot;selly-profile__avatar selly-profile__avatar--fallback&quot;>김</div>\';">' +
-        '<div class="selly-profile__name">김지창</div>' +
-        '<div class="selly-profile__role">식자재쿡 전략기획본부 CSO</div>' +
+        '<img class="selly-profile__avatar" src="' + AVATAR + '" alt="' + esc(NAME) + ' 프로필" ' +
+        'onerror="this.onerror=null;this.outerHTML=\'<div class=&quot;selly-profile__avatar selly-profile__avatar--fallback&quot;>' + esc(NAME.charAt(0)) + '</div>\';">' +
+        '<div class="selly-profile__name">' + esc(NAME) + '</div>' +
+        '<div class="selly-profile__role">' + esc(ROLE) + '</div>' +
+        bioHtml +
         '<div class="selly-profile__brand">' +
           '<img src="' + LOGO + '" alt="식자재쿡" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'none\';">' +
           '<div class="selly-profile__brand-caption">powered by 식자재쿡</div>' +
