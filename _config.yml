@@ -42,11 +42,20 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
+# ── Sass (로컬 빌드 로그 정리) ─────────────────────
+sass:
+  quiet_deps: true
+  silence_deprecations:
+    - import
+    - global-builtin
+    - color-functions
+
 # ── 플러그인 (GitHub Pages 허용 목록) ─────────
 plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-include-cache
 
 # ── 사이트 빌드 제외 ─────────────────────────
 # templates/는 문서 양식(스캐폴딩)이므로 사이트에는 렌더링하지 않음
@@ -55,6 +64,7 @@ exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
+  - scripts/
   - vendor/
   - templates/
   # mobile/ 는 React Native 앱(사이트 콘텐츠 아님) — Jekyll 빌드에서 제외
