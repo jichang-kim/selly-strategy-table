@@ -7,7 +7,14 @@ https://jichang-kim.github.io/selly-strategy-table/
 |------|------|
 | `company/` | 식자재쿡 사업 컨텍스트 (전략·제품·지표) |
 | `journal/` | 커리어 일기 (`YYYY/MM/YYYY-MM-DD.md`) |
+| `news/` | 외부 기사·분석자료 기반 뉴스 회고록 |
 | `research/` | 시장·경쟁사·트렌드 리서치 |
 | `reports/` | CSO 관점 보고서 |
 | `templates/` | 일기·리포트·리서치 표준 양식 |
 | `assets/` | 기존 Claude Desktop 아티팩트 이관 보관 |
+
+## News 자동화
+
+- `scripts/generate-news.mjs`는 Google News RSS를 기반으로 카테고리별 뉴스 회고 초안을 생성합니다.
+- `.github/workflows/news-digest.yml`은 매주 월요일 오전 8시(KST)와 수동 실행 시 최신 뉴스 digest를 커밋합니다.
+- 초기 백필(backfill)은 `node scripts/generate-news.mjs --days 180 --date 2026-07-04 --overwrite`로 생성했습니다.

@@ -22,9 +22,9 @@ permalink: /event/
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRAm4feXO83Ga1QmpyWIh2Ixib87YRZ9_IK1XPbnORLf2Gd1Qc1OT5FkxmxZCUTNV37Z0GbIO6T3y0E/pubhtml?widget=true&headers=false" title="식자재쿡 타임세일 기획전" loading="lazy" style="width:100%;height:70vh;border:1px solid #ECE3D8;border-radius:12px;background:#fff;"></iframe>
 ## 야채 타임세일 최저가 캠페인
 
-<a class="btn btn-primary mb-2" href="{{ '/assets/dashboards/veggie-timesale.html' | relative_url }}" target="_blank" rel="noopener">캠페인 대시보드 새 탭에서 열기 ↗</a>
+<a class="btn btn-primary mb-2" href="/selly-strategy-table/assets/dashboards/veggie-timesale.html" target="_blank" rel="noopener">캠페인 대시보드 새 탭에서 열기 ↗</a>
 
-<iframe src="{{ '/assets/dashboards/veggie-timesale.html' | relative_url }}" title="야채 타임세일 최저가 캠페인" loading="lazy" style="width:100%;height:82vh;border:1px solid #ECE3D8;border-radius:12px;margin-top:16px;"></iframe>
+<iframe src="/selly-strategy-table/assets/dashboards/veggie-timesale.html" title="야채 타임세일 최저가 캠페인" loading="lazy" style="width:100%;height:82vh;border:1px solid #ECE3D8;border-radius:12px;margin-top:16px;"></iframe>
 ---
 
 임베드는 시트의 "웹에 게시" 설정을 따릅니다. 게시가 해제되면 표가 표시되지 않으며, 게시된 데이터는 링크가 있는 누구나 볼 수 있으니 민감한 원가·마진 탭은 게시 범위에서 제외하세요.

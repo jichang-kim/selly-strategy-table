@@ -5,7 +5,7 @@ parent: Other
 nav_order: 1
 ---
 
-<img src="{{ '/assets/images/sugukchal/logo.png' | relative_url }}" alt="수국칼 로고" style="height:64px;width:auto;margin-bottom:8px;">
+<img src="/selly-strategy-table/assets/images/sugukchal/logo.png" alt="수국칼 로고" style="height:64px;width:auto;margin-bottom:8px;">
 
 # 수국칼
 {: .no_toc }
@@ -15,7 +15,7 @@ nav_order: 1
 
 수국칼은 매일 아침 신선한 재료로 정성 들여 끓여내는 닭 요리 전문 브랜드입니다. 닭 한 마리를 통째로 넣어 진하게 우린 국물로 건강하고 부담 없는 한 끼를 지향하며, **㈜식자재쿡의 직영 인큐베이팅 브랜드**로 운영됩니다. 홈페이지: [sugukkal.co.kr](https://sugukkal.co.kr/)
 
-<img src="{{ '/assets/images/sugukchal/franchise-banner.jpg' | relative_url }}" alt="수국칼 프랜차이즈 배너" style="width:100%;max-width:640px;border-radius:12px;border:1px solid #ECE3D8;margin-top:12px;">
+<img src="/selly-strategy-table/assets/images/sugukchal/franchise-banner.jpg" alt="수국칼 프랜차이즈 배너" style="width:100%;max-width:640px;border-radius:12px;border:1px solid #ECE3D8;margin-top:12px;">
 
 - TOC
 {:toc}
@@ -28,7 +28,7 @@ nav_order: 1
 - **포지셔닝** — "국물 한 방울까지 아끼지 않은 진한 국물 맛." 건강하고 부담 없는 한 끼를 내세운 **건강·가성비형 한식 국물요리** 브랜드입니다.
 - **매장 분위기** — 전통적인 느낌과 현대적 요소를 결합한 따뜻하고 아늑한 인테리어를 지향합니다.
 
-<img src="{{ '/assets/images/sugukchal/intro.png' | relative_url }}" alt="수국칼 브랜드 소개 이미지" style="width:100%;max-width:520px;border-radius:12px;border:1px solid #ECE3D8;">
+<img src="/selly-strategy-table/assets/images/sugukchal/intro.png" alt="수국칼 브랜드 소개 이미지" style="width:100%;max-width:520px;border-radius:12px;border:1px solid #ECE3D8;">
 
 ## 2. 메뉴
 
@@ -72,7 +72,7 @@ nav_order: 1
 
 ## 5. 식자재쿡과의 관계 (CSO 관점)
 
-수국칼은 [Company]({{ '/company/' | relative_url }}) §5 성장 전략에 명시된 **"가맹사업 인큐베이팅"의 직영 검증 사례**입니다.
+수국칼은 [Company](/selly-strategy-table/company/) §5 성장 전략에 명시된 **"가맹사업 인큐베이팅"의 직영 검증 사례**입니다.
 
 - **전략적 의미** — 식자재쿡이 보유한 식자재 소싱·물류·브랜드쿡(폐쇄몰)·AI 발주 역량을 **자사 브랜드에 우선 적용·검증**하는 파일럿. 인큐베이팅 방법론의 실증 무대.
 - **기회** — 성공 시 "식자재쿡표 프랜차이즈 인큐베이팅" 레퍼런스로, 외부 중소 외식 브랜드 유치의 세일즈 근거가 됩니다.
@@ -86,7 +86,7 @@ nav_order: 1
 
 - 수국칼 공식 홈페이지 — [https://sugukkal.co.kr/](https://sugukkal.co.kr/) (브랜드 소개·메뉴·창업문의, 창업상담 1599-9606)
 - 프랜차이즈 평균 창업비용 참고 — [아시아경제 (2024-01-04)](https://www.asiae.co.kr/article/2024010418315804857)
-- 식자재쿡 사업 컨텍스트 — 본 저장소 [Company]({{ '/company/' | relative_url }})
+- 식자재쿡 사업 컨텍스트 — 본 저장소 [Company](/selly-strategy-table/company/)
 
 이미지는 공식 홈페이지(imweb CDN) 자료를 로컬 저장해 사용했습니다. ⚠️ 창업비용·매장 수 등 미확인 항목은 창업상담 또는 정보공개서로 검증이 필요합니다.
 {: .fs-3 .fw-300 }
