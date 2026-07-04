@@ -11,6 +11,9 @@
      프로필 카드를 삽입한다. 프로필 사진은 assets/images/profile.jpg 를
      교체하면 자동으로 바뀐다(정적 사이트의 '업로드'). -->
 <style>
+  /* 사이드바 하단 "This site uses Just the Docs..." 문구 숨김 */
+  .site-footer { display: none !important; }
+
   .selly-profile {
     width: 100%;
     box-sizing: border-box;
@@ -111,16 +114,19 @@
     function inject() {
       var sidebar = document.querySelector('.side-bar');
       if (!sidebar) return false;
-      if (sidebar.querySelector('.selly-profile')) return true; // 중복 방지
-      var nav = sidebar.querySelector('.site-nav');
-      var header = sidebar.querySelector('.site-header');
+      if (document.querySelector('.selly-profile')) return true; // 중복 방지
+      var nav = document.querySelector('#site-nav') || sidebar.querySelector('.site-nav');
       var profile = buildProfile();
       if (nav) {
-        nav.parentNode.insertBefore(profile, nav);          // 메뉴 바로 위
-      } else if (header) {
-        header.parentNode.insertBefore(profile, header.nextSibling); // 타이틀 바로 아래
+        // 메뉴(nav) 컬럼 '안'의 맨 위에 삽입 → 메뉴와 동일한 폭·정렬 기준으로 가운데
+        nav.insertBefore(profile, nav.firstChild);
       } else {
-        sidebar.insertBefore(profile, sidebar.firstChild);
+        var header = sidebar.querySelector('.site-header');
+        if (header) {
+          header.parentNode.insertBefore(profile, header.nextSibling); // 타이틀 바로 아래
+        } else {
+          sidebar.insertBefore(profile, sidebar.firstChild);
+        }
       }
       return true;
     }
