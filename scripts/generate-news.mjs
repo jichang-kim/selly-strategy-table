@@ -103,9 +103,12 @@ function parseRss(xml) {
     const link = stripTags(extractTag(block, 'link'));
     const pubDate = stripTags(extractTag(block, 'pubDate'));
     const description = stripTags(extractTag(block, 'description'));
+    const sourceTagMatch = block.match(/<source([^>]*)>([\s\S]*?)<\/source>/i);
+    const sourceUrlMatch = sourceTagMatch?.[1]?.match(/url=["']([^"']+)["']/i);
     const sourceMatch = block.match(/<source[^>]*>([\s\S]*?)<\/source>/i);
     const source = sourceMatch ? stripTags(sourceMatch[1]) : '';
-    return { title, link, pubDate, description, source };
+    const sourceUrl = sourceUrlMatch ? stripTags(sourceUrlMatch[1]) : '';
+    return { title, link, pubDate, description, source, sourceUrl };
   });
 }
 
@@ -113,9 +116,81 @@ function normalizeTitle(title) {
   return title
     .replace(/\s+-\s+[^-]+$/, '')
     .replace(/\[[^\]]+\]\s*/g, '')
+    .replace(/&nbsp;/gi, ' ')
     .replace(/[“”"'`]/g, '')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+function formatShortDate(value) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return '날짜미상';
+  const year = String(date.getUTCFullYear()).slice(2);
+  const month = String(date.getUTCMonth() + 1).padStart(2, '0');
+  const day = String(date.getUTCDate()).padStart(2, '0');
+  return `${year}.${month}.${day}`;
+}
+
+function truncateText(value, maxLength) {
+  if (!value) return '';
+  return value.length > maxLength ? `${value.slice(0, maxLength).trim()}…` : value;
+}
+
+function topicLabel(title) {
+  return truncateText(normalizeTitle(title).replace(/[<>]/g, ''), 48);
+}
+
+function pickDigestTitle(categoryKey, groups) {
+  const categoryLabel = CATEGORY_CONFIG[categoryKey].title.replace(/·/g, '/');
+  if (!groups.length) {
+    return `카테고리 ${categoryLabel}, ${formatShortDate(new Date().toISOString())} 뉴스주제 확인 필요`;
+  }
+  const primary = groups[0].primary;
+  return `카테고리 ${categoryLabel}, ${formatShortDate(primary.pubDate)} 뉴스주제 ${topicLabel(primary.title)}에 관하여`;
+}
+
+function firstParagraph(text) {
+  return truncateText((text || '').replace(/&nbsp;/gi, ' ').replace(/\s+/g, ' ').trim(), 180);
+}
+
+function isWeakLead(text) {
+  if (!text) return true;
+  const normalized = text.replace(/\s+/g, ' ').trim();
+  const weakPhrases = ['종합일간지', '기사 제공', '뉴스 제공', '언론사', '온라인 매체', '경제일간지', '신문', '뉴스센터'];
+  return normalized.length < 25 || weakPhrases.some((phrase) => normalized.includes(phrase));
+}
+
+function extractMetaTag(html, key, attr = 'property') {
+  return (html.match(new RegExp(`<meta[^>]+${attr}=["']${key}["'][^>]+content=["']([^"']+)`, 'i'))
+    || html.match(new RegExp(`<meta[^>]+content=["']([^"']+)["'][^>]+${attr}=["']${key}["']`, 'i'))
+    || [])[1] || '';
+}
+
+async function fetchArticlePreview(item) {
+  const preview = {
+    articleUrl: item.link,
+    articleImage: '',
+    articleLead: firstParagraph(item.description),
+  };
+
+  if (!item.sourceUrl) return preview;
+
+  try {
+    const response = await fetch(item.sourceUrl, {
+      headers: {
+        'user-agent': 'Mozilla/5.0 (compatible; SellyStrategyNewsBot/1.0)',
+      },
+    });
+    if (!response.ok) return preview;
+    const html = await response.text();
+    preview.articleImage = extractMetaTag(html, 'og:image') || extractMetaTag(html, 'twitter:image', 'name');
+    const extractedLead = extractMetaTag(html, 'og:description') || extractMetaTag(html, 'description', 'name');
+    preview.articleLead = isWeakLead(extractedLead) ? preview.articleLead : extractedLead;
+  } catch {
+    return preview;
+  }
+
+  return preview;
 }
 
 function asDate(value) {
@@ -173,18 +248,23 @@ function buildSummary(groups, categoryKey) {
   return `${config.summaryLead} ${tail}`;
 }
 
-function buildFindings(groups) {
-  if (!groups.length) {
-    return ['- 최근 기간에 수집된 유의미한 기사군이 부족했습니다. 검색어 보정 또는 카테고리 확장이 필요합니다.'];
-  }
+function buildEmptyFindings() {
+  return '최근 기간에 수집된 유의미한 기사군이 부족했습니다. 검색어 보정 또는 카테고리 확장이 필요합니다.';
+}
 
-  return groups.slice(0, 6).map((group, index) => {
-    const date = group.primary.pubDate ? new Date(group.primary.pubDate).toISOString().slice(0, 10) : '날짜 확인 필요';
-    const sources = [group.primary.source, ...group.duplicates.map((item) => item.source)].filter(Boolean);
-    const uniqueSources = [...new Set(sources)].join(', ');
-    const note = group.primary.description || group.primary.title;
-    return `- ${index + 1}. ${group.normalizedTitle} (${date}, ${uniqueSources || '출처 확인 필요'})\n  기사 리드 기준 메모: ${note}`;
-  });
+async function buildFindings(groups) {
+  if (!groups.length) return buildEmptyFindings();
+
+  const sections = await Promise.all(groups.slice(0, 6).map(async (group, index) => {
+    const article = group.primary;
+    const preview = await fetchArticlePreview(article);
+    const duplicateLinks = group.duplicates.map((item, duplicateIndex) => `- 유사 기사 ${duplicateIndex + 1}: [${normalizeTitle(item.title)}](${item.link})`).join('\n');
+    const imageBlock = preview.articleImage ? `![${normalizeTitle(article.title)}](${preview.articleImage})\n` : '';
+    const lead = firstParagraph(preview.articleLead || article.description || article.title);
+    return `### ${index + 1}. ${normalizeTitle(article.title)}\n\n${imageBlock}발행일: ${formatShortDate(article.pubDate)}\n\n출처: ${article.source || '출처 확인 필요'}\n\n[원문으로 이동](${preview.articleUrl})\n\n요약: ${lead}\n\nCSO 메모: 이 기사는 ${normalizeTitle(article.title)} 이슈가 현재 카테고리 내에서 어떤 신호를 주는지 살펴볼 출발점입니다.${duplicateLinks ? `\n\n${duplicateLinks}` : ''}`;
+  }));
+
+  return sections.join('\n\n');
 }
 
 function buildFootnotes(groups) {
@@ -193,23 +273,19 @@ function buildFootnotes(groups) {
   const lines = [];
   groups.slice(0, 6).forEach((group, index) => {
     const number = index + 1;
-    lines.push(`- [${number}] ${group.primary.title} — ${group.primary.source || '출처 미상'} (${group.primary.pubDate})`);
-    lines.push(`  URL: ${group.primary.link}`);
+    lines.push(`- [${number}] [${normalizeTitle(group.primary.title)}](${group.primary.link}) — ${group.primary.source || '출처 미상'} (${group.primary.pubDate})`);
     group.duplicates.forEach((item, duplicateIndex) => {
       const suffix = String.fromCharCode(97 + duplicateIndex);
-      lines.push(`- [${number}${suffix}] 유사 기사: ${item.title} — ${item.source || '출처 미상'} (${item.pubDate})`);
-      lines.push(`  URL: ${item.link}`);
+      lines.push(`- [${number}${suffix}] 유사 기사: [${normalizeTitle(item.title)}](${item.link}) — ${item.source || '출처 미상'} (${item.pubDate})`);
     });
   });
   return lines;
 }
 
-function buildMarkdown(categoryKey, date, groups, days) {
+async function buildMarkdown(categoryKey, date, groups, days) {
   const config = CATEGORY_CONFIG[categoryKey];
-  const title = days >= 180
-    ? `${config.title} 최근 6개월 회고 (${date})`
-    : `${config.title} 주간 뉴스 브리프 (${date})`;
-  const findings = buildFindings(groups).join('\n');
+  const title = pickDigestTitle(categoryKey, groups);
+  const findings = await buildFindings(groups);
   const dynamics = config.dynamics.map((line) => `- ${line}`).join('\n');
   const actions = config.actions.map((line) => `- [ ] ${line}`).join('\n');
   const footnotes = buildFootnotes(groups).join('\n');
@@ -232,7 +308,7 @@ parent: ${config.title}
 
 # ${title}
 
-> 자동 수집 초안입니다. 기사 제목과 리드 기준으로 묶은 회고 메모이며, 주요 수치와 해석은 검토 후 보강이 필요합니다.
+> 자동 수집 초안입니다. 링크를 누르면 해당 기사로 이동하며, 이미지는 원문 사이트의 OG 메타데이터를 우선 사용해 가능한 범위에서 발췌합니다.
 
 ## 1. 한 줄 요약
 > ${buildSummary(groups, categoryKey)}
@@ -305,7 +381,7 @@ async function main() {
     }
 
     const groups = await fetchCategory(categoryKey, options.days, options.date);
-    const markdown = buildMarkdown(categoryKey, options.date, groups, options.days);
+    const markdown = await buildMarkdown(categoryKey, options.date, groups, options.days);
     await ensureDirectory(outputPath);
     await fs.writeFile(outputPath, markdown, 'utf8');
     console.log(`generated ${path.relative(repoRoot, outputPath)}`);
