@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- ===== BI SYMBOL: 저금통 + 하트 + 새싹 ===== -->
+    <symbol id="bi-symbol" viewBox="0 0 128 128">
+      <!-- sprout -->
+      <path d="M64 40 Q63 28 64 20" stroke="#6FA132" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+      <path d="M64 30 C55 24 45 27 44 37 C55 40 62 36 64 30 Z" fill="#8FBE4A"/>
+      <path d="M64 26 C71 18 81 18 84 26 C75 32 67 31 64 26 Z" fill="#A6CE63"/>
+      <!-- ears -->
+      <path d="M42 50 L35 34 Q47 38 51 51 Z" fill="#E97B18"/>
+      <path d="M86 50 L93 34 Q81 38 77 51 Z" fill="#E97B18"/>
+      <!-- face -->
+      <circle cx="64" cy="78" r="37" fill="#F79433"/>
+      <!-- eyes -->
+      <circle cx="51" cy="72" r="4.4" fill="#3A2A1A"/>
+      <circle cx="77" cy="72" r="4.4" fill="#3A2A1A"/>
+      <!-- heart snout -->
+      <path d="M64 96 C56 89 47 86 47 79 C47 74.5 51 72 55 74 C58.5 75.6 63 79 64 79 C65 79 69.5 75.6 73 74 C77 72 81 74.5 81 79 C81 86 72 89 64 96 Z" fill="#E4720F"/>
+      <circle cx="59" cy="81" r="2.1" fill="#B85C0A"/>
+      <circle cx="69" cy="81" r="2.1" fill="#B85C0A"/>
+    </symbol>
+  </defs>
+</svg>
