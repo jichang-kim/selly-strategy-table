@@ -1,8 +1,8 @@
 ---
 title: 담뿍하루 서비스 소개 웹페이지
 layout: default
-parent: Other
-nav_order: 4
+parent: 담뿍하루
+nav_order: 3
 ---
 
 # 담뿍하루 서비스 소개 웹페이지

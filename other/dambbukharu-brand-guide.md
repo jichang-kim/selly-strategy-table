@@ -1,8 +1,8 @@
 ---
 title: 담뿍하루 브랜드 가이드
 layout: default
-parent: Other
-nav_order: 2
+parent: 담뿍하루
+nav_order: 1
 ---
 
 # 담뿍하루 브랜드 가이드

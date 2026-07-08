@@ -1,6 +1,7 @@
 ---
 title: 담뿍하루 앱디자인 프로그레스 SVG Export
 layout: default
+nav_exclude: true
 ---
 
 # 담뿍하루 앱디자인 프로그레스 SVG Export

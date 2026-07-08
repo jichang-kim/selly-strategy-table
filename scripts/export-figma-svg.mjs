@@ -54,6 +54,7 @@ function writeIndexMd(dirPath, title, source, svgFiles, skippedReason = null) {
     '---',
     `title: ${title} SVG Export`,
     'layout: default',
+    'nav_exclude: true',
     '---',
     '',
     `# ${title} SVG Export`,
