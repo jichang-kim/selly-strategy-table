@@ -10,8 +10,6 @@ nav_order: 5
 
 - 원본(Claude Design): [와이어프레임](https://claude.ai/design/p/fdb7d04b-8b5a-40da-9acc-0c646eda755a?file=%EB%8B%B4%EB%BF%8D%ED%95%98%EB%A3%A8%2F%EC%99%80%EC%9D%B4%EC%96%B4%ED%94%84%EB%A0%88%EC%9E%84.html&via=share)
 
-- 로컬 소스 HTML: [assets/dambbukharu/wireframe.html](/selly-strategy-table/assets/dambbukharu/wireframe.html)
-
 ## 웹 미리보기
 
 - [와이어프레임 바로 열기](/selly-strategy-table/assets/dambbukharu/wireframe.html)

@@ -10,8 +10,6 @@ nav_order: 4
 
 - 원본(Claude Design): [서비스 소개 웹페이지](https://claude.ai/design/p/fdb7d04b-8b5a-40da-9acc-0c646eda755a?file=%EB%8B%B4%EB%BF%8D%ED%95%98%EB%A3%A8%2F%EC%84%9C%EB%B9%84%EC%8A%A4+%EC%86%8C%EA%B0%9C+%EC%9B%B9%ED%8E%98%EC%9D%B4%EC%A7%80.html&via=share)
 
-- 로컬 소스 HTML: [assets/dambbukharu/service-intro-webpage.html](/selly-strategy-table/assets/dambbukharu/service-intro-webpage.html)
-
 ## 웹 미리보기
 
 - [서비스 소개 웹페이지 바로 열기](/selly-strategy-table/assets/dambbukharu/service-intro-webpage.html)
