@@ -1,6 +1,7 @@
 ---
 title: 담뿍하루 브랜드 가이드 SVG Export
 layout: default
+nav_exclude: true
 ---
 
 # 담뿍하루 브랜드 가이드 SVG Export

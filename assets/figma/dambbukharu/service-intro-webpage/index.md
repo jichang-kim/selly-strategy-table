@@ -1,6 +1,7 @@
 ---
 title: 담뿍하루 서비스 소개 웹페이지 SVG Export
 layout: default
+nav_exclude: true
 ---
 
 # 담뿍하루 서비스 소개 웹페이지 SVG Export

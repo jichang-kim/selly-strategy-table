@@ -1,8 +1,8 @@
 ---
 title: 담뿍하루 앱디자인 프로그레스
 layout: default
-parent: Other
-nav_order: 3
+parent: 담뿍하루
+nav_order: 2
 ---
 
 # 담뿍하루 앱디자인 프로그레스

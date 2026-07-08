@@ -1,8 +1,8 @@
 ---
 title: 담뿍하루 와이어프레임
 layout: default
-parent: Other
-nav_order: 5
+parent: 담뿍하루
+nav_order: 4
 ---
 
 # 담뿍하루 와이어프레임
