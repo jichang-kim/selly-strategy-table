@@ -1,0 +1,54 @@
+:root {
+  --font-display: "Cafe24Ssurround", "Pretendard", "Noto Sans KR", system-ui, -apple-system, Segoe UI, sans-serif;
+  --font-body: "Pretendard", "Noto Sans KR", system-ui, -apple-system, Segoe UI, sans-serif;
+
+  --paper: #fff7ec;
+  --paper-deep: #f5eadb;
+  --card: #fffdf9;
+
+  --ink: #2f2a24;
+  --ink-2: #6f685f;
+  --ink-3: #9a9287;
+
+  --line: #ece1d2;
+  --line-2: #ddd0bf;
+
+  --dami: #f79433;
+  --dami-deep: #b85c0a;
+  --dami-ink: #7b3f09;
+  --dami-tint: #ffd9b3;
+  --dami-tint-2: #fff0de;
+
+  --bbuk: #8fbe4a;
+  --bbuk-deep: #5d8b24;
+  --bbuk-ink: #486c1d;
+  --bbuk-tint: #d9eeb9;
+  --bbuk-tint-2: #eef7df;
+
+  --heart: #f5836f;
+  --heart-deep: #c95a4b;
+  --heart-tint: #ffe0dc;
+
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+  --r-pill: 999px;
+
+  --sh-sm: 0 6px 14px rgba(65, 44, 20, 0.09);
+  --sh-lg: 0 16px 34px rgba(65, 44, 20, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+svg {
+  max-width: 100%;
+}

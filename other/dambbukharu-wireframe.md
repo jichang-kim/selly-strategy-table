@@ -12,6 +12,10 @@ nav_order: 5
 
 - 로컬 소스 HTML: [assets/dambbukharu/wireframe.html](/selly-strategy-table/assets/dambbukharu/wireframe.html)
 
+## 웹 미리보기
+
+- [와이어프레임 바로 열기](/selly-strategy-table/assets/dambbukharu/wireframe.html)
+
 ## Figma 편집용 변환 파일
 
 - GitHub 폴더: [assets/figma/dambbukharu/wireframe](https://github.com/jichang-kim/selly-strategy-table/tree/main/assets/figma/dambbukharu/wireframe)
