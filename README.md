@@ -26,3 +26,12 @@ https://jichang-kim.github.io/selly-strategy-table/
 - 예시:
 	`BUNDLE_GEMFILE=Gemfile.local bundle install`
 	`BUNDLE_GEMFILE=Gemfile.local bundle exec jekyll build`
+
+## Claude Design -> Figma 변환
+
+- `scripts/export-figma-svg.mjs`는 `assets/dambbukharu/*.html`에서 `<svg>` 블록을 추출해 Figma import용 `assets/figma/dambbukharu/<slug>/frame-*.svg`를 생성합니다.
+- 실행:
+	`node scripts/export-figma-svg.mjs`
+- 현재 기본 포함 소스:
+	`assets/dambbukharu/brand-guide.html`
+- 나머지 3개(`app-design-progress.html`, `service-intro-webpage.html`, `wireframe.html`)를 같은 폴더에 추가하면 다음 실행 시 자동 변환됩니다.

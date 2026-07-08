@@ -19,3 +19,7 @@ permalink: /other/
 ## 하위 문서
 
 - **[프랜차이즈 수국칼](/selly-strategy-table/other/franchise-sugukchal.html)** — 촌계 닭칼국수·닭곰탕 전문 프랜차이즈. 식자재쿡 직영 인큐베이팅 브랜드의 개요·메뉴·창업 안내 요약.
+- **[담뿍하루 브랜드 가이드](/selly-strategy-table/other/dambbukharu-brand-guide.html)** — Claude Design 원본 링크와 Figma 편집용 벡터 산출물.
+- **[담뿍하루 앱디자인 프로그레스](/selly-strategy-table/other/dambbukharu-app-design-progress.html)** — 앱 화면 설계 진행본 링크와 변환 준비 상태.
+- **[담뿍하루 서비스 소개 웹페이지](/selly-strategy-table/other/dambbukharu-service-intro-webpage.html)** — 서비스 소개 페이지 시안 링크와 변환 준비 상태.
+- **[담뿍하루 와이어프레임](/selly-strategy-table/other/dambbukharu-wireframe.html)** — IA/플로우 와이어프레임 링크와 변환 준비 상태.
