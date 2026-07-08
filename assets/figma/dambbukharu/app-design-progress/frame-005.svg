@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150" data-om-id="adf55e45:281">
+                    <circle cx="75" cy="75" r="62" fill="none" stroke="var(--paper-deep)" stroke-width="16" data-om-id="adf55e45:282"></circle>
+                    <circle cx="75" cy="75" r="62" fill="none" stroke="var(--dami)" stroke-width="16" stroke-linecap="round" stroke-dasharray="389" stroke-dashoffset="140" transform="rotate(-90 75 75)" data-om-id="adf55e45:283"></circle>
+                    <text x="75" y="70" text-anchor="middle" font-family="Cafe24Ssurround" font-size="26" fill="var(--ink)" data-om-id="adf55e45:284">64%</text>
+                    <text x="75" y="92" text-anchor="middle" font-family="Pretendard" font-size="11" fill="var(--ink-2)" data-om-id="adf55e45:285">32,000 / 50,000</text>
+                  </svg>

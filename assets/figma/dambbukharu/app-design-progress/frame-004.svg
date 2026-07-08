@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="width:38px;height:42px; flex-shrink:0;" data-om-id="adf55e45:250"><defs>
+<symbol id="bi-symbol" viewBox="0 0 128 128">
+    <path d="M64 40 Q63 28 64 20" stroke="#6FA132" stroke-width="4.5" fill="none" stroke-linecap="round"></path>
+    <path d="M64 30 C55 24 45 27 44 37 C55 40 62 36 64 30 Z" fill="#8FBE4A"></path>
+    <path d="M64 26 C71 18 81 18 84 26 C75 32 67 31 64 26 Z" fill="#A6CE63"></path>
+    <path d="M42 50 L35 34 Q47 38 51 51 Z" fill="#E97B18"></path>
+    <path d="M86 50 L93 34 Q81 38 77 51 Z" fill="#E97B18"></path>
+    <circle cx="64" cy="78" r="37" fill="#F79433"></circle>
+    <circle cx="51" cy="72" r="4.4" fill="#3A2A1A"></circle>
+    <circle cx="77" cy="72" r="4.4" fill="#3A2A1A"></circle>
+    <path d="M64 96 C56 89 47 86 47 79 C47 74.5 51 72 55 74 C58.5 75.6 63 79 64 79 C65 79 69.5 75.6 73 74 C77 72 81 74.5 81 79 C81 86 72 89 64 96 Z" fill="#E4720F"></path>
+    <circle cx="59" cy="81" r="2.1" fill="#B85C0A"></circle>
+    <circle cx="69" cy="81" r="2.1" fill="#B85C0A"></circle>
+  </symbol>
+<symbol id="mascot-dami" viewBox="0 0 200 230">
+    <path d="M60 210 Q60 158 100 158 Q140 158 140 210 Z" fill="#F79433"></path>
+    <ellipse cx="100" cy="208" rx="42" ry="10" fill="#E97B18"></ellipse>
+    <circle cx="58" cy="180" r="14" fill="#F79433"></circle>
+    <circle cx="142" cy="180" r="14" fill="#F79433"></circle>
+    <circle cx="100" cy="92" r="74" fill="#F79433"></circle>
+    <ellipse cx="79" cy="30" rx="13" ry="32" fill="#F79433" transform="rotate(-12 79 30)"></ellipse>
+    <ellipse cx="121" cy="30" rx="13" ry="32" fill="#F79433" transform="rotate(12 121 30)"></ellipse>
+    <ellipse cx="79" cy="32" rx="6" ry="22" fill="#FBC7A0" transform="rotate(-12 79 32)"></ellipse>
+    <ellipse cx="121" cy="32" rx="6" ry="22" fill="#FBC7A0" transform="rotate(12 121 32)"></ellipse>
+    <circle cx="100" cy="100" r="54" fill="#FFE3C4"></circle>
+    <circle cx="66" cy="112" r="12" fill="#FBB27E" opacity=".7"></circle>
+    <circle cx="134" cy="112" r="12" fill="#FBB27E" opacity=".7"></circle>
+    <circle cx="82" cy="96" r="6.5" fill="#3A2A1A"></circle>
+    <circle cx="118" cy="96" r="6.5" fill="#3A2A1A"></circle>
+    <circle cx="84" cy="93.5" r="2" fill="#fff"></circle>
+    <circle cx="120" cy="93.5" r="2" fill="#fff"></circle>
+    <path d="M86 116 Q100 128 114 116" stroke="#C9701F" stroke-width="4" fill="none" stroke-linecap="round"></path>
+  </symbol>
+<symbol id="mascot-dami-wink" viewBox="0 0 200 230">
+    <path d="M60 210 Q60 158 100 158 Q140 158 140 210 Z" fill="#F79433"></path>
+    <ellipse cx="100" cy="208" rx="42" ry="10" fill="#E97B18"></ellipse>
+    <circle cx="58" cy="172" r="14" fill="#F79433"></circle>
+    <circle cx="142" cy="180" r="14" fill="#F79433"></circle>
+    <circle cx="100" cy="92" r="74" fill="#F79433"></circle>
+    <ellipse cx="79" cy="30" rx="13" ry="32" fill="#F79433" transform="rotate(-12 79 30)"></ellipse>
+    <ellipse cx="121" cy="30" rx="13" ry="32" fill="#F79433" transform="rotate(12 121 30)"></ellipse>
+    <ellipse cx="79" cy="32" rx="6" ry="22" fill="#FBC7A0" transform="rotate(-12 79 32)"></ellipse>
+    <ellipse cx="121" cy="32" rx="6" ry="22" fill="#FBC7A0" transform="rotate(12 121 32)"></ellipse>
+    <circle cx="100" cy="100" r="54" fill="#FFE3C4"></circle>
+    <circle cx="66" cy="112" r="12" fill="#FBB27E" opacity=".7"></circle>
+    <circle cx="134" cy="112" r="12" fill="#FBB27E" opacity=".7"></circle>
+    <path d="M75 96 Q82 90 89 96" stroke="#3A2A1A" stroke-width="4" fill="none" stroke-linecap="round"></path>
+    <circle cx="118" cy="96" r="6.5" fill="#3A2A1A"></circle>
+    <circle cx="120" cy="93.5" r="2" fill="#fff"></circle>
+    <path d="M86 116 Q100 128 114 116" stroke="#C9701F" stroke-width="4" fill="none" stroke-linecap="round"></path>
+  </symbol>
+<symbol id="mascot-bbuk" viewBox="0 0 200 230">
+    <path d="M60 210 Q60 158 100 158 Q140 158 140 210 Z" fill="#8FBE4A"></path>
+    <ellipse cx="100" cy="208" rx="42" ry="10" fill="#6FA132"></ellipse>
+    <circle cx="58" cy="180" r="14" fill="#8FBE4A"></circle>
+    <circle cx="142" cy="180" r="14" fill="#8FBE4A"></circle>
+    <circle cx="100" cy="92" r="74" fill="#8FBE4A"></circle>
+    <path d="M100 30 Q99 14 100 4" stroke="#6FA132" stroke-width="5" fill="none" stroke-linecap="round"></path>
+    <path d="M100 20 C86 12 72 16 71 30 C87 35 97 28 100 20 Z" fill="#A6CE63"></path>
+    <path d="M100 14 C111 2 126 2 130 14 C117 22 105 21 100 14 Z" fill="#B7D97A"></path>
+    <circle cx="100" cy="100" r="54" fill="#FFE3C4"></circle>
+    <circle cx="66" cy="112" r="12" fill="#F6A94F" opacity=".55"></circle>
+    <circle cx="134" cy="112" r="12" fill="#F6A94F" opacity=".55"></circle>
+    <circle cx="82" cy="96" r="6.5" fill="#3A2A1A"></circle>
+    <circle cx="118" cy="96" r="6.5" fill="#3A2A1A"></circle>
+    <circle cx="84" cy="93.5" r="2" fill="#fff"></circle>
+    <circle cx="120" cy="93.5" r="2" fill="#fff"></circle>
+    <path d="M86 116 Q100 128 114 116" stroke="#C9701F" stroke-width="4" fill="none" stroke-linecap="round"></path>
+  </symbol>
+<symbol id="mascot-bbuk-happy" viewBox="0 0 200 230">
+    <path d="M60 210 Q60 158 100 158 Q140 158 140 210 Z" fill="#8FBE4A"></path>
+    <ellipse cx="100" cy="208" rx="42" ry="10" fill="#6FA132"></ellipse>
+    <circle cx="56" cy="168" r="14" fill="#8FBE4A"></circle>
+    <circle cx="144" cy="168" r="14" fill="#8FBE4A"></circle>
+    <circle cx="100" cy="92" r="74" fill="#8FBE4A"></circle>
+    <path d="M100 30 Q99 14 100 4" stroke="#6FA132" stroke-width="5" fill="none" stroke-linecap="round"></path>
+    <path d="M100 20 C86 12 72 16 71 30 C87 35 97 28 100 20 Z" fill="#A6CE63"></path>
+    <path d="M100 14 C111 2 126 2 130 14 C117 22 105 21 100 14 Z" fill="#B7D97A"></path>
+    <circle cx="100" cy="100" r="54" fill="#FFE3C4"></circle>
+    <circle cx="66" cy="110" r="12" fill="#F6A94F" opacity=".55"></circle>
+    <circle cx="134" cy="110" r="12" fill="#F6A94F" opacity=".55"></circle>
+    <path d="M76 92 Q82 86 88 92" stroke="#3A2A1A" stroke-width="4" fill="none" stroke-linecap="round"></path>
+    <path d="M112 92 Q118 86 124 92" stroke="#3A2A1A" stroke-width="4" fill="none" stroke-linecap="round"></path>
+    <path d="M84 114 Q100 134 116 114 Q100 122 84 114 Z" fill="#C9701F"></path>
+  </symbol>
+</defs><use href="#mascot-bbuk" data-om-id="adf55e45:251"></use></svg>
