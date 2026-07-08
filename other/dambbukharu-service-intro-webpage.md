@@ -12,6 +12,10 @@ nav_order: 4
 
 - 로컬 소스 HTML: [assets/dambbukharu/service-intro-webpage.html](/selly-strategy-table/assets/dambbukharu/service-intro-webpage.html)
 
+## 웹 미리보기
+
+- [서비스 소개 웹페이지 바로 열기](/selly-strategy-table/assets/dambbukharu/service-intro-webpage.html)
+
 ## Figma 편집용 변환 파일
 
 - GitHub 폴더: [assets/figma/dambbukharu/service-intro-webpage](https://github.com/jichang-kim/selly-strategy-table/tree/main/assets/figma/dambbukharu/service-intro-webpage)

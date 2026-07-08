@@ -12,6 +12,10 @@ nav_order: 3
 
 - 로컬 소스 HTML: [assets/dambbukharu/app-design-progress.html](/selly-strategy-table/assets/dambbukharu/app-design-progress.html)
 
+## 웹 미리보기
+
+- [앱디자인 프로그레스 바로 열기](/selly-strategy-table/assets/dambbukharu/app-design-progress.html)
+
 ## Figma 편집용 변환 파일
 
 - GitHub 폴더: [assets/figma/dambbukharu/app-design-progress](https://github.com/jichang-kim/selly-strategy-table/tree/main/assets/figma/dambbukharu/app-design-progress)
