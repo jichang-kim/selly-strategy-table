@@ -20,3 +20,4 @@ permalink: /other/
 
 - **[프랜차이즈 수국칼](/selly-strategy-table/other/franchise-sugukchal.html)** — 촌계 닭칼국수·닭곰탕 전문 프랜차이즈. 식자재쿡 직영 인큐베이팅 브랜드의 개요·메뉴·창업 안내 요약.
 - **[담뿍하루](/selly-strategy-table/other/dambbukharu.html)** — 브랜드 가이드, 앱디자인 프로그레스, 서비스 소개 웹페이지, 와이어프레임을 한 하위 분류로 묶은 섹션.
+- **[K&K 글로벌 트레이딩 (K-Market)](/selly-strategy-table/other/kk-global-trading.html)** — 베트남 최대 한국식품 유통기업 K-Market 대상 A-to-Z 개발 제안. 앱·ERP·POS·물류/CRM 모듈, 3단계 패키지, 기능별 공수 산정 포함.
