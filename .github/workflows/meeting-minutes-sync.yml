@@ -1,0 +1,42 @@
+name: Meeting Minutes Sync
+
+on:
+  schedule:
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-meeting-minutes:
+    runs-on: ubuntu-latest
+    env:
+      GDRIVE_MINUTES_FOLDER_ID: ${{ secrets.GDRIVE_MINUTES_FOLDER_ID }}
+      GCP_SERVICE_ACCOUNT_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install deps for sync script
+        run: npm install --no-save googleapis@^140
+
+      - name: Sync meeting minutes from Google Docs
+        run: node scripts/sync-meeting-minutes.mjs
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add minutes/
+          if git diff --cached --quiet; then
+            echo "No meeting minutes changes"
+            exit 0
+          fi
+          git commit -m "minutes: daily sync update"
+          git push
