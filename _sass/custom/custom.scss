@@ -325,6 +325,10 @@ body {
 html { scroll-behavior: smooth; }
 
 .main-content {
+  // 한국어 단어 중간 줄바꿈 방지 (긴 URL 등은 overflow-wrap으로 처리)
+  word-break: keep-all;
+  overflow-wrap: break-word;
+
   h1 {
     font-weight: 800;
     letter-spacing: -0.02em;
@@ -473,6 +477,7 @@ html { scroll-behavior: smooth; }
     color: var(--selly-ink-soft);
     max-width: 40em;
     margin-bottom: 1.8rem;
+    word-break: keep-all; // 한국어 단어 중간에서 줄바꿈 방지
   }
 
   .selly-hero__cta {

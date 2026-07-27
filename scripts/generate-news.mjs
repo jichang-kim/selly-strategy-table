@@ -294,7 +294,7 @@ async function buildMarkdown(categoryKey, date, groups, days) {
 
   return `---
 type: news
-title: ${title}
+title: ${config.title}
 date: ${date}
 author: 김지창 (CSO)
 status: draft
@@ -303,12 +303,11 @@ sources:
 ${sources.map((source) => `  - ${source}`).join('\n') || '  -'}
 layout: default
 grand_parent: News
-parent: ${config.title}
+parent: "${date}"
+nav_order: ${Object.keys(CATEGORY_CONFIG).indexOf(categoryKey) + 1}
 ---
 
 # ${title}
-
-> 자동 수집 초안입니다. 링크를 누르면 해당 기사로 이동하며, 이미지는 원문 사이트의 OG 메타데이터를 우선 사용해 가능한 범위에서 발췌합니다.
 
 ## 1. 한 줄 요약
 > ${buildSummary(groups, categoryKey)}
@@ -362,8 +361,36 @@ async function fetchCategory(categoryKey, days, date) {
   return groupItems(recent);
 }
 
+async function ensureDatePage(date) {
+  const datePagePath = path.join(repoRoot, 'news', `${date}.md`);
+  try {
+    await fs.access(datePagePath);
+    return;
+  } catch {
+    // Date page does not exist; create it.
+  }
+  const navOrder = -Number(date.replaceAll('-', ''));
+  const content = `---
+title: "${date}"
+layout: default
+parent: News
+has_children: true
+nav_order: ${navOrder}
+permalink: /news/${date}/
+---
+
+# ${date} 뉴스 회고
+{: .no_toc }
+
+아래 카테고리를 선택해 이 날짜의 이슈 회고를 확인하세요.
+`;
+  await fs.writeFile(datePagePath, content, 'utf8');
+  console.log(`generated news/${date}.md`);
+}
+
 async function main() {
   const options = parseArgs(process.argv.slice(2));
+  await ensureDatePage(options.date);
 
   for (const categoryKey of options.categories) {
     if (!CATEGORY_CONFIG[categoryKey]) {

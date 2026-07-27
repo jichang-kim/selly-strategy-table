@@ -6,9 +6,9 @@ permalink: /
 description: "전략기획본부 CSO 관점의 리서치·분석·보고서를 축적하는 전략 아카이브이자 포트폴리오"
 ---
 
-{% assign report_docs = site.pages | where_exp: "p", "p.dir contains '/reports/'" | where_exp: "p", "p.name != 'index.md'" %}
+{% assign report_docs = site.pages | where_exp: "p", "p.grand_parent == 'Reports'" %}
 {% assign research_docs = site.pages | where_exp: "p", "p.dir contains '/research/'" | where_exp: "p", "p.name != 'index.md'" %}
-{% assign news_docs = site.pages | where_exp: "p", "p.dir contains '/news/'" | where_exp: "p", "p.name != 'index.md'" %}
+{% assign news_docs = site.pages | where_exp: "p", "p.type == 'news'" %}
 {% assign minutes_docs = site.pages | where_exp: "p", "p.dir contains '/minutes/'" | where_exp: "p", "p.name != 'index.md'" %}
 
 <section class="selly-hero" id="selly-hero">
@@ -19,9 +19,8 @@ description: "전략기획본부 CSO 관점의 리서치·분석·보고서를 �
       사업운영의 의사결정 과정을 그대로 담아낸 포트폴리오입니다.
     </p>
     <div class="selly-hero__cta">
-      <a href="{{ '/reports/' | relative_url }}" class="btn btn-primary">리포트 보기</a>
-      <a href="{{ '/company/' | relative_url }}" class="btn">회사 소개</a>
-      <a href="{{ '/journal/' | relative_url }}" class="btn">저널</a>
+      <a href="{{ '/company/' | relative_url }}" class="btn btn-primary">회사 소개</a>
+      <a href="{{ '/reports/' | relative_url }}" class="btn">리포트 보기</a>
     </div>
     <div class="selly-hero__stats">
       <div class="selly-stat">
