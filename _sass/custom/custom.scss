@@ -1,0 +1,264 @@
+// ─────────────────────────────────────────────
+// 셀리의 전략테이블 — 커스텀 디자인 레이어
+// 웜 오렌지 아이덴티티 유지 + 에디토리얼 미니멀 업그레이드
+// (just-the-docs가 테마 스타일 뒤에 이 파일을 불러옴)
+// ─────────────────────────────────────────────
+
+:root {
+  --selly-ink:        #201A15;
+  --selly-ink-soft:   #5D5348;
+  --selly-ink-faint:  #9A8B78;
+  --selly-accent:     #E8730C;
+  --selly-accent-deep:#C75E05;
+  --selly-accent-soft:#FBE9D6;
+  --selly-surface:    #FFFFFF;
+  --selly-border:     #EDE2D3;
+  --selly-radius:     16px;
+  --selly-shadow-sm:  0 1px 2px rgba(90, 62, 30, 0.06), 0 2px 8px rgba(90, 62, 30, 0.05);
+  --selly-shadow-md:  0 4px 10px rgba(90, 62, 30, 0.08), 0 12px 28px rgba(90, 62, 30, 0.09);
+  --selly-ease:       cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+// ── 전역 타이포그래피 ─────────────────────────
+html { scroll-behavior: smooth; }
+
+.main-content {
+  h1 {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--selly-ink);
+  }
+  h2 {
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    margin-top: 2.4rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--selly-border);
+  }
+  h3 { font-weight: 700; letter-spacing: -0.01em; }
+
+  a:not(.btn):not(.selly-card):not(.selly-hero__cta a) {
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.25s var(--selly-ease);
+    &:hover { background-size: 100% 1px; }
+  }
+
+  blockquote {
+    border-left: 3px solid var(--selly-accent);
+    background: var(--selly-accent-soft);
+    border-radius: 0 10px 10px 0;
+    padding: 0.7rem 1rem;
+    color: var(--selly-ink-soft);
+  }
+
+  table {
+    border-radius: 10px;
+    box-shadow: var(--selly-shadow-sm);
+    border: 1px solid var(--selly-border);
+  }
+  th { background: #FBF3EA; font-weight: 700; }
+}
+
+// ── 버튼 ─────────────────────────────────────
+.btn {
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 0.55em 1.1em;
+  box-shadow: none;
+  transition: transform 0.2s var(--selly-ease), box-shadow 0.2s var(--selly-ease),
+              background-color 0.2s var(--selly-ease);
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--selly-shadow-sm);
+    text-decoration: none;
+  }
+}
+.btn-primary {
+  background: linear-gradient(135deg, #F08A2B, var(--selly-accent) 55%, var(--selly-accent-deep));
+  &:hover { background: linear-gradient(135deg, #EF831D, var(--selly-accent-deep)); }
+}
+
+// ── 사이드바 · 검색 폴리시 ────────────────────
+.site-nav .nav-list .nav-list-item {
+  .nav-list-link {
+    border-radius: 8px;
+    margin: 1px 6px;
+    transition: background-color 0.18s var(--selly-ease), color 0.18s var(--selly-ease);
+    &:hover { background: #F6EBDD; }
+    &.active { font-weight: 700; color: var(--selly-accent-deep); }
+  }
+}
+.search-input {
+  border-radius: 12px;
+  border: 1px solid var(--selly-border);
+  transition: border-color 0.2s var(--selly-ease), box-shadow 0.2s var(--selly-ease);
+  &:focus {
+    border-color: var(--selly-accent);
+    box-shadow: 0 0 0 3px rgba(232, 115, 12, 0.15);
+  }
+}
+
+// ── 홈 히어로 ─────────────────────────────────
+.selly-hero {
+  padding: 2.2rem 0 2.6rem;
+
+  .selly-hero__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45em;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--selly-accent-deep);
+    background: var(--selly-accent-soft);
+    border: 1px solid #F5D9B8;
+    border-radius: 999px;
+    padding: 0.35em 0.95em;
+    margin-bottom: 1.1rem;
+
+    svg { width: 14px; height: 14px; }
+  }
+
+  .selly-hero__title {
+    font-size: clamp(2.1rem, 5.2vw, 3.4rem) !important;
+    line-height: 1.18;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--selly-ink);
+    margin: 0 0 1rem;
+
+    em {
+      font-style: normal;
+      background: linear-gradient(120deg, #F08A2B, var(--selly-accent) 50%, var(--selly-accent-deep));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+
+  .selly-hero__lead {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--selly-ink-soft);
+    max-width: 44em;
+    margin-bottom: 1.6rem;
+  }
+
+  .selly-hero__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+}
+
+// ── 섹션 카드 그리드 ──────────────────────────
+.selly-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 0.9rem;
+  margin: 1.4rem 0 2.4rem;
+}
+
+.selly-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  background: var(--selly-surface);
+  border: 1px solid var(--selly-border);
+  border-radius: var(--selly-radius);
+  padding: 1.15rem 1.2rem 1.05rem;
+  text-decoration: none !important;
+  color: var(--selly-ink) !important;
+  box-shadow: var(--selly-shadow-sm);
+  transition: transform 0.22s var(--selly-ease), box-shadow 0.22s var(--selly-ease),
+              border-color 0.22s var(--selly-ease);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--selly-shadow-md);
+    border-color: #F0C79A;
+
+    .selly-card__arrow { transform: translateX(4px); color: var(--selly-accent-deep); }
+    .selly-card__icon { background: var(--selly-accent); color: #fff; }
+  }
+
+  .selly-card__icon {
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    background: var(--selly-accent-soft);
+    color: var(--selly-accent-deep);
+    transition: background-color 0.22s var(--selly-ease), color 0.22s var(--selly-ease);
+
+    svg { width: 19px; height: 19px; }
+  }
+
+  .selly-card__title {
+    font-size: 1.02rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .selly-card__desc {
+    font-size: 0.86rem;
+    line-height: 1.6;
+    color: var(--selly-ink-soft);
+    flex: 1;
+    margin: 0;
+  }
+
+  .selly-card__arrow {
+    align-self: flex-end;
+    color: var(--selly-ink-faint);
+    transition: transform 0.22s var(--selly-ease), color 0.22s var(--selly-ease);
+    svg { width: 18px; height: 18px; }
+  }
+}
+
+// ── 홈 구분선 · 푸터 노트 ─────────────────────
+.selly-note {
+  font-size: 0.85rem;
+  color: var(--selly-ink-faint);
+  border-top: 1px solid var(--selly-border);
+  padding-top: 1.1rem;
+}
+
+// ── 진입 모션 (스태거 페이드업) ────────────────
+@keyframes selly-fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.selly-hero > *,
+.selly-grid > .selly-card {
+  animation: selly-fade-up 0.55s var(--selly-ease) both;
+}
+
+.selly-hero > *:nth-child(1) { animation-delay: 0.05s; }
+.selly-hero > *:nth-child(2) { animation-delay: 0.12s; }
+.selly-hero > *:nth-child(3) { animation-delay: 0.19s; }
+.selly-hero > *:nth-child(4) { animation-delay: 0.26s; }
+
+@for $i from 1 through 8 {
+  .selly-grid > .selly-card:nth-child(#{$i}) {
+    animation-delay: #{0.25 + $i * 0.06}s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .selly-hero > *,
+  .selly-grid > .selly-card,
+  .btn,
+  .selly-card { animation: none !important; transition: none !important; }
+}

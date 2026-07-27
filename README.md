@@ -14,6 +14,11 @@ https://jichang-kim.github.io/selly-strategy-table/
 | `templates/` | 일기·리포트·리서치 표준 양식 |
 | `assets/` | 기존 Claude Desktop 아티팩트 이관 보관 |
 
+## 버전 안내
+
+- **main** — Jekyll(just-the-docs) 기반 웹사이트 버전. GitHub Pages로 배포됩니다.
+- **[`archive/react-native`](https://github.com/jichang-kim/selly-strategy-table/tree/archive/react-native)** — 기존 React Native 앱(`mobile/`)과 설계 문서(`react-native-design.md`)를 보관하는 아카이브 브랜치입니다.
+
 ## News 자동화
 
 - `scripts/generate-news.mjs`는 Google News RSS를 기반으로 카테고리별 뉴스 회고 초안을 생성합니다.
