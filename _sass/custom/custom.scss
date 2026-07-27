@@ -1,22 +1,68 @@
 // ─────────────────────────────────────────────
 // 셀리의 전략테이블 — 커스텀 디자인 레이어
-// 웜 오렌지 아이덴티티 유지 + 에디토리얼 미니멀 업그레이드
+// 바이올렛 포인트 + 글래스모피즘 (포트폴리오/아카이브)
 // (just-the-docs가 테마 스타일 뒤에 이 파일을 불러옴)
 // ─────────────────────────────────────────────
 
 :root {
-  --selly-ink:        #201A15;
-  --selly-ink-soft:   #5D5348;
-  --selly-ink-faint:  #9A8B78;
-  --selly-accent:     #E8730C;
-  --selly-accent-deep:#C75E05;
-  --selly-accent-soft:#FBE9D6;
-  --selly-surface:    #FFFFFF;
-  --selly-border:     #EDE2D3;
-  --selly-radius:     16px;
-  --selly-shadow-sm:  0 1px 2px rgba(90, 62, 30, 0.06), 0 2px 8px rgba(90, 62, 30, 0.05);
-  --selly-shadow-md:  0 4px 10px rgba(90, 62, 30, 0.08), 0 12px 28px rgba(90, 62, 30, 0.09);
-  --selly-ease:       cubic-bezier(0.22, 1, 0.36, 1);
+  --selly-ink:         #1D1930;
+  --selly-ink-soft:    #4B4560;
+  --selly-ink-faint:   #8B86A0;
+  --selly-accent:      #7C3AED;
+  --selly-accent-deep: #6D28D9;
+  --selly-accent-soft: rgba(124, 58, 237, 0.10);
+  --selly-glass:       rgba(255, 255, 255, 0.55);
+  --selly-glass-solid: rgba(255, 255, 255, 0.88);
+  --selly-glass-line:  rgba(255, 255, 255, 0.65);
+  --selly-border:      #E5E1F0;
+  --selly-radius:      18px;
+  --selly-blur:        16px;
+  --selly-shadow-sm:   0 1px 2px rgba(76, 49, 140, 0.06), 0 4px 14px rgba(76, 49, 140, 0.07);
+  --selly-shadow-md:   0 6px 16px rgba(76, 49, 140, 0.10), 0 16px 40px rgba(76, 49, 140, 0.12);
+  --selly-ease:        cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+// ── 글래스 공통 믹스인 ────────────────────────
+@mixin selly-glass($bg: var(--selly-glass), $blur: var(--selly-blur)) {
+  background: $bg;
+  -webkit-backdrop-filter: blur($blur) saturate(1.5);
+  backdrop-filter: blur($blur) saturate(1.5);
+  border: 1px solid var(--selly-glass-line);
+
+  // backdrop-filter 미지원 브라우저: 불투명에 가까운 흰 배경으로 대비 확보
+  @supports not (backdrop-filter: blur(1px)) {
+    background: var(--selly-glass-solid);
+  }
+}
+
+// ── 배경 그라디언트 메시 (글래스가 비쳐 보이는 캔버스) ──
+body {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(42rem 42rem at 12% -8%,  rgba(139, 92, 246, 0.22), transparent 60%),
+      radial-gradient(38rem 38rem at 96% 12%,  rgba(232, 121, 249, 0.16), transparent 62%),
+      radial-gradient(46rem 46rem at 55% 118%, rgba(99, 102, 241, 0.18), transparent 62%),
+      radial-gradient(30rem 30rem at 82% 78%,  rgba(56, 189, 248, 0.10), transparent 60%),
+      #F6F5FC;
+  }
+}
+
+// ── 사이드바 · 상단 헤더 글래스 ────────────────
+.side-bar {
+  @include selly-glass(rgba(255, 255, 255, 0.48));
+  border-right: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+.main-header {
+  @include selly-glass(rgba(255, 255, 255, 0.42), 14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 // ── 전역 타이포그래피 ─────────────────────────
@@ -50,24 +96,26 @@ html { scroll-behavior: smooth; }
   blockquote {
     border-left: 3px solid var(--selly-accent);
     background: var(--selly-accent-soft);
-    border-radius: 0 10px 10px 0;
+    border-radius: 0 12px 12px 0;
     padding: 0.7rem 1rem;
     color: var(--selly-ink-soft);
   }
 
   table {
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: var(--selly-shadow-sm);
-    border: 1px solid var(--selly-border);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.72);
   }
-  th { background: #FBF3EA; font-weight: 700; }
+  th { background: rgba(124, 58, 237, 0.07); font-weight: 700; }
+  td { background: transparent; }
 }
 
 // ── 버튼 ─────────────────────────────────────
 .btn {
-  border-radius: 10px;
+  border-radius: 12px;
   font-weight: 600;
-  padding: 0.55em 1.1em;
+  padding: 0.55em 1.15em;
   box-shadow: none;
   transition: transform 0.2s var(--selly-ease), box-shadow 0.2s var(--selly-ease),
               background-color 0.2s var(--selly-ease);
@@ -77,28 +125,36 @@ html { scroll-behavior: smooth; }
     text-decoration: none;
   }
 }
+.btn:not(.btn-primary) {
+  @include selly-glass(rgba(255, 255, 255, 0.5), 10px);
+  color: var(--selly-ink);
+}
 .btn-primary {
-  background: linear-gradient(135deg, #F08A2B, var(--selly-accent) 55%, var(--selly-accent-deep));
-  &:hover { background: linear-gradient(135deg, #EF831D, var(--selly-accent-deep)); }
+  background: linear-gradient(135deg, #A78BFA, var(--selly-accent) 55%, var(--selly-accent-deep));
+  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.35);
+  &:hover {
+    background: linear-gradient(135deg, #9F7BFA, var(--selly-accent-deep));
+    box-shadow: 0 8px 22px rgba(124, 58, 237, 0.42);
+  }
 }
 
-// ── 사이드바 · 검색 폴리시 ────────────────────
+// ── 사이드바 내비 · 검색 ──────────────────────
 .site-nav .nav-list .nav-list-item {
   .nav-list-link {
-    border-radius: 8px;
+    border-radius: 10px;
     margin: 1px 6px;
     transition: background-color 0.18s var(--selly-ease), color 0.18s var(--selly-ease);
-    &:hover { background: #F6EBDD; }
+    &:hover { background: rgba(124, 58, 237, 0.08); }
     &.active { font-weight: 700; color: var(--selly-accent-deep); }
   }
 }
 .search-input {
-  border-radius: 12px;
-  border: 1px solid var(--selly-border);
+  @include selly-glass(rgba(255, 255, 255, 0.55), 12px);
+  border-radius: 14px;
   transition: border-color 0.2s var(--selly-ease), box-shadow 0.2s var(--selly-ease);
   &:focus {
-    border-color: var(--selly-accent);
-    box-shadow: 0 0 0 3px rgba(232, 115, 12, 0.15);
+    border-color: rgba(124, 58, 237, 0.5);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.18);
   }
 }
 
@@ -107,6 +163,7 @@ html { scroll-behavior: smooth; }
   padding: 2.2rem 0 2.6rem;
 
   .selly-hero__eyebrow {
+    @include selly-glass(rgba(255, 255, 255, 0.5), 10px);
     display: inline-flex;
     align-items: center;
     gap: 0.45em;
@@ -114,8 +171,6 @@ html { scroll-behavior: smooth; }
     font-weight: 600;
     letter-spacing: 0.12em;
     color: var(--selly-accent-deep);
-    background: var(--selly-accent-soft);
-    border: 1px solid #F5D9B8;
     border-radius: 999px;
     padding: 0.35em 0.95em;
     margin-bottom: 1.1rem;
@@ -133,7 +188,7 @@ html { scroll-behavior: smooth; }
 
     em {
       font-style: normal;
-      background: linear-gradient(120deg, #F08A2B, var(--selly-accent) 50%, var(--selly-accent-deep));
+      background: linear-gradient(120deg, #A78BFA, var(--selly-accent) 45%, #C026D3);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -155,7 +210,7 @@ html { scroll-behavior: smooth; }
   }
 }
 
-// ── 섹션 카드 그리드 ──────────────────────────
+// ── 섹션 카드 그리드 (글래스 카드) ─────────────
 .selly-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
@@ -164,23 +219,23 @@ html { scroll-behavior: smooth; }
 }
 
 .selly-card {
+  @include selly-glass;
   display: flex;
   flex-direction: column;
   gap: 0.55rem;
-  background: var(--selly-surface);
-  border: 1px solid var(--selly-border);
   border-radius: var(--selly-radius);
   padding: 1.15rem 1.2rem 1.05rem;
   text-decoration: none !important;
   color: var(--selly-ink) !important;
   box-shadow: var(--selly-shadow-sm);
   transition: transform 0.22s var(--selly-ease), box-shadow 0.22s var(--selly-ease),
-              border-color 0.22s var(--selly-ease);
+              border-color 0.22s var(--selly-ease), background-color 0.22s var(--selly-ease);
 
   &:hover {
     transform: translateY(-4px);
     box-shadow: var(--selly-shadow-md);
-    border-color: #F0C79A;
+    border-color: rgba(167, 139, 250, 0.8);
+    background: rgba(255, 255, 255, 0.68);
 
     .selly-card__arrow { transform: translateX(4px); color: var(--selly-accent-deep); }
     .selly-card__icon { background: var(--selly-accent); color: #fff; }
@@ -192,7 +247,7 @@ html { scroll-behavior: smooth; }
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 11px;
+    border-radius: 12px;
     background: var(--selly-accent-soft);
     color: var(--selly-accent-deep);
     transition: background-color 0.22s var(--selly-ease), color 0.22s var(--selly-ease);
