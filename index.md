@@ -13,11 +13,6 @@ description: "전략기획본부 CSO 관점의 리서치·분석·보고서를 �
 
 <section class="selly-hero" id="selly-hero">
   <div class="selly-hero__inner">
-    <span class="selly-hero__profile">
-      <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="김지창 프로필" onerror="this.style.display='none'">
-      <span class="selly-hero__profile-name">김지창</span>
-      <span class="selly-hero__profile-role">식자재쿡 전략기획본부 CSO</span>
-    </span>
     <h1 class="selly-hero__title">전략을 기록하고,<br>기록으로 <em>증명합니다</em></h1>
     <p class="selly-hero__lead">
       식자재쿡 전략기획본부 CSO 관점의 리서치·분석·보고서를 축적하는 전략 아카이브이자,
@@ -55,7 +50,7 @@ description: "전략기획본부 CSO 관점의 리서치·분석·보고서를 �
 </section>
 
 <h2 class="selly-sections__title selly-reveal" id="sections">아카이브 둘러보기</h2>
-<p class="selly-sections__sub selly-reveal">왼쪽 상단 검색 또는 상단 메뉴로도 모든 문서를 찾을 수 있습니다.</p>
+<p class="selly-sections__sub selly-reveal">리포트부터 저널까지, 카테고리별로 정리된 기록입니다.</p>
 
 <div class="selly-grid">
   <a class="selly-card selly-reveal" href="{{ '/reports/' | relative_url }}">
@@ -82,7 +77,7 @@ description: "전략기획본부 CSO 관점의 리서치·분석·보고서를 �
   <a class="selly-card selly-reveal" href="{{ '/minutes/' | relative_url }}">
     <span class="selly-card__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg></span>
     <span class="selly-card__title">회의록</span>
-    <p class="selly-card__desc">Google Docs 주간회의록을 매일 10시(KST) 자동 동기화해 반영.</p>
+    <p class="selly-card__desc">주간회의의 논의 흐름과 의사결정 기록.</p>
     <span class="selly-card__arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
   </a>
 
@@ -107,11 +102,6 @@ description: "전략기획본부 CSO 관점의 리서치·분석·보고서를 �
     <span class="selly-card__arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
   </a>
 </div>
-
-<p class="selly-note selly-reveal">
-  이 공간은 CSO가 바라보는 사업운영의 기록이자, 김지창의 커리어 포트폴리오입니다.
-  모바일 앱(React Native) 버전은 <a href="https://github.com/jichang-kim/selly-strategy-table/tree/archive/react-native">archive/react-native 브랜치</a>에 보관되어 있습니다.
-</p>
 
 <script>
 (function () {

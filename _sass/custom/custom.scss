@@ -87,8 +87,10 @@ body {
     box-shadow: 0 2px 16px rgba(76, 49, 140, 0.07);
   }
 
+  // 좌(타이틀) / 중앙(메뉴) / 우(검색·GitHub) 3분할 — 양끝 flex:1로 메뉴를 정중앙에
   .site-header {
-    flex: none;
+    flex: 1 1 0;
+    min-width: 0;
     height: var(--selly-topbar-h) !important;
     max-height: none !important;
     border-bottom: none !important;
@@ -109,11 +111,11 @@ body {
   .side-bar .site-footer { display: none !important; }
 
   .site-nav {
-    flex: 1;
+    flex: 0 1 auto;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    padding: 0 0.9rem 0 0 !important;
+    padding: 0 !important;
     overflow: visible !important;
     height: 100%;
   }
@@ -189,12 +191,6 @@ body {
     max-width: none !important;
     padding-top: var(--selly-topbar-h);
   }
-  .main-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .search { max-width: 34rem; }
   .main-content-wrap {
     max-width: 76rem;
     margin: 0 auto;
@@ -206,6 +202,123 @@ body {
 @keyframes selly-drop {
   from { opacity: 0; transform: translateY(-6px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+// ═════════════════════════════════════════════
+// 상단바 우측 그룹: 아이콘형 검색(클릭 시 확장) + GitHub 링크
+// (head_custom.html의 JS가 .search와 .aux-nav를 이곳으로 이동)
+// ═════════════════════════════════════════════
+.selly-topbar-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+
+  // 검색: 평소엔 돋보기 아이콘만 보이는 원형 버튼
+  .search {
+    flex: none !important;
+    width: auto !important;
+    height: auto !important;
+    max-width: none !important;
+    padding: 0 !important;
+    position: relative;
+  }
+  .search-input-wrap {
+    @include selly-glass(rgba(255, 255, 255, 0.5), 10px);
+    position: relative;
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    border-radius: 999px;
+    overflow: hidden;
+    box-shadow: none !important;
+    transition: width 0.3s var(--selly-ease), box-shadow 0.2s var(--selly-ease);
+  }
+  .search-input {
+    width: 100%;
+    height: 2.5rem !important;
+    padding: 0 0.9rem 0 2.5rem !important;
+    background: transparent !important;
+    border: none;
+    font-size: 0.85rem !important;
+    opacity: 0;
+    transition: opacity 0.2s var(--selly-ease);
+  }
+  .search-label {
+    position: absolute;
+    left: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+
+    svg {
+      width: 15px;
+      height: 15px;
+      color: var(--selly-ink-soft);
+    }
+  }
+
+  // 검색 결과: 우측 정렬 글래스 패널
+  .search-results {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: auto !important;
+    right: 0;
+    width: min(30rem, calc(100vw - 2rem)) !important;
+    max-height: 60vh;
+    overflow-y: auto;
+    @include selly-glass(rgba(255, 255, 255, 0.86), 20px);
+    border-radius: 14px;
+    box-shadow: var(--selly-shadow-md);
+  }
+
+  // GitHub 저장소 링크
+  .aux-nav {
+    padding: 0 !important;
+    .site-button {
+      padding: 0.42rem 0.72rem !important;
+      border-radius: 10px;
+      font-size: 0.82rem !important;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: background-color 0.18s var(--selly-ease);
+      &:hover { background: rgba(124, 58, 237, 0.09); }
+    }
+  }
+}
+
+// 확장 상태: 입력창이 옆으로 펼쳐짐
+.selly-topbar-right.selly-search-open {
+  .search-input-wrap {
+    width: 15rem !important;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.18) !important;
+  }
+  .search-input { opacity: 1; }
+}
+
+// 데스크톱: 상단바 우측 영역으로 배치
+@media (min-width: 50rem) {
+  .selly-topbar-right {
+    flex: 1 1 0;
+    min-width: 0;
+    height: 100%;
+    padding-right: 1.1rem;
+  }
+}
+
+// 모바일: 타이틀 행 우측(햄버거 버튼 왼쪽)에 아이콘 배치
+@media (max-width: 49.99rem) {
+  .side-bar { position: relative; }
+  .selly-topbar-right {
+    position: absolute;
+    top: 0.55rem;
+    right: 3.1rem;
+    z-index: 5;
+  }
+  .selly-topbar-right .aux-nav { display: none; }
+  .selly-topbar-right.selly-search-open .search-input-wrap { width: min(13rem, calc(100vw - 8rem)) !important; }
 }
 
 // ── 전역 타이포그래피 ─────────────────────────
@@ -335,33 +448,6 @@ html { scroll-behavior: smooth; }
     margin: 0 auto;
     position: relative;
     z-index: 1;
-  }
-
-  .selly-hero__profile {
-    @include selly-glass(rgba(255, 255, 255, 0.5), 10px);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6em;
-    border-radius: 999px;
-    padding: 0.32em 1em 0.32em 0.4em;
-    margin-bottom: 1.3rem;
-
-    img {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid #C4B5FD;
-    }
-    .selly-hero__profile-name {
-      font-size: 0.86rem;
-      font-weight: 700;
-      color: var(--selly-ink);
-    }
-    .selly-hero__profile-role {
-      font-size: 0.78rem;
-      color: var(--selly-ink-faint);
-    }
   }
 
   .selly-hero__title {
@@ -522,14 +608,6 @@ html { scroll-behavior: smooth; }
     transition: transform 0.22s var(--selly-ease), color 0.22s var(--selly-ease);
     svg { width: 18px; height: 18px; }
   }
-}
-
-// ── 홈 푸터 노트 ──────────────────────────────
-.selly-note {
-  font-size: 0.85rem;
-  color: var(--selly-ink-faint);
-  border-top: 1px solid var(--selly-border);
-  padding-top: 1.1rem;
 }
 
 // ── 모션: 히어로 진입 스태거 ──────────────────
