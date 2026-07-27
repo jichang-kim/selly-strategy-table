@@ -5,136 +5,89 @@
 <link rel="icon" type="image/png" href="{{ '/assets/images/foodcook-icon.png' | relative_url }}">
 <link rel="apple-touch-icon" href="{{ '/assets/images/foodcook-icon.png' | relative_url }}">
 
-<!-- ── 사이드바 프로필 카드 (좌측 타이틀과 메뉴 사이) ─────────────────
-     just-the-docs 원격 테마는 버전이 고정돼 있지 않아 레이아웃을 직접
-     오버라이드하지 않고, 안정적인 클래스(.side-bar/.site-header/.site-nav)에
-     프로필 카드를 삽입한다. 프로필 사진은 assets/images/profile.jpg 를
-     교체하면 자동으로 바뀐다(정적 사이트의 '업로드'). -->
 <style>
   /* 사이드바 하단 "This site uses Just the Docs..." 문구 숨김 */
   .site-footer { display: none !important; }
+  /* 테마 기본 모바일 검색 오버레이 비활성 (커스텀 확장형 검색 사용) */
+  .search-overlay { display: none !important; }
 
-  .selly-profile {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 20px 22px 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;   /* flex 부모 안에서도 확실히 가운데 */
-    text-align: center;
-    border-bottom: 1px solid #E5E1F0;
-  }
-  .selly-profile__avatar {
-    width: 112px;
-    height: 112px;
+  /* 좌측 상단: 타이틀 옆 프로필 아바타 */
+  .site-title { display: flex; align-items: center; gap: 0.55rem; }
+  .selly-avatar {
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #C4B5FD;
-    background: #F1EEFA;
-    margin: 0 auto 12px;
-  }
-  .selly-profile__avatar--fallback {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 40px;
-    font-weight: 700;
-    color: #7C3AED;
-  }
-  .selly-profile__name {
-    font-size: 18px;
-    font-weight: 700;
-    color: #2A2440;
-    line-height: 1.3;
-  }
-  .selly-profile__role {
-    font-size: 13px;
-    font-weight: 300;
-    color: #8B86A0;
-    margin-top: 3px;
-  }
-  .selly-profile__bio {
-    font-size: 12.5px;
-    font-weight: 300;
-    color: #4B4560;
-    line-height: 1.55;
-    margin-top: 10px;
-    max-width: 220px;
-  }
-  .selly-profile__brand {
-    margin-top: 14px;
-    padding-top: 12px;
-    border-top: 1px dashed #E5E1F0;
-    width: 100%;
-  }
-  .selly-profile__brand img {
-    height: 26px;
-    width: auto;
-    opacity: 0.92;
-  }
-  .selly-profile__brand-caption {
-    font-size: 10px;
-    color: #A8A3BC;
-    margin-top: 4px;
-    letter-spacing: 0.02em;
+    border: 2px solid #C4B5FD;
+    flex: none;
   }
 </style>
+
 <script>
   (function () {
     var AVATAR = "{{ '/assets/images/profile.jpg' | relative_url }}";
-    var LOGO   = "{{ '/assets/images/foodcook-logo.png' | relative_url }}";
+    var NAME_TITLE = "김지창 · 식자재쿡 전략기획본부 CSO";
 
-    // ── 여기만 고치면 프로필 문구가 바뀝니다 ─────────────────
-    var NAME = "김지창";
-    var ROLE = "식자재쿡 전략기획본부 CSO";
-    var BIO  = "전략과 데이터로 외식업의 내일을 설계합니다.";  // ← 간단 소개문구
-    // ────────────────────────────────────────────────────
+    function init() {
+      // 1) 프로필 아바타를 좌측 상단 타이틀에 부착
+      var title = document.querySelector('.site-title');
+      if (title && !title.querySelector('.selly-avatar')) {
+        var img = document.createElement('img');
+        img.className = 'selly-avatar';
+        img.src = AVATAR;
+        img.alt = NAME_TITLE;
+        img.title = NAME_TITLE;
+        img.onerror = function () { this.remove(); };
+        title.insertBefore(img, title.firstChild);
+      }
 
-    function esc(s) {
-      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-    }
-
-    function buildProfile() {
-      var wrap = document.createElement('div');
-      wrap.className = 'selly-profile';
-      var bioHtml = BIO ? '<div class="selly-profile__bio">' + esc(BIO) + '</div>' : '';
-      wrap.innerHTML =
-        '<img class="selly-profile__avatar" src="' + AVATAR + '" alt="' + esc(NAME) + ' 프로필" ' +
-        'onerror="this.onerror=null;this.outerHTML=\'<div class=&quot;selly-profile__avatar selly-profile__avatar--fallback&quot;>' + esc(NAME.charAt(0)) + '</div>\';">' +
-        '<div class="selly-profile__name">' + esc(NAME) + '</div>' +
-        '<div class="selly-profile__role">' + esc(ROLE) + '</div>' +
-        bioHtml +
-        '<div class="selly-profile__brand">' +
-          '<img src="' + LOGO + '" alt="식자재쿡" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'none\';">' +
-          '<div class="selly-profile__brand-caption">powered by 식자재쿡</div>' +
-        '</div>';
-      return wrap;
-    }
-
-    function inject() {
+      // 2) 검색·GitHub 링크를 상단바 우측 그룹으로 이동
       var sidebar = document.querySelector('.side-bar');
-      if (!sidebar) return false;
-      if (document.querySelector('.selly-profile')) return true; // 중복 방지
-      var nav = document.querySelector('#site-nav') || sidebar.querySelector('.site-nav');
-      var profile = buildProfile();
-      if (nav) {
-        // 메뉴(nav) 컬럼 '안'의 맨 위에 삽입 → 메뉴와 동일한 폭·정렬 기준으로 가운데
-        nav.insertBefore(profile, nav.firstChild);
-      } else {
-        var header = sidebar.querySelector('.site-header');
-        if (header) {
-          header.parentNode.insertBefore(profile, header.nextSibling); // 타이틀 바로 아래
-        } else {
-          sidebar.insertBefore(profile, sidebar.firstChild);
+      var header = document.getElementById('main-header');
+      if (sidebar && header && !document.querySelector('.selly-topbar-right')) {
+        var right = document.createElement('div');
+        right.className = 'selly-topbar-right';
+        var search = header.querySelector('.search');
+        var aux = header.querySelector('.aux-nav');
+        if (search) right.appendChild(search);
+        if (aux) right.appendChild(aux);
+        sidebar.appendChild(right);
+        header.style.display = 'none';
+
+        // 3) 검색: 평소엔 돋보기 아이콘, 클릭하면 입력창 확장
+        var input = document.getElementById('search-input');
+        if (input) {
+          input.setAttribute('placeholder', '검색');
+          input.addEventListener('focus', function () {
+            right.classList.add('selly-search-open');
+          });
+          right.addEventListener('focusout', function (e) {
+            if (!right.contains(e.relatedTarget) && !input.value) {
+              right.classList.remove('selly-search-open');
+            }
+          });
+          document.addEventListener('click', function (e) {
+            if (!right.contains(e.target) && !input.value) {
+              right.classList.remove('selly-search-open');
+            }
+          });
+          document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+              input.value = '';
+              // 테마 검색 스크립트가 결과 패널을 닫도록 keyup을 흘려보냄
+              input.dispatchEvent(new KeyboardEvent('keyup', { bubbles: true, key: 'Escape' }));
+              input.blur();
+              right.classList.remove('selly-search-open');
+            }
+          });
         }
       }
-      return true;
     }
 
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', inject);
+      document.addEventListener('DOMContentLoaded', init);
     } else {
-      inject();
+      init();
     }
   })();
 </script>

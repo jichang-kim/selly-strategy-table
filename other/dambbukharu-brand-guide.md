@@ -8,8 +8,6 @@ nav_order: 1
 # 담뿍하루 브랜드 가이드
 {: .no_toc }
 
-- 원본(Claude Design): [브랜드 가이드](https://claude.ai/design/p/fdb7d04b-8b5a-40da-9acc-0c646eda755a?file=%EB%8B%B4%EB%BF%8D%ED%95%98%EB%A3%A8%2F%EB%B8%8C%EB%9E%9C%EB%93%9C+%EA%B0%80%EC%9D%B4%EB%93%9C.html&via=share)
-
 ## 웹 미리보기
 
 - [브랜드 가이드 바로 열기](/selly-strategy-table/assets/dambbukharu/brand-guide.html)
