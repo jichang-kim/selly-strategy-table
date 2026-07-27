@@ -1,6 +1,6 @@
 // ─────────────────────────────────────────────
 // 셀리의 전략테이블 — 커스텀 디자인 레이어
-// 바이올렛 포인트 + 글래스모피즘 (포트폴리오/아카이브)
+// 바이올렛 + 글래스모피즘 / 상단 내비 + 풀스크린 히어로
 // (just-the-docs가 테마 스타일 뒤에 이 파일을 불러옴)
 // ─────────────────────────────────────────────
 
@@ -17,6 +17,7 @@
   --selly-border:      #E5E1F0;
   --selly-radius:      18px;
   --selly-blur:        16px;
+  --selly-topbar-h:    3.5rem;
   --selly-shadow-sm:   0 1px 2px rgba(76, 49, 140, 0.06), 0 4px 14px rgba(76, 49, 140, 0.07);
   --selly-shadow-md:   0 6px 16px rgba(76, 49, 140, 0.10), 0 16px 40px rgba(76, 49, 140, 0.12);
   --selly-ease:        cubic-bezier(0.22, 1, 0.36, 1);
@@ -54,7 +55,7 @@ body {
   }
 }
 
-// ── 사이드바 · 상단 헤더 글래스 ────────────────
+// ── 사이드바 기본(모바일): 글래스 처리 ─────────
 .side-bar {
   @include selly-glass(rgba(255, 255, 255, 0.48));
   border-right: 1px solid rgba(255, 255, 255, 0.55);
@@ -63,6 +64,148 @@ body {
 .main-header {
   @include selly-glass(rgba(255, 255, 255, 0.42), 14px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+// ═════════════════════════════════════════════
+// 데스크톱(≥50rem): 사이드바 → 상단 내비게이션 바
+// ═════════════════════════════════════════════
+@media (min-width: 50rem) {
+  .side-bar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100% !important;
+    max-width: none !important;
+    height: var(--selly-topbar-h) !important;
+    min-height: 0 !important;
+    flex-flow: row nowrap !important;
+    align-items: center;
+    z-index: 120;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+    box-shadow: 0 2px 16px rgba(76, 49, 140, 0.07);
+  }
+
+  .site-header {
+    flex: none;
+    height: var(--selly-topbar-h) !important;
+    max-height: none !important;
+    border-bottom: none !important;
+    display: flex;
+    align-items: center;
+  }
+  .site-title {
+    padding: 0 1.2rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    background-image: none !important; // 테마 호버 하이라이트 제거
+    &:hover { color: var(--selly-accent-deep); }
+  }
+
+  // JS로 삽입되는 사이드바 프로필 카드는 상단바에선 숨김 (홈 히어로가 대신함)
+  .selly-profile { display: none !important; }
+  .side-bar .site-footer { display: none !important; }
+
+  .site-nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 0.9rem 0 0 !important;
+    overflow: visible !important;
+    height: 100%;
+  }
+
+  // 1단 메뉴: 가로 배치
+  #site-nav > .nav-list {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 2px;
+    margin: 0;
+    padding: 0;
+  }
+  #site-nav .nav-list-item {
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+  #site-nav > .nav-list > .nav-list-item > .nav-list-link {
+    display: block;
+    padding: 0.45rem 0.72rem;
+    margin: 0;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.86rem !important;
+    line-height: 1.2;
+    white-space: nowrap;
+    background-image: none !important;
+    transition: background-color 0.18s var(--selly-ease), color 0.18s var(--selly-ease);
+    &:hover { background: rgba(124, 58, 237, 0.09); }
+    &.active { color: var(--selly-accent-deep); background: rgba(124, 58, 237, 0.10); }
+  }
+
+  // 펼침 화살표 버튼은 상단바에서 숨김 (호버 드롭다운으로 대체)
+  #site-nav .nav-list-expander { display: none !important; }
+
+  // 2단 메뉴: 글래스 드롭다운
+  #site-nav > .nav-list > .nav-list-item > .nav-list {
+    @include selly-glass(rgba(255, 255, 255, 0.78), 20px);
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 13rem;
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 0.4rem;
+    border-radius: 14px;
+    box-shadow: var(--selly-shadow-md);
+  }
+  #site-nav > .nav-list > .nav-list-item:hover > .nav-list,
+  #site-nav > .nav-list > .nav-list-item:focus-within > .nav-list {
+    display: block;
+    animation: selly-drop 0.22s var(--selly-ease) both;
+  }
+  #site-nav > .nav-list > .nav-list-item > .nav-list .nav-list-link {
+    display: block;
+    padding: 0.45rem 0.7rem;
+    margin: 0;
+    border-radius: 9px;
+    font-size: 0.84rem !important;
+    white-space: nowrap;
+    background-image: none !important;
+    &:hover { background: rgba(124, 58, 237, 0.09); }
+    &.active { color: var(--selly-accent-deep); font-weight: 700; }
+  }
+  // 3단 이하는 드롭다운에서 숨김 (섹션 페이지·검색으로 접근)
+  #site-nav > .nav-list > .nav-list-item > .nav-list .nav-list { display: none !important; }
+
+  // 본문: 좌측 여백 제거 + 상단바 높이만큼 내리기
+  .main {
+    margin-left: 0 !important;
+    max-width: none !important;
+    padding-top: var(--selly-topbar-h);
+  }
+  .main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .search { max-width: 34rem; }
+  .main-content-wrap {
+    max-width: 76rem;
+    margin: 0 auto;
+  }
+
+  html { scroll-padding-top: calc(var(--selly-topbar-h) + 1rem); }
+}
+
+@keyframes selly-drop {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 // ── 전역 타이포그래피 ─────────────────────────
@@ -138,11 +281,10 @@ html { scroll-behavior: smooth; }
   }
 }
 
-// ── 사이드바 내비 · 검색 ──────────────────────
+// ── 사이드바 내비(모바일) · 검색 ──────────────
 .site-nav .nav-list .nav-list-item {
   .nav-list-link {
     border-radius: 10px;
-    margin: 1px 6px;
     transition: background-color 0.18s var(--selly-ease), color 0.18s var(--selly-ease);
     &:hover { background: rgba(124, 58, 237, 0.08); }
     &.active { font-weight: 700; color: var(--selly-accent-deep); }
@@ -158,33 +300,77 @@ html { scroll-behavior: smooth; }
   }
 }
 
-// ── 홈 히어로 ─────────────────────────────────
+// ═════════════════════════════════════════════
+// 홈: 풀스크린 히어로
+// ═════════════════════════════════════════════
 .selly-hero {
-  padding: 2.2rem 0 2.6rem;
+  // 본문 컨테이너를 뚫고 화면 전체 폭으로 (full-bleed)
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 3rem 1.5rem 2rem;
+  min-height: max(34rem, calc(100vh - 15rem));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 
-  .selly-hero__eyebrow {
+  // 포인터를 따라다니는 글로우 (JS가 --mx/--my 갱신)
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      24rem 24rem at var(--mx, 70%) var(--my, 30%),
+      rgba(139, 92, 246, 0.16),
+      transparent 65%
+    );
+    transition: opacity 0.3s var(--selly-ease);
+  }
+
+  .selly-hero__inner {
+    max-width: 76rem;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .selly-hero__profile {
     @include selly-glass(rgba(255, 255, 255, 0.5), 10px);
     display: inline-flex;
     align-items: center;
-    gap: 0.45em;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    color: var(--selly-accent-deep);
+    gap: 0.6em;
     border-radius: 999px;
-    padding: 0.35em 0.95em;
-    margin-bottom: 1.1rem;
+    padding: 0.32em 1em 0.32em 0.4em;
+    margin-bottom: 1.3rem;
 
-    svg { width: 14px; height: 14px; }
+    img {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #C4B5FD;
+    }
+    .selly-hero__profile-name {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--selly-ink);
+    }
+    .selly-hero__profile-role {
+      font-size: 0.78rem;
+      color: var(--selly-ink-faint);
+    }
   }
 
   .selly-hero__title {
-    font-size: clamp(2.1rem, 5.2vw, 3.4rem) !important;
-    line-height: 1.18;
+    font-size: clamp(2.4rem, 6vw, 4.4rem) !important;
+    line-height: 1.14;
     font-weight: 800;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.035em;
     color: var(--selly-ink);
-    margin: 0 0 1rem;
+    margin: 0 0 1.1rem;
 
     em {
       font-style: normal;
@@ -196,26 +382,83 @@ html { scroll-behavior: smooth; }
   }
 
   .selly-hero__lead {
-    font-size: 1.05rem;
+    font-size: clamp(1rem, 1.4vw, 1.15rem);
     line-height: 1.75;
     color: var(--selly-ink-soft);
-    max-width: 44em;
-    margin-bottom: 1.6rem;
+    max-width: 40em;
+    margin-bottom: 1.8rem;
   }
 
   .selly-hero__cta {
     display: flex;
     flex-wrap: wrap;
     gap: 0.6rem;
+    margin-bottom: 2.2rem;
+  }
+
+  // 아카이브 지표 (카운트업 JS 대상)
+  .selly-hero__stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+  }
+  .selly-stat {
+    @include selly-glass(rgba(255, 255, 255, 0.45), 12px);
+    border-radius: 14px;
+    padding: 0.65rem 1.1rem;
+    min-width: 7.2rem;
+
+    .selly-stat__num {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--selly-accent-deep);
+      font-variant-numeric: tabular-nums;
+    }
+    .selly-stat__label {
+      font-size: 0.76rem;
+      color: var(--selly-ink-faint);
+      margin-top: 0.1rem;
+    }
+  }
+
+  // 스크롤 유도 화살표
+  .selly-hero__scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 1.1rem;
+    transform: translateX(-50%);
+    color: var(--selly-ink-faint);
+    z-index: 1;
+    animation: selly-bounce 2.2s ease-in-out infinite;
+    svg { width: 22px; height: 22px; }
   }
 }
 
-// ── 섹션 카드 그리드 (글래스 카드) ─────────────
+@keyframes selly-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.7; }
+  50%      { transform: translateX(-50%) translateY(7px); opacity: 1; }
+}
+
+// ── 홈: 섹션 카드 그리드 ──────────────────────
+.selly-sections__title {
+  font-size: 1.4rem !important;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 1.2rem 0 0.2rem;
+  border-bottom: none !important;
+}
+.selly-sections__sub {
+  color: var(--selly-ink-faint);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
 .selly-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 0.9rem;
-  margin: 1.4rem 0 2.4rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.95rem;
+  margin: 1.2rem 0 2.6rem;
 }
 
 .selly-card {
@@ -228,11 +471,12 @@ html { scroll-behavior: smooth; }
   text-decoration: none !important;
   color: var(--selly-ink) !important;
   box-shadow: var(--selly-shadow-sm);
+  transform-style: preserve-3d;
+  will-change: transform;
   transition: transform 0.22s var(--selly-ease), box-shadow 0.22s var(--selly-ease),
               border-color 0.22s var(--selly-ease), background-color 0.22s var(--selly-ease);
 
   &:hover {
-    transform: translateY(-4px);
     box-shadow: var(--selly-shadow-md);
     border-color: rgba(167, 139, 250, 0.8);
     background: rgba(255, 255, 255, 0.68);
@@ -280,7 +524,7 @@ html { scroll-behavior: smooth; }
   }
 }
 
-// ── 홈 구분선 · 푸터 노트 ─────────────────────
+// ── 홈 푸터 노트 ──────────────────────────────
 .selly-note {
   font-size: 0.85rem;
   color: var(--selly-ink-faint);
@@ -288,32 +532,45 @@ html { scroll-behavior: smooth; }
   padding-top: 1.1rem;
 }
 
-// ── 진입 모션 (스태거 페이드업) ────────────────
+// ── 모션: 히어로 진입 스태거 ──────────────────
 @keyframes selly-fade-up {
-  from { opacity: 0; transform: translateY(14px); }
+  from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-.selly-hero > *,
-.selly-grid > .selly-card {
-  animation: selly-fade-up 0.55s var(--selly-ease) both;
+.selly-hero .selly-hero__inner > * {
+  animation: selly-fade-up 0.6s var(--selly-ease) both;
 }
+.selly-hero .selly-hero__inner > *:nth-child(1) { animation-delay: 0.05s; }
+.selly-hero .selly-hero__inner > *:nth-child(2) { animation-delay: 0.13s; }
+.selly-hero .selly-hero__inner > *:nth-child(3) { animation-delay: 0.21s; }
+.selly-hero .selly-hero__inner > *:nth-child(4) { animation-delay: 0.29s; }
+.selly-hero .selly-hero__inner > *:nth-child(5) { animation-delay: 0.37s; }
 
-.selly-hero > *:nth-child(1) { animation-delay: 0.05s; }
-.selly-hero > *:nth-child(2) { animation-delay: 0.12s; }
-.selly-hero > *:nth-child(3) { animation-delay: 0.19s; }
-.selly-hero > *:nth-child(4) { animation-delay: 0.26s; }
+// ── 모션: 스크롤 리빌 (JS가 .is-visible 부여) ──
+.selly-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s var(--selly-ease), transform 0.6s var(--selly-ease);
 
-@for $i from 1 through 8 {
-  .selly-grid > .selly-card:nth-child(#{$i}) {
-    animation-delay: #{0.25 + $i * 0.06}s;
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+@for $i from 1 through 8 {
+  .selly-grid > .selly-reveal:nth-child(#{$i}) { transition-delay: #{($i - 1) * 0.06}s; }
+}
+// JS 미동작 환경에서도 내용이 보이도록 (no-js 폴백)
+html:not(.selly-js) .selly-reveal { opacity: 1; transform: none; }
 
+// ── 모션 최소화 설정 존중 ─────────────────────
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .selly-hero > *,
-  .selly-grid > .selly-card,
-  .btn,
-  .selly-card { animation: none !important; transition: none !important; }
+  .selly-hero .selly-hero__inner > *,
+  .selly-hero__scroll,
+  .selly-card,
+  .btn { animation: none !important; transition: none !important; }
+  .selly-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .selly-hero::after { display: none; }
 }
