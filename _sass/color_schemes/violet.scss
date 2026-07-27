@@ -1,28 +1,28 @@
 // ─────────────────────────────────────────────
-// 식자재쿡 CSO Journal — 연한 오렌지(warm) 컬러 스킴
+// 셀리의 전략테이블 — 바이올렛 글래스 컬러 스킴
 // just-the-docs color scheme override
 // ─────────────────────────────────────────────
 
-// 링크 · 버튼 (오렌지 액센트)
-$link-color:                  #E8730C;
-$btn-primary-color:           #E8730C;
+// 링크 · 버튼 (보라 액센트)
+$link-color:                  #6D28D9;
+$btn-primary-color:           #7C3AED;
 
-// 배경 · 사이드바 (웜 화이트 / 소프트 피치)
-$body-background-color:       #FBF7F1;
-$sidebar-color:               #FBF3EA;
+// 배경 · 사이드바 (쿨 라벤더 화이트 — 글래스 레이어는 custom.scss에서 처리)
+$body-background-color:       #F6F5FC;
+$sidebar-color:               #F1EFFA;
 $search-background-color:     #FFFFFF;
 $table-background-color:      #FFFFFF;
-$code-background-color:       #FBF3EA;
-$feedback-color:              #F3E9DC;
+$code-background-color:       #F1EEFA;
+$feedback-color:              #E9E4F8;
 
 // 텍스트
-$body-heading-color:          #201A15;
-$body-text-color:             #33302B;
-$nav-child-link-color:        #6B625A;
-$search-result-preview-color: #6B625A;
+$body-heading-color:          #1D1930;
+$body-text-color:             #37324B;
+$nav-child-link-color:        #635E78;
+$search-result-preview-color: #635E78;
 
 // 경계선
-$border-color:                #ECE3D8;
+$border-color:                #E5E1F0;
 
 // 폰트 (Pretendard 통일 — head_custom.html 에서 웹폰트 로드)
 $body-font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans KR', sans-serif;
