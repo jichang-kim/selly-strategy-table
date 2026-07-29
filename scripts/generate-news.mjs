@@ -62,10 +62,36 @@ const CATEGORY_CONFIG = {
       '산지 리스크가 큰 품목은 대체 품목 제안과 행사 캘린더를 함께 설계한다.',
     ],
   },
+  dambbukharu: {
+    title: '담뿍하루',
+    dailyOnly: true,
+    queries: ['담뿍하루 when:30d', '어린이 금융교육 when:7d', '자녀 경제교육 when:7d', '아이 용돈 앱 when:7d', '키즈 핀테크 when:7d', '청소년 금융 앱 when:7d', '아이부자 앱 when:7d', '퍼핀 용돈 when:7d', '카카오뱅크 미니 when:7d'],
+    includeKeywords: ['담뿍하루', '용돈', '금융교육', '경제교육', '금융습관', '키즈 핀테크', '어린이 금융', '청소년 금융', '자녀 금융', '아이부자', '퍼핀', '카카오뱅크 미니', '조기 경제'],
+    excludeKeywords: ['퀴즈 정답', '퀴즈 문제', '앱테크', '캐시워크', '캐시닥', '타임스프레드', '용돈 퀴즈'],
+    summaryLead: '담뿍하루가 속한 키즈 핀테크·어린이 금융교육 시장은 용돈 지급을 넘어 습관 형성과 부모-자녀 소통 기능으로 차별화 경쟁이 이동하는 흐름입니다.',
+    dynamics: [
+      '어린이 금융교육 기사가 늘어나면 학부모의 조기 경제교육 수요가 커지고 있다는 신호로, 담뿍하루의 미션·리워드 구조에 대한 시장 수용성이 높아지는 국면입니다.',
+      '경쟁 앱(아이부자, 퍼핀, 카카오뱅크 미니 등)의 기능 확장·제휴 보도가 반복되면 용돈 지급 이후의 기록·소통·인성 축에서 담뿍하루의 차별점을 재점검할 시점입니다.',
+    ],
+    insights: [
+      '담뿍하루는 경쟁 앱이 비워둔 **정서·인성·기록** 축이 핵심 차별점이므로, 경쟁사 보도가 금융 기능(카드, 계좌, 결제)에 몰릴수록 소통·습관 코치 포지션의 희소성이 커집니다.',
+      '아동 대상 서비스 규제(만 14세 미만 법정대리인 동의, 아동 광고 제한 등) 관련 보도는 제품 설계와 직결되므로 정책 변화 신호를 우선 추적해야 합니다.',
+      '보도량이 적은 날에도 학부모 커뮤니티·교육 트렌드 기사에서 용돈·경제교육 언급 빈도를 함께 보면 수요 변화를 선행 감지할 수 있습니다.',
+    ],
+    actions: [
+      '경쟁 키즈 핀테크 앱의 신규 기능·제휴·요금제 변화를 주 단위로 비교 시트에 누적한다.',
+      '어린이 금융교육·아동 보호 관련 정책/규제 기사는 별도 태그로 모아 제품 설계 체크리스트와 연결한다.',
+    ],
+  },
 };
 
 function parseArgs(argv) {
-  const options = { days: 7, date: new Date().toISOString().slice(0, 10), overwrite: false, categories: Object.keys(CATEGORY_CONFIG) };
+  const options = {
+    days: 7,
+    date: new Date().toISOString().slice(0, 10),
+    overwrite: false,
+    categories: Object.keys(CATEGORY_CONFIG).filter((key) => !CATEGORY_CONFIG[key].dailyOnly),
+  };
   for (let index = 0; index < argv.length; index += 1) {
     const arg = argv[index];
     if (arg === '--days') options.days = Number(argv[++index]);
@@ -206,6 +232,21 @@ function filterRecent(items, days, endDate) {
   });
 }
 
+function titleTokens(title) {
+  return new Set(title.toLowerCase().split(/[^0-9a-z가-힣]+/).filter((token) => token.length >= 2));
+}
+
+function isSimilarTitle(leftTitle, rightTitle) {
+  const left = titleTokens(leftTitle);
+  const right = titleTokens(rightTitle);
+  if (!left.size || !right.size) return false;
+  let shared = 0;
+  left.forEach((token) => {
+    if (right.has(token)) shared += 1;
+  });
+  return shared / Math.min(left.size, right.size) >= 0.6;
+}
+
 function groupItems(items) {
   const groups = new Map();
   items.forEach((item) => {
@@ -213,7 +254,13 @@ function groupItems(items) {
     if (!groups.has(key)) groups.set(key, []);
     groups.get(key).push(item);
   });
-  return [...groups.entries()].map(([normalizedTitle, groupedItems]) => ({
+  const merged = [];
+  [...groups.entries()].forEach(([normalizedTitle, groupedItems]) => {
+    const existing = merged.find((entry) => isSimilarTitle(entry.normalizedTitle, normalizedTitle));
+    if (existing) existing.items.push(...groupedItems);
+    else merged.push({ normalizedTitle, items: groupedItems });
+  });
+  return merged.map(({ normalizedTitle, items: groupedItems }) => ({
     normalizedTitle,
     primary: groupedItems[0],
     duplicates: groupedItems.slice(1),
@@ -227,6 +274,12 @@ function groupItems(items) {
 
 function matchesKeywords(item, keywords) {
   if (!keywords?.length) return true;
+  const haystack = `${item.title} ${item.description}`.toLowerCase();
+  return keywords.some((keyword) => haystack.includes(keyword.toLowerCase()));
+}
+
+function matchesExcludeKeywords(item, keywords) {
+  if (!keywords?.length) return false;
   const haystack = `${item.title} ${item.description}`.toLowerCase();
   return keywords.some((keyword) => haystack.includes(keyword.toLowerCase()));
 }
@@ -291,6 +344,12 @@ async function buildMarkdown(categoryKey, date, groups, days) {
   const footnotes = buildFootnotes(groups).join('\n');
   const sources = [...new Set(groups.slice(0, 6).flatMap((group) => group.all.map((item) => item.link)))];
   const coverageNote = config.coverageNote ? `- ${config.coverageNote}\n` : '';
+  const defaultInsights = [
+    '이 카테고리는 개별 기사 건수보다 **반복되는 메시지**가 중요합니다. 반복 키워드가 가격, 물류, 수익성, 운영 효율 중 어디에 몰리는지 보는 것이 우선입니다.',
+    '식자재쿡은 기사 단건 대응보다 **발주 반복성, 배송 품질, 가격 신뢰, 운영 데이터 축적** 중 어느 축에서 우위를 쌓는지 연결해서 읽어야 합니다.',
+    '보도량이 적은 경쟁사라도 특정 기능 확장이나 제휴가 반복 보도되면 현장 세일즈 메시지 변화 가능성이 있으므로 영업·운영 현장 피드백으로 교차 확인이 필요합니다.',
+  ];
+  const insights = (config.insights || defaultInsights).map((line) => `- ${line}`).join('\n');
 
   return `---
 type: news
@@ -319,9 +378,7 @@ ${findings}
 ${dynamics}
 
 ## 4. CSO 관점 해석
-${coverageNote}- 이 카테고리는 개별 기사 건수보다 **반복되는 메시지**가 중요합니다. 반복 키워드가 가격, 물류, 수익성, 운영 효율 중 어디에 몰리는지 보는 것이 우선입니다.
-- 식자재쿡은 기사 단건 대응보다 **발주 반복성, 배송 품질, 가격 신뢰, 운영 데이터 축적** 중 어느 축에서 우위를 쌓는지 연결해서 읽어야 합니다.
-- 보도량이 적은 경쟁사라도 특정 기능 확장이나 제휴가 반복 보도되면 현장 세일즈 메시지 변화 가능성이 있으므로 영업·운영 현장 피드백으로 교차 확인이 필요합니다.
+${coverageNote}${insights}
 
 ## 5. 대응 메모
 ${actions}
@@ -332,7 +389,7 @@ ${footnotes}
 }
 
 function outputPathFor(categoryKey, date, days) {
-  const suffix = days >= 180 ? '최근-6개월-회고' : '주간-뉴스-브리프';
+  const suffix = days >= 180 ? '최근-6개월-회고' : days <= 2 ? '데일리-뉴스-브리프' : '주간-뉴스-브리프';
   return path.join(repoRoot, 'news', categoryKey, `${date}-${suffix}.md`);
 }
 
@@ -341,7 +398,7 @@ async function ensureDirectory(filePath) {
 }
 
 async function fetchCategory(categoryKey, days, date) {
-  const { queries, includeKeywords } = CATEGORY_CONFIG[categoryKey];
+  const { queries, includeKeywords, excludeKeywords } = CATEGORY_CONFIG[categoryKey];
   const queryResults = await Promise.all(queries.map(async (query) => {
     const url = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=ko&gl=KR&ceid=KR:ko`;
     const response = await fetch(url, {
@@ -357,7 +414,9 @@ async function fetchCategory(categoryKey, days, date) {
   }));
 
   const merged = uniqueItems(queryResults.flat());
-  const recent = filterRecent(merged, days, date).filter((item) => matchesKeywords(item, includeKeywords));
+  const recent = filterRecent(merged, days, date)
+    .filter((item) => matchesKeywords(item, includeKeywords))
+    .filter((item) => !matchesExcludeKeywords(item, excludeKeywords));
   return groupItems(recent);
 }
 
