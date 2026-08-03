@@ -1,11 +1,11 @@
 ---
-title: 담뿍하루 피치덱 (Seed v1.1)
+title: 담뿍하루 피치덱 (Seed v1.2)
 layout: default
 parent: 담뿍하루
 nav_order: 7
 ---
 
-# 담뿍하루 피치덱 (Seed v1.1)
+# 담뿍하루 피치덱 (Seed v1.2)
 {: .no_toc }
 
 시드 라운드 투자 발표용 · 29장 · 2026년 8월
@@ -21,8 +21,8 @@ nav_order: 7
 
 ## 원본 파일
 
-- [피치덱 내려받기 (.pptx)](/selly-strategy-table/assets/dambbukharu/pitch-deck-seed-v1.1.pptx)
-- 근거 문서: [담뿍하루 사업기획서 v2.1](/selly-strategy-table/other/dambbukharu-business-plan.html)
+- [피치덱 내려받기 (.pptx)](/selly-strategy-table/assets/dambbukharu/pitch-deck-seed-v1.2.pptx)
+- 근거 문서: [담뿍하루 사업기획서 v2.2](/selly-strategy-table/other/dambbukharu-business-plan.html)
 
 ---
 
@@ -101,6 +101,6 @@ nav_order: 7
 
 ## 관련 문서
 
-- [담뿍하루 사업기획서 v2.1](/selly-strategy-table/other/dambbukharu-business-plan.html)
+- [담뿍하루 사업기획서 v2.2](/selly-strategy-table/other/dambbukharu-business-plan.html)
 - [담뿍 캡테이블 시뮬레이터](/selly-strategy-table/other/dambbukharu-captable-simulator.html)
 - [담뿍하루 서비스 소개 웹페이지](/selly-strategy-table/other/dambbukharu-service-intro-webpage.html)
