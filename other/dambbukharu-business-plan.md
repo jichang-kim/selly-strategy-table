@@ -1,11 +1,11 @@
 ---
-title: 담뿍하루 사업기획서 v2.1
+title: 담뿍하루 사업기획서 v2.2
 layout: default
 parent: 담뿍하루
 nav_order: 6
 ---
 
-# 담뿍하루 사업기획서 v2.1
+# 담뿍하루 사업기획서 v2.2
 {: .no_toc }
 
 시드 라운드용 개정판 · 2026년 8월 · 작성 김지창
@@ -21,14 +21,22 @@ nav_order: 6
 
 ## 원본 파일
 
-- [사업기획서 v2.1 내려받기 (.docx)](/selly-strategy-table/assets/dambbukharu/business-plan-v2.1.docx)
-- 피치덱은 [담뿍하루 피치덱 (Seed v1.1)](/selly-strategy-table/other/dambbukharu-pitch-deck.html) 참조
+- [사업기획서 v2.2 내려받기 (.docx)](/selly-strategy-table/assets/dambbukharu/business-plan-v2.2.docx)
+- 피치덱은 [담뿍하루 피치덱 (Seed v1.2)](/selly-strategy-table/other/dambbukharu-pitch-deck.html) 참조
 
 이 페이지는 원본 문서의 요약·색인입니다. 확정 내용은 원본 `.docx`를 기준으로 합니다.
 
 ---
 
-## v2.1에서 바뀐 것
+## 개정 이력
+
+### v2.2
+
+| 항목 | 이전 | v2.2 |
+|:--|:--|:--|
+| 자금 연계 타임라인 (10.2) | 0~3개월 | 0~5개월 |
+
+### v2.1
 
 | 항목 | 이전 | v2.1 |
 |:--|:--|:--|
@@ -124,7 +132,7 @@ v2.0에서 확정된 사항(프리미엄 월 6,000원, 자녀 추가 3,000원, �
 
 ## 관련 문서
 
-- [담뿍하루 피치덱 (Seed v1.1)](/selly-strategy-table/other/dambbukharu-pitch-deck.html) — 본 기획서를 29장 투자 발표용으로 재구성
+- [담뿍하루 피치덱 (Seed v1.2)](/selly-strategy-table/other/dambbukharu-pitch-deck.html) — 본 기획서를 29장 투자 발표용으로 재구성
 - [담뿍 캡테이블 시뮬레이터](/selly-strategy-table/other/dambbukharu-captable-simulator.html) — 시드·시리즈 A 희석 시뮬레이션
 - [담뿍하루 와이어프레임](/selly-strategy-table/other/dambbukharu-wireframe.html) — 1장 화면 구조의 원본 설계
 - [담뿍하루 브랜드 가이드](/selly-strategy-table/other/dambbukharu-brand-guide.html)

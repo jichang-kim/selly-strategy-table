@@ -99,9 +99,11 @@ export default function CapTableSimulator() {
   // ── 설립 ──
   const [founderShares, setFounderShares] = useState(1000000); // 총 발행주식
   const [parVal, setParVal] = useState(100); // 액면가
-  const [kimPct, setKimPct] = useState(58);
-  const [gongPct, setGongPct] = useState(22);
-  const [parentPct, setParentPct] = useState(10);
+  // 기본값은 피치덱 25p 캡테이블과 동일 — 김지창 51 / 공경섭 39 / ESOP 10.
+  // 모법인(식자재쿡)은 지분·수익 관계가 없으므로 0에서 시작한다 (사업기획서 8.2).
+  const [kimPct, setKimPct] = useState(51);
+  const [gongPct, setGongPct] = useState(39);
+  const [parentPct, setParentPct] = useState(0);
   // ESOP = 나머지
 
   // ── 라운드 ──
@@ -298,7 +300,7 @@ export default function CapTableSimulator() {
                 </div>
               ))}
               <div style={{ display: "flex", flexWrap: "wrap", gap: "8px 16px", marginTop: 14, paddingTop: 12, borderTop: `1px solid ${LINE}` }}>
-                {Object.entries(HOLDERS).map(([k, h]) => (
+                {Object.entries(HOLDERS).filter(([k]) => sim.some((s) => s.cap[k] > 0)).map(([k, h]) => (
                   <div key={k} style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 11, color: MUTED }}>
                     <span style={{ width: 9, height: 9, borderRadius: 2, background: h.color }} />
                     {h.name}
