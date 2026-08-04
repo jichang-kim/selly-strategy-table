@@ -14,4 +14,5 @@ has_children: true
 ## 투자 자료 (2026년 8월 기준)
 
 - **[사업기획서 v2.4](/selly-strategy-table/other/dambbukharu-business-plan.html)** — 시드 라운드용 개정판 14장. 시장 규모·경쟁 지형·팀·재무·GTM·투자자 Q&A, 경쟁 5개사 기능 대조표 포함.
-- **[피치덱 (Seed v1.3)](/selly-strategy-table/other/dambbukharu-pitch-deck.html)** — 투자 발표용 30장. 경쟁 5개사 기능 대조표 슬라이드 포함. 1억 원 · 지분 10% · 포스트머니 10억 원 제안.
+- **[피치덱 (Seed v1.4)](/selly-strategy-table/other/dambbukharu-pitch-deck.html)** — 투자 발표용 30장. 경쟁 5개사 기능 대조표 슬라이드 포함.
+- **[피치덱 대본](/selly-strategy-table/other/dambbukharu-pitch-script.html)** — 슬라이드별 대사·시간 배분, 예상 질문 13개, 금지 표현 체크리스트. 1억 원 · 지분 10% · 포스트머니 10억 원 제안.

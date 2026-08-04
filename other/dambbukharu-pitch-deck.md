@@ -1,11 +1,11 @@
 ---
-title: 담뿍하루 피치덱 (Seed v1.3)
+title: 담뿍하루 피치덱 (Seed v1.4)
 layout: default
 parent: 담뿍하루
 nav_order: 7
 ---
 
-# 담뿍하루 피치덱 (Seed v1.3)
+# 담뿍하루 피치덱 (Seed v1.4)
 {: .no_toc }
 
 시드 라운드 투자 발표용 · 30장 · 2026년 8월
@@ -21,8 +21,9 @@ nav_order: 7
 
 ## 원본 파일
 
-- [피치덱 내려받기 (.pptx)](/selly-strategy-table/assets/dambbukharu/pitch-deck-seed-v1.3.pptx)
+- [피치덱 내려받기 (.pptx)](/selly-strategy-table/assets/dambbukharu/pitch-deck-seed-v1.4.pptx)
 - 근거 문서: [담뿍하루 사업기획서 v2.4](/selly-strategy-table/other/dambbukharu-business-plan.html)
+- 발표 대본: [담뿍하루 피치덱 대본](/selly-strategy-table/other/dambbukharu-pitch-script.html)
 
 ---
 
@@ -90,6 +91,21 @@ nav_order: 7
 슬라이드 하단에는 겹치는 축을 먼저 인정하는 문장을 넣었습니다 — "미션과 부모 보태기는 이미 경쟁사에 있습니다."
 
 같은 개정에서 7p 카드 문구의 "4개사 모두 실질 하한 만 7세"를 공식 확인된 3개사(퍼핀·카뱅·토스) 기준으로 수정했습니다.
+
+---
+
+## v1.4 — 발표자 노트 정합
+
+슬라이드 한 장이 삽입되면서 어긋난 노트 안의 상호 참조를 바로잡고, 신규 8p 노트를 채웠습니다.
+
+| 위치 | 이전 | v1.4 |
+|:--|:--|:--|
+| 14p 노트 | "12p의 기간제 체험 미도입 원칙" | 13p |
+| 26p 노트 | "45:45 동률 구조 데드락 질문" | 51:39 구조 · 공동창업자 보호 장치 질문 대비 |
+| 27p 노트 | "상세는 다음 장(27p)" | 28p |
+| 8p 노트 | 없음 | 겹치는 축을 먼저 인정할 것 · △ 표기의 의미 설명 |
+
+전체 발표 흐름은 [피치덱 대본](/selly-strategy-table/other/dambbukharu-pitch-script.html) 참조.
 
 ---
 
