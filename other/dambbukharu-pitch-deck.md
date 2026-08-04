@@ -1,14 +1,14 @@
 ---
-title: 담뿍하루 피치덱 (Seed v1.2)
+title: 담뿍하루 피치덱 (Seed v1.3)
 layout: default
 parent: 담뿍하루
 nav_order: 7
 ---
 
-# 담뿍하루 피치덱 (Seed v1.2)
+# 담뿍하루 피치덱 (Seed v1.3)
 {: .no_toc }
 
-시드 라운드 투자 발표용 · 29장 · 2026년 8월
+시드 라운드 투자 발표용 · 30장 · 2026년 8월
 {: .fs-5 .fw-300 }
 
 ## 목차
@@ -21,8 +21,8 @@ nav_order: 7
 
 ## 원본 파일
 
-- [피치덱 내려받기 (.pptx)](/selly-strategy-table/assets/dambbukharu/pitch-deck-seed-v1.2.pptx)
-- 근거 문서: [담뿍하루 사업기획서 v2.3](/selly-strategy-table/other/dambbukharu-business-plan.html)
+- [피치덱 내려받기 (.pptx)](/selly-strategy-table/assets/dambbukharu/pitch-deck-seed-v1.3.pptx)
+- 근거 문서: [담뿍하루 사업기획서 v2.4](/selly-strategy-table/other/dambbukharu-business-plan.html)
 
 ---
 
@@ -47,35 +47,55 @@ nav_order: 7
 | 4 | PRODUCT | 여섯 개 화면으로 완결 (부모·자녀 화면 분리) |
 | 5 | DIFFERENTIATION | 인성 미션 · 선행 칭찬 · 일기 답장 · 보태기 |
 | 6 | POSITIONING | 가격 경쟁이 아니라 카테고리 차이 |
-| 7 | COMPETITIVE LANDSCAPE | 아이부자 · 카카오뱅크 mini · 토스 유스카드 · 퍼핀 비교, 무료 대체재 대응 |
-| 8 | WHITE SPACE | 만 5–6세는 우리만 잡을 수 있다 |
-| 9 | WHY NOW | 출생등록 2년 연속 증가 · 정기 용돈 70% · 시장이 만 7세까지 내려옴 |
-| 10 | MARKET SIZE | 흐름 1.2조 / 구독 1,500억 / SOM 7.2억 + B2B |
-| 11 | PRICING | Free 0원 · Premium 월 6,000원 · 자녀 추가 3,000원 |
-| 12 | CONVERSION | 무료 체험을 두지 않는 세 가지 이유 |
-| 13 | GO-TO-MARKET (B2C) | 베타 → 유료 전환, '하루 200원' 앵커링, 집행 3원칙 |
-| 14 | UNIT ECONOMICS | 용돈 이자 2층 구조 — 회사 부담 0원 |
-| 15 | WHY IT MATTERS | 보태기는 비용 절감이 아니라 리텐션 장치 |
-| 16 | REGULATION | 제휴형 출시 → 시리즈에서 자체 선불업 전환 |
-| 17 | EXPANSION | (섹션 표지) B2B 아동복지시설 엔터프라이즈 |
-| 18 | WHY B2B | B2C 단일 모델의 세 가지 구조적 한계 |
-| 19 | POLICY FIT | 아동복지법 제38조 · 디딤씨앗통장 · 자립정착금 대응 |
-| 20 | GO-TO-MARKET (B2B) | 1단계만 계획으로, 2·3단계는 경로로 |
-| 21 | ROADMAP | 시드 이후 12개월 실행 계획 |
-| 22 | TEAM | 2인 코어 · 대표 현직 퇴사 후 풀타임 |
-| 23 | INVESTMENT | (섹션 표지) 사업 목표 · 캡테이블 · 투자 조건 |
-| 24 | MILESTONES | 0–1년차 무료 기반 → 1–2년차 유료 전환 15% |
-| 25 | CAP TABLE | 투자 전 51/39/ESOP 10 → 투자 후 45.9/35.1/9 + 투자자 10 |
-| 26 | THE ASK | 1억 원 · 지분 10% · 포스트머니 10억 원 |
-| 27 | FINANCE | 1억 원 = 10개월, 포스트 10억의 역산 구조 |
-| 28 | 클로징 | 사랑을 담뿍, 오늘부터 담뿍하루 |
-| 29 | APPENDIX | 투자자 예상 질문 6문항 (전체 12문항은 기획서 13장) |
+| 7 | COMPETITIVE LANDSCAPE | 아이부자 · 카뱅 mini · 토스 유스 · 퍼핀 비교, 무료 대체재 대응 |
+| 8 | **FEATURE MATRIX** | **(신규)** 경쟁 5개사 × 12개 기능 대조 — 되는 것, 제휴로 되는 것, 안 되는 것 |
+| 9 | WHITE SPACE | 만 5–6세는 우리만 잡을 수 있다 |
+| 10 | WHY NOW | 출생등록 2년 연속 증가 · 정기 용돈 70% · 시장이 만 7세까지 내려옴 |
+| 11 | MARKET SIZE | 흐름 1.2조 / 구독 1,500억 / SOM 7.2억 + B2B |
+| 12 | PRICING | Free 0원 · Premium 월 6,000원 · 자녀 추가 3,000원 |
+| 13 | CONVERSION | 무료 체험을 두지 않는 세 가지 이유 |
+| 14 | GO-TO-MARKET (B2C) | 베타 → 유료 전환, '하루 200원' 앵커링, 집행 3원칙 |
+| 15 | UNIT ECONOMICS | 용돈 이자 2층 구조 — 회사 부담 0원 |
+| 16 | WHY IT MATTERS | 보태기는 비용 절감이 아니라 리텐션 장치 |
+| 17 | REGULATION | 제휴형 출시 → 시리즈에서 자체 선불업 전환 |
+| 18 | EXPANSION | (섹션 표지) B2B 아동복지시설 엔터프라이즈 |
+| 19 | WHY B2B | B2C 단일 모델의 세 가지 구조적 한계 |
+| 20 | POLICY FIT | 아동복지법 제38조 · 디딤씨앗통장 · 자립정착금 대응 |
+| 21 | GO-TO-MARKET (B2B) | 1단계만 계획으로, 2·3단계는 경로로 |
+| 22 | ROADMAP | 시드 이후 12개월 실행 계획 |
+| 23 | TEAM | 2인 코어 · 대표 현직 퇴사 후 풀타임 |
+| 24 | INVESTMENT | (섹션 표지) 사업 목표 · 캡테이블 · 투자 조건 |
+| 25 | MILESTONES | 0–1년차 무료 기반 → 1–2년차 유료 전환 15% |
+| 26 | CAP TABLE | 투자 전 51/39/ESOP 10 → 투자 후 45.9/35.1/9 + 투자자 10 |
+| 27 | THE ASK | 1억 원 · 지분 10% · 포스트머니 10억 원 |
+| 28 | FINANCE | 1억 원 = 10개월, 포스트 10억의 역산 구조 |
+| 29 | 클로징 | 사랑을 담뿍, 오늘부터 담뿍하루 |
+| 30 | APPENDIX | 투자자 예상 질문 6문항 (전체 12문항은 기획서 13장) |
 
 ---
 
-## 이전 버전(22장) 대비 변경
+## 8p FEATURE MATRIX (v1.3 신규)
 
-신규 슬라이드 7장이 추가되어 22장 → 29장이 되었습니다.
+기획서 4.6~4.9 대조표를 한 장으로 압축했습니다. 12개 기능 축 × 담뿍하루 + 경쟁 5개사.
+
+| 표기 | 의미 |
+|:--|:--|
+| ○ | 제공 |
+| △ | 부분·조건부, 또는 **금융사 제휴로 대응 가능** (선불업 등록 불필요) |
+| × | 미제공 (공개 자료 기준) |
+| — | 공개 자료로 확인 불가 |
+
+담뿍하루가 △인 축은 실물 카드·결제, 교통카드, 현금 출금·송금 셋입니다 — 은행·카드사 제휴만으로 붙일 수 있어 "못 하는 것"이 아니라 "아직 붙이지 않은 것"입니다. ×는 증권 계좌가 필요한 투자 경험과, 금융과 무관한 교육 콘텐츠뿐입니다.
+
+슬라이드 하단에는 겹치는 축을 먼저 인정하는 문장을 넣었습니다 — "미션과 부모 보태기는 이미 경쟁사에 있습니다."
+
+같은 개정에서 7p 카드 문구의 "4개사 모두 실질 하한 만 7세"를 공식 확인된 3개사(퍼핀·카뱅·토스) 기준으로 수정했습니다.
+
+---
+
+## 22장 버전 대비 변경
+
+신규 슬라이드 7장이 추가되어 22장 → 29장이 되었고, v1.3에서 FEATURE MATRIX가 더해져 30장입니다.
 
 - **7 COMPETITIVE LANDSCAPE** — "무료 대체재가 있는데 왜 유료인가"에 대한 정면 답변
 - **9 WHY NOW** — 타이밍 논거 (출생등록 증가 · 정기 용돈 관행 · 저연령 확대)
@@ -101,6 +121,6 @@ nav_order: 7
 
 ## 관련 문서
 
-- [담뿍하루 사업기획서 v2.3](/selly-strategy-table/other/dambbukharu-business-plan.html)
+- [담뿍하루 사업기획서 v2.4](/selly-strategy-table/other/dambbukharu-business-plan.html)
 - [담뿍 캡테이블 시뮬레이터](/selly-strategy-table/other/dambbukharu-captable-simulator.html)
 - [담뿍하루 서비스 소개 웹페이지](/selly-strategy-table/other/dambbukharu-service-intro-webpage.html)
