@@ -22,7 +22,7 @@ nav_order: 6
 ## 원본 파일
 
 - [사업기획서 v2.4 내려받기 (.docx)](/selly-strategy-table/assets/dambbukharu/business-plan-v2.4.docx)
-- 피치덱은 [담뿍하루 피치덱 (Seed v1.3)](/selly-strategy-table/other/dambbukharu-pitch-deck.html) 참조
+- 피치덱은 [담뿍하루 피치덱 (Seed v1.4)](/selly-strategy-table/other/dambbukharu-pitch-deck.html) 참조
 
 이 페이지는 원본 문서의 요약·색인입니다. 확정 내용은 원본 `.docx`를 기준으로 합니다.
 
@@ -215,7 +215,7 @@ v2.0에서 확정된 사항(프리미엄 월 6,000원, 자녀 추가 3,000원, �
 
 ## 관련 문서
 
-- [담뿍하루 피치덱 (Seed v1.3)](/selly-strategy-table/other/dambbukharu-pitch-deck.html) — 본 기획서를 29장 투자 발표용으로 재구성
+- [담뿍하루 피치덱 (Seed v1.4)](/selly-strategy-table/other/dambbukharu-pitch-deck.html) — 본 기획서를 29장 투자 발표용으로 재구성
 - [담뿍 캡테이블 시뮬레이터](/selly-strategy-table/other/dambbukharu-captable-simulator.html) — 시드·시리즈 A 희석 시뮬레이션
 - [담뿍하루 와이어프레임](/selly-strategy-table/other/dambbukharu-wireframe.html) — 1장 화면 구조의 원본 설계
 - [담뿍하루 브랜드 가이드](/selly-strategy-table/other/dambbukharu-brand-guide.html)
