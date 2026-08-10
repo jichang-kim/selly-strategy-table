@@ -17,3 +17,9 @@ _site/
 vendor/
 Gemfile.lock
 Gemfile.local.lock
+
+# 원본 데이터 파일 — 절대 커밋 금지 (내부 실데이터)
+*.xls
+*.xlsx
+*.csv
+.claude/

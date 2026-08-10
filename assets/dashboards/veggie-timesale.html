@@ -116,6 +116,9 @@
   /* footer */
   footer{padding:34px 0 60px;border-top:1px solid var(--line2);color:var(--faint);font-size:12.5px}
   footer b{color:var(--muted)}
+  /* de-identification notice */
+  .notice{background:var(--amber-soft);border-bottom:1px solid var(--line2);
+    color:var(--amber-deep);font-size:13px;font-weight:600;padding:10px 0;text-align:center}
   @media(max-width:760px){
     .hero h1{font-size:33px} .stats{grid-template-columns:1fr 1fr}
     .g2,.g3,.budget-grid,.kpi{grid-template-columns:1fr}
@@ -126,6 +129,8 @@
 </head>
 <body>
 
+<div class="notice"><div class="wrap">본 페이지의 수치는 비식별화를 위해 변환된 예시 데이터이며, 실제 경영 수치가 아닙니다.</div></div>
+
 <div class="wrap hero">
   <div class="eyebrow">식자재쿡 · CSO 캠페인 기획서</div>
   <h1>야채 <span class="hl">최저가</span> 타임세일<br>— 첫 구매처 선점 작전</h1>
@@ -134,13 +139,13 @@
     <span>기간 <b>2026.06.29 ~ 07.31</b></span>
     <span>운영 <b>월·화·수 14:00 오픈</b></span>
     <span>지역 <b>영남권</b></span>
-    <span>연동 <b>구글 시트 실행캘린더</b></span>
+    <span>데이터 <b>비식별 변환 예시</b></span>
   </div>
   <div class="stats num">
     <div class="stat"><div class="k">행사일</div><div class="v">15<small>일</small></div></div>
-    <div class="stat"><div class="k">월 마케팅 예산(상한)</div><div class="v">150<small>만원</small></div></div>
-    <div class="stat"><div class="k">일평균 집행(상한)</div><div class="v">8.9<small>만원</small></div></div>
-    <div class="stat accent"><div class="k">평균 할인율</div><div class="v">~55<small>%</small></div></div>
+    <div class="stat"><div class="k">월 마케팅 예산(상한)</div><div class="v">100<small>만원</small></div></div>
+    <div class="stat"><div class="k">일평균 집행(상한)</div><div class="v">4.4<small>만원</small></div></div>
+    <div class="stat accent"><div class="k">평균 할인율</div><div class="v">~53<small>%</small></div></div>
   </div>
 </div>
 
@@ -215,18 +220,18 @@
 <section class="wrap">
   <div class="eyebrow">가격 산정</div>
   <h2>품목 풀 &amp; 이벤트가</h2>
-  <p class="lead">우리 raw 기본판매가(6/8~6/21) 대비 47~71% 할인, 모두 경쟁 시세보다 낮게 설정. 손실 = 마케팅비, 한정수량으로 상한을 고정합니다.</p>
+  <p class="lead">우리 raw 기본판매가(6/8~6/21) 대비 43~58% 할인, 모두 경쟁 시세보다 낮게 설정. 손실 = 마케팅비, 한정수량으로 상한을 고정합니다.</p>
   <table class="num">
     <thead><tr><th>품목</th><th class="r">기본가</th><th class="r">매입원가</th><th class="r">이벤트가</th><th class="r">할인</th><th class="r">손익/개</th><th>역할</th></tr></thead>
     <tbody>
-      <tr><td>흙대파 1단</td><td class="r">2,400</td><td class="r">1,800</td><td class="r">990</td><td class="r">59%</td><td class="r neg">−810</td><td>데일리</td></tr>
-      <tr><td>깐양파 1kg(햇)</td><td class="r">2,500</td><td class="r">~1,700</td><td class="r">990</td><td class="r">60%</td><td class="r neg">−710</td><td>데일리</td></tr>
-      <tr><td>청양고추 특 1kg</td><td class="r">7,500</td><td class="r">6,000</td><td class="r">3,900</td><td class="r">48%</td><td class="r neg">−2,100</td><td>데일리</td></tr>
-      <tr><td>가시오이 1kg</td><td class="r">3,000</td><td class="r">3,000</td><td class="r">1,490</td><td class="r">50%</td><td class="r neg">−1,510</td><td>데일리</td></tr>
-      <tr><td>애호박 1개</td><td class="r">900</td><td class="r">650</td><td class="r">390</td><td class="r">57%</td><td class="r neg">−260</td><td>미끼</td></tr>
-      <tr><td>깻잎 5묶음 · 손질양배추 · 무 · 당근 · 콩나물 · 부추 · 숙주 · 미나리</td><td class="r">1,450~3,300</td><td class="r">—</td><td class="r">690~1,490</td><td class="r">~50%</td><td class="r neg">소액</td><td>회전</td></tr>
-      <tr><td>무순 5팩</td><td class="r">3,100</td><td class="r">500</td><td class="r">1,490</td><td class="r">52%</td><td class="r pos">+990</td><td>방어(고마진)</td></tr>
-      <tr><td>간마늘 1kg · 깐양파 3kg · 포찹상추 2kg · 청양고추</td><td class="r">3,450~11,500</td><td class="r">—</td><td class="r">1,900~4,900</td><td class="r">45~61%</td><td class="r neg">크게</td><td>블록버스터</td></tr>
+      <tr><td>흙대파 1단</td><td class="r">1,600</td><td class="r">1,400</td><td class="r">690</td><td class="r">57%</td><td class="r neg">−710</td><td>데일리</td></tr>
+      <tr><td>깐양파 1kg(햇)</td><td class="r">1,600</td><td class="r">~1,300</td><td class="r">690</td><td class="r">57%</td><td class="r neg">−610</td><td>데일리</td></tr>
+      <tr><td>청양고추 특 1kg</td><td class="r">4,900</td><td class="r">4,700</td><td class="r">2,490</td><td class="r">49%</td><td class="r neg">−2,210</td><td>데일리</td></tr>
+      <tr><td>가시오이 1kg</td><td class="r">2,000</td><td class="r">2,300</td><td class="r">990</td><td class="r">51%</td><td class="r neg">−1,310</td><td>데일리</td></tr>
+      <tr><td>애호박 1개</td><td class="r">600</td><td class="r">510</td><td class="r">250</td><td class="r">58%</td><td class="r neg">−260</td><td>미끼</td></tr>
+      <tr><td>깻잎 5묶음 · 손질양배추 · 무 · 당근 · 콩나물 · 부추 · 숙주 · 미나리</td><td class="r">950~2,150</td><td class="r">—</td><td class="r">490~990</td><td class="r">~50%</td><td class="r neg">소액</td><td>회전</td></tr>
+      <tr><td>무순 5팩</td><td class="r">2,000</td><td class="r">390</td><td class="r">990</td><td class="r">51%</td><td class="r pos">+600</td><td>방어(고마진)</td></tr>
+      <tr><td>간마늘 1kg · 깐양파 3kg · 포찹상추 2kg · 청양고추</td><td class="r">2,250~7,500</td><td class="r">—</td><td class="r">1,290~3,190</td><td class="r">43~57%</td><td class="r neg">크게</td><td>블록버스터</td></tr>
     </tbody>
   </table>
 </section>
@@ -248,15 +253,15 @@
 
 <section class="wrap">
   <div class="eyebrow">손실 예산</div>
-  <h2>월 150만 한도 · 전량 소진 기준 상한</h2>
-  <p class="lead">한정수량 전량이 소진되는 최악 가정에서도 7월 집행 상한은 약 114만 원으로, 150만 한도 안에 버퍼가 남습니다. 무순 등 고마진 품목이 끼는 날은 손실이 줄어 실집행은 더 낮습니다.</p>
+  <h2>월 100만 한도 · 전량 소진 기준 상한</h2>
+  <p class="lead">한정수량 전량이 소진되는 최악 가정에서도 7월 집행 상한은 약 66만 원으로, 100만 한도 안에 버퍼가 남습니다. 무순 등 고마진 품목이 끼는 날은 손실이 줄어 실집행은 더 낮습니다.</p>
   <div class="budget-grid">
     <div class="chartbox"><canvas id="bchart" aria-label="주차별 손실 상한 막대그래프"></canvas></div>
     <div>
       <div class="lever"><div class="lt">한정수량</div><div class="ld">↓ 줄이면 일 손실 직접 감소. 가장 빠른 조절 레버.</div></div>
       <div class="lever"><div class="lt">블록버스터 빈도</div><div class="ld">주 1회(월요일) 유지 권장. 늘리면 손실 급증.</div></div>
       <div class="lever"><div class="lt">고가 품목 비중</div><div class="ld">마늘·상추 등은 손실 크므로 월 2~3회로 제한.</div></div>
-      <div class="lever" style="background:var(--orange-soft);border-color:var(--orange-soft)"><div class="lt" style="color:var(--orange-deep)">신규 100명 확보 시 CAC ≈ 1.3만원</div><div class="ld" style="color:var(--orange-deep)">배민상회 가입쿠폰 10만원 대비 매우 효율적.</div></div>
+      <div class="lever" style="background:var(--orange-soft);border-color:var(--orange-soft)"><div class="lt" style="color:var(--orange-deep)">신규 100명 확보 시 CAC ≈ 0.7만원</div><div class="ld" style="color:var(--orange-deep)">배민상회 가입쿠폰 10만원 대비 매우 효율적.</div></div>
     </div>
   </div>
 </section>
@@ -278,7 +283,7 @@
       <ul>
         <li>평소 최적창(19~21시)이 아니라 <b>오전 예고(11:30) + 오픈 직전(13:50)</b></li>
         <li>목적이 "오후 발주 결정 가로채기"이기 때문</li>
-        <li>핵심 카피: "대파 1단 990원, 선착순 40단. 오후 2시 땡."</li>
+        <li>핵심 카피: "대파 1단 690원, 선착순 50단. 오후 2시 땡."</li>
       </ul>
     </div>
   </div>
@@ -301,17 +306,29 @@
 </footer>
 
 <script>
-const SHEET_ID = '1VX7kVN1upX1qFhitwQw46ukmH6FY-Iu2oAo8llyjAsA';
-const GID = '490025442';
-const API_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&gid=${GID}`;
+// 비식별화를 위해 변환된 예시 데이터입니다. 실제 경영 수치가 아닙니다.
+// plannedLoss: 음수 = 손실(마케팅비), 양수 = 이익(방어 품목)
+const CAMPAIGN_DATA = [
+  { order: '2026-06-29', orderWd: '월', arrival: '2026-06-30', arrivalWd: '화', type: '블록버스터', item: '간마늘 1kg', eventPrice: 3190, discount: 0.57, quantity: 30, plannedLoss: -81300 },
+  { order: '2026-06-30', orderWd: '화', arrival: '2026-07-01', arrivalWd: '수', type: '데일리', item: '흙대파 1단', eventPrice: 690, discount: 0.57, quantity: 50, plannedLoss: -35500 },
+  { order: '2026-07-01', orderWd: '수', arrival: '2026-07-02', arrivalWd: '목', type: '데일리', item: '깐양파 1kg(햇)', eventPrice: 690, discount: 0.57, quantity: 50, plannedLoss: -30500 },
+  { order: '2026-07-06', orderWd: '월', arrival: '2026-07-07', arrivalWd: '화', type: '블록버스터', item: '깐양파 3kg', eventPrice: 1290, discount: 0.43, quantity: 30, plannedLoss: -78300 },
+  { order: '2026-07-07', orderWd: '화', arrival: '2026-07-08', arrivalWd: '수', type: '데일리', item: '가시오이 1kg', eventPrice: 990, discount: 0.51, quantity: 40, plannedLoss: -52400 },
+  { order: '2026-07-08', orderWd: '수', arrival: '2026-07-09', arrivalWd: '목', type: '데일리', item: '애호박 1개', eventPrice: 250, discount: 0.58, quantity: 120, plannedLoss: -31200 },
+  { order: '2026-07-13', orderWd: '월', arrival: '2026-07-14', arrivalWd: '화', type: '블록버스터', item: '포찹상추 2kg', eventPrice: 1890, discount: 0.55, quantity: 40, plannedLoss: -64400 },
+  { order: '2026-07-14', orderWd: '화', arrival: '2026-07-15', arrivalWd: '수', type: '데일리', item: '흙대파 1단', eventPrice: 690, discount: 0.57, quantity: 50, plannedLoss: -35500 },
+  { order: '2026-07-15', orderWd: '수', arrival: '2026-07-16', arrivalWd: '목', type: '데일리(방어)', item: '무순 5팩', eventPrice: 990, discount: 0.51, quantity: 30, plannedLoss: 18000 },
+  { order: '2026-07-20', orderWd: '월', arrival: '2026-07-21', arrivalWd: '화', type: '블록버스터', item: '간마늘 1kg', eventPrice: 3190, discount: 0.57, quantity: 25, plannedLoss: -67750 },
+  { order: '2026-07-21', orderWd: '화', arrival: '2026-07-22', arrivalWd: '수', type: '데일리', item: '깐양파 1kg(햇)', eventPrice: 690, discount: 0.57, quantity: 50, plannedLoss: -30500 },
+  { order: '2026-07-22', orderWd: '수', arrival: '2026-07-23', arrivalWd: '목', type: '데일리', item: '깻잎 5묶음', eventPrice: 990, discount: 0.54, quantity: 60, plannedLoss: -18000 },
+  { order: '2026-07-27', orderWd: '월', arrival: '2026-07-28', arrivalWd: '화', type: '블록버스터', item: '청양고추 특 1kg', eventPrice: 2490, discount: 0.49, quantity: 30, plannedLoss: -66300 },
+  { order: '2026-07-28', orderWd: '화', arrival: '2026-07-29', arrivalWd: '수', type: '데일리', item: '가시오이 1kg', eventPrice: 990, discount: 0.51, quantity: 40, plannedLoss: -52400 },
+  { order: '2026-07-29', orderWd: '수', arrival: '2026-07-30', arrivalWd: '목', type: '데일리', item: '흙대파 1단', eventPrice: 690, discount: 0.57, quantity: 50, plannedLoss: -35500 }
+];
 
-function parseSheetDate(value) {
-  if (!value) return null;
-  const match = /Date\((\d+),(\d+),(\d+)\)/.exec(value);
-  if (match) {
-    return new Date(parseInt(match[1], 10), parseInt(match[2], 10), parseInt(match[3], 10));
-  }
-  return new Date(value);
+function parseDate(value) {
+  const parts = value.split('-').map(Number);
+  return new Date(parts[0], parts[1] - 1, parts[2]);
 }
 
 function formatDate(date) {
@@ -402,46 +419,23 @@ function initChart(weeklyData) {
   });
 }
 
-function showLoadError() {
-  document.getElementById('cal').innerHTML = '<div style="padding:24px;color:#b14d00;background:#fff2e8;border:1px solid #f6d7bf;border-radius:12px;">구글 시트 데이터를 불러올 수 없습니다. 공개 설정이나 네트워크를 확인하세요.</div>';
-}
+var entries = CAMPAIGN_DATA.map(function (row) {
+  return {
+    orderDate: parseDate(row.order),
+    orderWeekday: row.orderWd,
+    arrivalDate: parseDate(row.arrival),
+    arrivalWeekday: row.arrivalWd,
+    type: row.type,
+    item: row.item,
+    eventPrice: row.eventPrice,
+    discount: row.discount,
+    quantity: row.quantity,
+    plannedLoss: row.plannedLoss
+  };
+});
 
-fetch(API_URL)
-  .then(function (res) { return res.text(); })
-  .then(function (text) {
-    var match = /google\.visualization\.Query\.setResponse\((.*)\);/s.exec(text);
-    if (!match) throw new Error('Invalid sheet response');
-    var data = JSON.parse(match[1]);
-    var entries = data.table.rows.map(function (row) {
-      return {
-        orderDate: parseSheetDate(row.c[1] && row.c[1].v),
-        orderWeekday: row.c[2] && row.c[2].v,
-        arrivalDate: parseSheetDate(row.c[3] && row.c[3].v),
-        arrivalWeekday: row.c[4] && row.c[4].v,
-        type: row.c[5] && row.c[5].v,
-        item: row.c[6] && row.c[6].v,
-        eventPrice: row.c[9] && row.c[9].v,
-        discount: row.c[10] && row.c[10].v,
-        quantity: row.c[12] && row.c[12].v,
-        plannedLoss: row.c[13] && row.c[13].v,
-        weekLabel: row.c[14] && row.c[14].v,
-        status: row.c[19] && row.c[19].v
-      };
-    }).filter(function (entry) {
-      return entry.item && entry.status !== '취소';
-    });
-
-    var weeklyData = buildCalendar(entries);
-    if (weeklyData.length) {
-      initChart(weeklyData);
-    } else {
-      showLoadError();
-    }
-  })
-  .catch(function (err) {
-    console.error(err);
-    showLoadError();
-  });
+var weeklyData = buildCalendar(entries);
+initChart(weeklyData);
 </script>
 </body>
 </html>
