@@ -153,9 +153,14 @@ body {
   #site-nav .nav-list-expander { display: none !important; }
 
   // 2단 메뉴: 글래스 드롭다운
+  // display:none/block 대신 visibility+opacity로 여닫는다.
+  // display는 전환 지연을 줄 수 없어, 마우스가 상위 메뉴를 벗어나는 순간
+  // 드롭다운이 즉시 사라져 하위 항목으로 옮겨가지 못하는 문제가 있었다.
   #site-nav > .nav-list > .nav-list-item > .nav-list {
     @include selly-glass(rgba(255, 255, 255, 0.78), 20px);
-    display: none;
+    // 테마 기본값 `.nav-list .nav-list-item > .nav-list { display:none }`를 덮는다.
+    // 여닫기는 아래 visibility/opacity가 담당하므로 display는 항상 block으로 둔다.
+    display: block;
     position: absolute;
     top: calc(100% + 8px);
     right: 0;
@@ -165,11 +170,42 @@ body {
     padding: 0.4rem;
     border-radius: 14px;
     box-shadow: var(--selly-shadow-md);
+
+    // 닫힘 상태 — visibility는 0.3s 뒤에 꺼지므로 그동안은 다시 올려도 살아난다
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition:
+      opacity 0.18s var(--selly-ease),
+      transform 0.18s var(--selly-ease),
+      visibility 0s linear 0.3s;
   }
   #site-nav > .nav-list > .nav-list-item:hover > .nav-list,
   #site-nav > .nav-list > .nav-list-item:focus-within > .nav-list {
-    display: block;
-    animation: selly-drop 0.22s var(--selly-ease) both;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+      opacity 0.2s var(--selly-ease),
+      transform 0.2s var(--selly-ease),
+      visibility 0s;
+  }
+
+  // 상위 메뉴와 드롭다운 사이 8px 틈을 덮는 투명 다리.
+  // 이 틈은 li 바깥이라 마우스가 지나는 순간 :hover가 끊겼다.
+  // 드롭다운이 상위 항목보다 왼쪽으로 넓게 열리므로(right:0) 다리도 같은 폭으로 깐다.
+  #site-nav > .nav-list > .nav-list-item:hover::after,
+  #site-nav > .nav-list > .nav-list-item:focus-within::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: max(100%, 13rem);
+    height: 12px;
+  }
+  // 하위 메뉴가 없는 항목에는 다리를 깔지 않는다 (본문 클릭 방해 방지)
+  #site-nav > .nav-list > .nav-list-item:not(:has(> .nav-list))::after {
+    content: none;
   }
   #site-nav > .nav-list > .nav-list-item > .nav-list .nav-list-link {
     display: block;
