@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CSO·사업부 리드·PM·PO·PMO·마케터 실무 용어 사전 — 직무별 필터와 검색">
+<title>실무 용어 사전</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --paper:#EFF2F1; --surface:#FFFFFF; --surface-2:#F7F9F8;
+  --ink:#121A18; --text:#2E3A37; --muted:#5F706B; --faint:#8A9A95;
+  --line:#D8E0DD; --line-soft:#E7EDEB;
+  --accent:#0E6A5B; --accent-soft:#DCEDE8; --accent-ink:#0A4E43;
+  --clay:#A0412C; --clay-soft:#F7E5DF;
+  --shadow:0 1px 2px rgba(18,26,24,.05);
+  --serif:'Gowun Batang',ui-serif,Georgia,serif;
+  --sans:'IBM Plex Sans KR',-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0E1413; --surface:#161E1C; --surface-2:#1B2523;
+    --ink:#E9EFED; --text:#C6D2CE; --muted:#8EA09B; --faint:#6B7C77;
+    --line:#283431; --line-soft:#202B29;
+    --accent:#4FB59D; --accent-soft:#12312B; --accent-ink:#7ACDB8;
+    --clay:#D98063; --clay-soft:#33201A;
+    --shadow:0 1px 2px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0E1413; --surface:#161E1C; --surface-2:#1B2523;
+  --ink:#E9EFED; --text:#C6D2CE; --muted:#8EA09B; --faint:#6B7C77;
+  --line:#283431; --line-soft:#202B29;
+  --accent:#4FB59D; --accent-soft:#12312B; --accent-ink:#7ACDB8;
+  --clay:#D98063; --clay-soft:#33201A;
+  --shadow:0 1px 2px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--text);
+  font-family:var(--sans); font-size:15px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:64rem; margin:0 auto; padding:40px 22px 96px}
+
+/* ── 머리말 ───────────────────────────── */
+.masthead{border-bottom:2px solid var(--ink); padding-bottom:18px; margin-bottom:4px}
+.kicker{font-family:var(--mono); font-size:11px; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--accent); font-weight:600}
+h1{font-family:var(--serif); font-size:clamp(30px,5vw,44px); font-weight:700; color:var(--ink);
+  margin:10px 0 0; letter-spacing:-.01em; line-height:1.15; text-wrap:balance}
+.standfirst{margin:12px 0 0; max-width:60ch; color:var(--muted); font-size:14.5px}
+.counts{display:flex; gap:18px; flex-wrap:wrap; margin-top:16px;
+  font-family:var(--mono); font-size:11.5px; color:var(--faint); letter-spacing:.04em}
+.counts b{color:var(--text); font-weight:600}
+
+/* ── 필터 ─────────────────────────────── */
+.controls{position:sticky; top:0; z-index:10; background:var(--paper);
+  padding:14px 0 12px; border-bottom:1px solid var(--line); margin-bottom:30px}
+.roles{display:flex; gap:6px; flex-wrap:wrap}
+.chip{font:inherit; font-size:13px; font-weight:600; color:var(--muted);
+  background:var(--surface); border:1px solid var(--line); border-radius:7px;
+  padding:6px 13px; cursor:pointer; transition:background .14s,color .14s,border-color .14s}
+.chip:hover{border-color:var(--accent); color:var(--accent-ink)}
+.chip[aria-pressed="true"]{background:var(--accent); border-color:var(--accent); color:#fff}
+.chip:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+.searchrow{display:flex; gap:10px; align-items:center; margin-top:10px}
+.search{flex:1; font:inherit; font-size:14px; color:var(--ink);
+  background:var(--surface); border:1px solid var(--line); border-radius:7px; padding:9px 13px}
+.search::placeholder{color:var(--faint)}
+.search:focus{outline:2px solid var(--accent); outline-offset:-1px; border-color:var(--accent)}
+.hits{font-family:var(--mono); font-size:12px; color:var(--faint); white-space:nowrap}
+
+/* ── 섹션 ─────────────────────────────── */
+.sec{margin-bottom:44px}
+.sec-head{display:flex; align-items:baseline; gap:12px; padding-bottom:8px;
+  border-bottom:1px solid var(--line); margin-bottom:2px}
+.sec-head h2{font-family:var(--serif); font-size:21px; font-weight:700; color:var(--ink); margin:0}
+.sec-head .who{font-family:var(--mono); font-size:11px; color:var(--faint); letter-spacing:.06em;
+  margin-left:auto; text-align:right}
+
+/* ── 표제어 행 ────────────────────────── */
+.term{display:grid; grid-template-columns:13.5rem 1fr; gap:0 26px;
+  padding:15px 0; border-bottom:1px solid var(--line-soft)}
+.term:last-child{border-bottom:0}
+.head .ko{font-size:15.5px; font-weight:700; color:var(--ink); line-height:1.35}
+.head .en{display:block; font-family:var(--mono); font-size:11.5px; color:var(--accent-ink);
+  margin-top:3px; letter-spacing:.01em}
+.body .def{margin:0}
+.body .use{margin:7px 0 0; padding-left:13px; border-left:2px solid var(--accent-soft);
+  color:var(--muted); font-size:14px}
+.body .use b{color:var(--text); font-weight:600}
+.tags{display:flex; gap:4px; flex-wrap:wrap; margin-top:9px}
+.tag{font-family:var(--mono); font-size:10px; letter-spacing:.06em; color:var(--faint);
+  border:1px solid var(--line); border-radius:4px; padding:1px 6px}
+
+/* ── 함정 섹션 ────────────────────────── */
+.pitfalls{background:var(--clay-soft); border:1px solid var(--clay);
+  border-radius:10px; padding:26px 28px; margin-top:56px}
+.pitfalls h2{font-family:var(--serif); font-size:22px; color:var(--clay); margin:0 0 6px}
+.pitfalls .lede{margin:0 0 20px; color:var(--text); font-size:14.5px; max-width:62ch}
+.pit{padding:14px 0; border-top:1px solid rgba(160,65,44,.22)}
+.pit h3{margin:0 0 5px; font-size:15px; font-weight:700; color:var(--ink)}
+.pit p{margin:0; font-size:14px; color:var(--text)}
+.pit .wrong{color:var(--clay); font-weight:600}
+
+.empty{padding:40px 0; text-align:center; color:var(--faint); font-size:14px}
+footer{margin-top:56px; padding-top:18px; border-top:1px solid var(--line);
+  font-size:12.5px; color:var(--faint)}
+
+@media (max-width:680px){
+  .wrap{padding:28px 16px 72px}
+  .term{grid-template-columns:1fr; gap:6px}
+  .head{padding-bottom:2px}
+  .sec-head .who{display:none}
+  .pitfalls{padding:20px 18px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header class="masthead">
+  <p class="kicker">전략 · 사업 · 프로덕트 · 마케팅</p>
+  <h1>실무 용어 사전</h1>
+  <p class="standfirst">CSO, 사업부 리드, PM, PO, PMO, 마케터가 회의에서 설명 없이 주고받는 말들. 정의보다 <b>언제 쓰는 말인지</b>와 <b>어디서 틀리는지</b>에 무게를 뒀습니다.</p>
+  <div class="counts">
+    <span><b id="c-total">0</b> 개 표제어</span>
+    <span><b>7</b> 개 분야</span>
+    <span><b>8</b> 개 함정</span>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="roles" id="roles" role="group" aria-label="직무 필터">
+    <button class="chip" data-role="all" aria-pressed="true">전체</button>
+    <button class="chip" data-role="cso" aria-pressed="false">CSO · 전략</button>
+    <button class="chip" data-role="lead" aria-pressed="false">사업부 리드</button>
+    <button class="chip" data-role="pm" aria-pressed="false">PM</button>
+    <button class="chip" data-role="po" aria-pressed="false">PO</button>
+    <button class="chip" data-role="pmo" aria-pressed="false">PMO</button>
+    <button class="chip" data-role="mkt" aria-pressed="false">마케터</button>
+  </div>
+  <div class="searchrow">
+    <input class="search" id="q" type="search" placeholder="용어 검색 — 한글, 영문 약어, 설명 모두 찾습니다 (예: 공헌이익, ROAS, 코호트)" aria-label="용어 검색">
+    <span class="hits" id="hits"></span>
+  </div>
+</div>
+
+<main id="list"></main>
+
+<section class="pitfalls">
+  <h2>자주 틀리는 여덟 가지</h2>
+  <p class="lede">면접과 회의에서 밑천이 드러나는 지점은 어려운 용어가 아니라 <b>비슷해 보이는 두 단어를 섞어 쓸 때</b>입니다.</p>
+  <div id="pits"></div>
+</section>
+
+<footer>
+  같은 용어라도 회사마다 정의가 다릅니다. 특히 전환율·리텐션·활성사용자는 <b>분모를 먼저 합의</b>하고 쓰십시오. 숫자가 틀리는 게 아니라 정의가 어긋나서 회의가 길어집니다.
+</footer>
+</div>
+
+<script>
+const T = [
+{g:"지표를 말하는 법", who:"전 직무 공통", items:[
+ {k:"KPI", e:"Key Performance Indicator", d:"목표 달성 정도를 재는 지표. 상태를 측정하는 도구다.", u:"KPI는 <b>재는 것</b>, OKR은 <b>거는 것</b>이다. 둘을 같은 말로 쓰면 목표 없는 대시보드가 된다.", r:["cso","lead","pm","po","pmo","mkt"]},
+ {k:"OKR", e:"Objectives & Key Results", d:"정성적 목표 하나에 측정 가능한 핵심결과 2~4개를 붙이는 목표 설정 방식.", u:"KR은 <b>행동이 아니라 결과</b>여야 한다. '앱 개편 완료'는 KR이 아니고 '재구매율 18%→24%'가 KR이다.", r:["cso","lead","pm","po"]},
+ {k:"노스스타 지표", e:"North Star Metric", d:"제품이 고객에게 주는 핵심 가치를 한 줄로 대표하는 지표.", u:"매출은 대개 노스스타가 아니다. 매출은 결과고, 노스스타는 <b>그 결과를 앞서 움직이는 것</b>이라야 한다.", r:["cso","pm","po"]},
+ {k:"선행지표 · 후행지표", e:"Leading / Lagging", d:"선행은 결과보다 먼저 움직이는 지표, 후행은 결과가 나온 뒤 확인되는 지표.", u:"매출·영업이익은 후행. 회의에서 후행지표만 보고 있으면 이미 손쓸 수 없는 것만 보는 중이다.", r:["cso","lead","pm","mkt"]},
+ {k:"가드레일 지표", e:"Guardrail Metric", d:"목표 지표를 올리려다 망가뜨리면 안 되는 지표.", u:"전환율 올리려고 할인을 때리면 공헌이익이 무너진다. 실험마다 가드레일을 먼저 정한다.", r:["pm","po","mkt"]},
+ {k:"코호트", e:"Cohort", d:"같은 시점에 유입된 사용자를 한 덩어리로 묶어 시간에 따라 추적하는 단위.", u:"전체 평균은 신규 유입에 가려져 착시가 생긴다. <b>가입 월별로 쪼개야</b> 제품이 나아졌는지 보인다.", r:["cso","pm","po","mkt"]},
+ {k:"리텐션 · 잔존율", e:"Retention", d:"일정 기간 뒤에도 남아 있는 사용자 비율.", u:"정의가 셋이다 — N일차에 정확히 돌아왔나(N-day), N일 이내 한 번이라도(unbounded), 기간 내 활동(rolling). <b>어느 정의인지 먼저 말하라.</b>", r:["pm","po","mkt"]},
+ {k:"이탈률", e:"Churn Rate", d:"기간 내 떠난 고객 비율. 리텐션의 반대편.", u:"구독은 해지로 세지만 커머스는 '얼마나 안 사면 이탈인지'를 정해야 한다. 업종마다 기준이 다르다.", r:["lead","pm","mkt"]},
+ {k:"퍼널", e:"Funnel", d:"유입에서 최종 행동까지 단계별로 줄어드는 구조.", u:"퍼널은 개선점을 찾는 도구지 보고용 그림이 아니다. <b>가장 크게 새는 한 칸</b>을 찾는 게 목적이다.", r:["pm","po","mkt"]},
+ {k:"구매전환율", e:"CVR, Conversion Rate", d:"특정 모수 중 목표 행동을 한 비율.", u:"분모 합의가 먼저다. 방문자 기준인지, 로그인 사용자 기준인지, 장바구니 담은 사람 기준인지로 숫자가 서너 배 달라진다.", r:["lead","pm","po","mkt"]},
+ {k:"AARRR", e:"해적 지표", d:"획득·활성화·잔존·수익·추천 5단계로 서비스 상태를 보는 틀.", u:"단계를 외우는 게 아니라 <b>우리 서비스에서 '활성화'가 무슨 행동인지</b> 정의하는 게 일이다.", r:["pm","po","mkt"]},
+ {k:"세그먼트", e:"Segment", d:"공통 속성이나 행동으로 나눈 고객 묶음.", u:"평균 한 줄로 보면 아무 의사결정도 안 나온다. 쪼개야 누구에게 무엇을 할지가 나온다.", r:["pm","mkt","lead"]},
+ {k:"MECE", e:"상호배타·전체포괄", d:"겹치지 않고 빠짐없이 나누는 사고 원칙.", u:"전략 보고서에서 '이 분류 겹치는데요' 소리를 듣지 않게 하는 최소 조건.", r:["cso","pmo"]},
+ {k:"이슈 트리", e:"Issue Tree / Logic Tree", d:"큰 문제를 답할 수 있는 작은 질문으로 쪼개 내려가는 구조.", u:"매출 부진처럼 막연한 문제를 <b>모수·전환·빈도·단가</b>로 쪼개는 순간 일이 시작된다.", r:["cso","lead","pmo"]},
+ {k:"가설 검증", e:"Hypothesis Testing", d:"검증 가능한 형태로 명제를 세우고 데이터로 참·거짓을 가리는 절차.", u:"'좋아질 것 같다'는 가설이 아니다. <b>무엇이 얼마나 바뀌면 참인지</b>를 숫자로 적어야 가설이다.", r:["cso","pm","po","mkt"]}
+]},
+
+{g:"돈을 읽는 법", who:"CSO · 사업부 리드", items:[
+ {k:"거래액", e:"GMV, Gross Merchandise Value", d:"플랫폼에서 일어난 거래의 총액.", u:"<b>GMV는 매출이 아니다.</b> 중개만 하면 수수료만 매출로 잡힌다. 이걸 섞으면 회사 규모를 열 배로 말하는 셈이 된다.", r:["cso","lead","pm"]},
+ {k:"매출", e:"Revenue", d:"기업이 고객에게 재화·용역을 제공하고 인식한 금액.", u:"직매입은 총액(판매가 전체), 중개는 순액(수수료)으로 인식한다. 사업모델이 바뀌면 매출 정의부터 바뀐다.", r:["cso","lead"]},
+ {k:"매출원가", e:"COGS", d:"판매한 상품·서비스를 만들거나 사오는 데 직접 든 비용.", u:"유통업은 매입가가 곧 원가의 대부분. 배송비를 원가에 넣느냐 판관비에 넣느냐로 마진율이 달라 보인다.", r:["cso","lead"]},
+ {k:"매출총이익", e:"GP, Gross Profit", d:"매출에서 매출원가를 뺀 금액. 상품 자체가 남기는 이익.", u:"'마진'이라고 말할 때 보통 이걸 뜻하지만, <b>물류·결제·마케팅비는 아직 빠지지 않았다.</b>", r:["cso","lead"]},
+ {k:"판매관리비", e:"SG&A", d:"인건비·임차료·마케팅비 등 파는 데와 관리하는 데 드는 비용.", u:"고정비 성격이 강해 매출이 흔들릴 때 손익을 결정한다.", r:["cso","lead"]},
+ {k:"영업이익", e:"OP, Operating Profit", d:"매출총이익에서 판관비를 뺀, 본업으로 번 이익.", u:"투자·이자·환차손은 여기 안 들어간다. 사업의 체력은 영업이익으로 본다.", r:["cso","lead"]},
+ {k:"EBITDA", e:"상각전 영업이익", d:"영업이익에 감가상각비를 더해 되돌린 값. 현금 창출력의 근사치.", u:"설비·무형자산이 큰 회사를 비교할 때 쓴다. 스타트업 밸류에이션 대화에서 자주 나온다.", r:["cso"]},
+ {k:"공헌이익", e:"Contribution Margin", d:"매출에서 <b>변동비</b>를 뺀 금액. 한 건 더 팔았을 때 실제로 남는 돈.", u:"매출총이익과 헷갈리기 쉽다. 배달·포장·결제수수료처럼 건당 따라붙는 비용을 빼야 <b>이 주문이 남는 장사인지</b>가 보인다.", r:["cso","lead","pm"]},
+ {k:"고정비 · 변동비", e:"Fixed / Variable Cost", d:"판매량과 무관하게 나가는 비용과, 판매량에 비례해 늘어나는 비용.", u:"이 구분이 흐리면 손익분기점도 공헌이익도 계산이 안 된다. 실무의 출발점.", r:["cso","lead"]},
+ {k:"손익분기점", e:"BEP, Break-Even Point", d:"고정비를 공헌이익으로 다 덮는 판매량 또는 매출액.", u:"고정비 ÷ 건당 공헌이익 = 필요 주문 수. 목표를 <b>건수</b>로 바꿔주는 유일한 계산.", r:["cso","lead"]},
+ {k:"객단가", e:"AOV, Average Order Value", d:"주문 한 건당 평균 결제금액.", u:"평균은 고액 주문에 끌려간다. <b>중앙값과 분포</b>를 같이 봐야 무료배송 기준선을 정할 수 있다.", r:["lead","pm","mkt"]},
+ {k:"고객획득비용", e:"CAC", d:"고객 한 명을 데려오는 데 든 비용.", u:"광고비만 넣으면 과소계상이다. 쿠폰·프로모션·영업 인건비까지 넣어야 진짜 CAC다.", r:["cso","mkt","lead"]},
+ {k:"고객생애가치", e:"LTV / CLV", d:"고객 한 명이 거래 기간 전체에 남길 이익의 합.", u:"<b>매출이 아니라 이익 기준</b>으로 잡아야 한다. 기간을 안 정하면 얼마든지 부풀릴 수 있는 숫자다.", r:["cso","mkt","pm"]},
+ {k:"LTV/CAC 배수", e:"—", d:"고객 한 명이 남기는 이익을 획득비용으로 나눈 값.", u:"통상 3배 이상을 건강하다고 본다. 다만 <b>회수 기간</b>이 길면 배수가 좋아도 현금이 마른다.", r:["cso","mkt"]},
+ {k:"회수 기간", e:"Payback Period", d:"획득비용을 공헌이익으로 되찾는 데 걸리는 기간.", u:"현금 관점에서는 LTV/CAC보다 이게 더 급한 숫자다.", r:["cso","lead","mkt"]},
+ {k:"유닛 이코노믹스", e:"Unit Economics", d:"주문 한 건, 고객 한 명 단위로 수익과 비용을 따지는 관점.", u:"'규모가 커지면 해결된다'가 통하는지 아닌지를 가르는 기준. 단위가 적자면 규모는 적자를 키운다.", r:["cso","lead","pm"]},
+ {k:"번레이트 · 런웨이", e:"Burn Rate / Runway", d:"월평균 현금 소진액과, 그 속도로 버틸 수 있는 개월 수.", u:"투자 유치 시점을 정하는 숫자. 런웨이 6개월 아래면 협상력이 사라진다.", r:["cso"]},
+ {k:"마진율 · 마크업", e:"Margin / Markup", d:"마진율은 판매가 대비 이익, 마크업은 원가 대비 얹은 비율.", u:"원가 1만원에 50% 마크업은 1.5만원이지만 마진율은 33%다. <b>같은 말로 쓰면 가격이 틀어진다.</b>", r:["lead","cso"]},
+ {k:"운전자본", e:"Working Capital", d:"매출채권·재고에 묶여 있는 돈에서 매입채무를 뺀 금액.", u:"흑자인데 돈이 없는 이유는 대개 여기 있다. 유통·제조에서 특히 치명적.", r:["cso","lead"]}
+]},
+
+{g:"전략을 세우는 법", who:"CSO · 전략기획", items:[
+ {k:"TAM · SAM · SOM", e:"전체·유효·수익시장", d:"이론상 최대 시장, 우리가 닿을 수 있는 시장, 실제로 먹을 수 있는 시장.", u:"TAM만 크게 부르면 신뢰를 잃는다. <b>SOM을 어떻게 계산했는지</b>가 실력을 보여준다.", r:["cso"]},
+ {k:"PMF", e:"Product-Market Fit", d:"시장이 실제로 원하는 제품을 만들어냈다는 상태.", u:"감이 아니라 리텐션 곡선이 평평해지는지, 재구매가 붙는지로 판단한다.", r:["cso","pm","po"]},
+ {k:"피벗", e:"Pivot", d:"배운 것을 근거로 사업의 방향을 구조적으로 트는 일.", u:"그만두는 게 아니라 <b>축 하나만 바꾸고 나머지는 유지</b>하는 것이다.", r:["cso","po"]},
+ {k:"3C · SWOT · STP", e:"—", d:"고객·자사·경쟁 / 강약점·기회위협 / 세분화·타겟팅·포지셔닝.", u:"틀 자체는 쉽다. 칸을 채우고 끝내면 아무 의미 없고, <b>거기서 무엇을 버릴지</b>가 결론이다.", r:["cso","mkt"]},
+ {k:"5 Forces", e:"산업구조 분석", d:"기존 경쟁·신규진입·대체재·구매자·공급자 다섯 힘으로 산업 수익성을 본다.", u:"'이 시장이 왜 돈이 안 되는가'를 설명할 때 가장 잘 먹히는 틀.", r:["cso"]},
+ {k:"밸류체인", e:"Value Chain", d:"원재료부터 최종 고객까지 가치가 더해지는 단계의 연결.", u:"우리가 어느 단계를 쥐고 있고 어디서 이익이 나는지를 보는 지도.", r:["cso","lead"]},
+ {k:"해자", e:"Moat", d:"경쟁자가 쉽게 따라오지 못하게 막는 구조적 우위.", u:"기능은 해자가 아니다. <b>규모의 경제·네트워크 효과·전환비용·독점적 공급</b>이 해자다.", r:["cso"]},
+ {k:"네트워크 효과", e:"Network Effect", d:"사용자가 늘수록 제품 가치가 커지는 구조.", u:"플랫폼 사업계획서의 단골. 진짜인지 확인하려면 <b>한쪽이 늘 때 반대쪽 지표가 실제로 좋아지는지</b>를 본다.", r:["cso","pm"]},
+ {k:"전환비용", e:"Switching Cost", d:"고객이 경쟁사로 옮길 때 치러야 하는 금전적·시간적 부담.", u:"B2B에서 가장 강력한 방어막. 데이터 이전, 재교육, 계약 잔여기간이 여기 들어간다.", r:["cso","po"]},
+ {k:"시나리오 플래닝", e:"Scenario Planning", d:"불확실한 변수 몇 개를 축으로 미래 몇 가지를 그려두는 기법.", u:"보수·기준·공격 3안은 그 기초 형태. <b>각 안의 전제를 명시</b>하지 않으면 숫자놀음이 된다.", r:["cso","lead"]},
+ {k:"민감도 분석", e:"Sensitivity Analysis", d:"핵심 가정을 흔들었을 때 결과가 얼마나 변하는지 보는 계산.", u:"'전환율이 1%p 떨어지면 영업이익이 얼마나 주는가'에 즉답하면 회의의 무게가 달라진다.", r:["cso","lead"]},
+ {k:"실사", e:"DD, Due Diligence", d:"인수·투자 전에 대상의 재무·법무·사업을 검증하는 절차.", u:"재무 DD, 법무 DD, 비즈니스 DD로 나뉜다. 전략 담당은 보통 비즈니스 DD를 맡는다.", r:["cso"]},
+ {k:"밸류에이션", e:"Valuation", d:"기업 가치를 산정하는 일. DCF, 멀티플(매출·EBITDA 배수) 등.", u:"스타트업은 대개 멀티플과 협상으로 정해진다. 숫자보다 <b>비교 대상 선정</b>이 논쟁의 핵심.", r:["cso"]},
+ {k:"프리 · 포스트 밸류", e:"Pre/Post-money", d:"투자금이 들어오기 전 기업가치와 들어온 후 기업가치.", u:"20억 프리에 5억 투자면 포스트 25억, 지분 20%. <b>이걸 헷갈리면 지분이 틀어진다.</b>", r:["cso"]},
+ {k:"캡테이블 · 희석", e:"Cap Table / Dilution", d:"주주 구성표와, 신주 발행으로 기존 지분율이 낮아지는 현상.", u:"라운드를 거듭할수록 창업자 지분은 반드시 준다. 스톡옵션 풀도 희석 요인이다.", r:["cso"]},
+ {k:"텀시트", e:"Term Sheet", d:"투자 조건의 뼈대를 담은 구속력 약한 합의서.", u:"밸류보다 <b>청산우선권·동반매도권 같은 조항</b>이 실제 결과를 좌우한다.", r:["cso"]}
+]},
+
+{g:"사업부를 굴리는 법", who:"사업부 리드 · 팀장", items:[
+ {k:"P&L 오너십", e:"손익 책임", d:"조직 단위의 매출과 비용, 최종 손익을 책임지는 역할.", u:"팀장과 리드를 가르는 기준선. <b>비용을 쓸 권한과 손익을 설명할 의무</b>가 함께 온다.", r:["lead","cso"]},
+ {k:"예산 · 실적 · 전망", e:"Budget / Actual / Forecast", d:"연초에 세운 계획, 실제 결과, 남은 기간의 최신 예상치.", u:"'포캐스트 다시 잡아달라'는 말은 연초 계획이 아니라 <b>지금 아는 걸로 다시 계산하라</b>는 뜻이다.", r:["lead","pmo","cso"]},
+ {k:"예실 차이", e:"Variance Analysis", d:"계획과 실적의 차이를 원인별로 쪼개 설명하는 일.", u:"'왜 못 했나'가 아니라 <b>수량 때문인지 단가 때문인지 믹스 때문인지</b>로 쪼개는 게 핵심.", r:["lead","cso","pmo"]},
+ {k:"헤드카운트 · FTE", e:"HC / Full-Time Equivalent", d:"인원 수와, 근무시간을 정규직 1명 기준으로 환산한 값.", u:"파트타임 2명은 HC 2명이지만 FTE는 1일 수 있다. 인건비 계획은 FTE로 잡는다.", r:["lead","pmo"]},
+ {k:"SKU", e:"Stock Keeping Unit", d:"재고 관리의 최소 단위. 같은 상품도 용량·색이 다르면 다른 SKU.", u:"'상품 수'와 'SKU 수'는 다르다. 온라인 등재율을 말할 때 기준을 맞춰야 한다.", r:["lead","pm"]},
+ {k:"재고회전율", e:"Inventory Turnover", d:"일정 기간 재고가 몇 번 팔려나갔는지 나타내는 비율.", u:"신선식품은 높아야 하고 내구재는 낮아도 된다. <b>업종 기준 없이 비교하면 무의미</b>하다.", r:["lead"]},
+ {k:"결품률 · 품절률", e:"Out-of-stock Rate", d:"주문 시점에 재고가 없어 판매하지 못한 비율.", u:"온라인 장보기에서 취소와 이탈의 1순위 원인. <b>대체상품 제안 규칙</b>이 있느냐로 실력이 갈린다.", r:["lead","pm"]},
+ {k:"폐기율 · 로스율", e:"Shrinkage", d:"판매되지 못하고 버려진 재고의 비율.", u:"신선식품 손익은 마진율이 아니라 폐기율이 결정하는 경우가 많다.", r:["lead"]},
+ {k:"안전재고 · 리드타임", e:"Safety Stock / Lead Time", d:"수요 변동에 대비해 두는 여유 재고와, 발주부터 입고까지 걸리는 시간.", u:"리드타임이 길수록 안전재고가 커지고, 안전재고가 커질수록 폐기가 는다.", r:["lead","pmo"]},
+ {k:"최소발주수량", e:"MOQ", d:"공급처가 요구하는 1회 최소 주문 수량.", u:"신상품 테스트를 막는 현실적 제약. 여기서 재고 리스크가 생긴다.", r:["lead"]},
+ {k:"SLA", e:"Service Level Agreement", d:"제공할 서비스 수준을 수치로 약속한 기준.", u:"'당일배송'은 SLA가 아니다. <b>몇 시 주문까지, 몇 시까지, 몇 % 달성</b>이 SLA다.", r:["lead","pm","pmo"]},
+ {k:"채널 믹스", e:"Channel Mix", d:"매출이 어느 판매채널에서 얼마씩 나오는지의 구성.", u:"채널마다 수수료와 마진이 다르므로, 믹스가 바뀌면 매출이 같아도 이익이 달라진다.", r:["lead","cso","mkt"]},
+ {k:"반품률 · 클레임율", e:"Return / Claim Rate", d:"판매 대비 반품 비율과 고객 불만 접수 비율.", u:"반품은 매출 차감과 물류비 이중 타격이다. 품질 문제의 선행지표로도 쓴다.", r:["lead","mkt"]}
+]},
+
+{g:"제품을 만드는 법", who:"PM · PO", items:[
+ {k:"PM과 PO의 차이", e:"Product Manager / Owner", d:"PM은 무엇을 왜 만들지(시장·문제·성과)를, PO는 스크럼 팀의 백로그와 우선순위를 책임진다.", u:"<b>회사마다 경계가 다르다.</b> 면접에서는 정의를 외우지 말고 '그 회사에서는 어디까지입니까'라고 묻는 편이 낫다.", r:["pm","po"]},
+ {k:"디스커버리 · 딜리버리", e:"Discovery / Delivery", d:"무엇을 만들지 찾는 단계와, 정해진 것을 제대로 만드는 단계.", u:"딜리버리만 잘하는 팀은 <b>아무도 원하지 않는 걸 빠르게</b> 만든다.", r:["pm","po"]},
+ {k:"PRD", e:"Product Requirements Document", d:"무엇을 왜 만드는지와 완성 기준을 적은 문서.", u:"기능 목록이 아니라 <b>해결하려는 문제와 성공 지표</b>가 먼저 와야 한다.", r:["pm","po"]},
+ {k:"유저 스토리", e:"User Story", d:"'누가, 무엇을 위해, 무엇을 할 수 있다'는 형식으로 쓴 요구사항.", u:"개발 지시서가 아니라 <b>대화의 약속</b>이다. 뒤에 인수조건이 붙어야 완성된다.", r:["po","pm"]},
+ {k:"인수조건", e:"AC, Acceptance Criteria", d:"그 작업이 끝났다고 인정받기 위한 구체적 조건.", u:"AC가 모호하면 QA 단계에서 싸운다. <b>'완료'의 정의를 미리 적는 것</b>이 PO의 일.", r:["po","pmo"]},
+ {k:"백로그", e:"Backlog", d:"아직 하지 않은 일들을 우선순위대로 쌓아둔 목록.", u:"쌓는 게 일이 아니라 <b>지우는 게</b> 일이다. 정리되지 않은 백로그는 기록일 뿐이다.", r:["po","pm"]},
+ {k:"에픽 · 스토리 · 태스크", e:"Epic / Story / Task", d:"큰 덩어리 목표, 사용자 관점의 작업 단위, 실제 실행 단위.", u:"단위가 섞이면 일정 추정이 무너진다. 스토리는 한 스프린트 안에 끝나는 크기로.", r:["po","pmo"]},
+ {k:"RICE · ICE", e:"우선순위 점수", d:"도달범위·영향·확신도·공수로 점수를 매겨 순서를 정하는 방법.", u:"점수는 <b>토론을 여는 도구</b>지 결론이 아니다. 숫자 뒤의 가정을 드러내는 데 의미가 있다.", r:["pm","po"]},
+ {k:"MoSCoW", e:"필수·권장·선택·제외", d:"Must·Should·Could·Won't로 범위를 나누는 합의 기법.", u:"일정이 밀릴 때 <b>무엇을 뺄지 미리 합의</b>해두는 장치.", r:["po","pmo"]},
+ {k:"카노 모델", e:"Kano Model", d:"기능을 당연·성능·매력 품질로 나눠 만족도 기여를 보는 틀.", u:"당연 품질은 채워도 칭찬받지 못하고 없으면 욕먹는다. 어디에 자원을 쓸지 가른다.", r:["pm","po"]},
+ {k:"MVP", e:"Minimum Viable Product", d:"가설을 검증할 수 있는 최소한의 제품.", u:"'싸게 대충'이 아니라 <b>배움을 얻기 위한 최소</b>다. 무엇을 배울지 없으면 MVP가 아니다.", r:["pm","po","cso"]},
+ {k:"스프린트 · 벨로시티", e:"Sprint / Velocity", d:"1~4주 고정 주기와, 그 주기에 팀이 처리한 작업량.", u:"벨로시티는 <b>예측용</b>이지 팀 평가 지표가 아니다. 평가에 쓰는 순간 숫자가 부풀려진다.", r:["po","pmo"]},
+ {k:"번다운 차트", e:"Burndown", d:"남은 작업량이 시간에 따라 줄어드는 모습을 그린 그래프.", u:"선이 평평하면 막힌 것이다. 스탠드업에서 볼 것은 진도가 아니라 <b>막힌 지점</b>.", r:["po","pmo"]},
+ {k:"칸반 · WIP 제한", e:"Kanban / Work In Progress", d:"작업 흐름을 시각화하고 동시 진행 개수를 제한하는 방식.", u:"동시에 많이 시작하면 아무것도 안 끝난다. WIP 제한은 <b>끝내는 속도</b>를 위한 장치.", r:["po","pmo"]},
+ {k:"A/B 테스트", e:"A/B Test", d:"사용자를 무작위로 나눠 두 안의 성과를 비교하는 실험.", u:"먼저 정할 것 — 지표, <b>필요 표본 수</b>, 기간. 좋아 보인다고 중간에 멈추면 그건 실험이 아니다.", r:["pm","po","mkt"]},
+ {k:"통계적 유의성 · MDE", e:"Significance / Minimum Detectable Effect", d:"차이가 우연이 아닐 확률과, 이 표본으로 잡아낼 수 있는 최소 차이.", u:"트래픽이 작으면 <b>작은 개선은 애초에 검출이 안 된다.</b> 실험 설계 단계에서 확인할 것.", r:["pm","mkt"]},
+ {k:"피처 플래그", e:"Feature Flag", d:"코드 배포와 기능 공개를 분리하는 스위치.", u:"문제가 생기면 되돌리는 대신 끈다. 점진 공개와 A/B의 기반.", r:["pm","po"]},
+ {k:"카나리 배포 · 롤백", e:"Canary / Rollback", d:"일부에게만 먼저 배포해 보고, 문제 시 이전 버전으로 되돌리는 것.", u:"PM이 개발 용어를 아는 이유는 <b>위험을 일정에 반영</b>하기 위해서다.", r:["pm","pmo"]},
+ {k:"기술 부채", e:"Technical Debt", d:"빠르게 가려고 미룬 설계·정리 작업이 쌓인 상태.", u:"이자가 붙는다. 속도가 점점 느려지면 기능이 아니라 부채를 봐야 한다.", r:["pm","po","pmo"]},
+ {k:"IA · 유저플로우", e:"Information Architecture / User Flow", d:"정보의 구조와, 사용자가 목표까지 거치는 화면 경로.", u:"화면을 그리기 전에 <b>구조와 경로</b>가 먼저다. 순서를 바꾸면 반드시 다시 그린다.", r:["pm","po"]},
+ {k:"이벤트 택소노미", e:"Event Taxonomy", d:"제품에서 수집할 행동 로그의 이름·속성 체계.", u:"이게 없으면 나중에 어떤 분석도 못 한다. <b>기능 출시 전에</b> 정의해야 하는 이유.", r:["pm","po"]}
+]},
+
+{g:"일을 굴러가게 하는 법", who:"PMO · 프로젝트 관리", items:[
+ {k:"포트폴리오 · 프로그램 · 프로젝트", e:"Portfolio / Program / Project", d:"전사 과제 묶음, 연관된 과제들의 묶음, 개별 과제.", u:"PMO가 보는 단위는 보통 프로그램 이상. <b>과제 간 충돌과 자원 다툼</b>을 조정하는 자리다.", r:["pmo"]},
+ {k:"범위", e:"Scope", d:"이 프로젝트가 무엇을 하고 무엇은 하지 않는지의 경계.", u:"범위 문서에서 <b>'하지 않는 것'을 적는 칸</b>이 실제로 분쟁을 막는다.", r:["pmo","po"]},
+ {k:"스코프 크립", e:"Scope Creep", d:"합의 없이 요구사항이 조금씩 불어나는 현상.", u:"거절하는 게 아니라 <b>변경관리 절차에 태우는</b> 것이 답이다.", r:["pmo","po"]},
+ {k:"WBS", e:"Work Breakdown Structure", d:"일을 관리 가능한 단위까지 계층적으로 쪼갠 구조.", u:"일정 추정과 담당 배정의 기초. 쪼개지 않은 일은 추정도 못 한다.", r:["pmo"]},
+ {k:"크리티컬 패스", e:"Critical Path", d:"전체 일정을 결정하는, 여유가 없는 작업들의 연결 경로.", u:"여기 있는 작업 하루 지연 = 프로젝트 하루 지연. <b>여기에만 자원을 더 투입</b>하면 된다.", r:["pmo"]},
+ {k:"RAID", e:"Risk·Assumption·Issue·Dependency", d:"위험·가정·현안·의존관계를 한 표로 관리하는 기법.", u:"위험은 아직 안 터진 것, 이슈는 이미 터진 것. <b>둘을 섞어 적는 순간 관리가 안 된다.</b>", r:["pmo"]},
+ {k:"RACI", e:"실행·책임·자문·공유", d:"업무별로 누가 실행하고 누가 최종 책임지는지 정하는 표.", u:"A(최종책임)는 <b>반드시 한 명</b>이다. 둘이면 아무도 책임지지 않는다.", r:["pmo","lead"]},
+ {k:"의존성", e:"Dependency", d:"다른 작업이 끝나야 시작할 수 있는 관계.", u:"외부 조직·외주에 걸린 의존성이 일정을 가장 자주 무너뜨린다. 먼저 찾아둘 것.", r:["pmo","po"]},
+ {k:"스테이지 게이트", e:"Stage-Gate", d:"단계마다 승인 관문을 두고 통과해야 다음으로 가는 방식.", u:"대기업·공공에서 흔하다. <b>게이트 일정이 곧 프로젝트 일정</b>이 되므로 미리 역산해야 한다.", r:["pmo","cso"]},
+ {k:"변경관리", e:"CR, Change Request", d:"합의된 범위·일정·비용을 바꾸려면 거치는 공식 절차.", u:"요청을 막는 장치가 아니라 <b>대가를 드러내는</b> 장치다. '되는데 2주 늘어납니다'가 답이다.", r:["pmo"]},
+ {k:"에스컬레이션", e:"Escalation", d:"현장에서 못 푸는 문제를 상위 의사결정자에게 올리는 것.", u:"기준을 미리 정해둔다 — <b>며칠 막히면, 얼마를 넘으면</b> 올린다.", r:["pmo","lead"]},
+ {k:"캐파 플래닝", e:"Capacity Planning", d:"가용 인력·설비로 소화 가능한 작업량을 계산하고 배분하는 일.", u:"'할 수 있다'가 아니라 <b>'이걸 하면 저건 못 한다'</b>를 보여주는 게 PMO의 언어.", r:["pmo","lead"]},
+ {k:"3대 제약", e:"범위 · 일정 · 비용", d:"셋 중 둘을 고정하면 나머지 하나는 따라 정해진다는 원칙.", u:"셋 다 지키라는 요구에 대응하는 근거. 품질을 넷째로 두기도 한다.", r:["pmo"]},
+ {k:"거버넌스", e:"Governance", d:"누가 어떤 회의체에서 무엇을 결정하는지의 구조.", u:"승인 권한과 금액 기준을 모르면 <b>아무리 좋은 안도 통과되지 않는다.</b>", r:["pmo","cso"]}
+]},
+
+{g:"고객을 데려오는 법", who:"마케터 · 그로스", items:[
+ {k:"ROAS", e:"Return On Ad Spend", d:"광고비 대비 매출. 100만원 써서 500만원 팔면 500%.", u:"<b>ROAS는 이익이 아니다.</b> 마진율 20%인데 ROAS 300%면 적자다. 손익분기 ROAS를 먼저 구하라.", r:["mkt","lead"]},
+ {k:"CPA · CPC · CPM", e:"행동·클릭·1000노출당 비용", d:"목표 행동 1건, 클릭 1회, 노출 1000회에 드는 광고비.", u:"CPA는 결과 기준, CPC·CPM은 매체 구매 단위. <b>섞어서 비교하면 채널 판단이 틀어진다.</b>", r:["mkt"]},
+ {k:"CTR", e:"Click-Through Rate", d:"노출 대비 클릭 비율. 소재의 매력도를 본다.", u:"CTR이 높고 전환이 낮으면 <b>소재가 과장</b>됐거나 랜딩이 어긋난 것이다.", r:["mkt"]},
+ {k:"도달 · 빈도", e:"Reach / Frequency", d:"몇 명에게 닿았는지와, 한 사람이 몇 번 봤는지.", u:"빈도가 과하면 피로도가 올라가고 성과가 꺾인다. 노출 수만 보면 이걸 놓친다.", r:["mkt"]},
+ {k:"어트리뷰션", e:"Attribution", d:"전환의 공을 어느 접점에 얼마나 돌릴지 정하는 규칙.", u:"라스트클릭은 <b>마지막 채널을 과대평가</b>한다. 브랜드 검색이 늘 이기는 이유.", r:["mkt","cso"]},
+ {k:"인크리멘털리티", e:"Incrementality", d:"그 마케팅이 없었어도 일어났을 전환을 뺀, 순수 증분 효과.", u:"'이 광고 껐을 때 매출이 얼마나 빠지나'가 진짜 질문. 홀드아웃 그룹으로 잰다.", r:["mkt","cso"]},
+ {k:"SA · DA", e:"검색광고 / 디스플레이광고", d:"검색 의도에 붙는 광고와, 지면에 노출하는 배너형 광고.", u:"SA는 <b>있는 수요를 가져오고</b> DA는 수요를 만든다. 성과 기준을 같게 두면 DA는 늘 나빠 보인다.", r:["mkt"]},
+ {k:"리타게팅", e:"Retargeting", d:"방문했으나 전환하지 않은 사용자를 다시 노출하는 기법.", u:"ROAS가 잘 나오지만 <b>이미 살 사람</b>을 세는 경우가 많다. 증분으로 검증할 대표 채널.", r:["mkt"]},
+ {k:"CRM 마케팅", e:"—", d:"이미 확보한 고객에게 단계별로 메시지를 보내 재구매·이탈방지를 노리는 활동.", u:"신규 획득보다 비용이 훨씬 싸다. 오프라인 회원을 온라인으로 옮기는 일도 여기.", r:["mkt","lead"]},
+ {k:"라이프사이클 · 윈백", e:"Lifecycle / Winback", d:"신규-활성-휴면-이탈 단계별 대응과, 떠난 고객을 되돌리는 캠페인.", u:"휴면 직전 구간을 잡는 게 가장 싸다. <b>이탈 후에 잡으면 비용이 몇 배</b>다.", r:["mkt"]},
+ {k:"NPS", e:"Net Promoter Score", d:"추천 의향 0~10점에서 추천군 비율 빼기 비추천군 비율.", u:"점수 자체보다 <b>왜 그 점수를 줬는지</b>의 응답이 자산이다.", r:["mkt","pm"]},
+ {k:"업셀 · 크로스셀", e:"Upsell / Cross-sell", d:"더 비싼 것을 권하는 것과, 함께 쓰는 것을 권하는 것.", u:"객단가를 올리는 두 가지 길. 무료배송 기준선과 묶으면 효과가 커진다.", r:["mkt","lead"]},
+ {k:"오가닉 · SEO", e:"Organic / Search Engine Optimization", d:"광고비 없이 들어오는 유입과, 검색 노출을 높이는 작업.", u:"효과가 늦게 오지만 <b>누적된다.</b> 퍼포먼스 예산이 끊겼을 때 남는 자산.", r:["mkt"]},
+ {k:"프로모션 비용 처리", e:"—", d:"할인·쿠폰을 매출 차감으로 볼지 판관비로 볼지의 회계 처리.", u:"처리 방식에 따라 <b>매출과 마진율이 달라 보인다.</b> 마케터도 이걸 알아야 성과 논쟁에서 밀리지 않는다.", r:["mkt","lead","cso"]}
+]}
+];
+
+const PITS = [
+ {t:"GMV와 매출", w:"거래액 300억 회사입니다", d:"중개 모델이면 매출은 수수료뿐이다. 투자자·면접관 앞에서 이 둘을 섞으면 다른 건 다 못 믿게 된다."},
+ {t:"매출총이익과 공헌이익", w:"마진 30% 남습니다", d:"매출총이익 30%라도 배송·포장·결제수수료를 빼면 건당 공헌이익은 마이너스일 수 있다. 온라인 장보기에서 특히 자주 일어난다."},
+ {t:"ROAS와 수익성", w:"ROAS 400% 나왔습니다", d:"마진율 25%면 손익분기 ROAS가 400%다. 즉 본전이다. 채널 성과는 ROAS가 아니라 공헌이익으로 말해야 한다."},
+ {t:"LTV의 기간", w:"LTV가 CAC의 5배입니다", d:"기간을 안 밝힌 LTV는 의미가 없다. 3년치인지 평생인지, 매출 기준인지 이익 기준인지, 할인율을 넣었는지로 값이 몇 배 달라진다."},
+ {t:"리텐션의 정의", w:"30일 리텐션 40%입니다", d:"30일째 딱 그날 돌아온 비율인지, 30일 안에 한 번이라도 온 비율인지에 따라 완전히 다른 숫자다. 정의를 붙여 말하라."},
+ {t:"전환율의 분모", w:"전환율 3%입니다", d:"세션 기준인지 방문자 기준인지 회원 기준인지. 분모 합의 없이 시작한 회의는 반드시 두 번 한다."},
+ {t:"평균과 중앙값", w:"객단가 4만 3천원입니다", d:"소수의 고액 주문이 평균을 끌어올린다. 무료배송 기준선처럼 실제 정책을 정할 때는 분포와 중앙값을 봐야 한다."},
+ {t:"PM과 PO의 경계", w:"저는 PO라서 지표는 안 봅니다", d:"회사마다 다르다. 정의를 외워 답하기보다 '이 회사에서 이 역할의 책임 범위'를 묻는 사람이 신뢰를 얻는다."}
+];
+
+const ROLE_LABEL = {cso:"CSO", lead:"리드", pm:"PM", po:"PO", pmo:"PMO", mkt:"마케터"};
+const esc = s => s.replace(/&(?!\w+;|#)/g,"&amp;").replace(/</g,"&lt;");
+
+const list = document.getElementById("list");
+list.innerHTML = T.map((sec,si)=>`
+  <section class="sec" data-sec="${si}">
+    <div class="sec-head"><h2>${esc(sec.g)}</h2><span class="who">${esc(sec.who)}</span></div>
+    ${sec.items.map(it=>`
+      <div class="term" data-roles="${it.r.join(" ")}" data-text="${[it.k,it.e,it.d,it.u].join(" ").replace(/<[^>]+>/g,"").replace(/&/g,"&amp;").replace(/"/g,"&quot;").toLowerCase()}">
+        <div class="head"><span class="ko">${esc(it.k)}</span><span class="en">${esc(it.e)}</span></div>
+        <div class="body">
+          <p class="def">${it.d}</p>
+          <p class="use">${it.u}</p>
+          <div class="tags">${it.r.map(r=>`<span class="tag">${ROLE_LABEL[r]}</span>`).join("")}</div>
+        </div>
+      </div>`).join("")}
+  </section>`).join("") + `<p class="empty" id="empty" hidden>조건에 맞는 용어가 없습니다. 다른 직무를 고르거나 검색어를 지워보세요.</p>`;
+
+document.getElementById("pits").innerHTML = PITS.map(p=>`
+  <div class="pit">
+    <h3>${esc(p.t)}</h3>
+    <p><span class="wrong">“${esc(p.w)}”</span> — ${esc(p.d)}</p>
+  </div>`).join("");
+
+const terms = [...document.querySelectorAll(".term")];
+document.getElementById("c-total").textContent = terms.length;
+
+let role = "all", q = "";
+try{ const saved = localStorage.getItem("glossary-role"); if(saved) role = saved; }catch(e){}
+
+function apply(){
+  let shown = 0;
+  terms.forEach(el=>{
+    const okRole = role === "all" || el.dataset.roles.split(" ").includes(role);
+    const okQ = !q || el.dataset.text.includes(q);
+    const vis = okRole && okQ;
+    el.hidden = !vis;
+    if(vis) shown++;
+  });
+  document.querySelectorAll(".sec").forEach(s=>{
+    s.hidden = ![...s.querySelectorAll(".term")].some(t=>!t.hidden);
+  });
+  document.getElementById("empty").hidden = shown > 0;
+  document.getElementById("hits").textContent = shown === terms.length ? `${terms.length}개` : `${shown} / ${terms.length}개`;
+  document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed", String(c.dataset.role === role)));
+}
+
+document.getElementById("roles").addEventListener("click", e=>{
+  const b = e.target.closest(".chip"); if(!b) return;
+  role = b.dataset.role;
+  try{ localStorage.setItem("glossary-role", role); }catch(err){}
+  apply();
+});
+document.getElementById("q").addEventListener("input", e=>{ q = e.target.value.trim().toLowerCase(); apply(); });
+
+apply();
+</script>
+</body>
+</html>
